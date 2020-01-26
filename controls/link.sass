@@ -1,0 +1,64 @@
+@import ../vars
+
+.mini
+  @mixin link($prefix, $color, $color-ratio, $font-weight)
+    @if $prefix == null
+      .link
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+        cursor: pointer
+        display: inline-block
+        font-weight: $font-weight
+    @else
+      .link.#{$prefix}
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+        cursor: pointer
+        display: inline-block
+        font-weight: $font-weight
+
+  @mixin link-active($prefix, $color, $color-ratio, $font-weight)
+    @if $prefix == null
+      .link:active
+        color: darken($color, $col-ratio * $color-ratio * 100%) !important
+        font-weight: $font-weight !important
+        transform: translateY(2px) !important
+    @else
+      .link:active.#{$prefix}
+        color: darken($color, $col-ratio * $color-ratio * 100%) !important
+        font-weight: $font-weight !important
+        transform: translateY(2px) !important
+
+  @mixin link-hover($prefix, $color, $color-ratio, $font-weight)
+    @if $prefix == null
+      .link:hover
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+        font-weight: $font-weight
+        transform: translateY(0px)
+    @else
+      .link:hover.#{$prefix}
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+        font-weight: $font-weight
+        transform: translateY(0px)
+
+  @include link(null, $col-primary, 0.05, inherit)
+  @include link-active(null, $col-primary, 0.15, inherit)
+  @include link-hover(null, $col-primary, 0.1, inherit)
+
+  @include link('default', $col-default, 0.05, inherit)
+  @include link-active('default', $col-default, 0.15, inherit)
+  @include link-hover('default', $col-default, 0.1, inherit)
+
+  @include link('failure', $col-failure, 0.05, inherit)
+  @include link-active('failure', $col-failure, 0.15, inherit)
+  @include link-hover('failure', $col-failure, 0.1, inherit)
+
+  @include link('primary', $col-primary, 0.05, inherit)
+  @include link-active('primary', $col-primary, 0.15, inherit)
+  @include link-hover('primary', $col-primary, 0.1, inherit)
+
+  @include link('success', $col-success, 0.05, inherit)
+  @include link-active('success', $col-success, 0.15, inherit)
+  @include link-hover('success', $col-success, 0.1, inherit)
+
+  @include link('warning', $col-warning, 0.05, inherit)
+  @include link-active('warning', $col-warning, 0.15, inherit)
+  @include link-hover('warning', $col-warning, 0.1, inherit)

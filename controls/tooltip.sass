@@ -1,0 +1,114 @@
+@import ../vars
+
+.mini
+  @mixin tooltip($prefix, $border-color, $border-color-ratio, $color, $color-ratio)
+    $brdc: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+
+    @if $prefix == null
+      .tooltip
+        border-color: $brdc
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+
+        &.arrow-top:before
+          border-color: transparent transparent $brdc transparent
+    @else
+      .tooltip.#{$prefix}
+        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+
+  @mixin tooltip-sized($suffix, $border-radius, $border-width, $font-size, $ver, $hor)
+    @if $suffix == null
+      .tooltip
+        border-radius: $border-radius
+        border-width: $border-width
+        font-size: $font-size
+        margin: $ver 0
+        padding: $ver $hor
+
+        &.arrow-bottom
+          &:after, &:before
+            top: 100%
+            left: 50%
+
+          &:after
+            border-width: $hor
+            margin-left: -$hor
+
+          &:before
+            border-width: $hor + $border-width * 1.4142
+            margin-left: -$hor - $border-width * 1.4142
+
+        &.arrow-left
+          &:after, &:before
+            right: 100%
+            top: 50%
+
+          &:after
+            border-width: $hor
+            margin-top: -$hor
+
+          &:before
+            border-width: $hor + $border-width * 1.4142
+            margin-top: -$hor - $border-width * 1.4142
+
+        &.arrow-right
+          &:after, &:before
+            left: 100%
+            top: 50%
+
+          &:after
+            border-width: $hor
+            margin-top: -$hor
+
+          &:before
+            border-width: $hor + $border-width * 1.4142
+            margin-top: -$hor - $border-width * 1.4142
+
+        &.arrow-top
+          &:after, &:before
+            bottom: 100%
+            left: 50%
+
+          &:after
+            border-width: $hor
+            margin-left: -$hor
+
+          &:before
+            border-width: $hor + $border-width * 1.4142
+            margin-left: -$hor - $border-width * 1.4142
+
+  .tooltip
+    background-color: lighten($col-default, 50%)
+    border-style: solid
+
+    &:after, &:before
+      border: solid transparent
+      content: " "
+      height: 0
+      pointer-events: none
+      position: absolute
+      width: 0
+
+    &:after
+      border-color: #ffffff transparent transparent transparent
+
+  @include tooltip(null, $col-default, 0.3, $col-default, 0.05)
+
+  @include tooltip('default', $col-default, 0.3, $col-default, 0.05)
+
+  @include tooltip('failure', $col-failure, 0.3, $col-failure, 0.05)
+
+  @include tooltip('primary', $col-primary, 0.3, $col-primary, 0.05)
+
+  @include tooltip('success', $col-success, 0.3, $col-success, 0.05)
+
+  @include tooltip('warning', $col-warning, 0.3, $col-warning, 0.05)
+
+  .sml
+    @include tooltip-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal / 2)
+
+  .med
+    @include tooltip-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal / 2)
+
+  .lrg
+    @include tooltip-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal / 2)

@@ -1,0 +1,101 @@
+$inline-ns: ''
+
+$grid-cells: 18
+
+$colors: default, failure, primary, success, warning
+
+$font-bold: 700
+
+$sml-1: 22px
+$sml-border-radius: 3px
+$sml-border-width: 2px
+$sml-font-size: 0.75rem
+$sml-horizontal: 5px
+$sml-media: 700px
+$sml-media-max: 969px
+$sml-vertical: $sml-horizontal / 2
+$med-1: 32px
+$med-border-radius: 4px
+$med-border-width: 2px
+$med-font-size: 1rem
+$med-horizontal: 10px
+$med-media: 970px
+$med-media-max: 1239px
+$med-vertical: $med-horizontal / 2
+$lrg-1: 42px
+$lrg-border-radius: 5px
+$lrg-border-width: 2px
+$lrg-font-size: 1.5rem
+$lrg-horizontal: 15px
+$lrg-media: 1240px
+$lrg-media-max: 3839px
+$lrg-vertical: $lrg-horizontal / 2
+
+$col-inverted: #404040
+
+$col-ratio: 1.1
+$col-darken-ratio: 0.1
+$col-darken-active-ratio: 0.15
+$col-darken-hover-ratio: 0.1
+
+$col-default: hsl(0, 0%, 50%)
+$col-default-ratio: 1.1
+$col-failure: hsl(0, 60%, 50%)
+$col-failure-ratio: 1.1
+$col-primary: hsl(210, 60%, 50%)
+$col-primary-ratio: 1.1
+$col-success: hsl(135, 60%, 50%)
+$col-success-ratio: 1.1
+$col-warning: hsl(45, 60%, 50%)
+$col-warning-ratio: 1.1
+
+$col-default-dark-1: darken($col-default, $col-default-ratio * 0.05 * 100%)
+$col-default-dark-2: darken($col-default, $col-default-ratio * 0.10 * 100%)
+$col-default-dark-3: darken($col-default, $col-default-ratio * 0.15 * 100%)
+$col-default-dark-4: darken($col-default, $col-default-ratio * 0.20 * 100%)
+$col-default-light-1: lighten($col-default, $col-default-ratio * 0.05 * 100%)
+$col-default-light-2: lighten($col-default, $col-default-ratio * 0.10 * 100%)
+$col-default-light-3: lighten($col-default, $col-default-ratio * 0.15 * 100%)
+$col-default-light-4: lighten($col-default, $col-default-ratio * 0.20 * 100%)
+
+$col-failure-dark-1: darken($col-failure, $col-failure-ratio * 0.05 * 100%)
+$col-failure-dark-2: darken($col-failure, $col-failure-ratio * 0.10 * 100%)
+$col-failure-dark-3: darken($col-failure, $col-failure-ratio * 0.15 * 100%)
+$col-failure-dark-4: darken($col-failure, $col-failure-ratio * 0.20 * 100%)
+$col-failure-light-1: lighten($col-failure, $col-failure-ratio * 0.05 * 100%)
+$col-failure-light-2: lighten($col-failure, $col-failure-ratio * 0.10 * 100%)
+$col-failure-light-3: lighten($col-failure, $col-failure-ratio * 0.15 * 100%)
+$col-failure-light-4: lighten($col-failure, $col-failure-ratio * 0.20 * 100%)
+
+$col-primary-dark-1: darken($col-primary, $col-primary-ratio * 0.05 * 100%)
+$col-primary-dark-2: darken($col-primary, $col-primary-ratio * 0.10 * 100%)
+$col-primary-dark-3: darken($col-primary, $col-primary-ratio * 0.15 * 100%)
+$col-primary-dark-4: darken($col-primary, $col-primary-ratio * 0.20 * 100%)
+$col-primary-light-1: lighten($col-primary, $col-primary-ratio * 0.05 * 100%)
+$col-primary-light-2: lighten($col-primary, $col-primary-ratio * 0.10 * 100%)
+$col-primary-light-3: lighten($col-primary, $col-primary-ratio * 0.15 * 100%)
+$col-primary-light-4: lighten($col-primary, $col-primary-ratio * 0.20 * 100%)
+
+$col-success-dark-1: darken($col-success, $col-success-ratio * 0.05 * 100%)
+$col-success-dark-2: darken($col-success, $col-success-ratio * 0.10 * 100%)
+$col-success-dark-3: darken($col-success, $col-success-ratio * 0.15 * 100%)
+$col-success-dark-4: darken($col-success, $col-success-ratio * 0.20 * 100%)
+$col-success-light-1: lighten($col-success, $col-success-ratio * 0.05 * 100%)
+$col-success-light-2: lighten($col-success, $col-success-ratio * 0.10 * 100%)
+$col-success-light-3: lighten($col-success, $col-success-ratio * 0.15 * 100%)
+$col-success-light-4: lighten($col-success, $col-success-ratio * 0.20 * 100%)
+
+$col-warning-dark-1: darken($col-warning, $col-warning-ratio * 0.05 * 100%)
+$col-warning-dark-2: darken($col-warning, $col-warning-ratio * 0.10 * 100%)
+$col-warning-dark-3: darken($col-warning, $col-warning-ratio * 0.15 * 100%)
+$col-warning-dark-4: darken($col-warning, $col-warning-ratio * 0.20 * 100%)
+$col-warning-light-1: lighten($col-warning, $col-warning-ratio * 0.05 * 100%)
+$col-warning-light-2: lighten($col-warning, $col-warning-ratio * 0.10 * 100%)
+$col-warning-light-3: lighten($col-warning, $col-warning-ratio * 0.15 * 100%)
+$col-warning-light-4: lighten($col-warning, $col-warning-ratio * 0.20 * 100%)
+
+@mixin cross($property, $css)
+  -moz-#{$property}: $css
+  -o-#{$property}: $css
+  -webkit-#{$property}: $css
+  #{$property}: $css

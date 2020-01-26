@@ -1,0 +1,234 @@
+@import ../vars
+
+.mini
+  @mixin media($width, $max-width, $wrap)
+    @media screen and (max-width: $max-width)
+      @for $i from 1 through $grid-cells
+        @if $i < 10
+          @if $wrap > 0
+            .c-#{$i}.-l-, .f-#{$i}.-l-
+              width: 100% !important
+
+          @if $wrap > 1
+            .c-#{$i}.-m-, .f-#{$i}.-m-
+              width: 100% !important
+
+          @if $wrap > 2
+            .c-#{$i}.-m-, .f-#{$i}.-s-
+              width: 100% !important
+        @else
+          @if $wrap > 0
+            .c#{$i}.-l-, .f#{$i}.-l-
+              width: 100% !important
+
+          @if $wrap > 1
+            .c#{$i}.-l-, .f#{$i}.-m-
+              width: 100% !important
+
+          @if $wrap > 2
+            .c#{$i}.-l-, .f#{$i}.-s-
+              width: 100% !important
+
+        .sml
+          @if $i < 10
+            .f-#{$i}
+              width: ($width + $sml-horizontal * 2) / $grid-cells * $i
+          @else
+            .f#{$i}
+              width: ($width + $sml-horizontal * 2) / $grid-cells * $i
+
+        .med
+          @if $i < 10
+            .f-#{$i}
+              width: ($width + $med-horizontal * 2) / $grid-cells * $i
+          @else
+            .f#{$i}
+              width: ($width + $med-horizontal * 2) / $grid-cells * $i
+
+        .lrg
+          @if $i < 10
+            .f-#{$i}
+              width: ($width + $lrg-horizontal * 2) / $grid-cells * $i
+          @else
+            .f#{$i}
+              width: ($width + $lrg-horizontal * 2) / $grid-cells * $i
+
+      .container
+        width: $width
+
+  @mixin media-minimal($max-width, $wrap)
+    @media screen and (max-width: $max-width)
+      @for $i from 1 through $grid-cells
+        @if $i < 10
+          @if $wrap > 0
+            .f-#{$i}.-l-
+              clear: both
+              display: block !important
+              width: 100% !important
+
+          @if $wrap > 1
+            .f-#{$i}.-m-
+              clear: both
+              display: block !important
+              width: 100% !important
+
+          @if $wrap > 2
+            .f-#{$i}.-s-
+              clear: both
+              display: block !important
+              width: 100% !important
+        @else
+          @if $wrap > 0
+            .f#{$i}.-l-
+              clear: both
+              display: block !important
+              width: 100% !important
+
+          @if $wrap > 1
+            .f#{$i}.-m-
+              clear: both
+              display: block !important
+              width: 100% !important
+
+          @if $wrap > 2
+            .f#{$i}.-s-
+              clear: both
+              display: block !important
+              width: 100% !important
+
+        @if $i < 10
+          .f-#{$i}
+            width: 100% / $grid-cells * $i
+        @else
+          .f#{$i}
+            width: 100% / $grid-cells * $i
+
+      .container
+        width: 100%
+
+  @mixin media-show($max-width, $wrap)
+    @media screen and (max-width: $max-width)
+      @if $wrap == 0
+        .show-sml, .show-med
+          display: none !important
+
+        .show-lrg
+          display: block !important
+
+      @if $wrap == 1
+        .show-sml, .show-lrg
+          display: none !important
+
+        .show-med
+          display: block !important
+
+      @if $wrap == 2
+        .show-med, .show-lrg
+          display: none !important
+
+        .show-sml
+          display: block !important
+
+  @for $i from 1 through $grid-cells
+    @if $i < 10
+      .c-#{$i}
+        @if $i != $grid-cells
+          float: left
+
+        min-height: 1px
+        width: 100% / $grid-cells * $i
+
+      .f-#{$i}
+        @if $i != $grid-cells
+          float: left
+
+        min-height: 1px
+    @else
+      .c#{$i}
+        @if $i != $grid-cells
+          float: left
+
+        min-height: 1px
+        width: 100% / $grid-cells * $i
+
+      .f#{$i}
+        @if $i != $grid-cells
+          float: left
+
+        min-height: 1px
+
+  @for $i from 2 through 50
+    @if $i < 10
+      .w-#{$i}
+        width: 100% / $i
+    @else
+      .w#{$i}
+        width: 100% / $i
+
+  @include media($lrg-media, $lrg-media-max, 0)
+
+  @include media($med-media, $med-media-max, 1)
+
+  @include media($sml-media, $sml-media-max, 2)
+
+  // @include media-minimal($sml-media-max, 2)
+
+  @include media-show($lrg-media-max, 0)
+
+  @include media-show($med-media-max, 1)
+
+  @include media-show($sml-media-max, 2)
+
+  .sml
+    @for $i from 1 through $grid-cells
+      @if $i < 10
+        .c-#{$i}, .f-#{$i}
+          padding: $sml-vertical $sml-horizontal
+      @else
+        .c#{$i}, .f#{$i}
+          padding: $sml-vertical $sml-horizontal
+
+    .ccc
+      padding: $sml-vertical $sml-horizontal
+
+  .med
+    @for $i from 1 through $grid-cells
+      @if $i < 10
+        .c-#{$i}, .f-#{$i}
+          padding: $med-vertical $med-horizontal
+      @else
+        .c#{$i}, .f#{$i}
+          padding: $med-vertical $med-horizontal
+
+    .ccc
+      padding: $med-vertical $med-horizontal
+
+  .lrg
+    @for $i from 1 through $grid-cells
+      @if $i < 10
+        .c-#{$i}, .f-#{$i}
+          padding: $lrg-vertical $lrg-horizontal
+      @else
+        .c#{$i}, .f#{$i}
+          padding: $lrg-vertical $lrg-horizontal
+
+    .ccc
+      padding: $lrg-vertical $lrg-horizontal
+
+  .sml
+    .row
+      margin-left: -$sml-horizontal
+      margin-right: -$sml-horizontal
+
+  .med
+    .row
+      margin-left: -$med-horizontal
+      margin-right: -$med-horizontal
+
+  .lrg
+    .row
+      margin-left: -$lrg-horizontal
+      margin-right: -$lrg-horizontal
+
+  .ccc, .oriented
+    float: left

@@ -1,0 +1,86 @@
+@import ../vars
+
+.mini
+  @mixin group-grid()
+    .ltr
+      .group-grid
+        &.hor>*
+          &:first-child
+            padding-right: 0
+
+            &>.alert, &>.button, &>.control, &>.panel
+              border-bottom-right-radius: 0
+              border-right-width: 1px
+              border-top-right-radius: 0
+
+          &:last-child
+            padding-left: 0
+
+            &>.alert, &>.button, &>.control, &>.panel
+              border-bottom-left-radius: 0
+              border-left-width: 1px
+              border-top-left-radius: 0
+
+  @include group-grid()
+
+  .group-grid
+    &.hor>*
+      &:not(:first-child):not(:last-child)
+        padding-left: 0
+        padding-right: 0
+
+        &>.alert, &>.button, &>.control, &>.panel
+          border-left-width: 1px
+          border-right-width: 1px
+          border-radius: 0
+
+    &.ver>*
+      &:not(:first-child):not(:last-child)
+        padding-bottom: 0
+        padding-top: 0
+
+        &>.alert, &>.button, &>.control, &>.panel
+          border-bottom-width: 1px
+          border-top-width: 1px
+          border-radius: 0
+
+        &>.hor>*
+          padding-bottom: 0
+          padding-top: 0
+
+          &>.alert, &>.button, &>.control, &>.panel
+            border-bottom-width: 1px
+            border-top-width: 1px
+            border-radius: 0
+
+      &:first-child
+        padding-bottom: 0
+
+        &>.alert, &>.button, &>.control, &>.panel
+          border-bottom-left-radius: 0
+          border-bottom-right-radius: 0
+          border-bottom-width: 1px
+
+        &>.hor>*
+          padding-bottom: 0
+
+          &>.alert, &>.button, &>.control, &>.panel
+            border-bottom-left-radius: 0
+            border-bottom-right-radius: 0
+            border-bottom-width: 1px
+
+      &:last-child
+        padding-top: 0
+
+        &>.alert, &>.button, &>.control, &>.panel
+          border-top-left-radius: 0
+          border-top-right-radius: 0
+          border-top-width: 1px
+
+        &>.hor>*
+          padding-top: 0
+
+          &>.alert, &>.button, &>.control, &>.panel
+            border-top-left-radius: 0
+            border-top-right-radius: 0
+            border-top-width: 1px

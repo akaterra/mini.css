@@ -1,0 +1,62 @@
+@import ../vars
+
+.mini
+  @mixin panel($prefix, $transparent-bg-color, $transparent-color, $transparent-color-ratio, $border-color, $border-color-ratio, $color, $color-ratio)
+    @if $prefix == null
+      .panel
+        &.transparent
+          color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
+
+        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+    @else
+      .panel.#{$prefix}
+        &.transparent
+          color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
+
+        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+
+  @mixin panel-sized($suffix, $border-radius, $border-width, $font-size, $ver, $hor)
+    @if $suffix == null
+      .panel
+        border-radius: $border-radius
+        border-width: $border-width
+        font-size: $font-size
+        padding: $ver $hor
+    @else
+      .panel.panel-#{$suffix}
+        border-radius: $border-radius
+        border-width: $border-width
+        font-size: $font-size
+
+  @include panel(null, transparent, $col-primary, 0.05, $col-default, 0.3, $col-default, 0.05)
+
+  @include panel('default', transparent, $col-default, 0.05, $col-default, 0.3, $col-default, 0.05)
+
+  @include panel('failure', transparent, $col-failure, 0.05, $col-failure, 0.3, $col-failure, 0.05)
+
+  @include panel('primary', transparent, $col-primary, 0.05, $col-primary, 0.3, $col-primary, 0.05)
+
+  @include panel('success', transparent, $col-success, 0.05, $col-success, 0.3, $col-success, 0.05)
+
+  @include panel('warning', transparent, $col-warning, 0.05, $col-warning, 0.3, $col-warning, 0.05)
+
+  .sml
+    @include panel-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include panel-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include panel-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
+
+  @include panel-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)
+
+  @include panel-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal)
+
+  @include panel-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
+
+  .panel
+    background-color: lighten($col-default, 50%)
+    border-style: solid

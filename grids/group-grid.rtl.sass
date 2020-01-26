@@ -1,0 +1,24 @@
+@import ../vars
+
+.mini
+  @mixin group-grid()
+    .rtl
+      .group-grid
+        &.hor>*
+          &:first-child
+            padding-left: 0
+
+            &>.alert, &>.button, &>.control, &>.panel
+              border-bottom-left-radius: 0
+              border-left-width: 1px
+              border-top-left-radius: 0
+
+          &:last-child
+            padding-right: 0
+
+            &>.alert, &>.button, &>.control, &>.panel
+              border-bottom-right-radius: 0
+              border-right-width: 1px
+              border-top-right-radius: 0
+
+  @include group-grid()

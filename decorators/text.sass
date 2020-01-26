@@ -1,0 +1,58 @@
+@import ../vars
+
+.mini
+  .bold
+    font-weight: $font-bold
+
+  .children-bold
+    font-weight: $font-bold
+
+  .center
+    text-align: center
+
+  .children-center>*
+    text-align: center
+
+  .left
+    text-align: left
+
+  .children-left>*
+    text-align: left
+
+  .right
+    text-align: right
+
+  .children-right>*
+    text-align: right
+
+  .lower
+    text-transform: lowercase
+
+  .children-lower>*
+    text-transform: lowercase
+
+  .upper
+    text-transform: uppercase
+
+  .children-upper>*
+    text-transform: uppercase
+
+  .mono
+    font-family: monospace
+
+  .children-mono>*
+    font-family: monospace
+
+  .no-underline
+    text-decoration: none !important
+
+  .children-no-underline>*
+    text-decoration: none !important
+
+  .hover-invert:hover
+    background-color: $col-primary !important
+    color: white !important
+
+  .children-hover-invert>*:hover
+    background-color: $col-primary !important
+    color: white !important

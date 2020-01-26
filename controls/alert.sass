@@ -1,0 +1,56 @@
+@import ../vars
+
+.mini
+  @mixin alert($prefix, $bg-color, $bg-color-ratio, $border-color, $border-color-ratio, $color, $color-ratio)
+    @if $prefix == null
+      .alert
+        background-color: lighten($bg-color, $col-ratio * $bg-color-ratio * 100%)
+        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+    @else
+      .alert.#{$prefix}
+        background-color: lighten($bg-color, $col-ratio * $bg-color-ratio * 100%)
+        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+
+  @mixin alert-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
+    @if $suffix == null
+      .alert
+        border-radius: $border-radius
+        border-width: $border-width
+        font-size: $font-size
+        //margin: $ver 0
+        padding: $ver $hor
+    @else
+      .alert.alert-#{$suffix}
+        border-radius: $border-radius
+        border-width: $border-width
+        font-size: $font-size
+        //margin: $ver 0
+
+  @include alert(null, $col-primary, 0.4, $col-primary, 0.3, $col-primary, 0.05)
+
+  @include alert('default', $col-default, 0.4, $col-default, 0.3, $col-default, 0.05)
+
+  @include alert('failure', $col-failure, 0.4, $col-failure, 0.3, $col-failure, 0.05)
+
+  @include alert('primary', $col-primary, 0.4, $col-primary, 0.3, $col-primary, 0.05)
+
+  @include alert('success', $col-success, 0.4, $col-success, 0.3, $col-success, 0.05)
+
+  @include alert('warning', $col-warning, 0.4, $col-warning, 0.3, $col-warning, 0.05)
+
+  .sml
+    @include alert-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include alert-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include alert-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+
+  @include alert-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+
+  @include alert-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+
+  @include alert-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)

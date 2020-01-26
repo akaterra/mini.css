@@ -1,0 +1,20 @@
+@import ../vars
+
+.mini
+  @mixin group()
+    .rtl
+      .group
+        &.hor
+          &>.alert:last-child, &>.button:last-child, &>.control:last-child
+            border-bottom-right-radius: 0 !important
+            border-right-width: 1px !important
+            border-top-right-radius: 0 !important
+            margin: 0 !important
+
+          &>.alert:first-child, &>.button:first-child, &>.control:first-child
+            border-bottom-left-radius: 0 !important
+            border-left-width: 1px !important
+            border-top-left-radius: 0 !important
+            margin: 0 !important
+
+  @include group()

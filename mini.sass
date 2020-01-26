@@ -1,0 +1,29 @@
+@import "controls/index"
+@import "decorators/index"
+@import "grids/index"
+@import "mock/index"
+
+html, body
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+  height: 100%
+  margin: 0
+  padding: 0
+
+.mini
+  *
+    box-sizing: border-box
+
+  .container
+    margin-left: auto
+    margin-right: auto
+
+  .cow, .row
+    display: block
+    position: relative
+
+  .cow:after, .row:after
+    clear: both
+
+  .cow:after, .cow:before, .row:after, .row:before
+    display: table
+    content: " "

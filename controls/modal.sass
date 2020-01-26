@@ -1,0 +1,38 @@
+@import ../vars
+
+.mini
+  @mixin modal-sized($suffix, $ver, $hor)
+    @if $suffix == null
+      .modal>.modal-content
+        //margin: $ver $hor
+    @else
+      .modal.modal-#{$suffix}>.modal-content
+        //margin: $ver $hor
+
+  .sml
+    @include modal-sized(null, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include modal-sized(null, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include modal-sized(null, $lrg-vertical, $lrg-horizontal)
+
+  @include modal-sized('sml', $sml-vertical, $sml-horizontal)
+
+  @include modal-sized('med', $med-vertical, $med-horizontal)
+
+  @include modal-sized('lrg', $lrg-vertical, $lrg-horizontal)
+
+  .modal
+    background-color: rgba(0, 0, 0, 0.5)
+    bottom: 0
+    left: 0
+    position: fixed
+    right: 0
+    top: 0
+    width: 100%
+    z-index: 20000
+
+  .modal-content
+    margin: 100px auto

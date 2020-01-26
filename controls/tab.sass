@@ -1,0 +1,210 @@
+@import ../vars
+
+.mini
+  @mixin tab($prefix, $bg-color, $border-color, $border-color-ratio, $color, $color-ratio)
+    $bc: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+
+    @if $prefix == null
+      .tabs
+        &>.tabs-bar
+          &>.tab
+            background-color: $bg-color
+            border-color: transparent
+            color: #ffffff
+
+          &>.tab.active
+            background-color: lighten($col-default, 50%)
+            border-color: $bc
+            color: darken($color, $col-ratio * $color-ratio * 100%)
+
+        &>.tabs-content
+          border-color: $bc
+    @else
+      .tabs
+        &>.tabs-bar
+          &>.tab.#{$prefix}
+            background-color: $bg-color
+            border-color: transparent
+            color: #ffffff
+
+          &>.tab.#{$prefix}.active
+            background-color: lighten($col-default, 50%)
+            border-color: $bc
+            color: darken($color, $col-ratio * $color-ratio * 100%)
+
+        &>.tabs-content
+          border-color: $bc
+
+  @mixin tab-active($prefix, $col-default, $bg-color, $bg-color-ratio)
+    @if $prefix == null
+      .tabs
+        &>.tabs-bar
+          &>.tab:active
+            background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%) !important
+
+          &>.tab.active:active
+            background-color: lighten($col-default, 50%) !important
+    @else
+      .tabs
+        &>.tabs-bar
+          &>.tab:active.#{$prefix}
+            background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%) !important
+
+          &>.tab.active:active.#{$prefix}
+            background-color: lighten($col-default, 50%) !important
+
+  @mixin tab-hover($prefix, $col-default, $bg-color, $bg-color-ratio)
+    @if $prefix == null
+      .tabs
+        &>.tabs-bar
+          &>.tab:hover
+            background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%)
+
+          &>.tab.active:hover
+            background-color: lighten($col-default, 50%)
+    @else
+      .tabs
+        &>.tabs-bar
+          &>.tab:hover.#{$prefix}
+            background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%)
+
+          &>.tab.active:hover.#{$prefix}
+            background-color: lighten($col-default, 50%)
+
+  @mixin tab-sized($suffix, $border-radius, $border-width, $font-size, $font-size-ratio, $height, $ver, $hor)
+    @if $suffix == null
+      .tabs
+        &>.tabs-bar
+          &>.tab
+            border-top-left-radius: $border-radius
+            border-top-right-radius: $border-radius
+            border-width: $border-width
+            font-size: $font-size * $font-size-ratio
+            height: $height - $border-width
+            margin-top: $border-width
+            min-height: $height - $border-width
+            padding: $ver - $border-width $hor $ver + $border-width $hor
+
+            &:active
+              height: $height - $border-width * 2
+              margin-top: $border-width * 2
+              min-height: $height - $border-width * 2
+
+            &.active
+              height: $height
+              margin-top: 0
+              min-height: $height
+              padding: $ver $hor
+
+          padding-left: $hor - $border-width
+
+        &>.tabs-content
+          border-radius: $border-radius
+          border-width: $border-width
+          margin-top: -$border-width
+          padding: 0 $hor
+    @else
+      .tabs.tabs-#{$suffix}
+        &>.tabs-bar
+          &>.tab
+            border-top-left-radius: $border-radius
+            border-top-right-radius: $border-radius
+            border-width: $border-width
+            font-size: $font-size * $font-size-ratio
+            height: $height - $border-width
+            margin-top: $border-width
+            min-height: $height - $border-width
+            padding: $ver - $border-width $hor $ver + $border-width $hor
+
+            &:active
+              height: $height - $border-width * 2
+              margin-top: $border-width * 2
+              min-height: $height - $border-width * 2
+
+            &.active
+              height: $height
+              margin-top: 0
+              min-height: $height
+              padding: $ver $hor
+
+        &>.tabs-content
+          border-radius: $border-radius
+          border-width: $border-width
+          margin-top: -$border-width
+
+  @include tab(null, $col-default, $col-default, 0.3, $col-default, 0.05)
+  @include tab-active(null, $col-default, $col-default, 0.15)
+  @include tab-hover(null, $col-default, $col-default, 0.1)
+
+  @include tab('default', $col-default, $col-default, 0.3, $col-default, 0.05)
+  @include tab-active('default', $col-default, $col-default, 0.15)
+  @include tab-hover('default', $col-default, $col-default, 0.1)
+
+  @include tab('failure', $col-failure, $col-default, 0.3, $col-failure, 0.05)
+  @include tab-active('failure', $col-default, $col-failure, 0.15)
+  @include tab-hover('failure', $col-default, $col-failure, 0.1)
+
+  @include tab('primary', $col-primary, $col-default, 0.3, $col-primary, 0.05)
+  @include tab-active('primary', $col-default, $col-primary, 0.15)
+  @include tab-hover('primary', $col-default, $col-primary, 0.1)
+
+  @include tab('success', $col-success, $col-default, 0.3, $col-success, 0.05)
+  @include tab-active('success', $col-default, $col-success, 0.15)
+  @include tab-hover('success', $col-default, $col-success, 0.1)
+
+  @include tab('warning', $col-warning, $col-default, 0.3, $col-warning, 0.05)
+  @include tab-active('warning', $col-default, $col-warning, 0.15)
+  @include tab-hover('warning', $col-default, $col-warning, 0.1)
+
+  .sml
+    @include tab-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include tab-sized(null, $med-border-radius, $med-border-width, $med-font-size, 1, $med-1, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include tab-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, 1, $lrg-1, $lrg-vertical, $lrg-horizontal)
+
+  @include tab-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)
+
+  @include tab-sized('med', $med-border-radius, $med-border-width, $med-font-size, 1, $med-1, $med-vertical, $med-horizontal)
+
+  @include tab-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, 1, $lrg-1, $lrg-vertical, $lrg-horizontal)
+
+  .tabs
+    &>.tabs-bar
+      &:after
+        clear: both
+
+      &:after, &:before
+        display: table
+        content: " "
+
+      &>.tab
+        border-bottom-width: 0 !important
+        border-style: solid
+        cursor: pointer
+        float: left
+        font-weight: bolder
+        margin: 0 2px
+        position: relative
+        z-index: 0
+
+      &>.tab.active
+        cursor: auto
+        position: relative
+        z-index: 1000
+
+      position: relative
+
+    &>.tabs-content
+      background-color: lighten($col-default, 50%)
+      position: relative
+      border-style: solid
+      z-index: 500
+
+      &.underlined
+        border-radius: 0
+        border-width: 2px 0 0 0
+
+    position: relative

@@ -1,0 +1,39 @@
+@import "../vars"
+@import "absolute"
+@import "absolute.rtl"
+@import "back"
+@import "controls"
+@import "effect"
+@import "elements"
+@import "fine"
+@import "flex"
+@import "font"
+@import "opacity"
+@import "overflow"
+@import "paddings"
+@import "paddings.rtl"
+@import "rtl"
+@import "shadow"
+@import "span"
+@import "text"
+@import "text.rtl"
+@import "zebra"
+
+.mini
+  .children-middle
+    &>*
+      vertical-align: middle
+
+  .clear
+    float: none !important
+
+  .disabled
+    cursor: not-allowed
+    opacity: 0.5
+
+  .hidden
+    display: none
+
+  .inl, .inline
+    display: inline-block
+    width: auto

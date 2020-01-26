@@ -1,0 +1,14 @@
+@import ../vars
+
+.mini
+  .zebra>*:nth-child(odd)
+    background-color: hsl(0, 0%, 94%)
+
+  .zebra.highlighted>*:hover
+    background-color: hsl(0, 0%, 91%)
+
+  .children-zebra>*:nth-child(odd)>*
+    background-color: hsl(0, 0%, 94%)
+
+  .children-zebra.highlighted>*:nth-child(odd):hover>*
+    background-color: hsl(0, 0%, 91%)

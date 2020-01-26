@@ -1,0 +1,20 @@
+@import ../vars
+
+.mini
+  .rtl
+    @for $i from 1 through $grid-cells
+      @if $i < 10
+        .c-#{$i}
+          float: right
+
+        .f-#{$i}
+          float: right
+      @else
+        .c#{$i}
+          float: right
+
+        .f#{$i}
+          float: right
+
+    .ccc, .oriented
+      float: right

@@ -1,0 +1,48 @@
+@import "../vars"
+
+.mini
+  @mixin breadcrumbs-sized($suffix, $ver, $hor)
+    @if $suffix == null
+      .breadcrumbs
+        &>.breadcrumb:after
+          padding: 0 $hor
+    @else
+      .breadcrumbs.breadcrumbs-#{$suffix}
+        &>.breadcrumb:after
+          padding: 0 $hor
+
+  .sml
+    @include breadcrumbs-sized(null, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include breadcrumbs-sized(null, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include breadcrumbs-sized(null, $lrg-vertical, $lrg-horizontal)
+
+  @include breadcrumbs-sized('sml', $sml-vertical, $sml-horizontal)
+
+  @include breadcrumbs-sized('med', $med-vertical, $med-horizontal)
+
+  @include breadcrumbs-sized('lrg', $lrg-vertical, $lrg-horizontal)
+
+  .breadcrumbs
+    display: block
+
+    &:after
+      clear: both
+
+    &:after, &:before
+      display: table
+      content: " "
+
+    &>.breadcrumb
+      &.active
+        font-weight: bolder
+
+      &:not(.active)
+        &:after
+          color: $col-default
+          content: "→"
+
+        color: $col-primary

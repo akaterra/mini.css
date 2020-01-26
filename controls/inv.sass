@@ -1,0 +1,77 @@
+@import ../vars
+
+.mini
+  .inv
+    @mixin controls($prefix, $color, $color-ratio)
+      @if $prefix == null
+        .caption, .button.transparent, .control.transparent, .link, .label, .panel.transparent
+          background-color: transparent !important
+          border-color: lighten($color, $col-ratio * $color-ratio * 100%)
+          color: lighten($color, $col-ratio * $color-ratio * 100%)
+      @else
+        .caption.#{$prefix}, .button.transparent.#{$prefix}, .control.transparent.#{$prefix}, .link.#{$prefix}, .label.#{$prefix}, .panel.transparent.#{$prefix}
+          background-color: transparent !important
+          border-color: lighten($color, $col-ratio * $color-ratio * 100%)
+          color: lighten($color, $col-ratio * $color-ratio * 100%)
+
+    @mixin controls-active($prefix, $color, $color-ratio)
+      @if $prefix == null
+        .button.transparent
+          &:active, &.active
+            background-color: transparent !important
+            border-color: lighten($color, $col-ratio * $color-ratio * 100%) !important
+            color: lighten($color, $col-ratio * $color-ratio * 100%) !important
+
+            &.unbound
+              border-color: transparent !important
+      @else
+        .button.transparent.#{$prefix}, .link.#{$prefix}
+          &:active, &.active
+            background-color: transparent !important
+            border-color: lighten($color, $col-ratio * $color-ratio * 100%) !important
+            color: lighten($color, $col-ratio * $color-ratio * 100%) !important
+
+            &.unbound
+              border-color: transparent !important
+
+    @mixin controls-hover($prefix, $color, $color-ratio)
+      @if $prefix == null
+        .button.transparent
+          &:hover
+            background-color: transparent !important
+            border-color: lighten($color, $col-ratio * $color-ratio * 100%)
+            color: lighten($color, $col-ratio * $color-ratio * 100%)
+      @else
+        .button.transparent.#{$prefix}, .link.#{$prefix}
+          &:hover
+            background-color: transparent !important
+            border-color: lighten($color, $col-ratio * $color-ratio * 100%)
+            color: lighten($color, $col-ratio * $color-ratio * 100%)
+
+    background-color: $col-inverted
+    color: lighten($col-default, 20%)
+    display: block
+
+    @include controls(null, $col-default, 0.3)
+    @include controls-active(null, $col-default, 0.4)
+    @include controls-hover(null, $col-default, 0.35)
+
+    @include controls('default', $col-default, 0.3)
+    @include controls-active('default', $col-default, 0.4)
+    @include controls-hover('default', $col-default, 0.35)
+
+    @include controls('failure', $col-failure, 0.3)
+    @include controls-active('failure', $col-failure, 0.4)
+    @include controls-hover('failure', $col-failure, 0.35)
+
+    @include controls('primary', $col-primary, 0.3)
+    @include controls-active('primary', $col-primary, 0.4)
+    @include controls-hover('primary', $col-primary, 0.35)
+
+    @include controls('success', $col-success, 0.3)
+    @include controls-active('success', $col-success, 0.4)
+    @include controls-hover('success', $col-success, 0.35)
+
+    @include controls('warning', $col-warning, 0.3)
+    @include controls-active('warning', $col-warning, 0.4)
+    @include controls-hover('warning', $col-warning, 0.35)

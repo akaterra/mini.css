@@ -1,0 +1,51 @@
+@import ../vars
+
+.mini
+  @mixin label($prefix, $color, $color-ratio, $font-weight)
+    @if $prefix == null
+      .label
+        color: lighten($color, $col-ratio * $color-ratio * 100%)
+        font-weight: $font-weight
+    @else
+      .label.#{$prefix}
+        color: lighten($color, $col-ratio * $color-ratio * 100%)
+        font-weight: $font-weight
+
+  @mixin label-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)
+    @if $suffix == null
+      .label
+        font-size: $font-size * $font-size-ratio
+        padding: $ver 0 // $hor
+    @else
+      .label.label-#{$suffix}
+        font-size: $font-size * $font-size-ratio
+
+  @include label(null, $col-default, 0.1, 500)
+
+  @include label('default', $col-default, 0.1, 500)
+
+  @include label('failure', $col-failure, 0.1, 500)
+
+  @include label('primary', $col-primary, 0.1, 500)
+
+  @include label('success', $col-success, 0.1, 500)
+
+  @include label('warning', $col-warning, 0.1, 500)
+
+  .sml
+    @include label-sized(null, $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include label-sized(null, $med-font-size, 0.8, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include label-sized(null, $lrg-font-size, 0.8, $lrg-vertical, $lrg-horizontal)
+
+  @include label-sized('sml', $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
+
+  @include label-sized('med', $med-font-size, 0.8, $med-vertical, $med-horizontal)
+
+  @include label-sized('lrg', $lrg-font-size, 0.8, $lrg-vertical, $lrg-horizontal)
+
+  .label
+    display: block

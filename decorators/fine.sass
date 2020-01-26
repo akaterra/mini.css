@@ -1,0 +1,26 @@
+@import ../vars
+
+.mini
+  .fine
+    &>.children-gapped
+      &:last-child
+        margin-bottom: 0
+
+    &>.divider:last-child
+      display: none
+
+    &>.fine-gap
+      padding-bottom: 0
+      padding-top: $med-vertical * 3
+
+      &:last-child
+        padding-bottom: $med-vertical * 3
+
+    &>.paragraph:not(:last-child)
+      padding-bottom: 0
+
+    &>.splitter:last-child
+      display: none
+
+    &.table>.row:last-child:after
+      border-bottom-width: 0

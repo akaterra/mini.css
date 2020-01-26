@@ -1,0 +1,61 @@
+@import ../vars
+
+.mini
+  @mixin divider($prefix, $color, $color-ratio)
+    @if $prefix == null
+      .divider
+        border-top-color: lighten($color, $col-ratio * $color-ratio * 100%)
+
+        &.top
+          border-top-color: lighten($color, $col-ratio * ($color-ratio - 0.1) * 100%)
+    @else
+      .divider.#{$prefix}
+        border-top-color: lighten($color, $col-ratio * $color-ratio * 100%)
+
+        &.top
+          border-top-color: lighten($color, $col-ratio * ($color-ratio - 0.1) * 100%)
+
+  @mixin divider-sized($suffix, $height, $ver, $hor)
+    @if $suffix == null
+      .divider
+        border-top-width: $height
+        height: $height
+        min-height: $height
+        margin: $ver $hor
+    @else
+      .divider.divider-#{$suffix}
+        border-top-width: $height
+        height: $height
+        min-height: $height
+        margin: $ver $hor
+
+  @include divider(null, $col-default, 0.3)
+
+  @include divider('default', $col-default, 0.3)
+
+  @include divider('failure', $col-failure, 0.3)
+
+  @include divider('primary', $col-primary, 0.3)
+
+  @include divider('success', $col-success, 0.3)
+
+  @include divider('warning', $col-warning, 0.3)
+
+  .sml
+    @include divider-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include divider-sized(null, $med-border-width, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include divider-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+
+  @include divider-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
+
+  @include divider-sized('med', $med-border-width, $med-vertical, $med-horizontal)
+
+  @include divider-sized('lrg', $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+
+  .divider
+    border-top-style: solid
+    clear: both

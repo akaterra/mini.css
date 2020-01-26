@@ -1,0 +1,67 @@
+@import ../vars
+
+.mini
+  @mixin control($prefix, $transparent-bg-color, $transparent-color, $transparent-color-ratio, $bg-color, $border-color, $color, $color-ratio)
+    @if $prefix == null
+      .control
+        &.transparent
+          color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
+
+        background-color: lighten($bg-color, 50%)
+        border-color: $border-color
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+    @else
+      .control.#{$prefix}
+        &.transparent
+          color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
+
+        background-color: lighten($bg-color, 50%)
+        border-color: $border-color
+        color: darken($color, $col-ratio * $color-ratio * 100%)
+
+  @mixin control-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
+    @if $suffix == null
+      .control
+        border-radius: $border-radius
+        border-width: $border-width
+        font-size: $font-size
+        height: $height
+        min-height: $height
+        padding: $ver $hor
+    @else
+      .control.control-#{$suffix}
+        border-radius: $border-radius
+        border-width: $border-width
+        font-size: $font-size
+        height: $height
+        min-height: $height
+
+  @include control(null, transparent, $col-primary, 0.05, $col-primary, $col-primary, $col-primary, 0.05)
+
+  @include control('default', transparent, $col-default, 0.05, $col-default, $col-default, $col-default, 0.05)
+
+  @include control('failure', transparent, $col-failure, 0.05, $col-default, $col-failure, $col-failure, 0.05)
+
+  @include control('primary', transparent, $col-primary, 0.05, $col-default, $col-primary, $col-primary, 0.05)
+
+  @include control('success', transparent, $col-success, 0.05, $col-default, $col-success, $col-success, 0.05)
+
+  @include control('warning', transparent, $col-warning, 0.05, $col-default, $col-warning, $col-warning, 0.05)
+
+  .sml
+    @include control-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include control-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include control-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+
+  @include control-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+
+  @include control-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+
+  @include control-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+
+  textarea.control
+    height: auto !important

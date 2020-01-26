@@ -1,0 +1,30 @@
+@import ../vars
+
+.mini
+  @mixin group()
+    .ltr
+      .group
+        &.hor
+          &>.alert:first-child, &>.button:first-child, &>.control:first-child
+            border-bottom-right-radius: 0 !important
+            border-right-width: 1px !important
+            border-top-right-radius: 0 !important
+            margin: 0 !important
+
+          &>.alert:last-child, &>.button:last-child, &>.control:last-child
+            border-bottom-left-radius: 0 !important
+            border-left-width: 1px !important
+            border-top-left-radius: 0 !important
+            margin: 0 !important
+
+  @include group()
+
+  .group
+    font-size: 0
+
+    &.hor
+      &>.alert:not(:first-child):not(:last-child), &>.button:not(:first-child):not(:last-child), &>.control:not(:first-child):not(:last-child)
+        border-left-width: 1px !important
+        border-right-width: 1px !important
+        border-radius: 0 !important
+        margin: 0 !important

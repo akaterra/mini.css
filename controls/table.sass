@@ -1,0 +1,121 @@
+@import ../vars
+
+.mini
+  @mixin table($prefix, $border-color, $border-color-ratio, $border-color-ratio_top)
+    @if $prefix == null
+      .table
+        &>.row
+          &>.l
+            border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+
+          &>.r
+            border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+
+        &.underlined
+          &>.row
+            &:after
+              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+
+            &.header:after
+              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+
+    @else
+      .table.#{$prefix}
+        &>.row
+          &>.l
+            border-left-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+
+          &>.r
+            border-right-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+
+        &.underlined
+          &>.row
+            &:after
+              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+
+            &.header:after
+              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+
+  @mixin table-sized($suffix, $border-width, $ver, $hor)
+    @if $suffix == null
+      .table
+        margin-left: -$hor
+        margin-right: -$hor
+
+        &>.row>*
+          padding-bottom: $ver
+          padding-top: $ver
+
+      .table.underlined
+        &>.row:after
+          border-bottom-width: $border-width
+          margin: 0 $hor
+    @else
+      .table.table-#{$suffix}
+        &>.row>*
+          padding-bottom: $ver
+          padding-top: $ver
+
+      .table.table-#{$suffix}.underlined
+        &>.row:after
+          border-bottom-width: $border-width
+          margin: 0 $hor
+
+  @include table(null, $col-default, 0.3, 0.15)
+
+  .sml
+    @include table-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include table-sized(null, $med-border-width, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include table-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+
+  @include table-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
+
+  @include table-sized('med', $med-border-width, $med-vertical, $med-horizontal)
+
+  @include table-sized('lrg', $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+
+  .ltr
+    .table
+      &>.row
+        &>.l
+          border-left-style: solid
+          border-left-width: 1px
+
+        &>.r
+          border-right-style: solid
+          border-right-width: 1px
+
+  .table
+    &.highlighted>.row:hover>*
+      background-color: hsl(0, 0%, 91%)
+
+    &.table-inner.underlined>.row:after
+      margin: 0
+
+    &.underlined>.row:after
+      border-bottom-style: solid
+      display: block
+
+    &>.row
+      &>*
+        display: inline-block
+        float: none !important
+        font-size: initial
+        position: static
+        vertical-align: inherit
+
+      &.header>*
+        font-weight: $font-bold
+        text-align: center
+
+      display: table
+      font-size: 0
+      margin: 0 !important
+      vertical-align: inherit
+      width: 100%
+
+    vertical-align: middle

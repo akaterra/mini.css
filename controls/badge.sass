@@ -1,0 +1,51 @@
+@import ../vars
+
+.mini
+  @mixin badge($prefix, $bg-color, $color)
+    @if $prefix == null
+      .badge
+        background-color: $bg-color
+        color: lighten($color, 50%)
+        display: inline-block
+    @else
+      .badge.#{$prefix}
+        background-color: $bg-color
+        color: lighten($color, 50%)
+        display: inline-block
+
+  @mixin badge-sized($suffix, $border-radius, $ver, $hor)
+    @if $suffix == null
+      .badge
+        border-radius: $border-radius
+        padding: $ver $hor
+    @else
+      .badge.badge-#{$suffix}
+        border-radius: $border-radius
+        padding: $ver $hor
+
+  @include badge(null, $col-primary, $col-primary)
+
+  @include badge('default', $col-default, $col-default)
+
+  @include badge('failure', $col-failure, $col-failure)
+
+  @include badge('primary', $col-primary, $col-primary)
+
+  @include badge('success', $col-success, $col-success)
+
+  @include badge('warning', $col-warning, $col-warning)
+
+  .sml
+    @include badge-sized(null, 25px, 0, $sml-horizontal)
+
+  .med
+    @include badge-sized(null, 25px, 0, $med-horizontal)
+
+  .lrg
+    @include badge-sized(null, 25px, 0, $lrg-horizontal)
+
+  @include badge-sized('sml', 25px, 0, $sml-horizontal)
+
+  @include badge-sized('med', 25px, 0, $med-horizontal)
+
+  @include badge-sized('lrg', 25px, 0, $lrg-horizontal)

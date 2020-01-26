@@ -1,0 +1,63 @@
+@import ../vars
+
+.mini
+  @mixin caption($prefix, $color, $font-weight)
+    @if $prefix == null
+      .caption
+        color: darken($color, $col-ratio * $col-darken-ratio * 100%)
+        font-weight: $font-weight
+    @else
+      .caption.#{$prefix}
+        color: darken($color, $col-ratio * $col-darken-ratio * 100%)
+        font-weight: $font-weight
+
+  @mixin caption-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)
+    @if $suffix == null
+      .caption
+        font-size: $font-size * $font-size-ratio
+        padding: $ver 0 // $hor
+
+        &.larger
+          font-size: $font-size * ($font-size-ratio + 0.5)
+
+        &.largest
+          font-size: $font-size * ($font-size-ratio + 1)
+
+        &.smaller
+          font-size: $font-size * ($font-size-ratio - 0.25)
+
+        &.smallest
+          font-size: $font-size * ($font-size-ratio - 0.5)
+    @else
+      .caption.caption-#{$suffix}
+        font-size: $font-size * $font-size-ratio
+
+  @include caption(null, $col-default, 500)
+
+  @include caption('default', $col-default, 500)
+
+  @include caption('failure', $col-failure, 500)
+
+  @include caption('primary', $col-primary, 500)
+
+  @include caption('success', $col-success, 500)
+
+  @include caption('warning', $col-warning, 500)
+
+  .sml
+    @include caption-sized(null, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
+
+  .med
+    @include caption-sized(null, $med-font-size, 1.5, $med-vertical, $med-horizontal)
+
+  .lrg
+    @include caption-sized(null, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
+
+  @include caption-sized('sml', $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
+
+  @include caption-sized('med', $med-font-size, 1.5, $med-vertical, $med-horizontal)
+
+  @include caption-sized('lrg', $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
+
+  .caption
+    display: block
