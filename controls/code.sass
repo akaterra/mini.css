@@ -1,48 +1,12 @@
 @import ../vars
 
 .mini
-  @mixin code($prefix, $color)
-    @if $prefix == null
-      .code
-        border-left: 2px $color solid
-    @else
-      .code.#{$prefix}
-        border-left: 2px $color solid
-
-  @mixin code-sized($prefix, $hor)
-    .code
-      padding-left: $hor * 2 - 2px
-
-  @include code(null, $col-default)
-
-  @include code('default', $col-default)
-
-  @include code('failure', $col-failure)
-
-  @include code('primary', $col-primary)
-
-  @include code('success', $col-success)
-
-  @include code('warning', $col-warning)
-
-  .sml
-    @include code-sized(null, $sml-horizontal)
-
-  .med
-    @include code-sized(null, $med-horizontal)
-
-  .lrg
-    @include code-sized(null, $lrg-horizontal)
-
-  @include code-sized('sml', $sml-horizontal)
-
-  @include code-sized('med', $med-horizontal)
-
-  @include code-sized('lrg', $lrg-horizontal)
-
-
   .code
+    &:not(.inline)
+      white-space: pre-wrap
+      word-break: break-all
+      word-wrap: break-word
+
+    background-color: $col-inverted
+    color: white
     font-family: monospace
-    white-space: pre-wrap
-    word-break: break-all
-    word-wrap: break-word

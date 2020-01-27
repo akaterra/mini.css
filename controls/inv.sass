@@ -8,9 +8,19 @@
           background-color: transparent !important
           border-color: lighten($color, $col-ratio * $color-ratio * 100%)
           color: lighten($color, $col-ratio * $color-ratio * 100%)
+
+        .tabs.transparent>.tabs-bar>.tab:not(.active)
+          background-color: $col-inverted
+          border-color: lighten($color, $col-ratio * $color-ratio * 100%)
+          color: lighten($color, $col-ratio * $color-ratio * 100%)
       @else
         .caption.#{$prefix}, .button.transparent.#{$prefix}, .control.transparent.#{$prefix}, .link.#{$prefix}, .label.#{$prefix}, .panel.transparent.#{$prefix}
           background-color: transparent !important
+          border-color: lighten($color, $col-ratio * $color-ratio * 100%)
+          color: lighten($color, $col-ratio * $color-ratio * 100%)
+
+        .tabs.transparent>.tabs-bar>.tab.#{$prefix}:not(.active)
+          background-color: $col-inverted
           border-color: lighten($color, $col-ratio * $color-ratio * 100%)
           color: lighten($color, $col-ratio * $color-ratio * 100%)
 
@@ -24,6 +34,10 @@
 
             &.unbound
               border-color: transparent !important
+
+        .tabs.transparent>.tabs-bar>.tab.active
+          background-color: $col-inverted
+          color: lighten($color, $col-ratio * $color-ratio * 100%) !important
       @else
         .button.transparent.#{$prefix}, .link.#{$prefix}
           &:active, &.active
@@ -33,6 +47,10 @@
 
             &.unbound
               border-color: transparent !important
+
+        .tabs.transparent>.tabs-bar>.tab.#{$prefix}.active
+          background-color: $col-inverted
+          color: lighten($color, $col-ratio * $color-ratio * 100%) !important
 
     @mixin controls-hover($prefix, $color, $color-ratio)
       @if $prefix == null
@@ -47,10 +65,6 @@
             background-color: transparent !important
             border-color: lighten($color, $col-ratio * $color-ratio * 100%)
             color: lighten($color, $col-ratio * $color-ratio * 100%)
-
-    background-color: $col-inverted
-    color: lighten($col-default, 20%)
-    display: block
 
     @include controls(null, $col-default, 0.3)
     @include controls-active(null, $col-default, 0.4)
@@ -75,3 +89,7 @@
     @include controls('warning', $col-warning, 0.3)
     @include controls-active('warning', $col-warning, 0.4)
     @include controls-hover('warning', $col-warning, 0.35)
+
+    background-color: $col-inverted
+    color: lighten($col-default, 20%)
+    display: block
