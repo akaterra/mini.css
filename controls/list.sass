@@ -5,7 +5,7 @@
     @if $prefix == null
       .list
         &.active
-          .list-header, .list-item, .list-subitem
+          .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
             &:not(.active):active
               background-color: darken($color, $col-ratio * $col-darken-active-ratio * 100%) !important
               color: white
@@ -15,18 +15,18 @@
               color: white
               cursor: pointer
   
-        .list-header
+        .list-header, .list-subheader, .list-subsubheader
           color: darken($color, $col-ratio * $col-darken-ratio * 100%)
           font-weight: $font-weight
 
-        .list-header, .list-item, .list-subitem
+        .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
           &.active
             background-color: darken($color, $col-ratio * $col-darken-active-ratio * 100%) !important
             color: white
     @else
       .list.#{$prefix}
         &.active
-          .list-header, .list-item, .list-subitem
+          .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
             &:not(.active):active
               background-color: darken($color, $col-ratio * $col-darken-active-ratio * 100%) !important
               color: white
@@ -36,11 +36,11 @@
               color: white
               cursor: pointer
 
-        .list-header
+        .list-header, .list-subheader, .list-subsubheader
           color: darken($color, $col-ratio * $col-darken-ratio * 100%)
           font-weight: $font-weight
 
-        .list-header, .list-item, .list-subitem
+        .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
           &.active
             background-color: darken($color, $col-ratio * $col-darken-active-ratio * 100%) !important
             color: white
@@ -48,28 +48,35 @@
   @mixin list-sized($suffix, $border-radius, $font-size, $font-size-ratio, $ver, $hor)
     @if $suffix == null
       .list
-        &.active
-          .list-header
-            &:not(.selected):hover
-              padding-left: $hor / 2
-  
         .list-header
           &:not(:first-child)
             margin-top: $ver * 2
   
-          &.active
-            padding-left: $hor / 2
-
           font-size: $font-size * ($font-size-ratio - 0.25)
-          padding: $ver / 2 0 $ver / 2 0
+          padding: $ver 0 $ver $hor * 1
+
+        .list-subheader
+          &:not(:first-child)
+            margin-top: $ver * 2
+  
+          padding: $ver 0 $ver $hor * 1
+
+        .list-subsubheader
+          &:not(:first-child)
+            margin-top: $ver * 2
+  
+          padding: $ver 0 $ver $hor * 2
 
         .list-item
-          padding: $ver / 2 0 $ver / 2 $hor * 1.5
+          padding: $ver 0 $ver $hor * 2
 
         .list-subitem
-          padding: $ver / 2 0 $ver / 2 $hor * 3
+          padding: $ver 0 $ver $hor * 3
 
-        .list-header, .list-item, .list-subitem
+        .list-subsubitem
+          padding: $ver 0 $ver $hor * 4
+
+        .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
           border: 0
           border-radius: $border-radius
     @else
@@ -77,24 +84,23 @@
         .list-header
           font-size: $font-size * ($font-size-ratio - 0.25)
 
-        .list-item, .list-subitem
+        .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
           font-size: $font-size
 
-        .list-header, .list-item, .list-subitem
-          border: 0
+        .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
           border-radius: $border-radius
 
-  @include list(null, $col-default, 500)
+  @include list(null, $col-default, $font-bold)
 
-  @include list('default', $col-default, 500)
+  @include list('default', $col-default, $font-bold)
 
-  @include list('failure', $col-failure, 500)
+  @include list('failure', $col-failure, $font-bold)
 
-  @include list('primary', $col-primary, 500)
+  @include list('primary', $col-primary, $font-bold)
 
-  @include list('success', $col-success, 500)
+  @include list('success', $col-success, $font-bold)
 
-  @include list('warning', $col-warning, 500)
+  @include list('warning', $col-warning, $font-bold)
 
   .sml
     @include list-sized(null, $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
@@ -115,5 +121,5 @@
     &>*
       display: block
 
-    .list-item, .list-subitem
+    .list-item, .list-subitem, .list-subsubitem
       color: $col-default

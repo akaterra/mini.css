@@ -273,55 +273,67 @@
   font-size: 0.75rem;
   height: 22px;
   min-height: 22px; }
+.mini .sml a.button {
+  line-height: 22px; }
 .mini .med .button {
   border-radius: 4px;
   border-width: 2px;
   font-size: 1rem;
   height: 32px;
   min-height: 32px; }
+.mini .med a.button {
+  line-height: 32px; }
 .mini .lrg .button {
   border-radius: 5px;
   border-width: 2px;
   font-size: 1.5rem;
   height: 42px;
   min-height: 42px; }
+.mini .lrg a.button {
+  line-height: 42px; }
 .mini .button.button-sml {
   border-radius: 3px;
   border-width: 2px;
   font-size: 0.75rem;
   height: 22px;
   min-height: 22px; }
+.mini a.button.button-sml {
+  line-height: 22px; }
 .mini .button.button-med {
   border-radius: 4px;
   border-width: 2px;
   font-size: 1rem;
   height: 32px;
   min-height: 32px; }
+.mini a.button.button-med {
+  line-height: 32px; }
 .mini .button.button-lrg {
   border-radius: 5px;
   border-width: 2px;
   font-size: 1.5rem;
   height: 42px;
   min-height: 42px; }
+.mini a.button.button-lrg {
+  line-height: 42px; }
 
 .mini .caption {
   color: #636363;
-  font-weight: 500; }
+  font-weight: 700; }
 .mini .caption.default {
   color: #636363;
-  font-weight: 500; }
+  font-weight: 700; }
 .mini .caption.failure {
   color: #9f2828;
-  font-weight: 500; }
+  font-weight: 700; }
 .mini .caption.primary {
   color: #28639f;
-  font-weight: 500; }
+  font-weight: 700; }
 .mini .caption.success {
   color: #289f46;
-  font-weight: 500; }
+  font-weight: 700; }
 .mini .caption.warning {
   color: #9f8128;
-  font-weight: 500; }
+  font-weight: 700; }
 .mini .sml .caption {
   font-size: 1.125rem;
   padding: 2.5px 0; }
@@ -365,13 +377,16 @@
   display: block; }
 
 .mini .code {
-  background-color: #404040;
-  color: white;
+  background-color: white;
+  color: black;
   font-family: monospace; }
   .mini .code:not(.inline) {
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word; }
+  .mini .code.code-dark {
+    background-color: #272727;
+    color: white; }
 
 .mini .control {
   background-color: white;
@@ -531,12 +546,18 @@
 .mini .sml .gap {
   height: 5px;
   min-height: 5px; }
+.mini .sml .children-gap > *:not(:first-child) {
+  margin-top: 5px; }
 .mini .med .gap {
   height: 10px;
   min-height: 10px; }
+.mini .med .children-gap > *:not(:first-child) {
+  margin-top: 10px; }
 .mini .lrg .gap {
   height: 15px;
   min-height: 15px; }
+.mini .lrg .children-gap > *:not(:first-child) {
+  margin-top: 15px; }
 .mini .gap.gap-sml {
   height: 5px;
   min-height: 5px; }
@@ -793,156 +814,171 @@
   font-weight: inherit;
   transform: translateY(0px); }
 
-.mini .list.active .list-header:not(.active):active, .mini .list.active .list-item:not(.active):active, .mini .list.active .list-subitem:not(.active):active {
+.mini .list.active .list-header:not(.active):active, .mini .list.active .list-subheader:not(.active):active, .mini .list.active .list-subsubheader:not(.active):active, .mini .list.active .list-item:not(.active):active, .mini .list.active .list-subitem:not(.active):active, .mini .list.active .list-subsubitem:not(.active):active {
   background-color: #555555 !important;
   color: white; }
-.mini .list.active .list-header:not(.active):hover, .mini .list.active .list-item:not(.active):hover, .mini .list.active .list-subitem:not(.active):hover {
+.mini .list.active .list-header:not(.active):hover, .mini .list.active .list-subheader:not(.active):hover, .mini .list.active .list-subsubheader:not(.active):hover, .mini .list.active .list-item:not(.active):hover, .mini .list.active .list-subitem:not(.active):hover, .mini .list.active .list-subsubitem:not(.active):hover {
   background-color: #636363;
   color: white;
   cursor: pointer; }
-.mini .list .list-header {
+.mini .list .list-header, .mini .list .list-subheader, .mini .list .list-subsubheader {
   color: #636363;
-  font-weight: 500; }
-.mini .list .list-header.active, .mini .list .list-item.active, .mini .list .list-subitem.active {
+  font-weight: 700; }
+.mini .list .list-header.active, .mini .list .list-subheader.active, .mini .list .list-subsubheader.active, .mini .list .list-item.active, .mini .list .list-subitem.active, .mini .list .list-subsubitem.active {
   background-color: #555555 !important;
   color: white; }
-.mini .list.default.active .list-header:not(.active):active, .mini .list.default.active .list-item:not(.active):active, .mini .list.default.active .list-subitem:not(.active):active {
+.mini .list.default.active .list-header:not(.active):active, .mini .list.default.active .list-subheader:not(.active):active, .mini .list.default.active .list-subsubheader:not(.active):active, .mini .list.default.active .list-item:not(.active):active, .mini .list.default.active .list-subitem:not(.active):active, .mini .list.default.active .list-subsubitem:not(.active):active {
   background-color: #555555 !important;
   color: white; }
-.mini .list.default.active .list-header:not(.selected):hover, .mini .list.default.active .list-item:not(.selected):hover, .mini .list.default.active .list-subitem:not(.selected):hover {
+.mini .list.default.active .list-header:not(.selected):hover, .mini .list.default.active .list-subheader:not(.selected):hover, .mini .list.default.active .list-subsubheader:not(.selected):hover, .mini .list.default.active .list-item:not(.selected):hover, .mini .list.default.active .list-subitem:not(.selected):hover, .mini .list.default.active .list-subsubitem:not(.selected):hover {
   background-color: #636363;
   color: white;
   cursor: pointer; }
-.mini .list.default .list-header {
+.mini .list.default .list-header, .mini .list.default .list-subheader, .mini .list.default .list-subsubheader {
   color: #636363;
-  font-weight: 500; }
-.mini .list.default .list-header.active, .mini .list.default .list-item.active, .mini .list.default .list-subitem.active {
+  font-weight: 700; }
+.mini .list.default .list-header.active, .mini .list.default .list-subheader.active, .mini .list.default .list-subsubheader.active, .mini .list.default .list-item.active, .mini .list.default .list-subitem.active, .mini .list.default .list-subsubitem.active {
   background-color: #555555 !important;
   color: white; }
-.mini .list.failure.active .list-header:not(.active):active, .mini .list.failure.active .list-item:not(.active):active, .mini .list.failure.active .list-subitem:not(.active):active {
+.mini .list.failure.active .list-header:not(.active):active, .mini .list.failure.active .list-subheader:not(.active):active, .mini .list.failure.active .list-subsubheader:not(.active):active, .mini .list.failure.active .list-item:not(.active):active, .mini .list.failure.active .list-subitem:not(.active):active, .mini .list.failure.active .list-subsubitem:not(.active):active {
   background-color: #892222 !important;
   color: white; }
-.mini .list.failure.active .list-header:not(.selected):hover, .mini .list.failure.active .list-item:not(.selected):hover, .mini .list.failure.active .list-subitem:not(.selected):hover {
+.mini .list.failure.active .list-header:not(.selected):hover, .mini .list.failure.active .list-subheader:not(.selected):hover, .mini .list.failure.active .list-subsubheader:not(.selected):hover, .mini .list.failure.active .list-item:not(.selected):hover, .mini .list.failure.active .list-subitem:not(.selected):hover, .mini .list.failure.active .list-subsubitem:not(.selected):hover {
   background-color: #9f2828;
   color: white;
   cursor: pointer; }
-.mini .list.failure .list-header {
+.mini .list.failure .list-header, .mini .list.failure .list-subheader, .mini .list.failure .list-subsubheader {
   color: #9f2828;
-  font-weight: 500; }
-.mini .list.failure .list-header.active, .mini .list.failure .list-item.active, .mini .list.failure .list-subitem.active {
+  font-weight: 700; }
+.mini .list.failure .list-header.active, .mini .list.failure .list-subheader.active, .mini .list.failure .list-subsubheader.active, .mini .list.failure .list-item.active, .mini .list.failure .list-subitem.active, .mini .list.failure .list-subsubitem.active {
   background-color: #892222 !important;
   color: white; }
-.mini .list.primary.active .list-header:not(.active):active, .mini .list.primary.active .list-item:not(.active):active, .mini .list.primary.active .list-subitem:not(.active):active {
+.mini .list.primary.active .list-header:not(.active):active, .mini .list.primary.active .list-subheader:not(.active):active, .mini .list.primary.active .list-subsubheader:not(.active):active, .mini .list.primary.active .list-item:not(.active):active, .mini .list.primary.active .list-subitem:not(.active):active, .mini .list.primary.active .list-subsubitem:not(.active):active {
   background-color: #225589 !important;
   color: white; }
-.mini .list.primary.active .list-header:not(.selected):hover, .mini .list.primary.active .list-item:not(.selected):hover, .mini .list.primary.active .list-subitem:not(.selected):hover {
+.mini .list.primary.active .list-header:not(.selected):hover, .mini .list.primary.active .list-subheader:not(.selected):hover, .mini .list.primary.active .list-subsubheader:not(.selected):hover, .mini .list.primary.active .list-item:not(.selected):hover, .mini .list.primary.active .list-subitem:not(.selected):hover, .mini .list.primary.active .list-subsubitem:not(.selected):hover {
   background-color: #28639f;
   color: white;
   cursor: pointer; }
-.mini .list.primary .list-header {
+.mini .list.primary .list-header, .mini .list.primary .list-subheader, .mini .list.primary .list-subsubheader {
   color: #28639f;
-  font-weight: 500; }
-.mini .list.primary .list-header.active, .mini .list.primary .list-item.active, .mini .list.primary .list-subitem.active {
+  font-weight: 700; }
+.mini .list.primary .list-header.active, .mini .list.primary .list-subheader.active, .mini .list.primary .list-subsubheader.active, .mini .list.primary .list-item.active, .mini .list.primary .list-subitem.active, .mini .list.primary .list-subsubitem.active {
   background-color: #225589 !important;
   color: white; }
-.mini .list.success.active .list-header:not(.active):active, .mini .list.success.active .list-item:not(.active):active, .mini .list.success.active .list-subitem:not(.active):active {
+.mini .list.success.active .list-header:not(.active):active, .mini .list.success.active .list-subheader:not(.active):active, .mini .list.success.active .list-subsubheader:not(.active):active, .mini .list.success.active .list-item:not(.active):active, .mini .list.success.active .list-subitem:not(.active):active, .mini .list.success.active .list-subsubitem:not(.active):active {
   background-color: #22893c !important;
   color: white; }
-.mini .list.success.active .list-header:not(.selected):hover, .mini .list.success.active .list-item:not(.selected):hover, .mini .list.success.active .list-subitem:not(.selected):hover {
+.mini .list.success.active .list-header:not(.selected):hover, .mini .list.success.active .list-subheader:not(.selected):hover, .mini .list.success.active .list-subsubheader:not(.selected):hover, .mini .list.success.active .list-item:not(.selected):hover, .mini .list.success.active .list-subitem:not(.selected):hover, .mini .list.success.active .list-subsubitem:not(.selected):hover {
   background-color: #289f46;
   color: white;
   cursor: pointer; }
-.mini .list.success .list-header {
+.mini .list.success .list-header, .mini .list.success .list-subheader, .mini .list.success .list-subsubheader {
   color: #289f46;
-  font-weight: 500; }
-.mini .list.success .list-header.active, .mini .list.success .list-item.active, .mini .list.success .list-subitem.active {
+  font-weight: 700; }
+.mini .list.success .list-header.active, .mini .list.success .list-subheader.active, .mini .list.success .list-subsubheader.active, .mini .list.success .list-item.active, .mini .list.success .list-subitem.active, .mini .list.success .list-subsubitem.active {
   background-color: #22893c !important;
   color: white; }
-.mini .list.warning.active .list-header:not(.active):active, .mini .list.warning.active .list-item:not(.active):active, .mini .list.warning.active .list-subitem:not(.active):active {
+.mini .list.warning.active .list-header:not(.active):active, .mini .list.warning.active .list-subheader:not(.active):active, .mini .list.warning.active .list-subsubheader:not(.active):active, .mini .list.warning.active .list-item:not(.active):active, .mini .list.warning.active .list-subitem:not(.active):active, .mini .list.warning.active .list-subsubitem:not(.active):active {
   background-color: #896f22 !important;
   color: white; }
-.mini .list.warning.active .list-header:not(.selected):hover, .mini .list.warning.active .list-item:not(.selected):hover, .mini .list.warning.active .list-subitem:not(.selected):hover {
+.mini .list.warning.active .list-header:not(.selected):hover, .mini .list.warning.active .list-subheader:not(.selected):hover, .mini .list.warning.active .list-subsubheader:not(.selected):hover, .mini .list.warning.active .list-item:not(.selected):hover, .mini .list.warning.active .list-subitem:not(.selected):hover, .mini .list.warning.active .list-subsubitem:not(.selected):hover {
   background-color: #9f8128;
   color: white;
   cursor: pointer; }
-.mini .list.warning .list-header {
+.mini .list.warning .list-header, .mini .list.warning .list-subheader, .mini .list.warning .list-subsubheader {
   color: #9f8128;
-  font-weight: 500; }
-.mini .list.warning .list-header.active, .mini .list.warning .list-item.active, .mini .list.warning .list-subitem.active {
+  font-weight: 700; }
+.mini .list.warning .list-header.active, .mini .list.warning .list-subheader.active, .mini .list.warning .list-subsubheader.active, .mini .list.warning .list-item.active, .mini .list.warning .list-subitem.active, .mini .list.warning .list-subsubitem.active {
   background-color: #896f22 !important;
   color: white; }
-.mini .sml .list.active .list-header:not(.selected):hover {
-  padding-left: 2.5px; }
 .mini .sml .list .list-header {
   font-size: 0.9375rem;
-  padding: 1.25px 0 1.25px 0; }
+  padding: 2.5px 0 2.5px 5px; }
   .mini .sml .list .list-header:not(:first-child) {
     margin-top: 5px; }
-  .mini .sml .list .list-header.active {
-    padding-left: 2.5px; }
+.mini .sml .list .list-subheader {
+  padding: 2.5px 0 2.5px 5px; }
+  .mini .sml .list .list-subheader:not(:first-child) {
+    margin-top: 5px; }
+.mini .sml .list .list-subsubheader {
+  padding: 2.5px 0 2.5px 10px; }
+  .mini .sml .list .list-subsubheader:not(:first-child) {
+    margin-top: 5px; }
 .mini .sml .list .list-item {
-  padding: 1.25px 0 1.25px 7.5px; }
+  padding: 2.5px 0 2.5px 10px; }
 .mini .sml .list .list-subitem {
-  padding: 1.25px 0 1.25px 15px; }
-.mini .sml .list .list-header, .mini .sml .list .list-item, .mini .sml .list .list-subitem {
+  padding: 2.5px 0 2.5px 15px; }
+.mini .sml .list .list-subsubitem {
+  padding: 2.5px 0 2.5px 20px; }
+.mini .sml .list .list-header, .mini .sml .list .list-subheader, .mini .sml .list .list-subsubheader, .mini .sml .list .list-item, .mini .sml .list .list-subitem, .mini .sml .list .list-subsubitem {
   border: 0;
   border-radius: 3px; }
-.mini .med .list.active .list-header:not(.selected):hover {
-  padding-left: 5px; }
 .mini .med .list .list-header {
   font-size: 1.25rem;
-  padding: 2.5px 0 2.5px 0; }
+  padding: 5px 0 5px 10px; }
   .mini .med .list .list-header:not(:first-child) {
     margin-top: 10px; }
-  .mini .med .list .list-header.active {
-    padding-left: 5px; }
+.mini .med .list .list-subheader {
+  padding: 5px 0 5px 10px; }
+  .mini .med .list .list-subheader:not(:first-child) {
+    margin-top: 10px; }
+.mini .med .list .list-subsubheader {
+  padding: 5px 0 5px 20px; }
+  .mini .med .list .list-subsubheader:not(:first-child) {
+    margin-top: 10px; }
 .mini .med .list .list-item {
-  padding: 2.5px 0 2.5px 15px; }
+  padding: 5px 0 5px 20px; }
 .mini .med .list .list-subitem {
-  padding: 2.5px 0 2.5px 30px; }
-.mini .med .list .list-header, .mini .med .list .list-item, .mini .med .list .list-subitem {
+  padding: 5px 0 5px 30px; }
+.mini .med .list .list-subsubitem {
+  padding: 5px 0 5px 40px; }
+.mini .med .list .list-header, .mini .med .list .list-subheader, .mini .med .list .list-subsubheader, .mini .med .list .list-item, .mini .med .list .list-subitem, .mini .med .list .list-subsubitem {
   border: 0;
   border-radius: 4px; }
-.mini .lrg .list.active .list-header:not(.selected):hover {
-  padding-left: 7.5px; }
 .mini .lrg .list .list-header {
   font-size: 1.875rem;
-  padding: 3.75px 0 3.75px 0; }
+  padding: 7.5px 0 7.5px 15px; }
   .mini .lrg .list .list-header:not(:first-child) {
     margin-top: 15px; }
-  .mini .lrg .list .list-header.active {
-    padding-left: 7.5px; }
+.mini .lrg .list .list-subheader {
+  padding: 7.5px 0 7.5px 15px; }
+  .mini .lrg .list .list-subheader:not(:first-child) {
+    margin-top: 15px; }
+.mini .lrg .list .list-subsubheader {
+  padding: 7.5px 0 7.5px 30px; }
+  .mini .lrg .list .list-subsubheader:not(:first-child) {
+    margin-top: 15px; }
 .mini .lrg .list .list-item {
-  padding: 3.75px 0 3.75px 22.5px; }
+  padding: 7.5px 0 7.5px 30px; }
 .mini .lrg .list .list-subitem {
-  padding: 3.75px 0 3.75px 45px; }
-.mini .lrg .list .list-header, .mini .lrg .list .list-item, .mini .lrg .list .list-subitem {
+  padding: 7.5px 0 7.5px 45px; }
+.mini .lrg .list .list-subsubitem {
+  padding: 7.5px 0 7.5px 60px; }
+.mini .lrg .list .list-header, .mini .lrg .list .list-subheader, .mini .lrg .list .list-subsubheader, .mini .lrg .list .list-item, .mini .lrg .list .list-subitem, .mini .lrg .list .list-subsubitem {
   border: 0;
   border-radius: 5px; }
 .mini .list.list-sml .list-header {
   font-size: 0.9375rem; }
-.mini .list.list-sml .list-item, .mini .list.list-sml .list-subitem {
+.mini .list.list-sml .list-subheader, .mini .list.list-sml .list-subsubheader, .mini .list.list-sml .list-item, .mini .list.list-sml .list-subitem, .mini .list.list-sml .list-subsubitem {
   font-size: 0.75rem; }
-.mini .list.list-sml .list-header, .mini .list.list-sml .list-item, .mini .list.list-sml .list-subitem {
-  border: 0;
+.mini .list.list-sml .list-header, .mini .list.list-sml .list-subheader, .mini .list.list-sml .list-subsubheader, .mini .list.list-sml .list-item, .mini .list.list-sml .list-subitem, .mini .list.list-sml .list-subsubitem {
   border-radius: 3px; }
 .mini .list.list-med .list-header {
   font-size: 1.25rem; }
-.mini .list.list-med .list-item, .mini .list.list-med .list-subitem {
+.mini .list.list-med .list-subheader, .mini .list.list-med .list-subsubheader, .mini .list.list-med .list-item, .mini .list.list-med .list-subitem, .mini .list.list-med .list-subsubitem {
   font-size: 1rem; }
-.mini .list.list-med .list-header, .mini .list.list-med .list-item, .mini .list.list-med .list-subitem {
-  border: 0;
+.mini .list.list-med .list-header, .mini .list.list-med .list-subheader, .mini .list.list-med .list-subsubheader, .mini .list.list-med .list-item, .mini .list.list-med .list-subitem, .mini .list.list-med .list-subsubitem {
   border-radius: 4px; }
 .mini .list.list-lrg .list-header {
   font-size: 1.875rem; }
-.mini .list.list-lrg .list-item, .mini .list.list-lrg .list-subitem {
+.mini .list.list-lrg .list-subheader, .mini .list.list-lrg .list-subsubheader, .mini .list.list-lrg .list-item, .mini .list.list-lrg .list-subitem, .mini .list.list-lrg .list-subsubitem {
   font-size: 1.5rem; }
-.mini .list.list-lrg .list-header, .mini .list.list-lrg .list-item, .mini .list.list-lrg .list-subitem {
-  border: 0;
+.mini .list.list-lrg .list-header, .mini .list.list-lrg .list-subheader, .mini .list.list-lrg .list-subsubheader, .mini .list.list-lrg .list-item, .mini .list.list-lrg .list-subitem, .mini .list.list-lrg .list-subsubitem {
   border-radius: 5px; }
 .mini .list > * {
   display: block; }
-.mini .list .list-item, .mini .list .list-subitem {
+.mini .list .list-item, .mini .list .list-subitem, .mini .list .list-subsubitem {
   color: gray; }
 
 .mini .rtl.sml .list .list-header {
@@ -1056,27 +1092,25 @@
   border-style: solid; }
 
 .mini .sml .paragraph {
-  padding-bottom: 7.5px;
-  padding-top: 7.5px; }
+  margin-bottom: 7.5px;
+  margin-top: 7.5px; }
 .mini .med .paragraph {
-  padding-bottom: 15px;
-  padding-top: 15px; }
+  margin-bottom: 15px;
+  margin-top: 15px; }
 .mini .lrg .paragraph {
-  padding-bottom: 22.5px;
-  padding-top: 22.5px; }
+  margin-bottom: 22.5px;
+  margin-top: 22.5px; }
 .mini .paragraph {
   display: block; }
   .mini .paragraph.paragraph-sml {
-    padding-bottom: 7.5px;
-    padding-top: 7.5px; }
+    margin-bottom: 7.5px;
+    margin-top: 7.5px; }
   .mini .paragraph.paragraph-med {
-    padding-bottom: 15px;
-    padding-top: 15px; }
+    margin-bottom: 15px;
+    margin-top: 15px; }
   .mini .paragraph.paragraph-lrg {
-    padding-bottom: 22.5px;
-    padding-top: 22.5px; }
-  .mini .paragraph.continuous {
-    padding-top: 0 !important; }
+    margin-bottom: 22.5px;
+    margin-top: 22.5px; }
 
 .mini .splitter {
   border-top: #d4d4d4 solid 2px; }
@@ -1406,6 +1440,8 @@
   border-bottom-color: #d4d4d4; }
 .mini .table.underlined > .row.header:after {
   border-bottom-color: #aaaaaa; }
+.mini table.table.underlined > tbody > .header > th {
+  border-bottom-color: #aaaaaa; }
 .mini .sml .table {
   margin-left: -5px;
   margin-right: -5px; }
@@ -1415,6 +1451,12 @@
 .mini .sml .table.underlined > .row:after {
   border-bottom-width: 2px;
   margin: 0 5px; }
+.mini .sml table.table.underlined {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%; }
+  .mini .sml table.table.underlined > tbody > .header {
+    border-bottom-width: 2px; }
 .mini .med .table {
   margin-left: -10px;
   margin-right: -10px; }
@@ -1424,6 +1466,12 @@
 .mini .med .table.underlined > .row:after {
   border-bottom-width: 2px;
   margin: 0 10px; }
+.mini .med table.table.underlined {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%; }
+  .mini .med table.table.underlined > tbody > .header {
+    border-bottom-width: 2px; }
 .mini .lrg .table {
   margin-left: -15px;
   margin-right: -15px; }
@@ -1433,6 +1481,12 @@
 .mini .lrg .table.underlined > .row:after {
   border-bottom-width: 2px;
   margin: 0 15px; }
+.mini .lrg table.table.underlined {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%; }
+  .mini .lrg table.table.underlined > tbody > .header {
+    border-bottom-width: 2px; }
 .mini .table.table-sml > .row > * {
   padding-bottom: 2.5px;
   padding-top: 2.5px; }
@@ -1481,6 +1535,8 @@
     .mini .table > .row.header > * {
       font-weight: 700;
       text-align: center; }
+.mini table.underlined > tbody > .header > th {
+  border-bottom-style: solid; }
 
 .mini .rtl .table > .row > .l {
   border-right-style: solid;
@@ -2464,7 +2520,7 @@
     width: 365px; }
   .mini .c10.-l-, .mini .f10.-l- {
     width: 100% !important; }
-  .mini .c10.-l-, .mini .f10.-m- {
+  .mini .c10.-m-, .mini .f10.-m- {
     width: 100% !important; }
   .mini .sml .f10 {
     width: 394.44444px; }
@@ -2474,7 +2530,7 @@
     width: 405.55556px; }
   .mini .c11.-l-, .mini .f11.-l- {
     width: 100% !important; }
-  .mini .c11.-l-, .mini .f11.-m- {
+  .mini .c11.-m-, .mini .f11.-m- {
     width: 100% !important; }
   .mini .sml .f11 {
     width: 433.88889px; }
@@ -2484,7 +2540,7 @@
     width: 446.11111px; }
   .mini .c12.-l-, .mini .f12.-l- {
     width: 100% !important; }
-  .mini .c12.-l-, .mini .f12.-m- {
+  .mini .c12.-m-, .mini .f12.-m- {
     width: 100% !important; }
   .mini .sml .f12 {
     width: 473.33333px; }
@@ -2494,7 +2550,7 @@
     width: 486.66667px; }
   .mini .c13.-l-, .mini .f13.-l- {
     width: 100% !important; }
-  .mini .c13.-l-, .mini .f13.-m- {
+  .mini .c13.-m-, .mini .f13.-m- {
     width: 100% !important; }
   .mini .sml .f13 {
     width: 512.77778px; }
@@ -2504,7 +2560,7 @@
     width: 527.22222px; }
   .mini .c14.-l-, .mini .f14.-l- {
     width: 100% !important; }
-  .mini .c14.-l-, .mini .f14.-m- {
+  .mini .c14.-m-, .mini .f14.-m- {
     width: 100% !important; }
   .mini .sml .f14 {
     width: 552.22222px; }
@@ -2514,7 +2570,7 @@
     width: 567.77778px; }
   .mini .c15.-l-, .mini .f15.-l- {
     width: 100% !important; }
-  .mini .c15.-l-, .mini .f15.-m- {
+  .mini .c15.-m-, .mini .f15.-m- {
     width: 100% !important; }
   .mini .sml .f15 {
     width: 591.66667px; }
@@ -2524,7 +2580,7 @@
     width: 608.33333px; }
   .mini .c16.-l-, .mini .f16.-l- {
     width: 100% !important; }
-  .mini .c16.-l-, .mini .f16.-m- {
+  .mini .c16.-m-, .mini .f16.-m- {
     width: 100% !important; }
   .mini .sml .f16 {
     width: 631.11111px; }
@@ -2534,7 +2590,7 @@
     width: 648.88889px; }
   .mini .c17.-l-, .mini .f17.-l- {
     width: 100% !important; }
-  .mini .c17.-l-, .mini .f17.-m- {
+  .mini .c17.-m-, .mini .f17.-m- {
     width: 100% !important; }
   .mini .sml .f17 {
     width: 670.55556px; }
@@ -2544,7 +2600,7 @@
     width: 689.44444px; }
   .mini .c18.-l-, .mini .f18.-l- {
     width: 100% !important; }
-  .mini .c18.-l-, .mini .f18.-m- {
+  .mini .c18.-m-, .mini .f18.-m- {
     width: 100% !important; }
   .mini .sml .f18 {
     width: 710px; }

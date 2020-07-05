@@ -32,17 +32,17 @@
       .caption.caption-#{$suffix}
         font-size: $font-size * $font-size-ratio
 
-  @include caption(null, $col-default, 500)
+  @include caption(null, $col-default, $font-bold)
 
-  @include caption('default', $col-default, 500)
+  @include caption('default', $col-default, $font-bold)
 
-  @include caption('failure', $col-failure, 500)
+  @include caption('failure', $col-failure, $font-bold)
 
-  @include caption('primary', $col-primary, 500)
+  @include caption('primary', $col-primary, $font-bold)
 
-  @include caption('success', $col-success, 500)
+  @include caption('success', $col-success, $font-bold)
 
-  @include caption('warning', $col-warning, 500)
+  @include caption('warning', $col-warning, $font-bold)
 
   .sml
     @include caption-sized(null, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)

@@ -3,62 +3,28 @@
 .mini
   @mixin table($prefix, $border-color, $border-color-ratio, $border-color-ratio_top)
     @if $prefix == null
-      .table
-        &>.row
-          &>.l
-            border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-
-          &>.r
-            border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-
-        &.underlined
-          &>.row
-            &:after
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-
-            &.header:after
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+      table
+        &.table.underlined
+          &>tbody>.header>th
+            border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
     @else
-      .table.#{$prefix}
-        &>.row
-          &>.l
-            border-left-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-
-          &>.r
-            border-right-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-
-        &.underlined
-          &>.row
-            &:after
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-
-            &.header:after>th
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+      table
+        &.table.underlined
+          &>tbody>.header>th
+            border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
 
   @mixin table-sized($suffix, $border-width, $ver, $hor)
     @if $suffix == null
-      .table
-        margin-left: -$hor
-        margin-right: -$hor
+      table
+        &.table.underlined
+          &>tbody>.header
+            border-bottom-width: $border-width
 
-        &>.row>*
-          padding-bottom: $ver
-          padding-top: $ver
-
-      .table.underlined
-        &>.row:after
-          border-bottom-width: $border-width
-          margin: 0 $hor
+          margin-left: 0
+          margin-right: 0
+          width: 100%
     @else
-      .table.table-#{$suffix}
-        &>.row>*
-          padding-bottom: $ver
-          padding-top: $ver
-
-      .table.table-#{$suffix}.underlined
-        &>.row:after
-          border-bottom-width: $border-width
-          margin: 0 $hor
+      table
 
   @include table(null, $col-default, 0.3, 0.15)
 
@@ -118,3 +84,7 @@
       width: 100%
 
     vertical-align: middle
+
+  table
+    &.underlined>tbody>.header>th
+      border-bottom-style: solid
