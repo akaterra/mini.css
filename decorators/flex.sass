@@ -2,12 +2,15 @@
 
 .mini
   .flex
-    &.center
+    &-center
       justify-content: center
 
-    &.middle
+    &-middle
       align-items: center
 
+    display: flex
+
+  .row.flex
     display: flex
 
   @for $i from 1 through $grid-cells
