@@ -4,11 +4,11 @@
   @mixin label($prefix, $color, $color-ratio, $font-weight)
     @if $prefix == null
       .label
-        color: lighten($color, $col-ratio * $color-ratio * 100%)
+        color: lighten($color, 10%)
         font-weight: $font-weight
     @else
       .label.#{$prefix}
-        color: lighten($color, $col-ratio * $color-ratio * 100%)
+        color: lighten($color, 10%)
         font-weight: $font-weight
 
   @mixin label-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)

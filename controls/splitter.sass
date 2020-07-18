@@ -4,10 +4,10 @@
   @mixin splitter($prefix, $color, $color-ratio)
     @if $prefix == null
       .splitter
-        border-top: lighten($color, $col-ratio * $color-ratio * 100%) solid 2px
+        border-top: lighten($color, 25%) solid 2px
     @else
       .splitter.#{$prefix}
-        border-top: lighten($color, $col-ratio * $color-ratio * 100%) solid 2px
+        border-top: lighten($color, 25%) solid 2px
 
   @mixin splitter-sized($suffix, $height, $ver, $hor)
     @if $suffix == null

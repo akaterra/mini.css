@@ -8,39 +8,57 @@
       .tabs
         &>.tabs-bar
           &>.tab
-            background-color: $bg-color
+            background-color: $color
             border-color: transparent
-            color: #ffffff
+            color: lighten($color, 50%)
 
           &>.tab.active
             background-color: lighten($col-default, 50%)
-            border-color: $bc
-            color: darken($color, $col-ratio * $color-ratio * 100%)
+            border-color: lighten($col-default, 25%)
+            color: $color
 
         &>.tabs-content
-          border-color: $bc
+          border-color: lighten($col-default, 25%)
     @else
       .tabs
         &>.tabs-bar
           &>.tab.#{$prefix}
-            background-color: $bg-color
+            background-color: $color
             border-color: transparent
-            color: #ffffff
+            color: lighten($color, 50%)
 
           &>.tab.#{$prefix}.active
             background-color: lighten($col-default, 50%)
-            border-color: $bc
-            color: darken($color, $col-ratio * $color-ratio * 100%)
+            border-color: lighten($col-default, 25%)
+            color: $color
 
         &>.tabs-content
-          border-color: $bc
+          border-color: lighten($col-default, 25%)
+
+  @mixin tab-hover($prefix, $col-default, $bg-color, $bg-color-ratio)
+    @if $prefix == null
+      .tabs
+        &>.tabs-bar
+          &>.tab:hover,&>.tab:focus
+            background-color: darken($bg-color, 15%)
+
+          &>.tab.active:hover,&>.tab.active:focus
+            background-color: lighten($col-default, 50%)
+    @else
+      .tabs
+        &>.tabs-bar
+          &>.tab:hover.#{$prefix},&>.tab:focus.#{$prefix}
+            background-color: darken($bg-color, 15%)
+
+          &>.tab.active:hover.#{$prefix},&>.tab.active:focus.#{$prefix}
+            background-color: lighten($col-default, 50%)
 
   @mixin tab-active($prefix, $col-default, $bg-color, $bg-color-ratio)
     @if $prefix == null
       .tabs
         &>.tabs-bar
           &>.tab:active
-            background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%) !important
+            background-color: darken($bg-color, 25%) !important
 
           &>.tab.active:active
             background-color: lighten($col-default, 50%) !important
@@ -48,28 +66,10 @@
       .tabs
         &>.tabs-bar
           &>.tab:active.#{$prefix}
-            background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%) !important
+            background-color: darken($bg-color, 25%) !important
 
           &>.tab.active:active.#{$prefix}
             background-color: lighten($col-default, 50%) !important
-
-  @mixin tab-hover($prefix, $col-default, $bg-color, $bg-color-ratio)
-    @if $prefix == null
-      .tabs
-        &>.tabs-bar
-          &>.tab:hover
-            background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%)
-
-          &>.tab.active:hover
-            background-color: lighten($col-default, 50%)
-    @else
-      .tabs
-        &>.tabs-bar
-          &>.tab:hover.#{$prefix}
-            background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%)
-
-          &>.tab.active:hover.#{$prefix}
-            background-color: lighten($col-default, 50%)
 
   @mixin tab-sized($suffix, $border-radius, $border-width, $font-size, $font-size-ratio, $height, $ver, $hor)
     @if $suffix == null

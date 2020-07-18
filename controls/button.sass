@@ -8,7 +8,7 @@
           color: darken($color, $col-ratio * $transparent-color-ratio * 100%)
 
         background-color: $color
-        border-color: darken($color, $col-ratio * $border-color-ratio * 100%)
+        border-color: darken($color, 5%)
         color: lighten($font-color, 50%)
     @else
       .button.#{$prefix}
@@ -16,38 +16,38 @@
           color: darken($color, $col-ratio * $transparent-color-ratio * 100%)
 
         background-color: $color
-        border-color: darken($color, $col-ratio * $border-color-ratio * 100%)
+        border-color: darken($color, 5%)
         color: lighten($font-color, 50%)
+
+  @mixin button-hover($prefix, $bg-color, $bg-color-ratio, $border-color, $border-color-ratio, $color)
+    @if $prefix == null
+      .button:hover, .button:focus
+        background-color: darken($bg-color, 10%) !important
+        border-color: darken($border-color, 15%)
+        color: lighten($color, 50%)
+    @else
+      .button:hover.#{$prefix}, .button:focus.#{$prefix}
+        background-color: darken($bg-color, 10%) !important
+        border-color: darken($border-color, 15%)
+        color: lighten($color, 50%)
 
   @mixin button-active($prefix, $bg-color, $bg-color-ratio, $border-color, $border-color-ratio, $color)
     @if $prefix == null
       .button:active:not(.disabled), .button.active
-        background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%) !important
-        border-color: darken($border-color, $col-ratio * $border-color-ratio * 100%) !important
+        background-color: darken($bg-color, 20%) !important
+        border-color: darken($border-color, 25%) !important
         color: lighten($color, 50%) !important
 
       .button:active:not(.disabled)
         transform: translateY(2px) !important
     @else
       .button:active:not(.disabled).#{$prefix}, .button.active.#{$prefix}
-        background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%) !important
-        border-color: darken($border-color, $col-ratio * $border-color-ratio * 100%) !important
+        background-color: darken($bg-color, 20%) !important
+        border-color: darken($border-color, 25%) !important
         color: lighten($color, 50%) !important
 
       .button:active:not(.disabled).#{$prefix}
         transform: translateY(2px) !important
-
-  @mixin button-hover($prefix, $bg-color, $bg-color-ratio, $border-color, $border-color-ratio, $color)
-    @if $prefix == null
-      .button:hover
-        background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%) !important
-        border-color: darken($border-color, $col-ratio * $border-color-ratio * 100%)
-        color: lighten($color, 50%)
-    @else
-      .button:hover.#{$prefix}
-        background-color: darken($bg-color, $col-ratio * $bg-color-ratio * 100%) !important
-        border-color: darken($border-color, $col-ratio * $border-color-ratio * 100%)
-        color: lighten($color, 50%)
 
   @mixin button-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     @if $suffix == null

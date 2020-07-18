@@ -4,11 +4,11 @@
   @mixin caption($prefix, $color, $font-weight)
     @if $prefix == null
       .caption
-        color: darken($color, $col-ratio * $col-darken-ratio * 100%)
+        color: darken($color, 10%)
         font-weight: $font-weight
     @else
       .caption.#{$prefix}
-        color: darken($color, $col-ratio * $col-darken-ratio * 100%)
+        color: darken($color, 10%)
         font-weight: $font-weight
 
   @mixin caption-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)

@@ -4,13 +4,13 @@
   @mixin divider($prefix, $color, $color-ratio)
     @if $prefix == null
       .divider
-        border-top-color: lighten($color, $col-ratio * $color-ratio * 100%)
+        border-top-color: lighten($color, 25%)
 
         &.top
           border-top-color: lighten($color, $col-ratio * ($color-ratio - 0.1) * 100%)
     @else
       .divider.#{$prefix}
-        border-top-color: lighten($color, $col-ratio * $color-ratio * 100%)
+        border-top-color: lighten($color, 25%)
 
         &.top
           border-top-color: lighten($color, $col-ratio * ($color-ratio - 0.1) * 100%)

@@ -8,16 +8,24 @@
           color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
 
         background-color: lighten($bg-color, 50%)
-        border-color: $border-color
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        border-color: darken($color, 5%)
+        color: $color
     @else
       .control.#{$prefix}
         &.transparent
           color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
 
         background-color: lighten($bg-color, 50%)
-        border-color: $border-color
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        border-color: darken($color, 5%)
+        color: $color
+
+  @mixin control-hover($prefix, $border-color)
+    @if $prefix == null
+      .control:hover, .control:focus
+        border-color: darken($border-color, 15%)
+    @else
+      .control:hover.#{$prefix}, .control:focus.#{$prefix}
+        border-color: darken($border-color, 15%)
 
   @mixin control-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     @if $suffix == null
@@ -37,16 +45,22 @@
         min-height: $height
 
   @include control(null, transparent, $col-primary, 0.05, $col-primary, $col-primary, $col-primary, 0.05)
+  @include control-hover(null, $col-primary)
 
   @include control('default', transparent, $col-default, 0.05, $col-default, $col-default, $col-default, 0.05)
+  @include control-hover('default', $col-default)
 
   @include control('failure', transparent, $col-failure, 0.05, $col-default, $col-failure, $col-failure, 0.05)
+  @include control-hover('failure', $col-failure)
 
   @include control('primary', transparent, $col-primary, 0.05, $col-default, $col-primary, $col-primary, 0.05)
+  @include control-hover('primary', $col-primary)
 
   @include control('success', transparent, $col-success, 0.05, $col-default, $col-success, $col-success, 0.05)
+  @include control-hover('success', $col-success)
 
   @include control('warning', transparent, $col-warning, 0.05, $col-default, $col-warning, $col-warning, 0.05)
+  @include control-hover('warning', $col-warning)
 
   .sml
     @include control-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)

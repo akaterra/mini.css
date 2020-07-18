@@ -132,28 +132,24 @@
   @for $i from 1 through $grid-cells
     @if $i < 10
       .c-#{$i}
-        @if $i != $grid-cells
-          float: left
+        float: left
 
         min-height: 1px
         width: 100% / $grid-cells * $i
 
       .f-#{$i}
-        @if $i != $grid-cells
-          float: left
+        float: left
 
         min-height: 1px
     @else
       .c#{$i}
-        @if $i != $grid-cells
-          float: left
+        float: left
 
         min-height: 1px
         width: 100% / $grid-cells * $i
 
       .f#{$i}
-        @if $i != $grid-cells
-          float: left
+        float: left
 
         min-height: 1px
 

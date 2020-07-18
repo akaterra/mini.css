@@ -7,15 +7,17 @@
         &.transparent
           color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
 
-        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        background-color: lighten($color, 50%)
+        border-color: lighten($color, 25%)
+        color: $color
     @else
       .panel.#{$prefix}
         &.transparent
           color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
 
-        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        background-color: lighten($color, 50%)
+        border-color: lighten($color, 25%)
+        color: $color
 
   @mixin panel-sized($suffix, $border-radius, $border-width, $font-size, $ver, $hor)
     @if $suffix == null

@@ -4,40 +4,40 @@
   @mixin link($prefix, $color, $color-ratio, $font-weight)
     @if $prefix == null
       .link
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        color: $color
         cursor: pointer
         display: inline-block
         font-weight: $font-weight
     @else
       .link.#{$prefix}
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        color: $color
         cursor: pointer
         display: inline-block
         font-weight: $font-weight
 
-  @mixin link-active($prefix, $color, $color-ratio, $font-weight)
-    @if $prefix == null
-      .link:active
-        color: darken($color, $col-ratio * $color-ratio * 100%) !important
-        font-weight: $font-weight !important
-        transform: translateY(2px) !important
-    @else
-      .link:active.#{$prefix}
-        color: darken($color, $col-ratio * $color-ratio * 100%) !important
-        font-weight: $font-weight !important
-        transform: translateY(2px) !important
-
   @mixin link-hover($prefix, $color, $color-ratio, $font-weight)
     @if $prefix == null
       .link:hover
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        color: darken($color, 10%)
         font-weight: $font-weight
         transform: translateY(0px)
     @else
       .link:hover.#{$prefix}
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        color: darken($color, 10%)
         font-weight: $font-weight
         transform: translateY(0px)
+
+  @mixin link-active($prefix, $color, $color-ratio, $font-weight)
+    @if $prefix == null
+      .link:active
+        color: darken($color, 20%) !important
+        font-weight: $font-weight !important
+        transform: translateY(2px) !important
+    @else
+      .link:active.#{$prefix}
+        color: darken($color, 20%) !important
+        font-weight: $font-weight !important
+        transform: translateY(2px) !important
 
   @include link(null, $col-primary, 0.05, inherit)
   @include link-active(null, $col-primary, 0.15, inherit)

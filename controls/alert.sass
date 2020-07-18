@@ -4,14 +4,14 @@
   @mixin alert($prefix, $bg-color, $bg-color-ratio, $border-color, $border-color-ratio, $color, $color-ratio)
     @if $prefix == null
       .alert
-        background-color: lighten($bg-color, $col-ratio * $bg-color-ratio * 100%)
-        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        background-color: lighten($bg-color, 45%)
+        border-color: lighten($border-color, 25%)
+        color: $color
     @else
       .alert.#{$prefix}
-        background-color: lighten($bg-color, $col-ratio * $bg-color-ratio * 100%)
-        border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-        color: darken($color, $col-ratio * $color-ratio * 100%)
+        background-color: lighten($bg-color, 45%)
+        border-color: lighten($border-color, 25%)
+        color: $color
 
   @mixin alert-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     @if $suffix == null
