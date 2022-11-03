@@ -17,13 +17,22 @@ html, body
     margin-left: auto
     margin-right: auto
 
-  .cow, .row
-    display: block
+  .col
+    // display: block
+    display: flex
+    flex-direction: column
     position: relative
 
-  .cow:after, .row:after
-    clear: both
+  // .cow, .row
+  .row
+    // display: block
+    display: flex
+    flex-direction: row
+    position: relative
 
-  .cow:after, .cow:before, .row:after, .row:before
-    display: table
-    content: " "
+  // .cow:after, .row:after
+  //   clear: both
+
+  // .cow:after, .cow:before, .row:after, .row:before
+  //   display: table
+  //   content: " "

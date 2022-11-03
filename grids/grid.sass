@@ -6,27 +6,27 @@
       @for $i from 1 through $grid-cells
         @if $i < 10
           @if $wrap > 0
-            .c-#{$i}.-l-, .f-#{$i}.-l-
+            .h-#{$i}.-l-, .f-#{$i}.-l-
               width: 100% !important
 
           @if $wrap > 1
-            .c-#{$i}.-m-, .f-#{$i}.-m-
+            .h-#{$i}.-m-, .f-#{$i}.-m-
               width: 100% !important
 
           @if $wrap > 2
-            .c-#{$i}.-s-, .f-#{$i}.-s-
+            .h-#{$i}.-s-, .f-#{$i}.-s-
               width: 100% !important
         @else
           @if $wrap > 0
-            .c#{$i}.-l-, .f#{$i}.-l-
+            .h#{$i}.-l-, .f#{$i}.-l-
               width: 100% !important
 
           @if $wrap > 1
-            .c#{$i}.-m-, .f#{$i}.-m-
+            .h#{$i}.-m-, .f#{$i}.-m-
               width: 100% !important
 
           @if $wrap > 2
-            .c#{$i}.-s-, .f#{$i}.-s-
+            .h#{$i}.-s-, .f#{$i}.-s-
               width: 100% !important
 
         .sml
@@ -56,55 +56,55 @@
       .container
         width: $width
 
-  @mixin media-minimal($max-width, $wrap)
-    @media screen and (max-width: $max-width)
-      @for $i from 1 through $grid-cells
-        @if $i < 10
-          @if $wrap > 0
-            .f-#{$i}.-l-
-              clear: both
-              display: block !important
-              width: 100% !important
+  // @mixin media-minimal($max-width, $wrap)
+  //   @media screen and (max-width: $max-width)
+  //     @for $i from 1 through $grid-cells
+  //       @if $i < 10
+  //         @if $wrap > 0
+  //           .f-#{$i}.-l-
+  //             clear: both
+  //             display: block !important
+  //             width: 100% !important
 
-          @if $wrap > 1
-            .f-#{$i}.-m-
-              clear: both
-              display: block !important
-              width: 100% !important
+  //         @if $wrap > 1
+  //           .f-#{$i}.-m-
+  //             clear: both
+  //             display: block !important
+  //             width: 100% !important
 
-          @if $wrap > 2
-            .f-#{$i}.-s-
-              clear: both
-              display: block !important
-              width: 100% !important
-        @else
-          @if $wrap > 0
-            .f#{$i}.-l-
-              clear: both
-              display: block !important
-              width: 100% !important
+  //         @if $wrap > 2
+  //           .f-#{$i}.-s-
+  //             clear: both
+  //             display: block !important
+  //             width: 100% !important
+  //       @else
+  //         @if $wrap > 0
+  //           .f#{$i}.-l-
+  //             clear: both
+  //             display: block !important
+  //             width: 100% !important
 
-          @if $wrap > 1
-            .f#{$i}.-m-
-              clear: both
-              display: block !important
-              width: 100% !important
+  //         @if $wrap > 1
+  //           .f#{$i}.-m-
+  //             clear: both
+  //             display: block !important
+  //             width: 100% !important
 
-          @if $wrap > 2
-            .f#{$i}.-s-
-              clear: both
-              display: block !important
-              width: 100% !important
+  //         @if $wrap > 2
+  //           .f#{$i}.-s-
+  //             clear: both
+  //             display: block !important
+  //             width: 100% !important
 
-        @if $i < 10
-          .f-#{$i}
-            width: 100% / $grid-cells * $i
-        @else
-          .f#{$i}
-            width: 100% / $grid-cells * $i
+  //       @if $i < 10
+  //         .f-#{$i}
+  //           width: 100% / $grid-cells * $i
+  //       @else
+  //         .f#{$i}
+  //           width: 100% / $grid-cells * $i
 
-      .container
-        width: 100%
+  //     .container
+  //       width: 100%
 
   @mixin media-show($max-width, $wrap)
     @media screen and (max-width: $max-width)
@@ -131,35 +131,35 @@
 
   @for $i from 1 through $grid-cells
     @if $i < 10
-      .c-#{$i}
-        float: left
+      .h-#{$i}
+        // float: left
 
-        min-height: 1px
+        // min-height: 1px
         width: 100% / $grid-cells * $i
 
-      .f-#{$i}
-        float: left
+      // .f-#{$i}
+      //   float: left
 
-        min-height: 1px
+      //   min-height: 1px
     @else
-      .c#{$i}
-        float: left
+      .h#{$i}
+        // float: left
 
-        min-height: 1px
+        // min-height: 1px
         width: 100% / $grid-cells * $i
 
-      .f#{$i}
-        float: left
+      // .f#{$i}
+      //   float: left
 
-        min-height: 1px
+      //   min-height: 1px
 
-  @for $i from 2 through 50
-    @if $i < 10
-      .w-#{$i}
-        width: 100% / $i
-    @else
-      .w#{$i}
-        width: 100% / $i
+  // @for $i from 2 through 50
+  //   @if $i < 10
+  //     .w-#{$i}
+  //       width: 100% / $i
+  //   @else
+  //     .w#{$i}
+  //       width: 100% / $i
 
   @include media($lrg-media, $lrg-media-max, 0)
 
@@ -175,41 +175,59 @@
 
   @include media-show($sml-media-max, 2)
 
+  .med
+    .row
+      >.button.hip
+        width: calc(- 2 * #{$med-horizontal})
+
+    .hip
+      margin: $med-vertical * 1 $med-horizontal
+
   .sml
     @for $i from 1 through $grid-cells
       @if $i < 10
         .c-#{$i}, .f-#{$i}
-          padding: $sml-vertical $sml-horizontal
+          padding: $sml-vertical * 1 $sml-horizontal
       @else
         .c#{$i}, .f#{$i}
-          padding: $sml-vertical $sml-horizontal
+          padding: $sml-vertical * 1 $sml-horizontal
 
-    .ccc
-      padding: $sml-vertical $sml-horizontal
+    .cel
+      padding: $sml-vertical * 1 $sml-horizontal
 
   .med
     @for $i from 1 through $grid-cells
       @if $i < 10
         .c-#{$i}, .f-#{$i}
-          padding: $med-vertical $med-horizontal
+          padding: $med-vertical * 1 $med-horizontal
       @else
         .c#{$i}, .f#{$i}
-          padding: $med-vertical $med-horizontal
+          padding: $med-vertical * 1 $med-horizontal
 
-    .ccc
-      padding: $med-vertical $med-horizontal
+    .cel
+      padding: $med-vertical * 1 $med-horizontal
 
   .lrg
     @for $i from 1 through $grid-cells
       @if $i < 10
         .c-#{$i}, .f-#{$i}
-          padding: $lrg-vertical $lrg-horizontal
+          padding: $lrg-vertical * 1 $lrg-horizontal
       @else
         .c#{$i}, .f#{$i}
-          padding: $lrg-vertical $lrg-horizontal
+          padding: $lrg-vertical * 1 $lrg-horizontal
 
-    .ccc
-      padding: $lrg-vertical $lrg-horizontal
+    .cel
+      padding: $lrg-vertical * 0 $lrg-horizontal
+
+  @for $i from 1 through $grid-cells
+    @if $i < 10
+      .c-#{$i}, .f-#{$i}
+        &>:first-child.row
+          margin-top: -$med-vertical
+    @else
+      .c#{$i}, .f#{$i}
+        &>:first-child.row
+          margin-top: -$med-vertical
 
   .sml
     .row
@@ -226,5 +244,5 @@
       margin-left: -$lrg-horizontal
       margin-right: -$lrg-horizontal
 
-  .ccc, .oriented
-    float: left
+  // .ccc, .oriented
+  //   float: left

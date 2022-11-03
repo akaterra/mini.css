@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
+    <link href="mini.css" rel="stylesheet" />
+    <style>
+        .__content {
+            padding: 0 10px;
+        }
+
+        .__green_1 {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .__green_2 {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .__green_2 {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .__section {
+            font-size: 20px;
+            font-weight: 500;
+            padding: 30px 0 10px 0;
+        }
+
+        .__section.__sub {
+            font-size: 15px;
+            font-weight: 400;
+            padding: 10px 0;
+        }
+
+        .__cell {
+            background-color: #e0e0e0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .__cell_embedded {
+            background-color: #c0c0c0;
+            margin: 2px 0;
+            text-align: center;
+        }
+
+        .__height-100 {
+            height: 100px;
+        }
+    </style>
+    <script>
+        function getById(id) {
+            return document.getElementById(id);
+        }
+
+        function addClass(id, cls) {
+            var el = document.getElementById(id);
+
+            if (el) {
+                var className = el.className.split(' ');
+                var index = className.findIndex(function (e) { return e === cls });
+
+                if (index !== - 1) {
+                    return;
+                }
+
+                className.push(cls);
+
+                el.className = className.join(' ');
+            }
+        }
+
+        function removeClass(id, cls) {
+            var el = document.getElementById(id);
+
+            if (el) {
+                var className = el.className.split(' ');
+                var index = className.findIndex(function (e) { return e === cls });
+
+                if (index === - 1) {
+                    return;
+                }
+
+                className.splice(index, 1);
+
+                el.className = className.join(' ');
+            }
+        }
+
+        function replaceClass(id, clsOld, clsNew) {
+            removeClass(id, clsOld);
+            addClass(id, clsNew);
+        }
+
+        function onChange(id, fn) {
+            var el = document.getElementById(id);
+
+            if (el) {
+                el.onchange = fn;
+            }
+        }
+
+        function onChangeSelect(id, fn) {
+            onChange(id, function () {
+                var elem = this.selectedIndex === void 0 ? window.event.srcElement : this;
+
+                fn(elem.value || elem.options[elem.selectedIndex].value);
+            });
+        }
+
+        function onClick(id, fn) {
+            var el = document.getElementById(id);
+
+            if (el) {
+                el.onclick = fn;
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <div class="mini back-medium" id="mini">
+      <div class="container med ltr" id="container">
+
+        <!--
+        Grid
+        -->
+
+        <div class="__section"></div>
+        <div class="row">
+          <div class="h-1 hip __green_1">c-1</div>
+          <div class="h17 hip __green_2">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h-2 hip __green_2">c-1</div>
+          <div class="h16 hip __green_1">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h-3 hip __green_1">c-1</div>
+          <div class="h15 hip __green_2">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h-4 hip __green_2">c-1</div>
+          <div class="h14 hip __green_1">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h-5 hip __green_1">c-1</div>
+          <div class="h13 hip __green_2">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h-6 hip __green_2">c-1</div>
+          <div class="h12 hip __green_1">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h-7 hip __green_1">c-1</div>
+          <div class="h11 hip __green_2">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h-8 hip __green_2">c-1</div>
+          <div class="h10 hip __green_1">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h-9 hip __green_1">c-1</div>
+          <div class="h-9 hip __green_2">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h10 hip __green_2">c-1</div>
+          <div class="h-8 hip __green_1">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h11 hip __green_1">c-1</div>
+          <div class="h-7 hip __green_2">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h12 hip __green_2">c-1</div>
+          <div class="h-6 hip __green_1">c17</div>
+        </div>
+        <div class="row">
+          <div class="h13 hip __green_1">c-1</div>
+          <div class="h-5 hip __green_2">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h14 hip __green_2">c-1</div>
+          <div class="h-4 hip __green_1">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h15 hip __green_1">c-1</div>
+          <div class="h-3 hip __green_2">c-17</div>
+        </div>
+        <div class="row">
+          <div class="h16 hip __green_2">c-1</div>
+          <div class="h-2 hip __green_1">c17</div>
+        </div>
+        <div class="row">
+          <div class="h17 hip __green_1">c-1</div>
+          <div class="h-1 hip __green_2">c17</div>
+        </div>
+
+        <!--
+        Embedded grid
+        -->
+
+        <div class="__section"></div>
+        <div class="row">
+          <div class="h-3">
+            <div class="row"><div class="h18 hip __green_1">h18</div></div>
+          </div>
+          <div class="h-6">
+            <div class="row"><div class="h-9 hip __green_2">h-9</div><div class="h-9 hip __green_2">c-9</div></div>
+          </div>
+          <div class="h-9">
+            <div class="row"><div class="h-6 hip __green_3">h-6</div><div class="h-6 hip __green_3">c-6</div><div class="h-6 hip __green_3">c-6</div></div>
+          </div>
+        </div>
+
+        <!--
+        Buttons
+        -->
+
+        <div class="__section"></div>
+        <div class="row">
+          <button class="button h-3 hip shadow">Button</button>
+          <button class="button h-3 hip">Button</button>
+          <button class="button h-3 hip">Button</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
