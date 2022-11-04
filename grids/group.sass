@@ -4,7 +4,7 @@
   @mixin group()
     .ltr
       .group
-        &.hor
+        &.group-hor
           &>.alert:first-child, &>.button:first-child, &>.control:first-child
             border-bottom-right-radius: 0 !important
             border-right-width: 1px !important
@@ -22,7 +22,7 @@
   .group
     font-size: 0
 
-    &.hor
+    &.group-hor
       &>.alert:not(:first-child):not(:last-child), &>.button:not(:first-child):not(:last-child), &>.control:not(:first-child):not(:last-child)
         border-left-width: 1px !important
         border-right-width: 1px !important

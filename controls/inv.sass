@@ -54,7 +54,7 @@
 
     @mixin controls-hover($prefix, $color, $color-ratio)
       @if $prefix == null
-        .button.transparent
+        .button.transparent, .link
           &:hover
             background-color: transparent !important
             border-color: lighten($color, $col-ratio * $color-ratio * 100%)

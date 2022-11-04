@@ -35,17 +35,23 @@
 
   @include badge('warning', $col-warning, $col-warning)
 
-  .sml
-    @include badge-sized(null, 25px, 0, $sml-horizontal)
+  @if $sml
+    .sml
+      @include badge-sized(null, 25px, 0, $sml-horizontal)
 
-  .med
-    @include badge-sized(null, 25px, 0, $med-horizontal)
+  @if $med
+    .med
+      @include badge-sized(null, 25px, 0, $med-horizontal)
 
-  .lrg
-    @include badge-sized(null, 25px, 0, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include badge-sized(null, 25px, 0, $lrg-horizontal)
 
-  @include badge-sized('sml', 25px, 0, $sml-horizontal)
+  @if $sml
+    @include badge-sized('sml', 25px, 0, $sml-horizontal)
 
-  @include badge-sized('med', 25px, 0, $med-horizontal)
+  @if $med
+    @include badge-sized('med', 25px, 0, $med-horizontal)
 
-  @include badge-sized('lrg', 25px, 0, $lrg-horizontal)
+  @if $lrg
+    @include badge-sized('lrg', 25px, 0, $lrg-horizontal)

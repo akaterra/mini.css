@@ -25,17 +25,23 @@
 
   @include blockquote('warning', $col-warning)
 
-  .sml
-    @include blockquote-sized(null, $sml-horizontal)
+  @if $sml
+    .sml
+      @include blockquote-sized(null, $sml-horizontal)
 
-  .med
-    @include blockquote-sized(null, $med-horizontal)
+  @if $med
+    .med
+      @include blockquote-sized(null, $med-horizontal)
 
-  .lrg
-    @include blockquote-sized(null, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include blockquote-sized(null, $lrg-horizontal)
 
-  @include blockquote-sized('sml', $sml-horizontal)
+  @if $sml
+    @include blockquote-sized('sml', $sml-horizontal)
 
-  @include blockquote-sized('med', $med-horizontal)
+  @if $med
+    @include blockquote-sized('med', $med-horizontal)
 
-  @include blockquote-sized('lrg', $lrg-horizontal)
+  @if $lrg
+    @include blockquote-sized('lrg', $lrg-horizontal)

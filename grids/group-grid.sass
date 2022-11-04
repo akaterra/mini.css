@@ -4,7 +4,7 @@
   @mixin group-grid()
     .ltr
       .group-grid
-        &.hor>*
+        &.group-hor>*
           &:first-child
             padding-right: 0
 
@@ -24,7 +24,7 @@
   @include group-grid()
 
   .group-grid
-    &.hor>*
+    &.group-hor>*
       &:not(:first-child):not(:last-child)
         padding-left: 0
         padding-right: 0
@@ -34,7 +34,7 @@
           border-right-width: 1px
           border-radius: 0
 
-    &.ver>*
+    &.group-ver>*
       &:not(:first-child):not(:last-child)
         padding-bottom: 0
         padding-top: 0
@@ -44,7 +44,7 @@
           border-top-width: 1px
           border-radius: 0
 
-        &>.hor>*
+        &>.group-hor>*
           padding-bottom: 0
           padding-top: 0
 
@@ -61,7 +61,7 @@
           border-bottom-right-radius: 0
           border-bottom-width: 1px
 
-        &>.hor>*
+        &>.group-hor>*
           padding-bottom: 0
 
           &>.alert, &>.button, &>.control, &>.panel
@@ -77,7 +77,7 @@
           border-top-right-radius: 0
           border-top-width: 1px
 
-        &>.hor>*
+        &>.group-hor>*
           padding-top: 0
 
           &>.alert, &>.button, &>.control, &>.panel

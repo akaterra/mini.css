@@ -33,17 +33,23 @@
 
   @include splitter('warning', $col-warning, 0.3)
 
-  .sml
-    @include splitter-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include splitter-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include splitter-sized(null, $med-border-width, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include splitter-sized(null, $med-border-width, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include splitter-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include splitter-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
 
-  @include splitter-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include splitter-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
 
-  @include splitter-sized('med', $med-border-width, $med-vertical, $med-horizontal)
+  @if $med
+    @include splitter-sized('med', $med-border-width, $med-vertical, $med-horizontal)
 
-  @include splitter-sized('lrg', $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include splitter-sized('lrg', $lrg-border-width, $lrg-vertical, $lrg-horizontal)

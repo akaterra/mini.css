@@ -28,20 +28,26 @@
 
   @include table(null, $col-default, 0.3, 0.15)
 
-  .sml
-    @include table-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include table-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include table-sized(null, $med-border-width, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include table-sized(null, $med-border-width, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include table-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include table-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
 
-  @include table-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include table-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
 
-  @include table-sized('med', $med-border-width, $med-vertical, $med-horizontal)
+  @if $med
+    @include table-sized('med', $med-border-width, $med-vertical, $med-horizontal)
 
-  @include table-sized('lrg', $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include table-sized('lrg', $lrg-border-width, $lrg-vertical, $lrg-horizontal)
 
   .ltr
     .table

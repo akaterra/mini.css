@@ -1,29 +1,32 @@
 @import ../vars
 
 .mini
-  .sml
-    .element, .e
-      margin-bottom: $sml-vertical
-      margin-top: $sml-vertical
+  @if $sml
+    .sml
+      .element, .e
+        margin-bottom: $sml-vertical
+        margin-top: $sml-vertical
 
-  .med
-    .element, .e
-      margin-bottom: $med-vertical
-      margin-top: $med-vertical
+  @if $med
+    .med
+      .element, .e
+        margin-bottom: $med-vertical
+        margin-top: $med-vertical
 
-  .lrg
-    .element, .e
-      margin-bottom: $lrg-vertical
-      margin-top: $lrg-vertical
+  @if $lrg
+    .lrg
+      .element, .e
+        margin-bottom: $lrg-vertical
+        margin-top: $lrg-vertical
 
-  .element.element-sml, .e.e-sml
-    margin-bottom: $sml-vertical
-    margin-top: $sml-vertical
+  // .element.element-sml, .e.e-sml
+  //   margin-bottom: $sml-vertical
+  //   margin-top: $sml-vertical
 
-  .element.element-med, .e.e-med
-    margin-bottom: $med-vertical
-    margin-top: $med-vertical
+  // .element.element-med, .e.e-med
+  //   margin-bottom: $med-vertical
+  //   margin-top: $med-vertical
 
-  .element.element-lrg, .e.e-lrg
-    margin-bottom: $lrg-vertical
-    margin-top: $lrg-vertical
+  // .element.element-lrg, .e.e-lrg
+  //   margin-bottom: $lrg-vertical
+  //   margin-top: $lrg-vertical

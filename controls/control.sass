@@ -62,20 +62,26 @@
   @include control('warning', transparent, $col-warning, 0.05, $col-default, $col-warning, $col-warning, 0.05)
   @include control-hover('warning', $col-warning)
 
-  .sml
-    @include control-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include control-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include control-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include control-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include control-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include control-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
-  @include control-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include control-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
-  @include control-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+  @if $med
+    @include control-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
 
-  @include control-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include control-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
   textarea.control
     height: auto !important

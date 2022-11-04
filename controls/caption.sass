@@ -44,20 +44,26 @@
 
   @include caption('warning', $col-warning, $font-bold)
 
-  .sml
-    @include caption-sized(null, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include caption-sized(null, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include caption-sized(null, $med-font-size, 1.5, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include caption-sized(null, $med-font-size, 1.5, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include caption-sized(null, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include caption-sized(null, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
 
-  @include caption-sized('sml', $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include caption-sized('sml', $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
 
-  @include caption-sized('med', $med-font-size, 1.5, $med-vertical, $med-horizontal)
+  @if $med
+    @include caption-sized('med', $med-font-size, 1.5, $med-vertical, $med-horizontal)
 
-  @include caption-sized('lrg', $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include caption-sized('lrg', $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
 
   .caption
     display: block

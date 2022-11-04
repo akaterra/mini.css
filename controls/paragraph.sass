@@ -1,32 +1,35 @@
 @import ../vars
 
 .mini
-  .sml
-    .paragraph
-      margin-bottom: $sml-vertical * 3
-      margin-top: $sml-vertical * 3
+  @if $sml
+    .sml
+      .paragraph
+        margin-bottom: $sml-vertical * 3
+        margin-top: $sml-vertical * 3
 
-  .med
-    .paragraph
-      margin-bottom: $med-vertical * 3
-      margin-top: $med-vertical * 3
+  @if $med
+    .med
+      .paragraph
+        margin-bottom: $med-vertical * 3
+        margin-top: $med-vertical * 3
 
-  .lrg
-    .paragraph
-      margin-bottom: $lrg-vertical * 3
-      margin-top: $lrg-vertical * 3
+  @if $lrg
+    .lrg
+      .paragraph
+        margin-bottom: $lrg-vertical * 3
+        margin-top: $lrg-vertical * 3
 
   .paragraph
-    &.paragraph-sml
-      margin-bottom: $sml-vertical * 3
-      margin-top: $sml-vertical * 3
+    // &.paragraph-sml
+    //   margin-bottom: $sml-vertical * 3
+    //   margin-top: $sml-vertical * 3
 
-    &.paragraph-med
-      margin-bottom: $med-vertical * 3
-      margin-top: $med-vertical * 3
+    // &.paragraph-med
+    //   margin-bottom: $med-vertical * 3
+    //   margin-top: $med-vertical * 3
 
-    &.paragraph-lrg
-      margin-bottom: $lrg-vertical * 3
-      margin-top: $lrg-vertical * 3
+    // &.paragraph-lrg
+    //   margin-bottom: $lrg-vertical * 3
+    //   margin-top: $lrg-vertical * 3
 
     display: block

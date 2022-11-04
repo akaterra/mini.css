@@ -11,20 +11,26 @@
         &>.breadcrumb:after
           padding: 0 $hor
 
-  .sml
-    @include breadcrumbs-sized(null, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include breadcrumbs-sized(null, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include breadcrumbs-sized(null, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include breadcrumbs-sized(null, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include breadcrumbs-sized(null, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include breadcrumbs-sized(null, $lrg-vertical, $lrg-horizontal)
 
-  @include breadcrumbs-sized('sml', $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include breadcrumbs-sized('sml', $sml-vertical, $sml-horizontal)
 
-  @include breadcrumbs-sized('med', $med-vertical, $med-horizontal)
+  @if $med
+    @include breadcrumbs-sized('med', $med-vertical, $med-horizontal)
 
-  @include breadcrumbs-sized('lrg', $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include breadcrumbs-sized('lrg', $lrg-vertical, $lrg-horizontal)
 
   .breadcrumbs
     display: block

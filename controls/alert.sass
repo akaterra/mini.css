@@ -40,17 +40,23 @@
 
   @include alert('warning', $col-warning, 0.4, $col-warning, 0.3, $col-warning, 0.05)
 
-  .sml
-    @include alert-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include alert-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include alert-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include alert-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include alert-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include alert-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
-  @include alert-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include alert-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
-  @include alert-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+  @if $med
+    @include alert-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
 
-  @include alert-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include alert-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)

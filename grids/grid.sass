@@ -167,53 +167,59 @@
 
   @include media-show($sml-media-max, 2)
 
-  .sml
-    @for $i from 1 through $grid-cells
-      @if $i < 10
-        .c-#{$i}, .f-#{$i}
-          padding: $sml-vertical $sml-horizontal
-      @else
-        .c#{$i}, .f#{$i}
-          padding: $sml-vertical $sml-horizontal
+  @if $sml
+    .sml
+      @for $i from 1 through $grid-cells
+        @if $i < 10
+          .c-#{$i}, .f-#{$i}
+            padding: $sml-vertical $sml-horizontal
+        @else
+          .c#{$i}, .f#{$i}
+            padding: $sml-vertical $sml-horizontal
 
-    .ccc
-      padding: $sml-vertical $sml-horizontal
+      .ccc
+        padding: $sml-vertical $sml-horizontal
 
-  .med
-    @for $i from 1 through $grid-cells
-      @if $i < 10
-        .c-#{$i}, .f-#{$i}
-          padding: $med-vertical $med-horizontal
-      @else
-        .c#{$i}, .f#{$i}
-          padding: $med-vertical $med-horizontal
+  @if $med
+    .med
+      @for $i from 1 through $grid-cells
+        @if $i < 10
+          .c-#{$i}, .f-#{$i}
+            padding: $med-vertical $med-horizontal
+        @else
+          .c#{$i}, .f#{$i}
+            padding: $med-vertical $med-horizontal
 
-    .ccc
-      padding: $med-vertical $med-horizontal
+      .ccc
+        padding: $med-vertical $med-horizontal
 
-  .lrg
-    @for $i from 1 through $grid-cells
-      @if $i < 10
-        .c-#{$i}, .f-#{$i}
-          padding: $lrg-vertical $lrg-horizontal
-      @else
-        .c#{$i}, .f#{$i}
-          padding: $lrg-vertical $lrg-horizontal
+  @if $lrg
+    .lrg
+      @for $i from 1 through $grid-cells
+        @if $i < 10
+          .c-#{$i}, .f-#{$i}
+            padding: $lrg-vertical $lrg-horizontal
+        @else
+          .c#{$i}, .f#{$i}
+            padding: $lrg-vertical $lrg-horizontal
 
-    .ccc
-      padding: $lrg-vertical $lrg-horizontal
+      .ccc
+        padding: $lrg-vertical $lrg-horizontal
 
-  .sml
-    .row
-      margin-left: -$sml-horizontal
-      margin-right: -$sml-horizontal
+  @if $sml
+    .sml
+      .row
+        margin-left: -$sml-horizontal
+        margin-right: -$sml-horizontal
 
-  .med
-    .row
-      margin-left: -$med-horizontal
-      margin-right: -$med-horizontal
+  @if $med
+    .med
+      .row
+        margin-left: -$med-horizontal
+        margin-right: -$med-horizontal
 
-  .lrg
-    .row
-      margin-left: -$lrg-horizontal
-      margin-right: -$lrg-horizontal
+  @if $lrg
+    .lrg
+      .row
+        margin-left: -$lrg-horizontal
+        margin-right: -$lrg-horizontal

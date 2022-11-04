@@ -157,20 +157,26 @@
   @include tab-active('warning', $col-default, $col-warning, 0.15)
   @include tab-hover('warning', $col-default, $col-warning, 0.1)
 
-  .sml
-    @include tab-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include tab-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include tab-sized(null, $med-border-radius, $med-border-width, $med-font-size, 1, $med-1, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include tab-sized(null, $med-border-radius, $med-border-width, $med-font-size, 1, $med-1, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include tab-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, 1, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include tab-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, 1, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
-  @include tab-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include tab-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)
 
-  @include tab-sized('med', $med-border-radius, $med-border-width, $med-font-size, 1, $med-1, $med-vertical, $med-horizontal)
+  @if $med
+    @include tab-sized('med', $med-border-radius, $med-border-width, $med-font-size, 1, $med-1, $med-vertical, $med-horizontal)
 
-  @include tab-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, 1, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include tab-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, 1, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
   .tabs
     &>.tabs-bar

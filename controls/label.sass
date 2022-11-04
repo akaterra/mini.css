@@ -31,20 +31,26 @@
 
   @include label('warning', $col-warning, 0.1, 500)
 
-  .sml
-    @include label-sized(null, $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include label-sized(null, $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include label-sized(null, $med-font-size, 0.8, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include label-sized(null, $med-font-size, 0.8, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include label-sized(null, $lrg-font-size, 0.8, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include label-sized(null, $lrg-font-size, 0.8, $lrg-vertical, $lrg-horizontal)
 
-  @include label-sized('sml', $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include label-sized('sml', $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
 
-  @include label-sized('med', $med-font-size, 0.8, $med-vertical, $med-horizontal)
+  @if $med
+    @include label-sized('med', $med-font-size, 0.8, $med-vertical, $med-horizontal)
 
-  @include label-sized('lrg', $lrg-font-size, 0.8, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include label-sized('lrg', $lrg-font-size, 0.8, $lrg-vertical, $lrg-horizontal)
 
   .label
     display: block

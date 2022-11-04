@@ -23,18 +23,24 @@
         .list-subitem
           padding: $ver / 2 $hor * 3 $ver / 2 0
 
-  .rtl.sml
-    @include list-sized(null, $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .rtl.sml
+      @include list-sized(null, $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
 
-  .rtl.med
-    @include list-sized(null, $med-border-radius, $med-font-size, 1.5, $med-vertical, $med-horizontal)
+  @if $med
+    .rtl.med
+      @include list-sized(null, $med-border-radius, $med-font-size, 1.5, $med-vertical, $med-horizontal)
 
-  .rtl.lrg
-    @include list-sized(null, $lrg-border-radius, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .rtl.lrg
+      @include list-sized(null, $lrg-border-radius, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
 
   .rtl
-    @include list-sized('sml', $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
+    @if $sml
+      @include list-sized('sml', $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
 
-    @include list-sized('med', $med-border-radius, $med-font-size, 1.5, $med-vertical, $med-horizontal)
+    @if $med
+      @include list-sized('med', $med-border-radius, $med-font-size, 1.5, $med-vertical, $med-horizontal)
 
-    @include list-sized('lrg', $lrg-border-radius, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
+    @if $lrg
+      @include list-sized('lrg', $lrg-border-radius, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)

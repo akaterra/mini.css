@@ -9,20 +9,26 @@
       .modal.modal-#{$suffix}>.modal-content
         //margin: $ver $hor
 
-  .sml
-    @include modal-sized(null, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include modal-sized(null, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include modal-sized(null, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include modal-sized(null, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include modal-sized(null, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include modal-sized(null, $lrg-vertical, $lrg-horizontal)
 
-  @include modal-sized('sml', $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include modal-sized('sml', $sml-vertical, $sml-horizontal)
 
-  @include modal-sized('med', $med-vertical, $med-horizontal)
+  @if $med
+    @include modal-sized('med', $med-vertical, $med-horizontal)
 
-  @include modal-sized('lrg', $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include modal-sized('lrg', $lrg-vertical, $lrg-horizontal)
 
   .modal
     background-color: rgba(0, 0, 0, 0.5)

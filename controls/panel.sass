@@ -44,20 +44,26 @@
 
   @include panel('warning', transparent, $col-warning, 0.05, $col-warning, 0.3, $col-warning, 0.05)
 
-  .sml
-    @include panel-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include panel-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include panel-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include panel-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include panel-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include panel-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
 
-  @include panel-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include panel-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)
 
-  @include panel-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal)
+  @if $med
+    @include panel-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal)
 
-  @include panel-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include panel-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
 
   .panel
     background-color: lighten($col-default, 50%)

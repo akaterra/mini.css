@@ -100,17 +100,23 @@
   @include button-hover('warning', $col-warning, 0.1, $col-warning, 0.1, $col-default)
   @include button-active('warning', $col-warning, 0.15, $col-warning, 0.15, $col-default)
 
-  .sml
-    @include button-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include button-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include button-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include button-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include button-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include button-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
-  @include button-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include button-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
-  @include button-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+  @if $med
+    @include button-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
 
-  @include button-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include button-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)

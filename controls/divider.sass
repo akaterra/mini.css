@@ -41,20 +41,26 @@
 
   @include divider('warning', $col-warning, 0.3)
 
-  .sml
-    @include divider-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
+  @if $sml
+    .sml
+      @include divider-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include divider-sized(null, $med-border-width, $med-vertical, $med-horizontal)
+  @if $med
+    .med
+      @include divider-sized(null, $med-border-width, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include divider-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    .lrg
+      @include divider-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
 
-  @include divider-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
+  @if $sml
+    @include divider-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
 
-  @include divider-sized('med', $med-border-width, $med-vertical, $med-horizontal)
+  @if $med
+    @include divider-sized('med', $med-border-width, $med-vertical, $med-horizontal)
 
-  @include divider-sized('lrg', $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+  @if $lrg
+    @include divider-sized('lrg', $lrg-border-width, $lrg-vertical, $lrg-horizontal)
 
   .divider
     border-top-style: solid
