@@ -35,21 +35,10 @@
   font-size: 1rem;
   padding: 5px 10px;
 }
-.mini .lrg .alert {
-  border-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
-  padding: 7.5px 15px;
-}
 .mini .alert.alert-med {
   border-radius: 4px;
   border-width: 2px;
   font-size: 1rem;
-}
-.mini .alert.alert-lrg {
-  border-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
 }
 
 .mini .badge {
@@ -86,17 +75,9 @@
   border-radius: 25px;
   padding: 0 10px;
 }
-.mini .lrg .badge {
-  border-radius: 25px;
-  padding: 0 15px;
-}
 .mini .badge.badge-med {
   border-radius: 25px;
   padding: 0 10px;
-}
-.mini .badge.badge-lrg {
-  border-radius: 25px;
-  padding: 0 15px;
 }
 
 .mini .block {
@@ -141,27 +122,15 @@
 .mini .med .blockquote {
   padding-left: 18px;
 }
-.mini .lrg .blockquote {
-  padding-left: 28px;
-}
 .mini .blockquote {
   padding-left: 18px;
-}
-.mini .blockquote {
-  padding-left: 28px;
 }
 
 .mini .med .breadcrumbs > .breadcrumb:after {
   padding: 0 10px;
 }
-.mini .lrg .breadcrumbs > .breadcrumb:after {
-  padding: 0 15px;
-}
 .mini .breadcrumbs.breadcrumbs-med > .breadcrumb:after {
   padding: 0 10px;
-}
-.mini .breadcrumbs.breadcrumbs-lrg > .breadcrumb:after {
-  padding: 0 15px;
 }
 .mini .breadcrumbs {
   display: block;
@@ -332,16 +301,6 @@
 .mini .med a.button {
   line-height: 32px;
 }
-.mini .lrg .button {
-  border-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
-  height: 42px;
-  min-height: 42px;
-}
-.mini .lrg a.button {
-  line-height: 42px;
-}
 .mini .button.button-med {
   border-radius: 4px;
   border-width: 2px;
@@ -351,16 +310,6 @@
 }
 .mini a.button.button-med {
   line-height: 32px;
-}
-.mini .button.button-lrg {
-  border-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
-  height: 42px;
-  min-height: 42px;
-}
-.mini a.button.button-lrg {
-  line-height: 42px;
 }
 
 .mini .caption {
@@ -403,27 +352,8 @@
 .mini .med .caption.smallest {
   font-size: 1rem;
 }
-.mini .lrg .caption {
-  font-size: 2.25rem;
-  padding: 7.5px 0;
-}
-.mini .lrg .caption.larger {
-  font-size: 3rem;
-}
-.mini .lrg .caption.largest {
-  font-size: 3.75rem;
-}
-.mini .lrg .caption.smaller {
-  font-size: 1.875rem;
-}
-.mini .lrg .caption.smallest {
-  font-size: 1.5rem;
-}
 .mini .caption.caption-med {
   font-size: 1.5rem;
-}
-.mini .caption.caption-lrg {
-  font-size: 2.25rem;
 }
 .mini .caption {
   display: block;
@@ -518,27 +448,12 @@
   min-height: 32px;
   padding: 5px 10px;
 }
-.mini .lrg .control {
-  border-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
-  height: 42px;
-  min-height: 42px;
-  padding: 7.5px 15px;
-}
 .mini .control.control-med {
   border-radius: 4px;
   border-width: 2px;
   font-size: 1rem;
   height: 32px;
   min-height: 32px;
-}
-.mini .control.control-lrg {
-  border-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
-  height: 42px;
-  min-height: 42px;
 }
 .mini textarea.control {
   height: auto !important;
@@ -586,23 +501,11 @@
   min-height: 2px;
   margin: 5px 10px;
 }
-.mini .lrg .divider {
-  border-top-width: 2px;
-  height: 2px;
-  min-height: 2px;
-  margin: 7.5px 15px;
-}
 .mini .divider.divider-med {
   border-top-width: 2px;
   height: 2px;
   min-height: 2px;
   margin: 5px 10px;
-}
-.mini .divider.divider-lrg {
-  border-top-width: 2px;
-  height: 2px;
-  min-height: 2px;
-  margin: 7.5px 15px;
 }
 .mini .divider {
   border-top-style: solid;
@@ -614,10 +517,6 @@
   margin-bottom: 5px;
   margin-top: 5px;
 }
-.mini .lrg .element, .mini .lrg .e {
-  margin-bottom: 7.5px;
-  margin-top: 7.5px;
-}
 
 .mini .med .gap {
   height: 10px;
@@ -625,13 +524,6 @@
 }
 .mini .med .children-gap > *:not(:first-child) {
   margin-top: 5px;
-}
-.mini .lrg .gap {
-  height: 15px;
-  min-height: 15px;
-}
-.mini .lrg .children-gap > *:not(:first-child) {
-  margin-top: 7.5px;
 }
 
 .mini .inv {
@@ -829,14 +721,8 @@
 .mini .med .label {
   font-size: 0.8rem;
 }
-.mini .lrg .label {
-  font-size: 1.2rem;
-}
 .mini .label.label-med {
   font-size: 0.8rem;
-}
-.mini .label.label-lrg {
-  font-size: 1.2rem;
 }
 .mini .label {
   display: block;
@@ -1073,38 +959,6 @@
   border: 0;
   border-radius: 4px;
 }
-.mini .lrg .list .list-header {
-  font-size: 1.875rem;
-  padding: 7.5px 0 7.5px 15px;
-}
-.mini .lrg .list .list-header:not(:first-child) {
-  margin-top: 15px;
-}
-.mini .lrg .list .list-subheader {
-  padding: 7.5px 0 7.5px 15px;
-}
-.mini .lrg .list .list-subheader:not(:first-child) {
-  margin-top: 15px;
-}
-.mini .lrg .list .list-subsubheader {
-  padding: 7.5px 0 7.5px 30px;
-}
-.mini .lrg .list .list-subsubheader:not(:first-child) {
-  margin-top: 15px;
-}
-.mini .lrg .list .list-item {
-  padding: 7.5px 0 7.5px 30px;
-}
-.mini .lrg .list .list-subitem {
-  padding: 7.5px 0 7.5px 45px;
-}
-.mini .lrg .list .list-subsubitem {
-  padding: 7.5px 0 7.5px 60px;
-}
-.mini .lrg .list .list-header, .mini .lrg .list .list-subheader, .mini .lrg .list .list-subsubheader, .mini .lrg .list .list-item, .mini .lrg .list .list-subitem, .mini .lrg .list .list-subsubitem {
-  border: 0;
-  border-radius: 5px;
-}
 .mini .list.list-med .list-header {
   font-size: 1.25rem;
 }
@@ -1113,15 +967,6 @@
 }
 .mini .list.list-med .list-header, .mini .list.list-med .list-subheader, .mini .list.list-med .list-subsubheader, .mini .list.list-med .list-item, .mini .list.list-med .list-subitem, .mini .list.list-med .list-subsubitem {
   border-radius: 4px;
-}
-.mini .list.list-lrg .list-header {
-  font-size: 1.875rem;
-}
-.mini .list.list-lrg .list-subheader, .mini .list.list-lrg .list-subsubheader, .mini .list.list-lrg .list-item, .mini .list.list-lrg .list-subitem, .mini .list.list-lrg .list-subsubitem {
-  font-size: 1.5rem;
-}
-.mini .list.list-lrg .list-header, .mini .list.list-lrg .list-subheader, .mini .list.list-lrg .list-subsubheader, .mini .list.list-lrg .list-item, .mini .list.list-lrg .list-subitem, .mini .list.list-lrg .list-subsubitem {
-  border-radius: 5px;
 }
 .mini .list > * {
   display: block;
@@ -1139,15 +984,6 @@
 .mini .rtl.med .list .list-subitem {
   padding: 2.5px 30px 2.5px 0;
 }
-.mini .rtl.lrg .list .list-header {
-  padding: 3.75px 15px 3.75px 0;
-}
-.mini .rtl.lrg .list .list-item {
-  padding: 3.75px 30px 3.75px 0;
-}
-.mini .rtl.lrg .list .list-subitem {
-  padding: 3.75px 45px 3.75px 0;
-}
 .mini .rtl .list.list-med .list-header {
   padding: 2.5px 10px 2.5px 0;
 }
@@ -1156,15 +992,6 @@
 }
 .mini .rtl .list.list-med .list-subitem {
   padding: 2.5px 30px 2.5px 0;
-}
-.mini .rtl .list.list-lrg .list-header {
-  padding: 3.75px 15px 3.75px 0;
-}
-.mini .rtl .list.list-lrg .list-item {
-  padding: 3.75px 30px 3.75px 0;
-}
-.mini .rtl .list.list-lrg .list-subitem {
-  padding: 3.75px 45px 3.75px 0;
 }
 
 .mini .modal {
@@ -1235,21 +1062,10 @@
   font-size: 1rem;
   padding: 5px 10px;
 }
-.mini .lrg .panel {
-  border-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
-  padding: 7.5px 15px;
-}
 .mini .panel.panel-med {
   border-radius: 4px;
   border-width: 2px;
   font-size: 1rem;
-}
-.mini .panel.panel-lrg {
-  border-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
 }
 .mini .panel {
   background-color: white;
@@ -1259,10 +1075,6 @@
 .mini .med .paragraph {
   margin-bottom: 15px;
   margin-top: 15px;
-}
-.mini .lrg .paragraph {
-  margin-bottom: 22.5px;
-  margin-top: 22.5px;
 }
 .mini .paragraph {
   display: block;
@@ -1291,20 +1103,10 @@
   min-height: 2px;
   margin: 5px 0;
 }
-.mini .lrg .splitter {
-  height: 2px;
-  min-height: 2px;
-  margin: 7.5px 0;
-}
 .mini .splitter.splitter-med {
   height: 2px;
   min-height: 2px;
   margin: 5px 0;
-}
-.mini .splitter.splitter-lrg {
-  height: 2px;
-  min-height: 2px;
-  margin: 7.5px 0;
 }
 
 .mini .tabs > .tabs-bar > .tab {
@@ -1488,37 +1290,6 @@
   margin-top: -2px;
   padding: 0 10px;
 }
-.mini .lrg .tabs > .tabs-bar {
-  padding-left: 13px;
-  padding-right: 13px;
-}
-.mini .lrg .tabs > .tabs-bar > .tab {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
-  height: 40px;
-  margin-top: 2px;
-  min-height: 40px;
-  padding: 5.5px 15px 9.5px 15px;
-}
-.mini .lrg .tabs > .tabs-bar > .tab:active {
-  height: 38px;
-  margin-top: 4px;
-  min-height: 38px;
-}
-.mini .lrg .tabs > .tabs-bar > .tab.active {
-  height: 42px;
-  margin-top: 0;
-  min-height: 42px;
-  padding: 7.5px 15px;
-}
-.mini .lrg .tabs > .tabs-content {
-  border-radius: 5px;
-  border-width: 2px;
-  margin-top: -2px;
-  padding: 0 15px;
-}
 .mini .tabs.tabs-med > .tabs-bar > .tab {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -1542,32 +1313,6 @@
 }
 .mini .tabs.tabs-med > .tabs-content {
   border-radius: 4px;
-  border-width: 2px;
-  margin-top: -2px;
-}
-.mini .tabs.tabs-lrg > .tabs-bar > .tab {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-width: 2px;
-  font-size: 1.5rem;
-  height: 40px;
-  margin-top: 2px;
-  min-height: 40px;
-  padding: 5.5px 15px 9.5px 15px;
-}
-.mini .tabs.tabs-lrg > .tabs-bar > .tab:active {
-  height: 38px;
-  margin-top: 4px;
-  min-height: 38px;
-}
-.mini .tabs.tabs-lrg > .tabs-bar > .tab.active {
-  height: 42px;
-  margin-top: 0;
-  min-height: 42px;
-  padding: 7.5px 15px;
-}
-.mini .tabs.tabs-lrg > .tabs-content {
-  border-radius: 5px;
   border-width: 2px;
   margin-top: -2px;
 }
@@ -2285,6 +2030,9 @@
   background-color: #e8e8e8;
 }
 
+.mini .auto {
+  width: auto;
+}
 .mini .children-middle > * {
   vertical-align: middle;
 }
@@ -2298,12 +2046,10 @@
 .mini .hidden {
   display: none;
 }
-.mini .inl, .mini .inline {
-  width: auto;
-}
 
 .mini .c-1 {
   min-height: 1px;
+  position: relative;
   width: 5.5555555556%;
 }
 .mini .f-1 {
@@ -2311,6 +2057,7 @@
 }
 .mini .c-2 {
   min-height: 1px;
+  position: relative;
   width: 11.1111111111%;
 }
 .mini .f-2 {
@@ -2318,6 +2065,7 @@
 }
 .mini .c-3 {
   min-height: 1px;
+  position: relative;
   width: 16.6666666667%;
 }
 .mini .f-3 {
@@ -2325,6 +2073,7 @@
 }
 .mini .c-4 {
   min-height: 1px;
+  position: relative;
   width: 22.2222222222%;
 }
 .mini .f-4 {
@@ -2332,6 +2081,7 @@
 }
 .mini .c-5 {
   min-height: 1px;
+  position: relative;
   width: 27.7777777778%;
 }
 .mini .f-5 {
@@ -2339,6 +2089,7 @@
 }
 .mini .c-6 {
   min-height: 1px;
+  position: relative;
   width: 33.3333333333%;
 }
 .mini .f-6 {
@@ -2346,6 +2097,7 @@
 }
 .mini .c-7 {
   min-height: 1px;
+  position: relative;
   width: 38.8888888889%;
 }
 .mini .f-7 {
@@ -2353,6 +2105,7 @@
 }
 .mini .c-8 {
   min-height: 1px;
+  position: relative;
   width: 44.4444444444%;
 }
 .mini .f-8 {
@@ -2360,6 +2113,7 @@
 }
 .mini .c-9 {
   min-height: 1px;
+  position: relative;
   width: 50%;
 }
 .mini .f-9 {
@@ -2367,6 +2121,7 @@
 }
 .mini .c10 {
   min-height: 1px;
+  position: relative;
   width: 55.5555555556%;
 }
 .mini .f10 {
@@ -2374,6 +2129,7 @@
 }
 .mini .c11 {
   min-height: 1px;
+  position: relative;
   width: 61.1111111111%;
 }
 .mini .f11 {
@@ -2381,6 +2137,7 @@
 }
 .mini .c12 {
   min-height: 1px;
+  position: relative;
   width: 66.6666666667%;
 }
 .mini .f12 {
@@ -2388,6 +2145,7 @@
 }
 .mini .c13 {
   min-height: 1px;
+  position: relative;
   width: 72.2222222222%;
 }
 .mini .f13 {
@@ -2395,6 +2153,7 @@
 }
 .mini .c14 {
   min-height: 1px;
+  position: relative;
   width: 77.7777777778%;
 }
 .mini .f14 {
@@ -2402,6 +2161,7 @@
 }
 .mini .c15 {
   min-height: 1px;
+  position: relative;
   width: 83.3333333333%;
 }
 .mini .f15 {
@@ -2409,6 +2169,7 @@
 }
 .mini .c16 {
   min-height: 1px;
+  position: relative;
   width: 88.8888888889%;
 }
 .mini .f16 {
@@ -2416,6 +2177,7 @@
 }
 .mini .c17 {
   min-height: 1px;
+  position: relative;
   width: 94.4444444444%;
 }
 .mini .f17 {
@@ -2423,157 +2185,11 @@
 }
 .mini .c18 {
   min-height: 1px;
+  position: relative;
   width: 100%;
 }
 .mini .f18 {
   min-height: 1px;
-}
-.mini .w-2 {
-  width: 50%;
-}
-.mini .w-3 {
-  width: 33.3333333333%;
-}
-.mini .w-4 {
-  width: 25%;
-}
-.mini .w-5 {
-  width: 20%;
-}
-.mini .w-6 {
-  width: 16.6666666667%;
-}
-.mini .w-7 {
-  width: 14.2857142857%;
-}
-.mini .w-8 {
-  width: 12.5%;
-}
-.mini .w-9 {
-  width: 11.1111111111%;
-}
-.mini .w10 {
-  width: 10%;
-}
-.mini .w11 {
-  width: 9.0909090909%;
-}
-.mini .w12 {
-  width: 8.3333333333%;
-}
-.mini .w13 {
-  width: 7.6923076923%;
-}
-.mini .w14 {
-  width: 7.1428571429%;
-}
-.mini .w15 {
-  width: 6.6666666667%;
-}
-.mini .w16 {
-  width: 6.25%;
-}
-.mini .w17 {
-  width: 5.8823529412%;
-}
-.mini .w18 {
-  width: 5.5555555556%;
-}
-.mini .w19 {
-  width: 5.2631578947%;
-}
-.mini .w20 {
-  width: 5%;
-}
-.mini .w21 {
-  width: 4.7619047619%;
-}
-.mini .w22 {
-  width: 4.5454545455%;
-}
-.mini .w23 {
-  width: 4.347826087%;
-}
-.mini .w24 {
-  width: 4.1666666667%;
-}
-.mini .w25 {
-  width: 4%;
-}
-.mini .w26 {
-  width: 3.8461538462%;
-}
-.mini .w27 {
-  width: 3.7037037037%;
-}
-.mini .w28 {
-  width: 3.5714285714%;
-}
-.mini .w29 {
-  width: 3.4482758621%;
-}
-.mini .w30 {
-  width: 3.3333333333%;
-}
-.mini .w31 {
-  width: 3.2258064516%;
-}
-.mini .w32 {
-  width: 3.125%;
-}
-.mini .w33 {
-  width: 3.0303030303%;
-}
-.mini .w34 {
-  width: 2.9411764706%;
-}
-.mini .w35 {
-  width: 2.8571428571%;
-}
-.mini .w36 {
-  width: 2.7777777778%;
-}
-.mini .w37 {
-  width: 2.7027027027%;
-}
-.mini .w38 {
-  width: 2.6315789474%;
-}
-.mini .w39 {
-  width: 2.5641025641%;
-}
-.mini .w40 {
-  width: 2.5%;
-}
-.mini .w41 {
-  width: 2.4390243902%;
-}
-.mini .w42 {
-  width: 2.380952381%;
-}
-.mini .w43 {
-  width: 2.3255813953%;
-}
-.mini .w44 {
-  width: 2.2727272727%;
-}
-.mini .w45 {
-  width: 2.2222222222%;
-}
-.mini .w46 {
-  width: 2.1739130435%;
-}
-.mini .w47 {
-  width: 2.1276595745%;
-}
-.mini .w48 {
-  width: 2.0833333333%;
-}
-.mini .w49 {
-  width: 2.0408163265%;
-}
-.mini .w50 {
-  width: 2%;
 }
 @media screen and (max-width: 3839px) {
   .mini .sml .f-1 {
@@ -3319,70 +2935,9 @@
 .mini .med .ccc {
   padding: 5px 10px;
 }
-.mini .lrg .c-1, .mini .lrg .f-1 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c-2, .mini .lrg .f-2 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c-3, .mini .lrg .f-3 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c-4, .mini .lrg .f-4 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c-5, .mini .lrg .f-5 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c-6, .mini .lrg .f-6 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c-7, .mini .lrg .f-7 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c-8, .mini .lrg .f-8 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c-9, .mini .lrg .f-9 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c10, .mini .lrg .f10 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c11, .mini .lrg .f11 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c12, .mini .lrg .f12 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c13, .mini .lrg .f13 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c14, .mini .lrg .f14 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c15, .mini .lrg .f15 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c16, .mini .lrg .f16 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c17, .mini .lrg .f17 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .c18, .mini .lrg .f18 {
-  padding: 7.5px 15px;
-}
-.mini .lrg .ccc {
-  padding: 7.5px 15px;
-}
 .mini .med .row {
   margin-left: -10px;
   margin-right: -10px;
-}
-.mini .lrg .row {
-  margin-left: -15px;
-  margin-right: -15px;
 }
 
 .mini .rtl .c-1 {
@@ -3632,10 +3187,14 @@ html, body {
   padding: 0;
 }
 
+.mini {
+  height: 100%;
+}
 .mini * {
   box-sizing: border-box;
 }
 .mini .container {
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -3650,6 +3209,16 @@ html, body {
   flex-direction: row;
   flex-wrap: wrap;
   position: relative;
+}
+.mini .cow:after, .mini .cow:before, .mini .row:after, .mini .row:before {
+  display: table;
+  content: " ";
+}
+.mini .max-height {
+  height: 100%;
+}
+.mini .max-width {
+  width: 100%;
 }
 
 /*# sourceMappingURL=mini.css.map */

@@ -133,6 +133,7 @@
     @if $i < 10
       .c-#{$i}
         min-height: 1px
+        position: relative
         width: 100% / $grid-cells * $i
 
       .f-#{$i}
@@ -140,18 +141,19 @@
     @else
       .c#{$i}
         min-height: 1px
+        position: relative
         width: 100% / $grid-cells * $i
 
       .f#{$i}
         min-height: 1px
 
-  @for $i from 2 through 50
-    @if $i < 10
-      .w-#{$i}
-        width: 100% / $i
-    @else
-      .w#{$i}
-        width: 100% / $i
+  // @for $i from 2 through 50
+  //   @if $i < 10
+  //     .w-#{$i}
+  //       width: 100% / $i
+  //   @else
+  //     .w#{$i}
+  //       width: 100% / $i
 
   @include media($lrg-media, $lrg-media-max, 0)
 
