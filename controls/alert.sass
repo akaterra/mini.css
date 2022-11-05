@@ -5,12 +5,12 @@
     @if $prefix == null
       .alert
         background-color: lighten($bg-color, 45%)
-        border-color: lighten($border-color, 25%)
+        border-color: lighten($border-color, 35%)
         color: $color
     @else
       .alert.#{$prefix}
         background-color: lighten($bg-color, 45%)
-        border-color: lighten($border-color, 25%)
+        border-color: lighten($border-color, 35%)
         color: $color
 
   @mixin alert-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)

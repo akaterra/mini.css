@@ -174,54 +174,61 @@
       @for $i from 1 through $grid-cells
         @if $i < 10
           .c-#{$i}, .f-#{$i}
-            padding: $sml-vertical $sml-horizontal
+            padding: 0 $sml-horizontal
         @else
           .c#{$i}, .f#{$i}
-            padding: $sml-vertical $sml-horizontal
+            padding: 0 $sml-horizontal
 
       .ccc
-        padding: $sml-vertical $sml-horizontal
+        padding: 0 $sml-horizontal
 
   @if $med
     .med
       @for $i from 1 through $grid-cells
         @if $i < 10
           .c-#{$i}, .f-#{$i}
-            padding: $med-vertical $med-horizontal
+            padding: 0 $med-horizontal
         @else
           .c#{$i}, .f#{$i}
-            padding: $med-vertical $med-horizontal
+            padding: 0 $med-horizontal
 
       .ccc
-        padding: $med-vertical $med-horizontal
+        padding: 0 $med-horizontal
 
   @if $lrg
     .lrg
       @for $i from 1 through $grid-cells
         @if $i < 10
           .c-#{$i}, .f-#{$i}
-            padding: $lrg-vertical $lrg-horizontal
+            padding: 0 $lrg-horizontal
         @else
           .c#{$i}, .f#{$i}
-            padding: $lrg-vertical $lrg-horizontal
+            padding: 0 $lrg-horizontal
 
       .ccc
-        padding: $lrg-vertical $lrg-horizontal
+        padding: 0 $lrg-horizontal
 
   @if $sml
     .sml
       .row
         margin-left: -$sml-horizontal
         margin-right: -$sml-horizontal
+        // padding-top: $sml-vertical * 1
+        // padding-bottom: $sml-vertical * 1
+
 
   @if $med
     .med
       .row
         margin-left: -$med-horizontal
         margin-right: -$med-horizontal
+        // padding-top: $med-vertical * 1
+        // padding-bottom: $med-vertical * 1
 
   @if $lrg
     .lrg
       .row
         margin-left: -$lrg-horizontal
         margin-right: -$lrg-horizontal
+        // padding-top: $lrg-vertical * 1
+        // padding-bottom: $lrg-vertical * 1
