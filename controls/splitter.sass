@@ -14,12 +14,12 @@
       .splitter
         height: $height
         min-height: $height
-        margin: $ver 0
+        margin: $ver * 2 0
     @else
       .splitter.splitter-#{$suffix}
         height: $height
         min-height: $height
-        margin: $ver 0
+        margin: $ver * 2 0
 
   @include splitter(null, $col-default, 0.3)
 

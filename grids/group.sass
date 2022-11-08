@@ -5,17 +5,15 @@
     .ltr
       .group
         &.group-hor
-          &>.alert:first-child, &>.button:first-child, &>.control:first-child
+          &>.alert:first-child:not(:last-child), &>.button:first-child:not(:last-child), &>.control:first-child:not(:last-child)
             border-bottom-right-radius: 0 !important
             border-right-width: 1px !important
             border-top-right-radius: 0 !important
-            margin: 0 !important
 
-          &>.alert:last-child, &>.button:last-child, &>.control:last-child
+          &>.alert:last-child:not(:first-child), &>.button:last-child:not(:first-child), &>.control:last-child:not(:first-child)
             border-bottom-left-radius: 0 !important
             border-left-width: 1px !important
             border-top-left-radius: 0 !important
-            margin: 0 !important
 
   @include group()
 
@@ -27,4 +25,3 @@
         border-left-width: 1px !important
         border-right-width: 1px !important
         border-radius: 0 !important
-        margin: 0 !important
