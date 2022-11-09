@@ -18,6 +18,10 @@
 
             &.header:after
               border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+          
+          th:after, tr:after
+              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+
     @else
       .table.#{$prefix}
         &>.row
@@ -35,28 +39,31 @@
             &.header:after>th
               border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
 
+          th:after, tr:after
+            border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+
   @mixin table-sized($suffix, $border-width, $ver, $hor)
     @if $suffix == null
       .table
         margin-left: -$hor
         margin-right: -$hor
 
-        &>.row>*
+        &>.row>*, th, tr
           padding-bottom: $ver
           padding-top: $ver
 
       .table.underlined
-        &>.row:after
+        &>.row:after, th:after, tr:after
           border-bottom-width: $border-width
           margin: 0 $hor
     @else
       .table.table-#{$suffix}
-        &>.row>*
+        &>.row>*, th, tr
           padding-bottom: $ver
           padding-top: $ver
 
       .table.table-#{$suffix}.underlined
-        &>.row:after
+        &>.row:after, th:after, tr:after
           border-bottom-width: $border-width
           margin: 0 $hor
 
@@ -117,4 +124,8 @@
       vertical-align: inherit
       width: 100%
 
+    thead>th:after, tbody>tr:after
+      border-bottom-style: solid
+
+    border-collapse: collapse
     vertical-align: middle

@@ -363,6 +363,7 @@
   margin-bottom: 2.5px;
   margin-top: 2.5px;
   min-height: 22px;
+  padding: 2.5px 5px;
 }
 .mini .sml a.button {
   line-height: 22px;
@@ -375,6 +376,7 @@
   margin-bottom: 5px;
   margin-top: 5px;
   min-height: 32px;
+  padding: 5px 10px;
 }
 .mini .med a.button {
   line-height: 32px;
@@ -387,6 +389,7 @@
   margin-bottom: 7.5px;
   margin-top: 7.5px;
   min-height: 42px;
+  padding: 7.5px 15px;
 }
 .mini .lrg a.button {
   line-height: 42px;
@@ -1919,15 +1922,18 @@
 .mini .table.underlined > .row.header:after {
   border-bottom-color: #aaaaaa;
 }
+.mini .table.underlined th:after, .mini .table.underlined tr:after {
+  border-bottom-color: #aaaaaa;
+}
 .mini .sml .table {
   margin-left: -5px;
   margin-right: -5px;
 }
-.mini .sml .table > .row > * {
+.mini .sml .table > .row > *, .mini .sml .table th, .mini .sml .table tr {
   padding-bottom: 2.5px;
   padding-top: 2.5px;
 }
-.mini .sml .table.underlined > .row:after {
+.mini .sml .table.underlined > .row:after, .mini .sml .table.underlined th:after, .mini .sml .table.underlined tr:after {
   border-bottom-width: 2px;
   margin: 0 5px;
 }
@@ -1935,11 +1941,11 @@
   margin-left: -10px;
   margin-right: -10px;
 }
-.mini .med .table > .row > * {
+.mini .med .table > .row > *, .mini .med .table th, .mini .med .table tr {
   padding-bottom: 5px;
   padding-top: 5px;
 }
-.mini .med .table.underlined > .row:after {
+.mini .med .table.underlined > .row:after, .mini .med .table.underlined th:after, .mini .med .table.underlined tr:after {
   border-bottom-width: 2px;
   margin: 0 10px;
 }
@@ -1947,35 +1953,35 @@
   margin-left: -15px;
   margin-right: -15px;
 }
-.mini .lrg .table > .row > * {
+.mini .lrg .table > .row > *, .mini .lrg .table th, .mini .lrg .table tr {
   padding-bottom: 7.5px;
   padding-top: 7.5px;
 }
-.mini .lrg .table.underlined > .row:after {
+.mini .lrg .table.underlined > .row:after, .mini .lrg .table.underlined th:after, .mini .lrg .table.underlined tr:after {
   border-bottom-width: 2px;
   margin: 0 15px;
 }
-.mini .table.table-sml > .row > * {
+.mini .table.table-sml > .row > *, .mini .table.table-sml th, .mini .table.table-sml tr {
   padding-bottom: 2.5px;
   padding-top: 2.5px;
 }
-.mini .table.table-sml.underlined > .row:after {
+.mini .table.table-sml.underlined > .row:after, .mini .table.table-sml.underlined th:after, .mini .table.table-sml.underlined tr:after {
   border-bottom-width: 2px;
   margin: 0 5px;
 }
-.mini .table.table-med > .row > * {
+.mini .table.table-med > .row > *, .mini .table.table-med th, .mini .table.table-med tr {
   padding-bottom: 5px;
   padding-top: 5px;
 }
-.mini .table.table-med.underlined > .row:after {
+.mini .table.table-med.underlined > .row:after, .mini .table.table-med.underlined th:after, .mini .table.table-med.underlined tr:after {
   border-bottom-width: 2px;
   margin: 0 10px;
 }
-.mini .table.table-lrg > .row > * {
+.mini .table.table-lrg > .row > *, .mini .table.table-lrg th, .mini .table.table-lrg tr {
   padding-bottom: 7.5px;
   padding-top: 7.5px;
 }
-.mini .table.table-lrg.underlined > .row:after {
+.mini .table.table-lrg.underlined > .row:after, .mini .table.table-lrg.underlined th:after, .mini .table.table-lrg.underlined tr:after {
   border-bottom-width: 2px;
   margin: 0 15px;
 }
@@ -1988,6 +1994,7 @@
   border-right-width: 1px;
 }
 .mini .table {
+  border-collapse: collapse;
   vertical-align: middle;
 }
 .mini .table.highlighted > .row:hover {
@@ -2017,6 +2024,9 @@
 .mini .table > .row.header > * {
   font-weight: 700;
   text-align: center;
+}
+.mini .table thead > th:after, .mini .table tbody > tr:after {
+  border-bottom-style: solid;
 }
 
 .mini .rtl .table > .row > .l {
@@ -2769,6 +2779,82 @@
 }
 .mini .f18 {
   min-height: 1px;
+}
+.mini .w-5 {
+  flex: none;
+  width: 5%;
+}
+.mini .w10 {
+  flex: none;
+  width: 10%;
+}
+.mini .w15 {
+  flex: none;
+  width: 15%;
+}
+.mini .w20 {
+  flex: none;
+  width: 20%;
+}
+.mini .w25 {
+  flex: none;
+  width: 25%;
+}
+.mini .w30 {
+  flex: none;
+  width: 30%;
+}
+.mini .w35 {
+  flex: none;
+  width: 35%;
+}
+.mini .w40 {
+  flex: none;
+  width: 40%;
+}
+.mini .w45 {
+  flex: none;
+  width: 45%;
+}
+.mini .w50 {
+  flex: none;
+  width: 50%;
+}
+.mini .w55 {
+  flex: none;
+  width: 55%;
+}
+.mini .w60 {
+  flex: none;
+  width: 60%;
+}
+.mini .w65 {
+  flex: none;
+  width: 65%;
+}
+.mini .w70 {
+  flex: none;
+  width: 70%;
+}
+.mini .w75 {
+  flex: none;
+  width: 75%;
+}
+.mini .w80 {
+  flex: none;
+  width: 80%;
+}
+.mini .w85 {
+  flex: none;
+  width: 85%;
+}
+.mini .w90 {
+  flex: none;
+  width: 90%;
+}
+.mini .w95 {
+  flex: none;
+  width: 95%;
 }
 @media screen and (max-width: 3839px) {
   .mini .sml .f-1 {
