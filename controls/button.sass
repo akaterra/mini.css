@@ -60,8 +60,8 @@
         margin-top: $ver
         min-height: $height
         padding: $ver $hor
-      a.button
-        line-height: $height
+      // a.button
+      //   line-height: $height
   
     @else
       .button.button-#{$suffix}
@@ -71,13 +71,16 @@
         height: $height
         min-height: $height
 
-      a.button.button-#{$suffix}
-        line-height: $height
+      // a.button.button-#{$suffix}
+      //   line-height: $height
 
   .button
     cursor: pointer
     display: block
     text-align: center
+  
+  a.button
+    text-decoration: none
 
   @include button(null, transparent, $col-primary, 0.05, $col-primary, $col-primary, 0.05, $col-default)
   @include button-hover(null, $col-primary, 0.1, $col-primary, 0.1, $col-default)

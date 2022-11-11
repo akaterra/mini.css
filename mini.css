@@ -229,6 +229,9 @@
   display: block;
   text-align: center;
 }
+.mini a.button {
+  text-decoration: none;
+}
 .mini .button {
   background-color: #3380cc;
   border-color: #2e73b8;
@@ -365,9 +368,6 @@
   min-height: 22px;
   padding: 2.5px 5px;
 }
-.mini .sml a.button {
-  line-height: 22px;
-}
 .mini .med .button {
   border-radius: 5px;
   border-width: 2px;
@@ -377,9 +377,6 @@
   margin-top: 5px;
   min-height: 32px;
   padding: 5px 10px;
-}
-.mini .med a.button {
-  line-height: 32px;
 }
 .mini .lrg .button {
   border-radius: 7px;
@@ -391,18 +388,12 @@
   min-height: 42px;
   padding: 7.5px 15px;
 }
-.mini .lrg a.button {
-  line-height: 42px;
-}
 .mini .button.button-sml {
   border-radius: 3px;
   border-width: 2px;
   font-size: 0.75rem;
   height: 22px;
   min-height: 22px;
-}
-.mini a.button.button-sml {
-  line-height: 22px;
 }
 .mini .button.button-med {
   border-radius: 5px;
@@ -411,18 +402,12 @@
   height: 32px;
   min-height: 32px;
 }
-.mini a.button.button-med {
-  line-height: 32px;
-}
 .mini .button.button-lrg {
   border-radius: 7px;
   border-width: 2px;
   font-size: 1.5rem;
   height: 42px;
   min-height: 42px;
-}
-.mini a.button.button-lrg {
-  line-height: 42px;
 }
 
 .mini .caption {
@@ -1928,6 +1913,8 @@
 .mini .sml .table {
   margin-left: -5px;
   margin-right: -5px;
+  margin-bottom: 2.5px;
+  margin-top: 2.5px;
 }
 .mini .sml .table > .row > *, .mini .sml .table th, .mini .sml .table tr {
   padding-bottom: 2.5px;
@@ -1940,6 +1927,8 @@
 .mini .med .table {
   margin-left: -10px;
   margin-right: -10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .mini .med .table > .row > *, .mini .med .table th, .mini .med .table tr {
   padding-bottom: 5px;
@@ -1952,6 +1941,8 @@
 .mini .lrg .table {
   margin-left: -15px;
   margin-right: -15px;
+  margin-bottom: 7.5px;
+  margin-top: 7.5px;
 }
 .mini .lrg .table > .row > *, .mini .lrg .table th, .mini .lrg .table tr {
   padding-bottom: 7.5px;
@@ -2015,10 +2006,8 @@
   width: 100%;
 }
 .mini .table > .row > * {
-  display: inline-block;
-  float: none !important;
+  display: inline-flex;
   font-size: initial;
-  position: static;
   vertical-align: inherit;
 }
 .mini .table > .row.header > * {
@@ -2635,150 +2624,90 @@
 .mini .hidden {
   display: none;
 }
+.mini .h-auto {
+  flex: none;
+  height: auto;
+}
+.mini .w-auto {
+  flex: none;
+  width: auto;
+}
 
 .mini .c-1 {
-  min-height: 1px;
   position: relative;
   width: 5.5555555556%;
 }
-.mini .f-1 {
-  min-height: 1px;
-}
 .mini .c-2 {
-  min-height: 1px;
   position: relative;
   width: 11.1111111111%;
 }
-.mini .f-2 {
-  min-height: 1px;
-}
 .mini .c-3 {
-  min-height: 1px;
   position: relative;
   width: 16.6666666667%;
 }
-.mini .f-3 {
-  min-height: 1px;
-}
 .mini .c-4 {
-  min-height: 1px;
   position: relative;
   width: 22.2222222222%;
 }
-.mini .f-4 {
-  min-height: 1px;
-}
 .mini .c-5 {
-  min-height: 1px;
   position: relative;
   width: 27.7777777778%;
 }
-.mini .f-5 {
-  min-height: 1px;
-}
 .mini .c-6 {
-  min-height: 1px;
   position: relative;
   width: 33.3333333333%;
 }
-.mini .f-6 {
-  min-height: 1px;
-}
 .mini .c-7 {
-  min-height: 1px;
   position: relative;
   width: 38.8888888889%;
 }
-.mini .f-7 {
-  min-height: 1px;
-}
 .mini .c-8 {
-  min-height: 1px;
   position: relative;
   width: 44.4444444444%;
 }
-.mini .f-8 {
-  min-height: 1px;
-}
 .mini .c-9 {
-  min-height: 1px;
   position: relative;
   width: 50%;
 }
-.mini .f-9 {
-  min-height: 1px;
-}
 .mini .c10 {
-  min-height: 1px;
   position: relative;
   width: 55.5555555556%;
 }
-.mini .f10 {
-  min-height: 1px;
-}
 .mini .c11 {
-  min-height: 1px;
   position: relative;
   width: 61.1111111111%;
 }
-.mini .f11 {
-  min-height: 1px;
-}
 .mini .c12 {
-  min-height: 1px;
   position: relative;
   width: 66.6666666667%;
 }
-.mini .f12 {
-  min-height: 1px;
-}
 .mini .c13 {
-  min-height: 1px;
   position: relative;
   width: 72.2222222222%;
 }
-.mini .f13 {
-  min-height: 1px;
-}
 .mini .c14 {
-  min-height: 1px;
   position: relative;
   width: 77.7777777778%;
 }
-.mini .f14 {
-  min-height: 1px;
-}
 .mini .c15 {
-  min-height: 1px;
   position: relative;
   width: 83.3333333333%;
 }
-.mini .f15 {
-  min-height: 1px;
-}
 .mini .c16 {
-  min-height: 1px;
   position: relative;
   width: 88.8888888889%;
 }
-.mini .f16 {
-  min-height: 1px;
-}
 .mini .c17 {
-  min-height: 1px;
   position: relative;
   width: 94.4444444444%;
 }
-.mini .f17 {
-  min-height: 1px;
-}
 .mini .c18 {
-  min-height: 1px;
   position: relative;
   width: 100%;
 }
-.mini .f18 {
-  min-height: 1px;
+.mini .w-0 {
+  flex: none;
+  width: 0%;
 }
 .mini .w-5 {
   flex: none;

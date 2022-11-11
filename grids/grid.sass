@@ -132,22 +132,22 @@
   @for $i from 1 through $grid-cells
     @if $i < 10
       .c-#{$i}
-        min-height: 1px
+        // min-height: 1px
         position: relative
         width: 100% / $grid-cells * $i
 
-      .f-#{$i}
-        min-height: 1px
+      // .f-#{$i}
+      //   min-height: 1px
     @else
       .c#{$i}
-        min-height: 1px
+        // min-height: 1px
         position: relative
         width: 100% / $grid-cells * $i
 
-      .f#{$i}
-        min-height: 1px
+      // .f#{$i}
+      //   min-height: 1px
 
-  @for $i from 1 through 19
+  @for $i from 0 through 19
     @if $i < 2
       .w-#{$i * 5}
         flex: none

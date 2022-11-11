@@ -47,6 +47,8 @@
       .table
         margin-left: -$hor
         margin-right: -$hor
+        margin-bottom: $ver
+        margin-top: $ver
 
         &>.row>*, th, tr
           padding-bottom: $ver
@@ -108,10 +110,10 @@
 
     &>.row
       &>*
-        display: inline-block
-        float: none !important
+        display: inline-flex
+        // float: none !important
         font-size: initial
-        position: static
+        // position: static
         vertical-align: inherit
 
       &.header>*
