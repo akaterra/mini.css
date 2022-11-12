@@ -1491,32 +1491,32 @@
 .mini .sml .splitter {
   height: 2px;
   min-height: 2px;
-  margin: 5px 0;
+  margin: 2.5px 0;
 }
 .mini .med .splitter {
   height: 2px;
   min-height: 2px;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 .mini .lrg .splitter {
   height: 2px;
   min-height: 2px;
-  margin: 15px 0;
+  margin: 7.5px 0;
 }
 .mini .splitter.splitter-sml {
   height: 2px;
   min-height: 2px;
-  margin: 5px 0;
+  margin: 2.5px 0;
 }
 .mini .splitter.splitter-med {
   height: 2px;
   min-height: 2px;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 .mini .splitter.splitter-lrg {
   height: 2px;
   min-height: 2px;
-  margin: 15px 0;
+  margin: 7.5px 0;
 }
 
 .mini .tabs > .tabs-bar > .tab {
@@ -1989,7 +1989,7 @@
   vertical-align: middle;
 }
 .mini .table.highlighted > .row:hover {
-  background-color: #e8e8e8;
+  background-image: linear-gradient(to right, rgba(232, 232, 232, 0) 0%, #e8e8e8 25%, #e8e8e8 75%, rgba(232, 232, 232, 0) 100%);
 }
 .mini .table.table-inner.underlined > .row:after {
   margin: 0;
@@ -2593,16 +2593,10 @@
 }
 
 .mini .zebra > *:nth-child(odd) {
-  background-color: #f0f0f0;
-}
-.mini .zebra.highlighted > *:hover {
-  background-color: #e8e8e8;
+  background-image: linear-gradient(to right, rgba(240, 240, 240, 0) 0%, #f0f0f0 25%, #f0f0f0 75%, rgba(240, 240, 240, 0) 100%);
 }
 .mini .children-zebra > *:nth-child(odd) > * {
-  background-color: #f0f0f0;
-}
-.mini .children-zebra.highlighted > *:nth-child(odd):hover > * {
-  background-color: #e8e8e8;
+  background-image: linear-gradient(to right, rgba(240, 240, 240, 0) 0%, #f0f0f0 25%, #f0f0f0 75%, rgba(240, 240, 240, 0) 100%);
 }
 
 .mini .auto {
