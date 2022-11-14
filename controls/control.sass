@@ -37,7 +37,11 @@
         margin-bottom: $ver
         margin-top: $ver
         min-height: $height
-        padding: $ver $hor
+
+        @if $normalize-css
+          padding: 0 $hor - 2px
+        @else
+          padding: $ver $hor
     @else
       .control.control-#{$suffix}
         border-radius: $border-radius
@@ -45,6 +49,10 @@
         font-size: $font-size
         height: $height
         min-height: $height
+
+    @if $normalize-css
+      textarea.control, a.button
+        padding: $ver $hor
 
   @include control(null, transparent, $col-primary, 0.05, $col-primary, $col-primary, $col-primary, 0.05)
   @include control-hover(null, $col-primary)

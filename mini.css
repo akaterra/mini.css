@@ -366,7 +366,7 @@
   margin-bottom: 2.5px;
   margin-top: 2.5px;
   min-height: 22px;
-  padding: 2.5px 5px;
+  padding: 0 3px;
 }
 .mini .med .button {
   border-radius: 5px;
@@ -376,7 +376,7 @@
   margin-bottom: 5px;
   margin-top: 5px;
   min-height: 32px;
-  padding: 5px 10px;
+  padding: 0 8px;
 }
 .mini .lrg .button {
   border-radius: 7px;
@@ -386,7 +386,7 @@
   margin-bottom: 7.5px;
   margin-top: 7.5px;
   min-height: 42px;
-  padding: 7.5px 15px;
+  padding: 0 13px;
 }
 .mini .button.button-sml {
   border-radius: 3px;
@@ -584,6 +584,9 @@
   margin-bottom: 2.5px;
   margin-top: 2.5px;
   min-height: 22px;
+  padding: 0 3px;
+}
+.mini .sml textarea.control, .mini .sml a.button {
   padding: 2.5px 5px;
 }
 .mini .med .control {
@@ -594,6 +597,9 @@
   margin-bottom: 5px;
   margin-top: 5px;
   min-height: 32px;
+  padding: 0 8px;
+}
+.mini .med textarea.control, .mini .med a.button {
   padding: 5px 10px;
 }
 .mini .lrg .control {
@@ -604,6 +610,9 @@
   margin-bottom: 7.5px;
   margin-top: 7.5px;
   min-height: 42px;
+  padding: 0 13px;
+}
+.mini .lrg textarea.control, .mini .lrg a.button {
   padding: 7.5px 15px;
 }
 .mini .control.control-sml {
@@ -613,6 +622,9 @@
   height: 22px;
   min-height: 22px;
 }
+.mini textarea.control, .mini a.button {
+  padding: 2.5px 5px;
+}
 .mini .control.control-med {
   border-radius: 5px;
   border-width: 2px;
@@ -620,12 +632,18 @@
   height: 32px;
   min-height: 32px;
 }
+.mini textarea.control, .mini a.button {
+  padding: 5px 10px;
+}
 .mini .control.control-lrg {
   border-radius: 7px;
   border-width: 2px;
   font-size: 1.5rem;
   height: 42px;
   min-height: 42px;
+}
+.mini textarea.control, .mini a.button {
+  padding: 7.5px 15px;
 }
 .mini textarea.control {
   height: auto !important;

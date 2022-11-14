@@ -59,7 +59,11 @@
         margin-bottom: $ver
         margin-top: $ver
         min-height: $height
-        padding: $ver $hor
+
+        @if $normalize-css
+          padding: 0 $hor - 2px
+        @else
+          padding: $ver $hor
       // a.button
       //   line-height: $height
   
