@@ -5,29 +5,48 @@
     @media screen and (max-width: $max-width)
       @for $i from 1 through $grid-cells
         @if $i < 10
-          @if $wrap > 0
+          @if $wrap == 'lrg'
             .c-#{$i}.-l-, .f-#{$i}.-l-
               width: 100% !important
+          @if $wrap == 'lrg'
+            .c-#{$i}-l-
+              width: 100% / $grid-cells * $i !important
 
-          @if $wrap > 1
+          @if $wrap == 'med'
             .c-#{$i}.-m-, .f-#{$i}.-m-
               width: 100% !important
-
-          @if $wrap > 2
+          @if $wrap == 'med'
+            .c-#{$i}-m-
+              width: 100% / $grid-cells * $i !important
+  
+          @if $wrap == 'sml'
             .c-#{$i}.-s-, .f-#{$i}.-s-
               width: 100% !important
+          @if $wrap == 'sml'
+            .c-#{$i}-s-
+              width: 100% / $grid-cells * $i !important
+
         @else
-          @if $wrap > 0
+          @if $wrap == 'lrg'
             .c#{$i}.-l-, .f#{$i}.-l-
               width: 100% !important
+          @if $wrap == 'lrg'
+            .c#{$i}-l-
+              width: 100% / $grid-cells * $i !important
 
-          @if $wrap > 1
+          @if $wrap == 'med'
             .c#{$i}.-m-, .f#{$i}.-m-
               width: 100% !important
+          @if $wrap == 'med'
+            .c#{$i}-m-
+              width: 100% / $grid-cells * $i !important
 
-          @if $wrap > 2
+          @if $wrap == 'sml'
             .c#{$i}.-s-, .f#{$i}.-s-
               width: 100% !important
+          @if $wrap == 'sml'
+            .c#{$i}-s-
+              width: 100% / $grid-cells * $i !important
 
         .sml
           @if $i < 10
@@ -157,11 +176,11 @@
         flex: none
         width: 5% * $i
 
-  @include media($lrg-media, $lrg-media-max, 0)
+  @include media($lrg-media, $lrg-media-max, 'lrg')
 
-  @include media($med-media, $med-media-max, 1)
+  @include media($med-media, $med-media-max, 'med')
 
-  @include media($sml-media, $sml-media-max, 2)
+  @include media($sml-media, $sml-media-max, 'sml')
 
   // @include media-minimal($sml-media-max, 2)
 
