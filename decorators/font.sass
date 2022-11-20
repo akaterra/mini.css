@@ -1,6 +1,10 @@
 @import ../vars
 
 .mini
+  @mixin media($font-size, $max-width)
+    @media screen and (max-width: $max-width)
+      font-size: $font-size !important
+  
   .font
     font-size: inherit
 
@@ -27,3 +31,9 @@
 
   .lrg
     font-size: $lrg-font-size
+
+  // @include media($med-font-size, $lrg-media-max)
+
+  // @include media($med-font-size, $med-media-max)
+
+  // @include media($lrg-font-size, $lrg-media-max)
