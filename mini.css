@@ -1874,6 +1874,8 @@
   position: relative;
 }
 .mini .tabs > .tabs-bar {
+  display: flex;
+  flex-flow: wrap;
   position: relative;
 }
 .mini .tabs > .tabs-bar:after {
@@ -3678,7 +3680,7 @@
     width: 100vw !important;
   }
   .mini .container {
-    width: calc(100% - 15px);
+    width: 100%;
   }
 }
 @media screen and (max-width: 3839px) {
@@ -3762,6 +3764,9 @@
 .mini .sml .ccc {
   padding: 0 5px;
 }
+.mini .container.sml {
+  padding: 0 5px;
+}
 .mini .med .c-1, .mini .med .f-1 {
   padding: 0 10px;
 }
@@ -3819,6 +3824,9 @@
 .mini .med .ccc {
   padding: 5px 10px;
 }
+.mini .container.med {
+  padding: 0 10px;
+}
 .mini .lrg .c-1, .mini .lrg .f-1 {
   padding: 0 15px;
 }
@@ -3874,6 +3882,9 @@
   padding: 0 15px;
 }
 .mini .lrg .ccc {
+  padding: 0 15px;
+}
+.mini .container.lrg {
   padding: 0 15px;
 }
 .mini .sml .row {
