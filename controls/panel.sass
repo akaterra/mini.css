@@ -1,22 +1,22 @@
 @import ../vars
 
 .mini
-  @mixin panel($prefix, $transparent-bg-color, $transparent-color, $transparent-color-ratio, $border-color, $border-color-ratio, $color, $color-ratio)
+  @mixin panel($prefix, $bg-color, $border-color, $color, $transparent-color)
     @if $prefix == null
       .panel
         &.transparent
-          color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
+          color: $transparent-color
 
-        background-color: lighten($color, 50%)
-        border-color: lighten($color, 35%)
+        background-color: $bg-color
+        border-color: $border-color
         color: $color
     @else
       .panel.#{$prefix}
         &.transparent
-          color: darken($transparent-color, $col-ratio * $transparent-color-ratio * 100%)
+          color: $transparent-color
 
-        background-color: lighten($color, 50%)
-        border-color: lighten($color, 35%)
+        background-color: $bg-color
+        border-color: $border-color
         color: $color
 
   @mixin panel-sized($suffix, $border-radius, $border-width, $font-size, $ver, $hor)
@@ -34,17 +34,17 @@
         border-width: $border-width
         font-size: $font-size
 
-  @include panel(null, transparent, $col-primary, 0.05, $col-default, 0.3, $col-default, 0.05)
+  @include panel(null, $col, $col-primary-light-3, $col-inverted, $col-primary-dark-1)
 
-  @include panel('default', transparent, $col-default, 0.05, $col-default, 0.3, $col-default, 0.05)
+  @include panel('default', $col, $col-default-light-3, $col-inverted, $col-default-dark-1)
 
-  @include panel('failure', transparent, $col-failure, 0.05, $col-failure, 0.3, $col-failure, 0.05)
+  @include panel('failure', $col, $col-failure-light-3, $col-inverted, $col-failure-dark-1)
 
-  @include panel('primary', transparent, $col-primary, 0.05, $col-primary, 0.3, $col-primary, 0.05)
+  @include panel('primary', $col, $col-primary-light-3, $col-inverted, $col-primary-dark-1)
 
-  @include panel('success', transparent, $col-success, 0.05, $col-success, 0.3, $col-success, 0.05)
+  @include panel('success', $col, $col-success-light-3, $col-inverted, $col-success-dark-1)
 
-  @include panel('warning', transparent, $col-warning, 0.05, $col-warning, 0.3, $col-warning, 0.05)
+  @include panel('warning', $col, $col-warning-light-3, $col-inverted, $col-warning-dark-1)
 
   @if $sml
     .sml
@@ -68,5 +68,5 @@
     @include panel-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
 
   .panel
-    background-color: lighten($col-default, 50%)
+    background-color: $col
     border-style: solid

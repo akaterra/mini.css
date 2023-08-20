@@ -1,16 +1,16 @@
 @import ../vars
 
 .mini
-  @mixin alert($prefix, $bg-color, $bg-color-ratio, $border-color, $border-color-ratio, $color, $color-ratio)
+  @mixin alert($prefix, $bg-color, $border-color, $color, $transparent-color)
     @if $prefix == null
       .alert
-        background-color: lighten($bg-color, 45%)
-        border-color: lighten($border-color, 35%)
+        background-color: $bg-color
+        border-color: $border-color
         color: $color
     @else
       .alert.#{$prefix}
-        background-color: lighten($bg-color, 45%)
-        border-color: lighten($border-color, 35%)
+        background-color: $bg-color
+        border-color: $border-color
         color: $color
 
   @mixin alert-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
@@ -28,17 +28,17 @@
         border-width: $border-width
         font-size: $font-size
 
-  @include alert(null, $col-primary, 0.4, $col-primary, 0.3, $col-primary, 0.05)
+  @include alert(null, $col-primary, $col-primary, $col, $col)
 
-  @include alert('default', $col-default, 0.4, $col-default, 0.3, $col-default, 0.05)
+  @include alert('default', $col-default, $col-default, $col, $col)
 
-  @include alert('failure', $col-failure, 0.4, $col-failure, 0.3, $col-failure, 0.05)
+  @include alert('failure', $col-failure, $col-failure, $col, $col)
 
-  @include alert('primary', $col-primary, 0.4, $col-primary, 0.3, $col-primary, 0.05)
+  @include alert('primary', $col-primary, $col-primary, $col, $col)
 
-  @include alert('success', $col-success, 0.4, $col-success, 0.3, $col-success, 0.05)
+  @include alert('success', $col-success, $col-success, $col, $col)
 
-  @include alert('warning', $col-warning, 0.4, $col-warning, 0.3, $col-warning, 0.05)
+  @include alert('warning', $col-warning, $col-warning, $col, $col)
 
   @if $sml
     .sml

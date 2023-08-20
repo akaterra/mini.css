@@ -1,75 +1,89 @@
 @import ../vars
 
 .mini
-  @mixin tab($prefix, $bg-color, $border-color, $border-color-ratio, $color, $color-ratio)
-    $bc: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
-
+  @mixin tab($prefix, $bg-color, $border-color, $color, $transparent-color, $border-color-content)
     @if $prefix == null
       .tabs
         &>.tabs-bar
           &>.tab
-            background-color: $color
+            background-color: $bg-color
             border-color: transparent
             color: lighten($color, 50%)
 
           &>.tab.active
-            background-color: lighten($col-default, 50%)
-            border-color: lighten($col-default, 25%)
-            color: $color
+            background-color: $color
+            border-color: $border-color-content
+            color: $bg-color
 
         &>.tabs-content
-          border-color: lighten($col-default, 25%)
+          border-color: $border-color-content
     @else
       .tabs
         &>.tabs-bar
           &>.tab.#{$prefix}
-            background-color: $color
+            background-color: $bg-color
             border-color: transparent
             color: lighten($color, 50%)
 
           &>.tab.#{$prefix}.active
-            background-color: lighten($col-default, 50%)
-            border-color: lighten($col-default, 25%)
-            color: $color
+            background-color: $color
+            border-color: $border-color-content
+            color: $bg-color
 
         &>.tabs-content
-          border-color: lighten($col-default, 25%)
+          border-color: $border-color-content
 
-  @mixin tab-hover($prefix, $col-default, $bg-color, $bg-color-ratio)
+  @mixin tab-hover($prefix, $bg-color, $border-color, $color, $transparent-color, $border-color-content)
     @if $prefix == null
       .tabs
         &>.tabs-bar
           &>.tab:hover,&>.tab:focus
-            background-color: darken($bg-color, 15%)
+            background-color: $bg-color !important
+            border-color: $border-color
+            color: $color
 
           &>.tab.active:hover,&>.tab.active:focus
-            background-color: lighten($col-default, 50%)
+            background-color: $color !important
+            border-color: $border-color-content
+            color: $bg-color
     @else
       .tabs
         &>.tabs-bar
           &>.tab:hover.#{$prefix},&>.tab:focus.#{$prefix}
-            background-color: darken($bg-color, 15%)
+            background-color: $bg-color !important
+            border-color: $border-color
+            color: $color
 
           &>.tab.active:hover.#{$prefix},&>.tab.active:focus.#{$prefix}
-            background-color: lighten($col-default, 50%)
+            background-color: $color !important
+            border-color: $border-color-content
+            color: $bg-color
 
-  @mixin tab-active($prefix, $col-default, $bg-color, $bg-color-ratio)
+  @mixin tab-active($prefix, $bg-color, $border-color, $color, $transparent-color, $border-color-content)
     @if $prefix == null
       .tabs
         &>.tabs-bar
           &>.tab:active
-            background-color: darken($bg-color, 25%) !important
+            background-color: $bg-color !important
+            border-color: $border-color
+            color: $color
 
-          &>.tab.active:active
-            background-color: lighten($col-default, 50%) !important
+          &>.tab.active:hover,&>.tab.active:focus
+            background-color: $color !important
+            border-color: $border-color-content
+            color: $bg-color
     @else
       .tabs
         &>.tabs-bar
           &>.tab:active.#{$prefix}
-            background-color: darken($bg-color, 25%) !important
+            background-color: $bg-color !important
+            border-color: $border-color
+            color: $color
 
-          &>.tab.active:active.#{$prefix}
-            background-color: lighten($col-default, 50%) !important
+          &>.tab.active:hover.#{$prefix},&>.tab.active:focus.#{$prefix}
+            background-color: $color !important
+            border-color: $border-color-content
+            color: $bg-color
 
   @mixin tab-sized($suffix, $border-radius, $border-width, $font-size, $font-size-ratio, $height, $ver, $hor)
     @if $suffix == null
@@ -79,11 +93,11 @@
             border-top-left-radius: $border-radius
             border-top-right-radius: $border-radius
             border-width: $border-width
-            font-size: $font-size * $font-size-ratio
+            font-size: $font-size * 0.8
             height: $height - $border-width
             margin-top: $border-width
             min-height: $height - $border-width
-            padding: $ver - $border-width $hor $ver + $border-width $hor
+            padding: $ver - $border-width * 1 / 0.8 $hor 0 $hor
 
             &:active
               height: $height - $border-width * 2
@@ -115,11 +129,11 @@
             border-top-left-radius: $border-radius
             border-top-right-radius: $border-radius
             border-width: $border-width
-            font-size: $font-size * $font-size-ratio
+            font-size: $font-size * 0.8
             height: $height - $border-width
             margin-top: $border-width
             min-height: $height - $border-width
-            padding: $ver - $border-width $hor $ver + $border-width $hor
+            padding: $ver - $border-width * 1 / 0.8 $hor 0 $hor
 
             &:active
               height: $height - $border-width * 2
@@ -137,29 +151,29 @@
           border-width: $border-width
           margin-top: -$border-width
 
-  @include tab(null, $col-default, $col-default, 0.3, $col-default, 0.05)
-  @include tab-active(null, $col-default, $col-default, 0.15)
-  @include tab-hover(null, $col-default, $col-default, 0.1)
+  @include tab(null, $col-primary, $col-primary, $col, $col, $col-default-light-3)
+  @include tab-hover(null, $col-primary-dark-1, $col-primary-dark-1, $col, $col, $col-default-light-3)
+  @include tab-active(null, $col-primary-dark-2, $col-primary-dark-2, $col, $col, $col-default-light-3)
 
-  @include tab('default', $col-default, $col-default, 0.3, $col-default, 0.05)
-  @include tab-active('default', $col-default, $col-default, 0.15)
-  @include tab-hover('default', $col-default, $col-default, 0.1)
+  @include tab('default', $col-default, $col-default, $col, $col, $col-default-light-3)
+  @include tab-hover('default', $col-default-dark-1, $col-default-dark-1, $col, $col, $col-default-light-3)
+  @include tab-active('default', $col-default-dark-2, $col-default-dark-2, $col, $col, $col-default-light-3)
 
-  @include tab('failure', $col-failure, $col-default, 0.3, $col-failure, 0.05)
-  @include tab-active('failure', $col-default, $col-failure, 0.15)
-  @include tab-hover('failure', $col-default, $col-failure, 0.1)
+  @include tab('failure', $col-failure, $col-failure, $col, $col, $col-default-light-3)
+  @include tab-hover('failure', $col-failure-dark-1, $col-failure-dark-1, $col, $col, $col-default-light-3)
+  @include tab-active('failure', $col-failure-dark-2, $col-failure-dark-2, $col, $col, $col-default-light-3)
 
-  @include tab('primary', $col-primary, $col-default, 0.3, $col-primary, 0.05)
-  @include tab-active('primary', $col-default, $col-primary, 0.15)
-  @include tab-hover('primary', $col-default, $col-primary, 0.1)
+  @include tab('primary', $col-primary, $col-primary, $col, $col, $col-default-light-3)
+  @include tab-hover('primary', $col-primary-dark-1, $col-primary-dark-1, $col, $col, $col-default-light-3)
+  @include tab-active('primary', $col-primary-dark-2, $col-primary-dark-2, $col, $col, $col-default-light-3)
 
-  @include tab('success', $col-success, $col-default, 0.3, $col-success, 0.05)
-  @include tab-active('success', $col-default, $col-success, 0.15)
-  @include tab-hover('success', $col-default, $col-success, 0.1)
+  @include tab('success', $col-success, $col-success, $col, $col, $col-default-light-3)
+  @include tab-hover('success', $col-success-dark-1, $col-success-dark-1, $col, $col, $col-default-light-3)
+  @include tab-active('success', $col-success-dark-2, $col-success-dark-2, $col, $col, $col-default-light-3)
 
-  @include tab('warning', $col-warning, $col-default, 0.3, $col-warning, 0.05)
-  @include tab-active('warning', $col-default, $col-warning, 0.15)
-  @include tab-hover('warning', $col-default, $col-warning, 0.1)
+  @include tab('warning', $col-warning, $col-warning, $col, $col, $col-default-light-3)
+  @include tab-hover('warning', $col-warning-dark-1, $col-warning-dark-1, $col, $col, $col-default-light-3)
+  @include tab-active('warning', $col-warning-dark-2, $col-warning-dark-2, $col, $col, $col-default-light-3)
 
   @if $sml
     .sml
@@ -211,7 +225,7 @@
       position: relative
 
     &>.tabs-content
-      background-color: lighten($col-default, 50%)
+      background-color: $col
       position: relative
       border-style: solid
       z-index: 500

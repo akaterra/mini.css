@@ -5,12 +5,12 @@
     @if $prefix == null
       .badge
         background-color: $bg-color
-        color: lighten($color, 50%)
+        color: $color
         display: inline-block
     @else
       .badge.#{$prefix}
         background-color: $bg-color
-        color: lighten($color, 50%)
+        color: $color
         display: inline-block
 
   @mixin badge-sized($suffix, $border-radius, $ver, $hor)
@@ -23,17 +23,17 @@
         border-radius: $border-radius
         padding: $ver $hor
 
-  @include badge(null, $col-primary, $col-primary)
+  @include badge(null, $col-primary, $col)
 
-  @include badge('default', $col-default, $col-default)
+  @include badge('default', $col-default, $col)
 
-  @include badge('failure', $col-failure, $col-failure)
+  @include badge('failure', $col-failure, $col)
 
-  @include badge('primary', $col-primary, $col-primary)
+  @include badge('primary', $col-primary, $col)
 
-  @include badge('success', $col-success, $col-success)
+  @include badge('success', $col-success, $col)
 
-  @include badge('warning', $col-warning, $col-warning)
+  @include badge('warning', $col-warning, $col)
 
   @if $sml
     .sml

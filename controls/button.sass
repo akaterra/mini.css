@@ -1,50 +1,50 @@
 @import ../vars
 
 .mini
-  @mixin button($prefix, $transparent-bg-color, $color, $transparent-color-ratio, $bg-color, $border-color, $border-color-ratio, $font-color)
+  @mixin button($prefix, $bg-color, $border-color, $color, $transparent-color)
     @if $prefix == null
       .button
         &.transparent
-          color: darken($color, $col-ratio * $transparent-color-ratio * 100%)
+          color: $border-color
 
-        background-color: $color
-        border-color: darken($color, 5%)
-        color: lighten($font-color, 50%)
+        background: $bg-color
+        border-color: $border-color
+        color: $color
     @else
       .button.#{$prefix}
         &.transparent
-          color: darken($color, $col-ratio * $transparent-color-ratio * 100%)
+          color: $border-color
 
-        background-color: $color
-        border-color: darken($color, 5%)
-        color: lighten($font-color, 50%)
+        background: $bg-color
+        border-color: $border-color
+        color: $color
 
-  @mixin button-hover($prefix, $bg-color, $bg-color-ratio, $border-color, $border-color-ratio, $color)
+  @mixin button-hover($prefix, $bg-color, $border-color, $color, $transparent-color)
     @if $prefix == null
       .button:hover, .button:focus
-        background-color: darken($bg-color, 10%) !important
-        border-color: darken($border-color, 15%)
-        color: lighten($color, 50%)
+        background-color: $bg-color !important
+        border-color: $border-color
+        color: $color
     @else
       .button:hover.#{$prefix}, .button:focus.#{$prefix}
-        background-color: darken($bg-color, 10%) !important
-        border-color: darken($border-color, 15%)
-        color: lighten($color, 50%)
+        background-color: $bg-color !important
+        border-color: $border-color
+        color: $color
 
-  @mixin button-active($prefix, $bg-color, $bg-color-ratio, $border-color, $border-color-ratio, $color)
+  @mixin button-active($prefix, $bg-color, $border-color, $color, $transparent-color)
     @if $prefix == null
       .button:active:not(.disabled), .button.active
-        background-color: darken($bg-color, 20%) !important
-        border-color: darken($border-color, 25%) !important
-        color: lighten($color, 50%) !important
+        background-color: $bg-color !important
+        border-color: $border-color
+        color: $color
 
       .button:active:not(.disabled)
         transform: translateY(2px) !important
     @else
       .button:active:not(.disabled).#{$prefix}, .button.active.#{$prefix}
-        background-color: darken($bg-color, 20%) !important
-        border-color: darken($border-color, 25%) !important
-        color: lighten($color, 50%) !important
+        background-color: $bg-color !important
+        border-color: $border-color
+        color: $color
 
       .button:active:not(.disabled).#{$prefix}
         transform: translateY(2px) !important
@@ -54,7 +54,7 @@
       .button
         border-radius: $border-radius
         border-width: $border-width
-        font-size: $font-size
+        font-size: $font-size * 0.8
         height: $height
         margin-bottom: $ver
         margin-top: $ver
@@ -71,7 +71,7 @@
       .button.button-#{$suffix}
         border-radius: $border-radius
         border-width: $border-width
-        font-size: $font-size
+        font-size: $font-size * 0.8
         height: $height
         min-height: $height
 
@@ -86,29 +86,29 @@
   a.button
     text-decoration: none
 
-  @include button(null, transparent, $col-primary, 0.05, $col-primary, $col-primary, 0.05, $col-default)
-  @include button-hover(null, $col-primary, 0.1, $col-primary, 0.1, $col-default)
-  @include button-active(null, $col-primary, 0.15, $col-primary, 0.15, $col-default)
+  @include button(null, $col-primary, $col-primary, $col, $col)
+  @include button-hover(null, $col-primary-dark-1, $col-primary-dark-1, $col, $col)
+  @include button-active(null, $col-primary-dark-2, $col-primary-dark-2, $col, $col)
 
-  @include button('default', transparent, $col-default, 0.05, $col-default, $col-default, 0.05, $col-default)
-  @include button-hover('default', $col-default, 0.1, $col-default, 0.1, $col-default)
-  @include button-active('default', $col-default, 0.15, $col-default, 0.15, $col-default)
+  @include button('default', $col-default, $col-default, $col, $col)
+  @include button-hover('default', $col-default-dark-1, $col-default-dark-1, $col, $col)
+  @include button-active('default', $col-default-dark-2, $col-default-dark-2, $col, $col)
 
-  @include button('failure', transparent, $col-failure, 0.05, $col-failure, $col-failure, 0.05, $col-default)
-  @include button-hover('failure', $col-failure, 0.1, $col-failure, 0.1, $col-default)
-  @include button-active('failure', $col-failure, 0.15, $col-failure, 0.15, $col-default)
+  @include button('failure', $col-failure, $col-failure, $col, $col)
+  @include button-hover('failure', $col-failure-dark-1, $col-failure-dark-1, $col, $col)
+  @include button-active('failure', $col-failure-dark-2, $col-failure-dark-2, $col, $col)
 
-  @include button('primary', transparent, $col-primary, 0.05, $col-primary, $col-primary, 0.05, $col-default)
-  @include button-hover('primary', $col-primary, 0.1, $col-primary, 0.1, $col-default)
-  @include button-active('primary', $col-primary, 0.15, $col-primary, 0.15, $col-default)
+  @include button('primary', $col-primary, $col-primary, $col, $col)
+  @include button-hover('primary', $col-primary-dark-1, $col-primary-dark-1, $col, $col)
+  @include button-active('primary', $col-primary-dark-2, $col-primary-dark-2, $col, $col)
 
-  @include button('success', transparent, $col-success, 0.05, $col-success, $col-success, 0.05, $col-default)
-  @include button-hover('success', $col-success, 0.1, $col-success, 0.1, $col-default)
-  @include button-active('success', $col-success, 0.15, $col-success, 0.15, $col-default)
+  @include button('success', $col-success, $col-success, $col, $col)
+  @include button-hover('success', $col-success-dark-1, $col-success-dark-1, $col, $col)
+  @include button-active('success', $col-success-dark-2, $col-success-dark-2, $col, $col)
 
-  @include button('warning', transparent, $col-warning, 0.05, $col-warning, $col-warning, 0.05, $col-default)
-  @include button-hover('warning', $col-warning, 0.1, $col-warning, 0.1, $col-default)
-  @include button-active('warning', $col-warning, 0.15, $col-warning, 0.15, $col-default)
+  @include button('warning', $col-warning, $col-warning, $col, $col)
+  @include button-hover('warning', $col-warning-dark-1, $col-warning-dark-1, $col, $col)
+  @include button-active('warning', $col-warning-dark-2, $col-warning-dark-2, $col, $col)
 
   @if $sml
     .sml
