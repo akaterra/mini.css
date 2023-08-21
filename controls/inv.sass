@@ -9,8 +9,8 @@
           border-color: lighten($color, $lighten-ratio * 100%)
           color: lighten($color, $lighten-ratio * 100%) !important
 
-        .tabs>.tabs-bar>.tab:not(.active)
-          background-color: $col-inverted
+        .tabs>.tabs-bar>.tab, .tabs>.tabs-bar>.tab.active, .tabs>.tabs-bar>.tab:hover, .tabs>.tabs-bar>.tab:active
+          background-color: $col-inverted !important
           border-color: lighten($color, $lighten-ratio * 100%)
           color: lighten($color, $lighten-ratio * 100%)
       @else
@@ -19,8 +19,8 @@
           border-color: lighten($color, $lighten-ratio * 100%)
           color: lighten($color, $lighten-ratio * 100%) !important
 
-        .tabs>.tabs-bar>.tab.#{$prefix}:not(.active)
-          background-color: $col-inverted
+        .tabs>.tabs-bar>.tab.#{$prefix}, .tabs>.tabs-bar>.tab.#{$prefix}.active, .tabs>.tabs-bar>.tab:hover.#{$prefix}, .tabs>.tabs-bar>.tab:active.#{$prefix}
+          background-color: $col-inverted !important
           border-color: lighten($color, $lighten-ratio * 100%)
           color: lighten($color, $lighten-ratio * 100%)
 
@@ -35,9 +35,9 @@
             &.unbound
               border-color: transparent !important
 
-        .tabs>.tabs-bar>.tab.active
-          background-color: $col-inverted
-          color: lighten($color, $lighten-ratio * 100%) !important
+        // .tabs>.tabs-bar>.tab.active
+        //   background-color: $col-inverted
+        //   color: lighten($color, $lighten-ratio * 100%) !important
       @else
         .button.#{$prefix}, .link.#{$prefix}
           &:active, &.active
@@ -48,9 +48,9 @@
             &.unbound
               border-color: transparent !important
 
-        .tabs>.tabs-bar>.tab.#{$prefix}.active
-          background-color: $col-inverted
-          color: lighten($color, $lighten-ratio * 100%) !important
+        // .tabs>.tabs-bar>.tab.#{$prefix}.active
+        //   background-color: $col-inverted
+        //   color: lighten($color, $lighten-ratio * 100%) !important
 
     @mixin controls-hover($prefix, $color, $lighten-ratio)
       @if $prefix == null

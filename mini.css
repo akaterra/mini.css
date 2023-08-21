@@ -757,174 +757,6 @@
   margin-top: 7.5px;
 }
 
-.mini .inv {
-  background-color: #404040;
-  color: #b3b3b3;
-  display: block;
-}
-.mini .inv .caption, .mini .inv .button, .mini .inv .control, .mini .inv .link, .mini .inv .label, .mini .inv .panel {
-  background-color: transparent !important;
-  border-color: #cccccc;
-  color: #cccccc !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab:not(.active) {
-  background-color: #404040;
-  border-color: #cccccc;
-  color: #cccccc;
-}
-.mini .inv .button:active, .mini .inv .button.active {
-  background-color: transparent !important;
-  border-color: #e6e6e6 !important;
-  color: #e6e6e6 !important;
-}
-.mini .inv .button:active.unbound, .mini .inv .button.active.unbound {
-  border-color: transparent !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.active {
-  background-color: #404040;
-  color: #e6e6e6 !important;
-}
-.mini .inv .button:hover, .mini .inv .link:hover {
-  background-color: transparent !important;
-  border-color: #d9d9d9;
-  color: #d9d9d9;
-}
-.mini .inv .caption.default, .mini .inv .button.default, .mini .inv .control.default, .mini .inv .link.default, .mini .inv .label.default, .mini .inv .panel.default {
-  background-color: transparent !important;
-  border-color: #cccccc;
-  color: #cccccc !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.default:not(.active) {
-  background-color: #404040;
-  border-color: #cccccc;
-  color: #cccccc;
-}
-.mini .inv .button.default:active, .mini .inv .button.default.active, .mini .inv .link.default:active, .mini .inv .link.default.active {
-  background-color: transparent !important;
-  border-color: #e6e6e6 !important;
-  color: #e6e6e6 !important;
-}
-.mini .inv .button.default:active.unbound, .mini .inv .button.default.active.unbound, .mini .inv .link.default:active.unbound, .mini .inv .link.default.active.unbound {
-  border-color: transparent !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.default.active {
-  background-color: #404040;
-  color: #e6e6e6 !important;
-}
-.mini .inv .button.default:hover, .mini .inv .link.default:hover {
-  background-color: transparent !important;
-  border-color: #d9d9d9;
-  color: #d9d9d9;
-}
-.mini .inv .caption.failure, .mini .inv .button.failure, .mini .inv .control.failure, .mini .inv .link.failure, .mini .inv .label.failure, .mini .inv .panel.failure {
-  background-color: transparent !important;
-  border-color: #ff9999;
-  color: #ff9999 !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.failure:not(.active) {
-  background-color: #404040;
-  border-color: #ff9999;
-  color: #ff9999;
-}
-.mini .inv .button.failure:active, .mini .inv .button.failure.active, .mini .inv .link.failure:active, .mini .inv .link.failure.active {
-  background-color: transparent !important;
-  border-color: #ffcccc !important;
-  color: #ffcccc !important;
-}
-.mini .inv .button.failure:active.unbound, .mini .inv .button.failure.active.unbound, .mini .inv .link.failure:active.unbound, .mini .inv .link.failure.active.unbound {
-  border-color: transparent !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.failure.active {
-  background-color: #404040;
-  color: #ffcccc !important;
-}
-.mini .inv .button.failure:hover, .mini .inv .link.failure:hover {
-  background-color: transparent !important;
-  border-color: #ffb3b3;
-  color: #ffb3b3;
-}
-.mini .inv .caption.primary, .mini .inv .button.primary, .mini .inv .control.primary, .mini .inv .link.primary, .mini .inv .label.primary, .mini .inv .panel.primary {
-  background-color: transparent !important;
-  border-color: #ff99bb;
-  color: #ff99bb !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.primary:not(.active) {
-  background-color: #404040;
-  border-color: #ff99bb;
-  color: #ff99bb;
-}
-.mini .inv .button.primary:active, .mini .inv .button.primary.active, .mini .inv .link.primary:active, .mini .inv .link.primary.active {
-  background-color: transparent !important;
-  border-color: #ffccdd !important;
-  color: #ffccdd !important;
-}
-.mini .inv .button.primary:active.unbound, .mini .inv .button.primary.active.unbound, .mini .inv .link.primary:active.unbound, .mini .inv .link.primary.active.unbound {
-  border-color: transparent !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.primary.active {
-  background-color: #404040;
-  color: #ffccdd !important;
-}
-.mini .inv .button.primary:hover, .mini .inv .link.primary:hover {
-  background-color: transparent !important;
-  border-color: #ffb3cc;
-  color: #ffb3cc;
-}
-.mini .inv .caption.success, .mini .inv .button.success, .mini .inv .control.success, .mini .inv .link.success, .mini .inv .label.success, .mini .inv .panel.success {
-  background-color: transparent !important;
-  border-color: #bddbcc;
-  color: #bddbcc !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.success:not(.active) {
-  background-color: #404040;
-  border-color: #bddbcc;
-  color: #bddbcc;
-}
-.mini .inv .button.success:active, .mini .inv .button.success.active, .mini .inv .link.success:active, .mini .inv .link.success.active {
-  background-color: transparent !important;
-  border-color: #deede6 !important;
-  color: #deede6 !important;
-}
-.mini .inv .button.success:active.unbound, .mini .inv .button.success.active.unbound, .mini .inv .link.success:active.unbound, .mini .inv .link.success.active.unbound {
-  border-color: transparent !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.success.active {
-  background-color: #404040;
-  color: #deede6 !important;
-}
-.mini .inv .button.success:hover, .mini .inv .link.success:hover {
-  background-color: transparent !important;
-  border-color: #cde4d9;
-  color: #cde4d9;
-}
-.mini .inv .caption.warning, .mini .inv .button.warning, .mini .inv .control.warning, .mini .inv .link.warning, .mini .inv .label.warning, .mini .inv .panel.warning {
-  background-color: transparent !important;
-  border-color: #ffb399;
-  color: #ffb399 !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.warning:not(.active) {
-  background-color: #404040;
-  border-color: #ffb399;
-  color: #ffb399;
-}
-.mini .inv .button.warning:active, .mini .inv .button.warning.active, .mini .inv .link.warning:active, .mini .inv .link.warning.active {
-  background-color: transparent !important;
-  border-color: #ffd9cc !important;
-  color: #ffd9cc !important;
-}
-.mini .inv .button.warning:active.unbound, .mini .inv .button.warning.active.unbound, .mini .inv .link.warning:active.unbound, .mini .inv .link.warning.active.unbound {
-  border-color: transparent !important;
-}
-.mini .inv .tabs > .tabs-bar > .tab.warning.active {
-  background-color: #404040;
-  color: #ffd9cc !important;
-}
-.mini .inv .button.warning:hover, .mini .inv .link.warning:hover {
-  background-color: transparent !important;
-  border-color: #ffc6b3;
-  color: #ffc6b3;
-}
-
 .mini .label {
   color: #999999;
   font-weight: 500;
@@ -2040,7 +1872,7 @@
   vertical-align: middle;
 }
 .mini .table.highlighted > .row:hover {
-  background-image: linear-gradient(to right, hsla(0, 0%, 96%, 0) 0%, hsl(0, 0%, 96%) 25%, hsl(0, 0%, 96%) 75%, hsla(0, 0%, 96%, 0) 100%);
+  background-image: linear-gradient(to right, #e6e6e6 0%, #e6e6e6 100%);
 }
 .mini .table.table-inner.underlined > .row:after {
   margin: 0;
@@ -2103,7 +1935,6 @@
 .mini .l-b, .mini .on-left-bottom {
   bottom: 0;
   left: auto;
-  margin: 5px !important;
   position: absolute !important;
   right: 100%;
   top: auto;
@@ -2111,7 +1942,6 @@
 .mini .l-t, .mini .on-left-top {
   bottom: auto;
   left: auto;
-  margin: 5px !important;
   position: absolute !important;
   right: 100%;
   top: 0;
@@ -2119,7 +1949,6 @@
 .mini .r-b, .mini .on-right-bottom {
   bottom: 0;
   left: 100%;
-  margin: 5px !important;
   position: absolute !important;
   right: auto;
   top: auto;
@@ -2127,7 +1956,6 @@
 .mini .r-t, .mini .on-right-top {
   bottom: auto;
   left: 100%;
-  margin: 5px !important;
   position: absolute !important;
   right: auto;
   top: 0;
@@ -2147,6 +1975,15 @@
   position: absolute !important;
   right: 0;
   top: auto;
+}
+.mini .sml .l-b, .mini .sml .on-left-bottom, .mini .sml .l-t, .mini .sml .on-left-top, .mini .sml .r-b, .mini .sml .on-right-bottom, .mini .sml .r-t, .mini .sml .on-right-top {
+  margin: 2.5px !important;
+}
+.mini .med .l-b, .mini .med .on-left-bottom, .mini .med .l-t, .mini .med .on-left-top, .mini .med .r-b, .mini .med .on-right-bottom, .mini .med .r-t, .mini .med .on-right-top {
+  margin: 5px !important;
+}
+.mini .lrg .l-b, .mini .lrg .on-left-bottom, .mini .lrg .l-t, .mini .lrg .on-left-top, .mini .lrg .r-b, .mini .lrg .on-right-bottom, .mini .lrg .r-t, .mini .lrg .on-right-top {
+  margin: 7.5px !important;
 }
 
 .mini .rtl .b-l, .mini .rtl .on-bottom-left {

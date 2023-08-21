@@ -105,10 +105,10 @@
   @include tooltip('warning', $col-warning, 0.3, $col-warning, 0.05)
 
   .sml
-    @include tooltip-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal / 2)
+    @include tooltip-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, calc($sml-horizontal / 2))
 
   .med
-    @include tooltip-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal / 2)
+    @include tooltip-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-vertical, calc($med-horizontal / 2))
 
   .lrg
-    @include tooltip-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal / 2)
+    @include tooltip-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, calc($lrg-horizontal / 2))
