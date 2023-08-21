@@ -12,6 +12,11 @@ $colors: default, failure, primary, success, warning
 
 $font-bold: 700
 
+$active-rotate: 1deg
+$active-scale: 0.98
+$hover-rotate: -1deg
+$hover-scale: 1.02
+
 $sml-1: 22px
 $sml-border-radius: 3px
 $sml-border-width: 2px
@@ -47,66 +52,69 @@ $col-darken-ratio: 0.1
 $col-darken-active-ratio: 0.15
 $col-darken-hover-ratio: 0.1
 
-$col-default: hsl(0, 0%, 40%)
+$col-default: hsl(0, 0%, 50%)
 $col-default-ratio: 1.0
-$col-failure: hsl(0, 100%, 40%)
+$col-failure: hsl(0, 100%, 50%)
 $col-failure-ratio: 1.0
-$col-primary: hsl(340, 100%, 40%)
+$col-primary: hsl(340, 100%, 50%)
 $col-primary-ratio: 1.0
-$col-success: hsl(150, 40%, 40%)
+$col-success: hsl(150, 30%, 50%)
 $col-success-ratio: 1.0
-$col-warning: hsl(15, 100%, 40%)
+$col-warning: hsl(15, 100%, 50%)
 $col-warning-ratio: 1.0
 
-$col-default-dark-1: darken($col-default, $col-default-ratio * 0.05 * 100%)
-$col-default-dark-2: darken($col-default, $col-default-ratio * 0.10 * 100%)
-$col-default-dark-3: darken($col-default, $col-default-ratio * 0.15 * 100%)
-$col-default-dark-4: darken($col-default, $col-default-ratio * 0.20 * 100%)
-$col-default-light-1: lighten($col-default, $col-default-ratio * 0.10 * 100%)
-$col-default-light-2: lighten($col-default, $col-default-ratio * 0.25 * 100%)
-$col-default-light-3: lighten($col-default, $col-default-ratio * 0.40 * 100%)
-$col-default-light-4: lighten($col-default, $col-default-ratio * 0.55 * 100%)
-$col-default-light-5: lighten($col-default, $col-default-ratio * 0.70 * 100%)
+$col-dark-step: 0.05
+$col-ligth-step: 0.10
 
-$col-failure-dark-1: darken($col-failure, $col-failure-ratio * 0.05 * 100%)
-$col-failure-dark-2: darken($col-failure, $col-failure-ratio * 0.10 * 100%)
-$col-failure-dark-3: darken($col-failure, $col-failure-ratio * 0.15 * 100%)
-$col-failure-dark-4: darken($col-failure, $col-failure-ratio * 0.20 * 100%)
-$col-failure-light-1: lighten($col-failure, $col-failure-ratio * 0.10 * 100%)
-$col-failure-light-2: lighten($col-failure, $col-failure-ratio * 0.25 * 100%)
-$col-failure-light-3: lighten($col-failure, $col-failure-ratio * 0.40 * 100%)
-$col-failure-light-4: lighten($col-failure, $col-failure-ratio * 0.55 * 100%)
-$col-failure-light-5: lighten($col-failure, $col-failure-ratio * 0.70 * 100%)
+$col-default-dark-1: darken($col-default, $col-dark-step * 1 * 100%)
+$col-default-dark-2: darken($col-default, $col-dark-step * 2 * 100%)
+$col-default-dark-3: darken($col-default, $col-dark-step * 3 * 100%)
+$col-default-dark-4: darken($col-default, $col-dark-step * 4 * 100%)
+$col-default-light-1: lighten($col-default, $col-ligth-step * 1 * 100%)
+$col-default-light-2: lighten($col-default, $col-ligth-step * 2 * 100%)
+$col-default-light-3: lighten($col-default, $col-ligth-step * 3 * 100%)
+$col-default-light-4: lighten($col-default, $col-ligth-step * 4 * 100%)
+$col-default-light-5: lighten($col-default, $col-ligth-step * 4.5 * 100%)
 
-$col-primary-dark-1: darken($col-primary, $col-primary-ratio * 0.05 * 100%)
-$col-primary-dark-2: darken($col-primary, $col-primary-ratio * 0.10 * 100%)
-$col-primary-dark-3: darken($col-primary, $col-primary-ratio * 0.15 * 100%)
-$col-primary-dark-4: darken($col-primary, $col-primary-ratio * 0.20 * 100%)
-$col-primary-light-1: lighten($col-primary, $col-primary-ratio * 0.10 * 100%)
-$col-primary-light-2: lighten($col-primary, $col-primary-ratio * 0.25 * 100%)
-$col-primary-light-3: lighten($col-primary, $col-primary-ratio * 0.40 * 100%)
-$col-primary-light-4: lighten($col-primary, $col-primary-ratio * 0.55 * 100%)
-$col-primary-light-5: lighten($col-primary, $col-primary-ratio * 0.70 * 100%)
+$col-failure-dark-1: darken($col-failure, $col-dark-step * 1 * 100%)
+$col-failure-dark-2: darken($col-failure, $col-dark-step * 2 * 100%)
+$col-failure-dark-3: darken($col-failure, $col-dark-step * 3 * 100%)
+$col-failure-dark-4: darken($col-failure, $col-dark-step * 4 * 100%)
+$col-failure-light-1: lighten($col-failure, $col-ligth-step * 1 * 100%)
+$col-failure-light-2: lighten($col-failure, $col-ligth-step * 2 * 100%)
+$col-failure-light-3: lighten($col-failure, $col-ligth-step * 3 * 100%)
+$col-failure-light-4: lighten($col-failure, $col-ligth-step * 4 * 100%)
+$col-failure-light-5: lighten($col-default, $col-ligth-step * 4.5 * 100%)
 
-$col-success-dark-1: darken($col-success, $col-success-ratio * 0.05 * 100%)
-$col-success-dark-2: darken($col-success, $col-success-ratio * 0.10 * 100%)
-$col-success-dark-3: darken($col-success, $col-success-ratio * 0.15 * 100%)
-$col-success-dark-4: darken($col-success, $col-success-ratio * 0.20 * 100%)
-$col-success-light-1: lighten($col-success, $col-success-ratio * 0.10 * 100%)
-$col-success-light-2: lighten($col-success, $col-success-ratio * 0.25 * 100%)
-$col-success-light-3: lighten($col-success, $col-success-ratio * 0.40 * 100%)
-$col-success-light-4: lighten($col-success, $col-success-ratio * 0.55 * 100%)
-$col-success-light-5: lighten($col-success, $col-success-ratio * 0.70 * 100%)
+$col-primary-dark-1: darken($col-primary, $col-dark-step * 1 * 100%)
+$col-primary-dark-2: darken($col-primary, $col-dark-step * 2 * 100%)
+$col-primary-dark-3: darken($col-primary, $col-dark-step * 3 * 100%)
+$col-primary-dark-4: darken($col-primary, $col-dark-step * 4 * 100%)
+$col-primary-light-1: lighten($col-primary, $col-ligth-step * 1 * 100%)
+$col-primary-light-2: lighten($col-primary, $col-ligth-step * 2 * 100%)
+$col-primary-light-3: lighten($col-primary, $col-ligth-step * 3 * 100%)
+$col-primary-light-4: lighten($col-primary, $col-ligth-step * 4 * 100%)
+$col-primary-light-5: lighten($col-primary, $col-ligth-step * 4.5 * 100%)
 
-$col-warning-dark-1: darken($col-warning, $col-warning-ratio * 0.05 * 100%)
-$col-warning-dark-2: darken($col-warning, $col-warning-ratio * 0.10 * 100%)
-$col-warning-dark-3: darken($col-warning, $col-warning-ratio * 0.15 * 100%)
-$col-warning-dark-4: darken($col-warning, $col-warning-ratio * 0.20 * 100%)
-$col-warning-light-1: lighten($col-warning, $col-warning-ratio * 0.10 * 100%)
-$col-warning-light-2: lighten($col-warning, $col-warning-ratio * 0.25 * 100%)
-$col-warning-light-3: lighten($col-warning, $col-warning-ratio * 0.40 * 100%)
-$col-warning-light-4: lighten($col-warning, $col-warning-ratio * 0.55 * 100%)
-$col-warning-light-5: lighten($col-warning, $col-warning-ratio * 0.70 * 100%)
+$col-success-dark-1: darken($col-success, $col-dark-step * 1 * 100%)
+$col-success-dark-2: darken($col-success, $col-dark-step * 2 * 100%)
+$col-success-dark-3: darken($col-success, $col-dark-step * 3 * 100%)
+$col-success-dark-4: darken($col-success, $col-dark-step * 4 * 100%)
+$col-success-light-1: lighten($col-success, $col-ligth-step * 1 * 100%)
+$col-success-light-2: lighten($col-success, $col-ligth-step * 2 * 100%)
+$col-success-light-3: lighten($col-success, $col-ligth-step * 3 * 100%)
+$col-success-light-4: lighten($col-success, $col-ligth-step * 4 * 100%)
+$col-success-light-5: lighten($col-success, $col-ligth-step * 4.5 * 100%)
+
+$col-warning-dark-1: darken($col-warning, $col-dark-step * 1 * 100%)
+$col-warning-dark-2: darken($col-warning, $col-dark-step * 2 * 100%)
+$col-warning-dark-3: darken($col-warning, $col-dark-step * 3 * 100%)
+$col-warning-dark-4: darken($col-warning, $col-dark-step * 4 * 100%)
+$col-warning-light-1: lighten($col-warning, $col-ligth-step * 1 * 100%)
+$col-warning-light-2: lighten($col-warning, $col-ligth-step * 2 * 100%)
+$col-warning-light-3: lighten($col-warning, $col-ligth-step * 3 * 100%)
+$col-warning-light-4: lighten($col-warning, $col-ligth-step * 4 * 100%)
+$col-warning-light-5: lighten($col-warning, $col-ligth-step * 4.5 * 100%)
 
 @mixin cross($property, $css)
   -moz-#{$property}: $css

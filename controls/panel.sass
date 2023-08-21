@@ -34,17 +34,17 @@
         border-width: $border-width
         font-size: $font-size
 
-  @include panel(null, $col, $col-primary-light-3, $col-inverted, $col-primary-dark-1)
+  @include panel(null, $col, $col-default-light-4, $col-default-dark-1, $col-default-dark-1)
 
-  @include panel('default', $col, $col-default-light-3, $col-inverted, $col-default-dark-1)
+  @include panel('default', $col, $col-default-light-4, $col-default-dark-1, $col-default-dark-1)
 
-  @include panel('failure', $col, $col-failure-light-3, $col-inverted, $col-failure-dark-1)
+  @include panel('failure', $col, $col-failure-light-4, $col-default-dark-1, $col-default-dark-1)
 
-  @include panel('primary', $col, $col-primary-light-3, $col-inverted, $col-primary-dark-1)
+  @include panel('primary', $col, $col-primary-light-4, $col-default-dark-1, $col-default-dark-1)
 
-  @include panel('success', $col, $col-success-light-3, $col-inverted, $col-success-dark-1)
+  @include panel('success', $col, $col-success-light-4, $col-default-dark-1, $col-default-dark-1)
 
-  @include panel('warning', $col, $col-warning-light-3, $col-inverted, $col-warning-dark-1)
+  @include panel('warning', $col, $col-warning-light-4, $col-default-dark-1, $col-default-dark-1)
 
   @if $sml
     .sml

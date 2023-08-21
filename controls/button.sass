@@ -37,17 +37,11 @@
         background-color: $bg-color !important
         border-color: $border-color
         color: $color
-
-      .button:active:not(.disabled)
-        transform: translateY(2px) !important
     @else
       .button:active:not(.disabled).#{$prefix}, .button.active.#{$prefix}
         background-color: $bg-color !important
         border-color: $border-color
         color: $color
-
-      .button:active:not(.disabled).#{$prefix}
-        transform: translateY(2px) !important
 
   @mixin button-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     @if $suffix == null
@@ -59,11 +53,12 @@
         margin-bottom: $ver
         margin-top: $ver
         min-height: $height
+        padding: 1px $hor 0 $hor
 
-        @if $normalize-css
-          padding: 0 $hor - 2px
-        @else
-          padding: $ver $hor
+        // @if $normalize-css
+        //   padding: 0 $hor - 2px
+        // @else
+        //   padding: $ver $hor
       // a.button
       //   line-height: $height
   
@@ -79,9 +74,16 @@
       //   line-height: $height
 
   .button
+    &:hover
+      transform: rotate($hover-rotate) scale($hover-scale)
+
+    &:active:not(.disabled)
+      transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
+
     cursor: pointer
     display: block
     text-align: center
+    text-transform: uppercase
   
   a.button
     text-decoration: none

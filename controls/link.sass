@@ -1,7 +1,7 @@
 @import ../vars
 
 .mini
-  @mixin link($prefix, $color, $color-ratio, $font-weight)
+  @mixin link($prefix, $color, $font-weight)
     @if $prefix == null
       .link
         color: $color
@@ -15,50 +15,46 @@
         display: inline-block
         font-weight: $font-weight
 
-  @mixin link-hover($prefix, $color, $color-ratio, $font-weight)
+  @mixin link-hover($prefix, $color, $font-weight)
     @if $prefix == null
       .link:hover
-        color: darken($color, 10%)
-        font-weight: $font-weight
-        transform: translateY(0px)
+        color: $color
+        transform: rotate($hover-rotate) scale($hover-scale) translateY(0px)
     @else
       .link:hover.#{$prefix}
-        color: darken($color, 10%)
-        font-weight: $font-weight
-        transform: translateY(0px)
+        color: $color
+        transform: rotate($hover-rotate) scale($hover-scale) translateY(0px)
 
-  @mixin link-active($prefix, $color, $color-ratio, $font-weight)
+  @mixin link-active($prefix, $color, $font-weight)
     @if $prefix == null
       .link:active
-        color: darken($color, 20%) !important
-        font-weight: $font-weight !important
-        transform: translateY(2px) !important
+        color: $color
+        transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
     @else
       .link:active.#{$prefix}
-        color: darken($color, 20%) !important
-        font-weight: $font-weight !important
-        transform: translateY(2px) !important
+        color: $color
+        transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
 
-  @include link(null, $col-primary, 0.05, inherit)
-  @include link-active(null, $col-primary, 0.15, inherit)
-  @include link-hover(null, $col-primary, 0.1, inherit)
+  @include link(null, $col-primary, inherit)
+  @include link-hover(null, $col-primary-dark-1, inherit)
+  @include link-active(null, $col-primary-dark-2, inherit)
 
-  @include link('default', $col-default, 0.05, inherit)
-  @include link-active('default', $col-default, 0.15, inherit)
-  @include link-hover('default', $col-default, 0.1, inherit)
+  @include link('default', $col-default, inherit)
+  @include link-hover('default', $col-default-dark-1, inherit)
+  @include link-active('default', $col-default-dark-2, inherit)
 
-  @include link('failure', $col-failure, 0.05, inherit)
-  @include link-active('failure', $col-failure, 0.15, inherit)
-  @include link-hover('failure', $col-failure, 0.1, inherit)
+  @include link('failure', $col-failure, inherit)
+  @include link-hover('failure', $col-failure-dark-1, inherit)
+  @include link-active('failure', $col-failure-dark-2, inherit)
 
-  @include link('primary', $col-primary, 0.05, inherit)
-  @include link-active('primary', $col-primary, 0.15, inherit)
-  @include link-hover('primary', $col-primary, 0.1, inherit)
+  @include link('primary', $col-primary, inherit)
+  @include link-hover('primary', $col-primary-dark-1, inherit)
+  @include link-active('primary', $col-primary-dark-2, inherit)
 
-  @include link('success', $col-success, 0.05, inherit)
-  @include link-active('success', $col-success, 0.15, inherit)
-  @include link-hover('success', $col-success, 0.1, inherit)
+  @include link('success', $col-success, inherit)
+  @include link-hover('success', $col-success-dark-1, inherit)
+  @include link-active('success', $col-success-dark-2, inherit)
 
-  @include link('warning', $col-warning, 0.05, inherit)
-  @include link-active('warning', $col-warning, 0.15, inherit)
-  @include link-hover('warning', $col-warning, 0.1, inherit)
+  @include link('warning', $col-warning, inherit)
+  @include link-hover('warning', $col-warning-dark-1, inherit)
+  @include link-active('warning', $col-warning-dark-2, inherit)

@@ -1,13 +1,13 @@
 @import ../vars
 
 .mini
-  @mixin splitter($prefix, $color, $color-ratio)
+  @mixin splitter($prefix, $color)
     @if $prefix == null
       .splitter
-        border-top: lighten($color, 25%) solid 2px
+        border-top: $color solid 2px
     @else
       .splitter.#{$prefix}
-        border-top: lighten($color, 25%) solid 2px
+        border-top: $color solid 2px
 
   @mixin splitter-sized($suffix, $height, $ver, $hor)
     @if $suffix == null
@@ -21,17 +21,17 @@
         min-height: $height
         margin: $ver 0
 
-  @include splitter(null, $col-default, 0.3)
+  @include splitter(null, $col-default-light-3)
 
-  @include splitter('default', $col-default, 0.3)
+  @include splitter('default', $col-default-light-3)
 
-  @include splitter('failure', $col-failure, 0.3)
+  @include splitter('failure', $col-failure-light-3)
 
-  @include splitter('primary', $col-primary, 0.3)
+  @include splitter('primary', $col-primary-light-3)
 
-  @include splitter('success', $col-success, 0.3)
+  @include splitter('success', $col-success-light-3)
 
-  @include splitter('warning', $col-warning, 0.3)
+  @include splitter('warning', $col-warning-light-3)
 
   @if $sml
     .sml
