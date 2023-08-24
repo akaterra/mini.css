@@ -8,7 +8,16 @@
         min-height: $sml-vertical * 2
 
       .children-gap>*:not(:first-child)
-        margin-top: $sml-vertical
+        margin-top: $sml-vertical * 2
+
+      .children-gap-full>*
+        margin-top: $sml-vertical * 2
+
+      .children-gap-full>*:last-child
+        margin-bottom: $sml-vertical * 2
+
+      .children-gap-top>
+        margin-top: $sml-vertical * 2
 
   @if $med
     .med
@@ -17,13 +26,16 @@
         min-height: $med-vertical * 2
 
       .children-gap>*:not(:first-child)
-        margin-top: $med-vertical
+        margin-top: $med-vertical * 2
 
       .children-gap-full>*
-        margin-top: $med-vertical
+        margin-top: $med-vertical * 2
 
       .children-gap-full>*:last-child
-        margin-bottom: $med-vertical
+        margin-bottom: $med-vertical * 2
+
+      .children-gap-top>
+        margin-top: $med-vertical * 2
 
   @if $lrg
     .lrg
@@ -32,8 +44,17 @@
         min-height: $lrg-vertical * 2
 
       .children-gap>*:not(:first-child)
-        margin-top: $lrg-vertical
+        margin-top: $lrg-vertical * 2
 
+      .children-gap-full>*
+        margin-top: $lrg-vertical * 2
+
+      .children-gap-full>*:last-child
+        margin-bottom: $lrg-vertical * 2
+
+      .children-gap-top>
+        margin-top: $lrg-vertical * 2
+  
   // .gap.gap-sml
   //   height: $sml-vertical * 2
   //   min-height: $sml-vertical * 2

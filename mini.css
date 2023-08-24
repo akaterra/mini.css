@@ -734,29 +734,40 @@
   min-height: 5px;
 }
 .mini .sml .children-gap > *:not(:first-child) {
-  margin-top: 2.5px;
+  margin-top: 5px;
+}
+.mini .sml .children-gap-full > * {
+  margin-top: 5px;
+}
+.mini .sml .children-gap-full > *:last-child {
+  margin-bottom: 5px;
 }
 .mini .med .gap {
   height: 10px;
   min-height: 10px;
 }
 .mini .med .children-gap > *:not(:first-child) {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .mini .med .children-gap-full > * {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .mini .med .children-gap-full > *:last-child {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .mini .lrg .gap {
   height: 15px;
   min-height: 15px;
 }
 .mini .lrg .children-gap > *:not(:first-child) {
-  margin-top: 7.5px;
+  margin-top: 15px;
 }
-
+.mini .lrg .children-gap-full > * {
+  margin-top: 15px;
+}
+.mini .lrg .children-gap-full > *:last-child {
+  margin-bottom: 15px;
+}
 .mini .label {
   color: #999999;
   font-weight: 500;
@@ -2054,6 +2065,10 @@
 .mini .block.no-y-scroll {
   overflow-y: hidden;
 }
+.mini .block.x-scroll {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
 .mini .block.y-scroll {
   overflow-x: hidden;
   overflow-y: scroll;
@@ -2173,8 +2188,14 @@
 .mini .flex-center {
   justify-content: center;
 }
+.mini .flex-end {
+  align-items: flex-end;
+}
 .mini .flex-middle {
   align-items: center;
+}
+.mini .flex-start {
+  align-items: flex-start;
 }
 .mini .flex-hor {
   flex-direction: row;
@@ -2454,6 +2475,12 @@
 }
 .mini .no-underline {
   text-decoration: none !important;
+}
+.mini .sub {
+  vertical-align: sub;
+}
+.mini .sup {
+  vertical-align: super;
 }
 .mini .children-no-underline > * {
   text-decoration: none !important;
