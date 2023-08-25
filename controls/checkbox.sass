@@ -1,0 +1,147 @@
+@import ../vars
+
+.mini
+  @mixin checkbox($prefix, $bg-color, $border-color, $color, $transparent-color)
+    @if $prefix == null
+      .checkbox:before
+        background: $bg-color
+        border-color: $border-color
+
+      .checkbox:checked:before
+        background: $border-color
+        outline-color: $bg-color
+
+    @else
+      .checkbox.#{$prefix}:before
+        background: $bg-color
+        border-color: $border-color
+
+      .checkbox:checked.#{$prefix}:before
+        background: $border-color
+        outline-color: $bg-color
+
+  @mixin checkbox-hover($prefix, $bg-color, $border-color, $color, $transparent-color)
+    @if $prefix == null
+      .checkbox:hover:before, .checkbox:focus:before
+        border-color: $border-color !important
+
+      .checkbox:hover:checked:before, .checkbox:focus:checked:before
+        background: $border-color !important
+
+    @else
+      .checkbox:hover.#{$prefix}:before, .checkbox:focus.#{$prefix}:before
+        border-color: $border-color !important
+
+      .checkbox:hover.#{$prefix}:checked:before, .checkbox:focus.#{$prefix}:checked:before
+        background: $border-color !important
+
+  @mixin checkbox-active($prefix, $bg-color, $border-color, $color, $transparent-color)
+    @if $prefix == null
+      .checkbox:active:not(.disabled):before, .checkbox.active:before
+        border-color: $border-color !important
+
+      .checkbox:checked:not(.disabled):active:before, .checkbox.active:checked:before
+        background: $border-color !important
+
+    @else
+      .checkbox:active:not(.disabled).#{$prefix}:before, .checkbox.active.#{$prefix}:before
+        border-color: $border-color !important
+
+      .checkbox:checked:not(.disabled):active.#{$prefix}:before, .checkbox.active:checked.#{$prefix}:before
+        background: $border-color !important
+
+  @mixin checkbox-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
+    @if $suffix == null
+      .checkbox
+        height: $height
+        margin: auto $border-width * 2 auto 0
+        width: $height
+
+      .checkbox:before
+        border-width: $border-width
+        font-size: $font-size
+        height: $height
+        outline-offset: -$border-width * 2
+        outline-width: $border-width
+        padding: $border-width
+        width: $height
+
+    @else
+      .checkbox-#{$suffix}
+        height: $height
+        margin: auto $border-width * 2 auto 0
+        width: $height
+  
+      .checkbox-#{$suffix}:before
+        border-width: $border-width
+        font-size: $font-size * 0.8
+        height: $height
+        padding: $border-width
+        outline-offset: -$border-width * 2
+        outline-width: $border-width
+        width: $height
+
+  .checkbox
+    &:hover
+      transform: rotate($hover-rotate) scale($hover-scale)
+
+    &:active:not(.disabled)
+      transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
+
+    content: none
+    cursor: pointer
+    outline: none
+    position: relative
+
+    &:before
+      border-style: solid
+      box-sizing: border-box
+      color: transparent !important
+      content: ''
+      display: block
+      outline-style: solid
+
+  @include checkbox(null, $col, $col-default, $col, $col)
+  @include checkbox-hover(null, $col, $col-default-dark-1, $col, $col)
+  @include checkbox-active(null, $col, $col-default-dark-2, $col, $col)
+
+  @include checkbox('default', $col, $col-default, $col, $col)
+  @include checkbox-hover('default', $col, $col-default-dark-1, $col, $col)
+  @include checkbox-active('default', $col, $col-default-dark-2, $col, $col)
+
+  @include checkbox('failure', $col, $col-failure, $col, $col)
+  @include checkbox-hover('failure', $col, $col-failure-dark-1, $col, $col)
+  @include checkbox-active('failure', $col, $col-failure-dark-2, $col, $col)
+  
+  @include checkbox('primary', $col, $col-primary, $col, $col)
+  @include checkbox-hover('primary', $col, $col-primary-dark-1, $col, $col)
+  @include checkbox-active('primary', $col, $col-primary-dark-2, $col, $col)
+  
+  @include checkbox('success', $col, $col-success, $col, $col)
+  @include checkbox-hover('success', $col, $col-success-dark-1, $col, $col)
+  @include checkbox-active('success', $col, $col-success-dark-2, $col, $col)
+  
+  @include checkbox('warning', $col, $col-warning, $col, $col)
+  @include checkbox-hover('warning', $col, $col-warning-dark-1, $col, $col)
+  @include checkbox-active('warning', $col, $col-warning-dark-2, $col, $col)
+
+  @if $sml
+    .sml
+      @include checkbox-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1 * 0.5, $sml-vertical, $sml-horizontal)
+
+  @if $med
+    .med
+      @include checkbox-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1 * 0.5, $med-vertical, $med-horizontal)
+
+  @if $lrg
+    .lrg
+      @include checkbox-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1 * 0.5, $lrg-vertical, $lrg-horizontal)
+
+  @if $sml
+    @include checkbox-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1 * 0.5, $sml-vertical, $sml-horizontal)
+
+  @if $med
+    @include checkbox-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1 * 0.5, $med-vertical, $med-horizontal)
+
+  @if $lrg
+    @include checkbox-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1 * 0.5, $lrg-vertical, $lrg-horizontal)
