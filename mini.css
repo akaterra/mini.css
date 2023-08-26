@@ -2416,8 +2416,14 @@
 .mini .flex-end {
   align-items: flex-end;
 }
+.mini .flex-left {
+  justify-content: left;
+}
 .mini .flex-middle {
   align-items: center;
+}
+.mini .flex-right {
+  justify-content: right;
 }
 .mini .flex-start {
   align-items: flex-start;
