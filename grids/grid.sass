@@ -56,6 +56,9 @@
             .f#{$i}
               width: ($fixed-width + $sml-horizontal * 2) / $grid-cells * $i
 
+        .container.sml
+          width: $width - $sml-horizontal * 2
+
         .med
           @if $i < 10
             .f-#{$i}
@@ -63,6 +66,9 @@
           @else
             .f#{$i}
               width: ($fixed-width + $med-horizontal * 2) / $grid-cells * $i
+
+        .container.med
+          width: $width - $med-horizontal * 2
 
         .lrg
           @if $i < 10
@@ -72,8 +78,8 @@
             .f#{$i}
               width: ($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i
 
-      .container
-        width: $width
+        .container.lrg
+          width: $width - $lrg-horizontal * 2
 
   @mixin media-minimal($max-width, $wrap)
     @media screen and (max-width: $max-width)
@@ -123,7 +129,7 @@
             width: 100vw / $grid-cells * $i !important
 
       .container
-        width: 100%
+        width: 100% !important
 
   @mixin media-show($max-width, $wrap)
     @media screen and (max-width: $max-width)
@@ -151,20 +157,12 @@
   @for $i from 1 through $grid-cells
     @if $i < 10
       .c-#{$i}
-        // min-height: 1px
         position: relative
         width: 100% / $grid-cells * $i
-
-      // .f-#{$i}
-      //   min-height: 1px
     @else
       .c#{$i}
-        // min-height: 1px
         position: relative
         width: 100% / $grid-cells * $i
-
-      // .f#{$i}
-      //   min-height: 1px
 
   @for $i from 0 through 19
     @if $i < 2
@@ -195,17 +193,9 @@
       @for $i from 1 through $grid-cells
         @if $i < 10
           .c-#{$i}, .f-#{$i}
-            // &>.row
-            //   margin-top: -$sml-vertical
-            //   margin-bottom: -$sml-vertical
-
             padding: 0 $sml-horizontal
         @else
           .c#{$i}, .f#{$i}
-            // &>.row
-            //   margin-top: -$sml-vertical
-            //   margin-bottom: -$sml-vertical
-
             padding: 0 $sml-horizontal
 
       .ccc
@@ -219,17 +209,9 @@
       @for $i from 1 through $grid-cells
         @if $i < 10
           .c-#{$i}, .f-#{$i}
-            // &>.row
-            //   margin-top: -$sml-vertical
-            //   margin-bottom: -$sml-vertical
-  
             padding: 0 $med-horizontal
         @else
           .c#{$i}, .f#{$i}
-            // &>.row
-            //     margin-top: -$sml-vertical
-            //     margin-bottom: -$sml-vertical
-  
             padding: 0 $med-horizontal
 
       .ccc
