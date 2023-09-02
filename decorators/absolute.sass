@@ -2,13 +2,21 @@
 
 .mini
   @mixin absolute-sized($suffix, $ver, $hor)
-    .l-b, .on-left-bottom, .l-t, .on-left-top, .r-b, .on-right-bottom, .r-t, .on-right-top
-      margin: $ver !important
+    .b-l, .on-bottom-left, .b-r, .on-bottom-right
+      margin-top: $ver !important
+
+    .t-l, .on-top-left, .t-r, .on-top-right
+      margin-bottom: $ver !important
+  
+    .l-b, .on-left-bottom, .l-t, .on-left-top
+      margin: 0 $ver 0 $ver !important
+
+    .r-b, .on-right-bottom, .r-t, .on-right-top
+      margin: 0 $ver 0 $ver !important
 
   .b-l, .on-bottom-left
     bottom: auto
     left: 0
-    margin: 0 !important
     position: absolute !important
     right: auto
     top: 100%
@@ -16,7 +24,6 @@
   .b-r, .on-bottom-right
     bottom: auto
     left: auto
-    margin: 0 !important
     position: absolute !important
     right: 0
     top: 100%

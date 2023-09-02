@@ -37,7 +37,7 @@
                 text-align: center;
             }
 
-            .__cell_embedded {
+            .__cell_inner {
                 background-color: #c0c0c0;
                 margin: 2px 0;
                 text-align: center;
@@ -180,8 +180,8 @@
                                 <div class="row">
                                     <div class="f-3 font-med">
                                         <div><a class="link" href="#grid">Grid</a></div>
-                                        <div><a class="link" href="#embeddedGrid">Embedded grid</a></div>
-                                        <div><a class="link" href="#embeddedFixedGrid">Embedded fixed grid</a></div>
+                                        <div><a class="link" href="#innerGrid">Inner grid</a></div>
+                                        <div><a class="link" href="#innerFixedGrid">Inner fixed grid</a></div>
                                         <div><a class="link" href="#mediaShow">Media show</a></div>
                                         <div><a class="link" href="#buttons">Buttons</a></div>
                                         <div><a class="link" href="#transparentButtons">Transparent buttons</a></div>
@@ -189,6 +189,7 @@
                                         <div><a class="link" href="#rounded">Rounded</a></div>
                                         <div><a class="link" href="#controls">Controls</a></div>
                                         <div><a class="link" href="#transparentControls">Transparent controls</a></div>
+                                        <div><a class="link" href="#checkboxes">Checkboxes</a></div>
                                         <div><a class="link" href="#labels">Labels</a></div>
                                         <div><a class="link" href="#captions">Captions</a></div>
                                         <div><a class="link" href="#captionsSmallModifiers">Captions small modifiers</a></div>
@@ -202,16 +203,15 @@
                                         <div><a class="link" href="#links">Links</a></div>
                                         <div><a class="link" href="#splitters">Splitters</a></div>
                                         <div><a class="link" href="#dividers">Dividers</a></div>
-                                        <div><a class="link" href="#fineDividers">Fine dividers</a></div>
                                         <div><a class="link" href="#textDecorations">Text decorations</a></div>
                                         <div><a class="link" href="#shadows">Shadows</a></div>
+                                        <div><a class="link" href="#gaps">Gaps</a></div>
                                         <div><a class="link" href="#tabsWithUnderline">Tabs with underline</a></div>
                                         <div><a class="link" href="#tabsWithContent">Tabs with content</a></div>
                                         <div><a class="link" href="#groups">Groups</a></div>
                                         <div><a class="link" href="#flexedGroups">Flexed groups</a></div>
                                         <div><a class="link" href="#gridGroups">Grid groups</a></div>
                                         <div><a class="link" href="#paragraphs">Paragraphs</a></div>
-                                        <div><a class="link" href="#fineParagraphs">Fine paragraphs</a></div>
                                         <div><a class="link" href="#tables">Tables</a></div>
                                         <div><a class="link" href="#bubblings">Bubblings</a></div>
                                         <div><a class="link success" href="#inverted">Inverted</a></div>
@@ -245,7 +245,7 @@
                                 <div class="row"><div class="c18"><div class="__cell">c18</div></div></div>
                             </div>
 
-                            <div class="__section"><a name="grid">Colors<a/></div>
+                            <!-- <div class="__section"><a name="grid">Colors<a/></div>
                             <div class="children-gap">
                                 <div class="row">
                                     <div class="c-3"></div>
@@ -319,15 +319,15 @@
                                     <div class="c-3"><div class="success bg dark-4 __cell">Success Dk 4</div></div>
                                     <div class="c-3"><div class="warning bg dark-4 __cell">Warning Dk 4</div></div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="__section"><a name="embeddedGrid">Embedded grid</a></div>
+                            <div class="__section"><a name="innerGrid">Inner grid</a></div>
                             <div class="row">
                                 <div class="c-3">
                                     <div class="__cell">
                                         c-3
                                         <div class="row">
-                                            <div class="c18"><div class="__cell_embedded">c18 - 100% of parent</div></div>
+                                            <div class="c18"><div class="__cell_inner">c18 - 100% of parent</div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -335,8 +335,8 @@
                                     <div class="__cell">
                                         c-6
                                         <div class="row">
-                                            <div class="c-9"><div class="__cell_embedded">c-9 - 50% of parent</div></div>
-                                            <div class="c-9"><div class="__cell_embedded">c-9 - 50% of parent</div></div>
+                                            <div class="c-9"><div class="__cell_inner">c-9 - 50% of parent</div></div>
+                                            <div class="c-9"><div class="__cell_inner">c-9 - 50% of parent</div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -344,21 +344,21 @@
                                     <div class="__cell">
                                         c-9
                                         <div class="row">
-                                            <div class="c-6"><div class="__cell_embedded">c-6 - 1/3 of parent</div></div>
-                                            <div class="c-6"><div class="__cell_embedded">c-6 - 1/3 of parent</div></div>
-                                            <div class="c-6"><div class="__cell_embedded">c-6 - 1/3 of parent</div></div>
+                                            <div class="c-6"><div class="__cell_inner">c-6 - 1/3 of parent</div></div>
+                                            <div class="c-6"><div class="__cell_inner">c-6 - 1/3 of parent</div></div>
+                                            <div class="c-6"><div class="__cell_inner">c-6 - 1/3 of parent</div></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="__section"><a name="embeddedFixedGrid">Embedded fixed grid</a></div>
+                            <div class="__section"><a name="innerFixedGrid">Inner fixed grid</a></div>
                             <div class="row">
                                 <div class="f-3">
                                     <div class="__cell">
                                         f-3
                                         <div class="row">
-                                            <div class="f-3"><div class="__cell_embedded">f-3</div></div>
+                                            <div class="f-3"><div class="__cell_inner">f-3</div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -366,8 +366,8 @@
                                     <div class="__cell">
                                         f-6
                                         <div class="row">
-                                            <div class="f-3"><div class="__cell_embedded">f-3</div></div>
-                                            <div class="f-3"><div class="__cell_embedded">f-3</div></div>
+                                            <div class="f-3"><div class="__cell_inner">f-3</div></div>
+                                            <div class="f-3"><div class="__cell_inner">f-3</div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -375,23 +375,34 @@
                                     <div class="__cell">
                                         f-9
                                         <div class="row">
-                                            <div class="f-3"><div class="__cell_embedded">f-3</div></div>
-                                            <div class="f-3"><div class="__cell_embedded">f-3</div></div>
-                                            <div class="f-3"><div class="__cell_embedded">f-3</div></div>
+                                            <div class="f-3"><div class="__cell_inner">f-3</div></div>
+                                            <div class="f-3"><div class="__cell_inner">f-3</div></div>
+                                            <div class="f-3"><div class="__cell_inner">f-3</div></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="__section"><a name="mediaSizedGrid">Media sized grid</a></div>
+                            <div class="row">
+                                <div class="c-3 c-6-m- c-9-s-"><div class="__cell">c-3 c-6 c-9</div></div>
+                                <div class="c15 c12-m- c-9-s-"><div class="__cell">c15 c12 c-9</div></div>
+                            </div>
+
+                            <div class="__section"><a name="mediaSizedFixedGrid">Media sized fixed grid</a></div>
+                            <div class="row">
+                                <div class="f-2 f-3-m- f-4-s-"><div class="__cell">f-2 f-3 f-4</div></div>
+                                <div class="f-4 f-3-m- f-2-s-"><div class="__cell">f-4 f-3 f-2</div></div>
+                            </div>
+
                             <div class="__section"><a name="mediaShow">Media show (resize horizontally to see the changes)</a></div>
                             <div class="row children-gap">
                                 <div class="c18 show-sml span primary">I'm shown on a small sized media.</div>
-                                <div class="c18 show-sml c18 show-med span success">I'm shown on a small or medium sized media.</div>
-                                <div class="c18 show-sml c18 show-lrg span failure">I'm shown on a small or large sized media.</div>
+                                <div class="c18 show-sml show-med span success">I'm shown on a small or medium sized media.</div>
+                                <div class="c18 show-sml show-lrg span failure">I'm shown on a small or large sized media.</div>
                                 <div class="c18 show-med span success">I'm shown on a medium sized media.</div>
                                 <div class="c18 show-med show-lrg span failure">I'm shown on a medium or large sized media.</div>
                                 <div class="c18 show-lrg span failure">I'm shown on a large sized media.</div>
-                                <div class="c-3 c-6-m-"><div class="__cell">c-3 c-6</div></div><div class="c15 c12-m-"><div class="__cell">c15 c12</div></div>
                             </div>
 
                             <div class="__section"><a name="buttons">Buttons</a></div>
@@ -738,25 +749,25 @@
                                 </div>
                             </div>
 
-                            <div class="__section"><a name="labels">Checkboxes</a></div>
+                            <div class="__section"><a name="checkboxes">Checkboxes</a></div>
                             <div class="row">
                                 <div class="c-3">
-                                    <label><input class="checkbox" type="checkbox"/>Checkbox</label>
+                                    <label class="flex flex-middle"><input class="checkbox" type="checkbox"/>Checkbox</label>
                                 </div>
                                 <div class="c-3">
-                                    <label><input class="checkbox default" type="checkbox"/>Checkbox</label>
+                                    <label class="flex flex-middle"><input class="checkbox default" type="checkbox"/>Checkbox</label>
                                 </div>
                                 <div class="c-3">
-                                    <label><input class="checkbox failure" type="checkbox"/>Checkbox</label>
+                                    <label class="flex flex-middle"><input class="checkbox failure" type="checkbox"/>Checkbox</label>
                                 </div>
                                 <div class="c-3">
-                                    <label><input class="checkbox warning" type="checkbox"/>Checkbox</label>
+                                    <label class="flex flex-middle"><input class="checkbox warning" type="checkbox"/>Checkbox</label>
                                 </div>
                                 <div class="c-3">
-                                    <label><input class="checkbox success" type="checkbox"/>Checkbox</label>
+                                    <label class="flex flex-middle"><input class="checkbox success" type="checkbox"/>Checkbox</label>
                                 </div>
                                 <div class="c-3">
-                                    <label><input class="checkbox primary" type="checkbox"/>Checkbox</label>
+                                    <label class="flex flex-middle"><input class="checkbox primary" type="checkbox"/>Checkbox</label>
                                 </div>
                             </div>
 
@@ -1340,6 +1351,37 @@
                                 <div class="c-6"><div class="panel shadow shadow-low">Low shadow</div></div>
                             </div>
 
+                            <div class="__section"><a name="gaps">Gaps</a></div>
+                            <div class="row">
+                                <div class="c-6">
+                                    <div class="__green_2">&nbsp;</div>
+                                    <div class="children-gap">
+                                        <div class="__green_1">No gap</div>
+                                        <div class="__green_1">Gap top</div>
+                                        <div class="__green_1">Gap top</div>
+                                    </div>
+                                    <div class="__green_2">&nbsp;</div>
+                                </div>
+                                <div class="c-6">
+                                    <div class="__green_2">&nbsp;</div>
+                                    <div class="children-gap-full">
+                                        <div class="__green_1">Gap top</div>
+                                        <div class="__green_1">Gap top</div>
+                                        <div class="__green_1">Gap top and bottom</div>
+                                    </div>
+                                    <div class="__green_2">&nbsp;</div>
+                                </div>
+                                <div class="c-6">
+                                    <div class="__green_2">&nbsp;</div>
+                                    <div class="children-gap-top">
+                                        <div class="__green_1">Gap top</div>
+                                        <div class="__green_1">Gap top</div>
+                                        <div class="__green_1">Gap top</div>
+                                    </div>
+                                    <div class="__green_2">&nbsp;</div>
+                                </div>
+                            </div>
+
                             <div class="__section"><a name="tabsWithUnderline">Tabs with underline</a></div>
                             <div class="row">
                                 <div class="c18">
@@ -1705,80 +1747,6 @@
 
                             <div class="__section"><a name="fineTables">Fine tables</a></div>
                             <div class="table highlighted underlined fine">
-                                <div class="row header">
-                                    <div class="c-3"><input class="control"></div>
-                                    <div class="c-3">Column 2</div>
-                                    <div class="c-3">Column 3</div>
-                                    <div class="c-3">Column 4</div>
-                                    <div class="c-3">Column 5</div>
-                                    <div class="c-3">Column 6</div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">Content 1</div>
-                                    <div class="c-3 r">Content 2</div>
-                                    <div class="c-3 l r">Content 3</div>
-                                    <div class="c-3 l">Content 4</div>
-                                    <div class="c-3">Content 5</div>
-                                    <div class="c-3">Content 6</div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">Content 1</div>
-                                    <div class="c-3 r">Content 2</div>
-                                    <div class="c-3 l r">Content 3</div>
-                                    <div class="c-3 l">Content 4</div>
-                                    <div class="c-3">Content 5</div>
-                                    <div class="c-3">Content 6</div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">Content 1</div>
-                                    <div class="c-3 r">Content 2</div>
-                                    <div class="c-3 l r">Content 3</div>
-                                    <div class="c-3 l">Content 4</div>
-                                    <div class="c-3">Content 5</div>
-                                    <div class="c-3">Content 6</div>
-                                </div>
-                            </div>
-
-                            <div class="__section"><a name="tables">Tables</a></div>
-
-                            <table class="table highlighted underlined">
-                              <tr class="header">
-                                  <th class="c-3"><input class="control"></th>
-                                  <th class="c-3">Column 2</th>
-                                  <th class="c-3">Column 3</th>
-                                  <th class="c-3">Column 4</th>
-                                  <th class="c-3">Column 5</th>
-                                  <th class="c-3">Column 6</th>
-                              </tr>
-                              <tr>
-                                  <td class="c-3">Content 1</td>
-                                  <td class="c-3 r">Content 2</td>
-                                  <td class="c-3 l r">Content 3</td>
-                                  <td class="c-3 l">Content 4</td>
-                                  <td class="c-3">Content 5</td>
-                                  <td class="c-3">Content 6</td>
-                              </tr>
-                              <tr>
-                                  <td class="c-3">Content 1</td>
-                                  <td class="c-3 r">Content 2</td>
-                                  <td class="c-3 l r">Content 3</td>
-                                  <td class="c-3 l">Content 4</td>
-                                  <td class="c-3">Content 5</td>
-                                  <td class="c-3">Content 6</td>
-                              </tr>
-                              <tr>
-                                  <td class="c-3">Content 1</td>
-                                  <td class="c-3 r">Content 2</td>
-                                  <td class="c-3 l r">Content 3</td>
-                                  <td class="c-3 l">Content 4</td>
-                                  <td class="c-3">Content 5</td>
-                                  <td class="c-3">Content 6</td>
-                              </tr>
-                          </table>
-
-                            <div class="__section"><a name="tables">Tables with zebra</a></div>
-
-                            <div class="table highlighted underlined zebra">
                                 <div class="row header">
                                     <div class="c-3"><input class="control"></div>
                                     <div class="c-3">Column 2</div>
