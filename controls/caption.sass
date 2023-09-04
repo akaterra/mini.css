@@ -4,11 +4,11 @@
   @mixin caption($prefix, $color, $font-weight)
     @if $prefix == null
       .caption
-        color: darken($color, 10%)
+        color: $color
         font-weight: $font-weight
     @else
       .caption.#{$prefix}
-        color: darken($color, 10%)
+        color: $color
         font-weight: $font-weight
 
   @mixin caption-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)
@@ -32,17 +32,17 @@
       .caption.caption-#{$suffix}
         font-size: $font-size * $font-size-ratio
 
-  @include caption(null, $col-default, $font-bold)
+  @include caption(null, $col-default-dark-4, $font-bold)
 
-  @include caption('default', $col-default, $font-bold)
+  @include caption('default', $col-default-dark-4, $font-bold)
 
-  @include caption('failure', $col-failure, $font-bold)
+  @include caption('failure', $col-failure-dark-4, $font-bold)
 
-  @include caption('primary', $col-primary, $font-bold)
+  @include caption('primary', $col-primary-dark-4, $font-bold)
 
-  @include caption('success', $col-success, $font-bold)
+  @include caption('success', $col-success-dark-4, $font-bold)
 
-  @include caption('warning', $col-warning, $font-bold)
+  @include caption('warning', $col-warning-dark-4, $font-bold)
 
   @if $sml
     .sml

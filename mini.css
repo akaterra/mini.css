@@ -400,27 +400,27 @@
 }
 
 .mini .caption {
-  color: #666666;
+  color: #4d4d4d;
   font-weight: 700;
 }
 .mini .caption.default {
-  color: #666666;
+  color: #4d4d4d;
   font-weight: 700;
 }
 .mini .caption.failure {
-  color: #cc0000;
+  color: #990000;
   font-weight: 700;
 }
 .mini .caption.primary {
-  color: #cc0044;
+  color: #990033;
   font-weight: 700;
 }
 .mini .caption.success {
-  color: #478566;
+  color: #36634d;
   font-weight: 700;
 }
 .mini .caption.warning {
-  color: #cc3300;
+  color: #992600;
   font-weight: 700;
 }
 .mini .sml .caption {
@@ -2655,19 +2655,19 @@
 }
 
 .mini .span {
-  color: #4d4d4d;
+  color: #595959;
 }
 .mini .span.failure {
-  color: #990000;
+  color: #b30000;
 }
 .mini .span.primary {
-  color: #990033;
+  color: #b3003c;
 }
 .mini .span.success {
-  color: #36634d;
+  color: #3e7459;
 }
 .mini .span.warning {
-  color: #992600;
+  color: #b32d00;
 }
 
 .mini .bold {
@@ -4637,7 +4637,7 @@ html, body {
 }
 
 .mini {
-  color: #202020;
+  color: #404040;
   height: 100%;
 }
 .mini * {

@@ -4,11 +4,11 @@
   @mixin label($prefix, $color, $color-ratio, $font-weight)
     @if $prefix == null
       .label
-        color: lighten($color, 10%)
+        color: $color
         font-weight: $font-weight
     @else
       .label.#{$prefix}
-        color: lighten($color, 10%)
+        color: $color
         font-weight: $font-weight
 
   @mixin label-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)
@@ -19,17 +19,17 @@
       .label.label-#{$suffix}
         font-size: $font-size * $font-size-ratio
 
-  @include label(null, $col-default, 0.1, 500)
+  @include label(null, $col-default-light-1, 0.1, 500)
 
-  @include label('default', $col-default, 0.1, 500)
+  @include label('default', $col-default-light-1, 0.1, 500)
 
-  @include label('failure', $col-failure, 0.1, 500)
+  @include label('failure', $col-failure-light-1, 0.1, 500)
 
-  @include label('primary', $col-primary, 0.1, 500)
+  @include label('primary', $col-primary-light-1, 0.1, 500)
 
-  @include label('success', $col-success, 0.1, 500)
+  @include label('success', $col-success-light-1, 0.1, 500)
 
-  @include label('warning', $col-warning, 0.1, 500)
+  @include label('warning', $col-warning-light-1, 0.1, 500)
 
   @if $sml
     .sml
