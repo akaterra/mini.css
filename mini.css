@@ -1057,10 +1057,14 @@
 }
 .mini .link:hover {
   color: #e6004d;
+}
+.mini .link:not(.active):hover {
   transform: rotate(-1deg) scale(1.02) translateY(0px);
 }
 .mini .link:active {
   color: #cc0044;
+}
+.mini .link:not(.active):active {
   transform: rotate(1deg) scale(0.98) translateY(2px) !important;
 }
 .mini .link.default {
@@ -1071,10 +1075,14 @@
 }
 .mini .link:hover.default {
   color: #737373;
+}
+.mini .link:not(.active):hover.default {
   transform: rotate(-1deg) scale(1.02) translateY(0px);
 }
 .mini .link:active.default {
   color: #666666;
+}
+.mini .link:not(.active):active.default {
   transform: rotate(1deg) scale(0.98) translateY(2px) !important;
 }
 .mini .link.failure {
@@ -1085,10 +1093,14 @@
 }
 .mini .link:hover.failure {
   color: #e60000;
+}
+.mini .link:not(.active):hover.failure {
   transform: rotate(-1deg) scale(1.02) translateY(0px);
 }
 .mini .link:active.failure {
   color: #cc0000;
+}
+.mini .link:not(.active):active.failure {
   transform: rotate(1deg) scale(0.98) translateY(2px) !important;
 }
 .mini .link.primary {
@@ -1099,10 +1111,14 @@
 }
 .mini .link:hover.primary {
   color: #e6004d;
+}
+.mini .link:not(.active):hover.primary {
   transform: rotate(-1deg) scale(1.02) translateY(0px);
 }
 .mini .link:active.primary {
   color: #cc0044;
+}
+.mini .link:not(.active):active.primary {
   transform: rotate(1deg) scale(0.98) translateY(2px) !important;
 }
 .mini .link.success {
@@ -1113,10 +1129,14 @@
 }
 .mini .link:hover.success {
   color: #509573;
+}
+.mini .link:not(.active):hover.success {
   transform: rotate(-1deg) scale(1.02) translateY(0px);
 }
 .mini .link:active.success {
   color: #478566;
+}
+.mini .link:not(.active):active.success {
   transform: rotate(1deg) scale(0.98) translateY(2px) !important;
 }
 .mini .link.warning {
@@ -1127,10 +1147,14 @@
 }
 .mini .link:hover.warning {
   color: #e63900;
+}
+.mini .link:not(.active):hover.warning {
   transform: rotate(-1deg) scale(1.02) translateY(0px);
 }
 .mini .link:active.warning {
   color: #cc3300;
+}
+.mini .link:not(.active):active.warning {
   transform: rotate(1deg) scale(0.98) translateY(2px) !important;
 }
 
@@ -1999,10 +2023,11 @@
   content: " ";
 }
 .mini .tabs > .tabs-bar > .tab {
+  align-items: center;
   border-bottom-width: 0 !important;
   border-style: solid;
   cursor: pointer;
-  float: left;
+  display: flex;
   font-weight: bolder;
   margin: 0 2px;
   position: relative;
