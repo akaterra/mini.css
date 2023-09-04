@@ -5,19 +5,19 @@
     @if $prefix == null
       .panel
         &.transparent
-          color: $transparent-color
+          // color: $transparent-color
 
         background-color: $bg-color
         border-color: $border-color
-        color: $color
+        // color: $color
     @else
       .panel.#{$prefix}
         &.transparent
-          color: $transparent-color
+          // color: $transparent-color
 
         background-color: $bg-color
         border-color: $border-color
-        color: $color
+        // color: $color
 
   @mixin panel-sized($suffix, $border-radius, $border-width, $font-size, $ver, $hor)
     @if $suffix == null
@@ -34,17 +34,17 @@
         border-width: $border-width
         font-size: $font-size
 
-  @include panel(null, $col, $col-default-light-4, $col-default-dark-1, $col-default-dark-1)
+  @include panel(null, $col, $col-default-light-4, $col-text, $col-text)
 
-  @include panel('default', $col, $col-default-light-4, $col-default-dark-1, $col-default-dark-1)
+  @include panel('default', $col, $col-default-light-4, $col-text, $col-text)
 
-  @include panel('failure', $col, $col-failure-light-4, $col-default-dark-1, $col-default-dark-1)
+  @include panel('failure', $col, $col-failure-light-4, $col-text, $col-text)
 
-  @include panel('primary', $col, $col-primary-light-4, $col-default-dark-1, $col-default-dark-1)
+  @include panel('primary', $col, $col-primary-light-4, $col-text, $col-text)
 
-  @include panel('success', $col, $col-success-light-4, $col-default-dark-1, $col-default-dark-1)
+  @include panel('success', $col, $col-success-light-4, $col-text, $col-text)
 
-  @include panel('warning', $col, $col-warning-light-4, $col-default-dark-1, $col-default-dark-1)
+  @include panel('warning', $col, $col-warning-light-4, $col-text, $col-text)
 
   @if $sml
     .sml
