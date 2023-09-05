@@ -234,7 +234,7 @@
   transform: rotate(-1deg) scale(1.02);
 }
 .mini .button:active:not(.disabled) {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini a.button {
   text-decoration: none;
@@ -494,7 +494,7 @@
   transform: rotate(-1deg) scale(1.02);
 }
 .mini .checkbox:active:not(.disabled) {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini .checkbox:before {
   border-style: solid;
@@ -1065,7 +1065,7 @@
   color: #cc0044;
 }
 .mini .link:not(.active):active {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini .link.default {
   color: hsl(0, 0%, 50%);
@@ -1083,7 +1083,7 @@
   color: #666666;
 }
 .mini .link:not(.active):active.default {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini .link.failure {
   color: hsl(0, 100%, 50%);
@@ -1101,7 +1101,7 @@
   color: #cc0000;
 }
 .mini .link:not(.active):active.failure {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini .link.primary {
   color: hsl(340, 100%, 50%);
@@ -1119,7 +1119,7 @@
   color: #cc0044;
 }
 .mini .link:not(.active):active.primary {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini .link.success {
   color: hsl(150, 30%, 50%);
@@ -1137,7 +1137,7 @@
   color: #478566;
 }
 .mini .link:not(.active):active.success {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini .link.warning {
   color: hsl(15, 100%, 50%);
@@ -1155,7 +1155,7 @@
   color: #cc3300;
 }
 .mini .link:not(.active):active.warning {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 
 .mini .list.active .list-header:not(.active):active, .mini .list.active .list-subheader:not(.active):active, .mini .list.active .list-subsubheader:not(.active):active, .mini .list.active .list-item:not(.active):active, .mini .list.active .list-subitem:not(.active):active, .mini .list.active .list-subsubitem:not(.active):active {
@@ -2013,7 +2013,7 @@
   transform: rotate(-1deg) scale(1.02);
 }
 .mini .tabs > .tabs-bar > .tab:active:not(.active) {
-  transform: rotate(1deg) scale(0.98) translateY(2px) !important;
+  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini .tabs > .tabs-bar > .tab.active {
   cursor: auto;
@@ -2390,19 +2390,6 @@
   border-width: 0 2px;
 }
 
-.mini .ripped {
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-}
-.mini .ripped:after {
-  content: "";
-  border-bottom: 3px dotted white !important;
-  display: block;
-  position: absolute;
-  left: 0;
-  height: 4px;
-  width: 100%;
-}
 .mini .rounded {
   border-radius: 1000px !important;
 }
@@ -2618,56 +2605,56 @@
 }
 
 .mini .sml .shadow {
-  box-shadow: 0 2.5px 7.5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2.5px 3.75px rgba(0, 0, 0, 0.25);
 }
 .mini .sml .shadow.shadow-low {
-  box-shadow: 0 1.25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1.25px 1.875px rgba(0, 0, 0, 0.25);
 }
 .mini .sml .shadow.shadow-high {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 7.5px rgba(0, 0, 0, 0.25);
 }
 .mini .sml .text-shadow {
-  text-shadow: 0 0.625px 1.25px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0.625px 0.625px rgba(0, 0, 0, 0.25);
 }
 .mini .med .shadow {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 7.5px rgba(0, 0, 0, 0.25);
 }
 .mini .med .shadow.shadow-low {
-  box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2.5px 3.75px rgba(0, 0, 0, 0.25);
 }
 .mini .med .shadow.shadow-high {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
 }
 .mini .med .text-shadow {
-  text-shadow: 0 1.25px 2.5px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1.25px 1.25px rgba(0, 0, 0, 0.25);
 }
 .mini .lrg .shadow {
-  box-shadow: 0 7.5px 22.5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 7.5px 11.25px rgba(0, 0, 0, 0.25);
 }
 .mini .lrg .shadow.shadow-low {
-  box-shadow: 0 3.75px 7.5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3.75px 5.625px rgba(0, 0, 0, 0.25);
 }
 .mini .lrg .shadow.shadow-high {
   box-shadow: 0 15px 22.5px rgba(0, 0, 0, 0.25);
 }
 .mini .lrg .text-shadow {
-  text-shadow: 0 1.875px 3.75px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1.875px 1.875px rgba(0, 0, 0, 0.25);
 }
 
 .mini .span {
-  color: #595959;
+  color: #666666;
 }
 .mini .span.failure {
-  color: #b30000;
+  color: #cc0000;
 }
 .mini .span.primary {
-  color: #b3003c;
+  color: #cc0044;
 }
 .mini .span.success {
-  color: #3e7459;
+  color: #478566;
 }
 .mini .span.warning {
-  color: #b32d00;
+  color: #cc3300;
 }
 
 .mini .bold {

@@ -1,41 +1,49 @@
 @import ../vars
 
 .mini
+  @mixin shadow($val)
+    box-shadow: 0 $val $val * 1.5 rgba(0, 0, 0, .25)
+    // box-shadow: $val $val 0 0 rgba(0, 0, 0, .15)
+
+  @mixin text-shadow($val)
+    text-shadow: 0 $val / 4 $val / 4 rgba(0, 0, 0, .25)
+    // text-shadow: $val / 2 $val / 2 0 0 rgba(0, 0, 0, .15)
+
   .sml
     .shadow
-      box-shadow: 0 $sml-vertical $sml-horizontal * 1.5 rgba(0, 0, 0, .25)
+      @include shadow($sml-vertical)
 
       &.shadow-low
-        box-shadow: 0 $sml-vertical * 0.5 $sml-horizontal rgba(0, 0, 0, .25)
+        @include shadow($sml-vertical * 0.5)
 
       &.shadow-high
-        box-shadow: 0 $sml-vertical * 2 $sml-horizontal * 3 rgba(0, 0, 0, .25)
+        @include shadow($sml-vertical * 2)
 
     .text-shadow
-      text-shadow: 0 $sml-vertical / 4 $sml-horizontal / 4 rgba(0, 0, 0, .25)
+      @include text-shadow($sml-vertical)
 
   .med
     .shadow
-      box-shadow: 0 $med-vertical $med-horizontal * 1.5 rgba(0, 0, 0, .25)
+      @include shadow($med-vertical)
 
       &.shadow-low
-        box-shadow: 0 $med-vertical * 0.5 $med-vertical rgba(0, 0, 0, .25)
+        @include shadow($med-vertical * 0.5)
 
       &.shadow-high
-        box-shadow: 0 $med-vertical * 2 $med-vertical * 3 rgba(0, 0, 0, .25)
+        @include shadow($med-vertical * 2)
 
     .text-shadow
-      text-shadow: 0 $med-vertical / 4 $med-horizontal / 4 rgba(0, 0, 0, .25)
+      @include text-shadow($med-vertical)
 
   .lrg
     .shadow
-      box-shadow: 0 $lrg-vertical $lrg-horizontal * 1.5 rgba(0, 0, 0, .25)
+      @include shadow($lrg-vertical)
 
       &.shadow-low
-        box-shadow: 0 $lrg-vertical * 0.5 $lrg-vertical rgba(0, 0, 0, .25)
+        @include shadow($lrg-vertical * 0.5)
 
       &.shadow-high
-        box-shadow: 0 $lrg-vertical * 2 $lrg-vertical * 3 rgba(0, 0, 0, .25)
+        @include shadow($lrg-vertical * 2)
 
     .text-shadow
-      text-shadow: 0 $lrg-vertical / 4 $lrg-horizontal / 4 rgba(0, 0, 0, .25)
+      @include text-shadow($lrg-vertical)
