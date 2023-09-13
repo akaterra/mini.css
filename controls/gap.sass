@@ -1,56 +1,37 @@
 @import ../vars
 
 .mini
-  .sml
-    @if $sml
-      .gap
-        height: $sml-vertical * 2
-        min-height: $sml-vertical * 2
+  @mixin gap-sized($suffix, $ver, $hor)
+    .gap
+      height: $ver * 2
+      min-height: $ver * 2
+  
+    .children-gap>*:not(:first-child):not(.link)
+      margin-top: $ver * 2
 
-      .children-gap>*:not(:first-child)
-        margin-top: $sml-vertical * 2
+    .children-gap>*:not(:last-child):not(.link)
+      margin-bottom: $ver * 2
 
-      .children-gap-full>*
-        margin-top: $sml-vertical * 2
+    .children-gap-full>*:first-child
+      margin-top: $ver * 2
 
-      .children-gap-full>*:last-child
-        margin-bottom: $sml-vertical * 2
+    .children-gap-full>*:last-child
+      margin-bottom: $ver * 2
 
-      .children-gap-top>*
-        margin-top: $sml-vertical * 2
+    .children-gap-top>*:first-child
+      margin-top: $ver * 2
+
+    .children-gap-bottom>*:last-child
+      margin-bottom: $ver * 2
+
+  @if $sml
+    .sml
+      @include gap-sized(null, $sml-vertical, $sml-horizontal)
 
   @if $med
     .med
-      .gap
-        height: $med-vertical * 2
-        min-height: $med-vertical * 2
-
-      .children-gap>*:not(:first-child)
-        margin-top: $med-vertical * 2
-
-      .children-gap-full>*
-        margin-top: $med-vertical * 2
-
-      .children-gap-full>*:last-child
-        margin-bottom: $med-vertical * 2
-
-      .children-gap-top>*
-        margin-top: $med-vertical * 2
+      @include gap-sized(null, $med-vertical, $med-horizontal)
 
   @if $lrg
     .lrg
-      .gap
-        height: $lrg-vertical * 2
-        min-height: $lrg-vertical * 2
-
-      .children-gap>*:not(:first-child)
-        margin-top: $lrg-vertical * 2
-
-      .children-gap-full>*
-        margin-top: $lrg-vertical * 2
-
-      .children-gap-full>*:last-child
-        margin-bottom: $lrg-vertical * 2
-
-      .children-gap-top>*
-        margin-top: $lrg-vertical * 2
+      @include gap-sized(null, $lrg-vertical, $lrg-horizontal)

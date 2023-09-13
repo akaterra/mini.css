@@ -25,8 +25,8 @@
   color: white;
 }
 .mini .alert.warning {
-  background-color: #ff6633;
-  border-color: #ff6633;
+  background-color: #ff8833;
+  border-color: #ff8833;
   color: white;
 }
 .mini .sml .alert {
@@ -95,7 +95,7 @@
   display: inline-block;
 }
 .mini .badge.warning {
-  background-color: hsl(15, 100%, 50%);
+  background-color: hsl(25, 100%, 50%);
   color: white;
   display: inline-block;
 }
@@ -145,7 +145,7 @@
   border-left: 2px hsl(150, 30%, 50%) solid;
 }
 .mini .blockquote.warning {
-  border-left: 2px hsl(15, 100%, 50%) solid;
+  border-left: 2px hsl(25, 100%, 50%) solid;
 }
 .mini .sml .blockquote {
   padding-left: 8px;
@@ -225,8 +225,11 @@
 }
 
 .mini .button {
+  align-items: center;
   cursor: pointer;
-  display: block;
+  display: flex;
+  justify-content: center;
+  outline-width: 4px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -330,21 +333,21 @@
   color: white;
 }
 .mini .button.warning {
-  background: hsl(15, 100%, 50%);
-  border-color: hsl(15, 100%, 50%);
+  background: hsl(25, 100%, 50%);
+  border-color: hsl(25, 100%, 50%);
   color: white;
 }
 .mini .button.warning.transparent {
-  color: hsl(15, 100%, 50%);
+  color: hsl(25, 100%, 50%);
 }
 .mini .button:hover.warning, .mini .button:focus.warning {
-  background-color: #e63900 !important;
-  border-color: #e63900;
+  background-color: #e66000 !important;
+  border-color: #e66000;
   color: white;
 }
 .mini .button:active:not(.disabled).warning, .mini .button.active.warning {
-  background-color: #cc3300 !important;
-  border-color: #cc3300;
+  background-color: #cc5500 !important;
+  border-color: #cc5500;
   color: white;
 }
 .mini .sml .button {
@@ -352,30 +355,33 @@
   border-width: 2px;
   font-size: 0.6rem;
   height: 22px;
+  line-height: 2.5;
   margin-bottom: 2.5px;
   margin-top: 2.5px;
   min-height: 22px;
-  padding: 1px 5px 0 5px;
+  padding: calc(2.5px + 0.075rem) 5px;
 }
 .mini .med .button {
   border-radius: 5px;
   border-width: 2px;
   font-size: 0.8rem;
   height: 32px;
+  line-height: 2.5;
   margin-bottom: 5px;
   margin-top: 5px;
   min-height: 32px;
-  padding: 1px 10px 0 10px;
+  padding: calc(5px + 0.1rem) 10px;
 }
 .mini .lrg .button {
   border-radius: 7px;
   border-width: 2px;
   font-size: 1.2rem;
   height: 42px;
+  line-height: 2.5;
   margin-bottom: 7.5px;
   margin-top: 7.5px;
   min-height: 42px;
-  padding: 1px 15px 0 15px;
+  padding: calc(7.5px + 0.15rem) 15px;
 }
 .mini .button.button-sml {
   border-radius: 3px;
@@ -420,7 +426,7 @@
   font-weight: 700;
 }
 .mini .caption.warning {
-  color: #992600;
+  color: #994000;
   font-weight: 700;
 }
 .mini .sml .caption {
@@ -606,23 +612,23 @@
 }
 .mini .checkbox.warning:before {
   background: white;
-  border-color: hsl(15, 100%, 50%);
+  border-color: hsl(25, 100%, 50%);
 }
 .mini .checkbox:checked.warning:before {
-  background: hsl(15, 100%, 50%);
+  background: hsl(25, 100%, 50%);
   outline-color: white;
 }
 .mini .checkbox:hover.warning:before, .mini .checkbox:focus.warning:before {
-  border-color: #e63900 !important;
+  border-color: #e66000 !important;
 }
 .mini .checkbox:hover.warning:checked:before, .mini .checkbox:focus.warning:checked:before {
-  background: #e63900 !important;
+  background: #e66000 !important;
 }
 .mini .checkbox:active:not(.disabled).warning:before, .mini .checkbox.active.warning:before {
-  border-color: #cc3300 !important;
+  border-color: #cc5500 !important;
 }
 .mini .checkbox:checked:not(.disabled):active.warning:before, .mini .checkbox.active:checked.warning:before {
-  background: #cc3300 !important;
+  background: #cc5500 !important;
 }
 .mini .sml .checkbox {
   height: 11px;
@@ -781,14 +787,14 @@
 }
 .mini .control.warning {
   background-color: white;
-  border-color: hsl(15, 100%, 50%);
-  color: hsl(15, 100%, 50%);
+  border-color: hsl(25, 100%, 50%);
+  color: hsl(25, 100%, 50%);
 }
 .mini .control.warning.transparent {
-  color: hsl(15, 100%, 50%);
+  color: hsl(25, 100%, 50%);
 }
 .mini .control:hover.warning, .mini .control:focus.warning {
-  border-color: #e63900;
+  border-color: #e66000;
 }
 .mini .sml .control {
   border-radius: 3px;
@@ -798,7 +804,7 @@
   margin-bottom: 2.5px;
   margin-top: 2.5px;
   min-height: 22px;
-  padding: 0 3px;
+  padding: 2.5px 3px;
 }
 .mini .sml textarea.control, .mini .sml a.button {
   padding: 2.5px 5px;
@@ -811,7 +817,7 @@
   margin-bottom: 5px;
   margin-top: 5px;
   min-height: 32px;
-  padding: 0 8px;
+  padding: 5px 8px;
 }
 .mini .med textarea.control, .mini .med a.button {
   padding: 5px 10px;
@@ -824,7 +830,7 @@
   margin-bottom: 7.5px;
   margin-top: 7.5px;
   min-height: 42px;
-  padding: 0 13px;
+  padding: 7.5px 13px;
 }
 .mini .lrg textarea.control, .mini .lrg a.button {
   padding: 7.5px 15px;
@@ -894,10 +900,10 @@
   border-top-color: hsl(150, 30%, 50%);
 }
 .mini .divider.warning {
-  border-top-color: #ffb399;
+  border-top-color: #ffc499;
 }
 .mini .divider.warning.top {
-  border-top-color: hsl(15, 100%, 50%);
+  border-top-color: hsl(25, 100%, 50%);
 }
 .mini .sml .divider {
   border-top-width: 2px;
@@ -958,49 +964,67 @@
   height: 5px;
   min-height: 5px;
 }
-.mini .sml .children-gap > *:not(:first-child) {
+.mini .sml .children-gap > *:not(:first-child):not(.link) {
   margin-top: 5px;
 }
-.mini .sml .children-gap-full > * {
+.mini .sml .children-gap > *:not(:last-child):not(.link) {
+  margin-bottom: 5px;
+}
+.mini .sml .children-gap-full > *:first-child {
   margin-top: 5px;
 }
 .mini .sml .children-gap-full > *:last-child {
   margin-bottom: 5px;
 }
-.mini .sml .children-gap-top > * {
+.mini .sml .children-gap-top > *:first-child {
   margin-top: 5px;
+}
+.mini .sml .children-gap-bottom > *:last-child {
+  margin-bottom: 5px;
 }
 .mini .med .gap {
   height: 10px;
   min-height: 10px;
 }
-.mini .med .children-gap > *:not(:first-child) {
+.mini .med .children-gap > *:not(:first-child):not(.link) {
   margin-top: 10px;
 }
-.mini .med .children-gap-full > * {
+.mini .med .children-gap > *:not(:last-child):not(.link) {
+  margin-bottom: 10px;
+}
+.mini .med .children-gap-full > *:first-child {
   margin-top: 10px;
 }
 .mini .med .children-gap-full > *:last-child {
   margin-bottom: 10px;
 }
-.mini .med .children-gap-top > * {
+.mini .med .children-gap-top > *:first-child {
   margin-top: 10px;
+}
+.mini .med .children-gap-bottom > *:last-child {
+  margin-bottom: 10px;
 }
 .mini .lrg .gap {
   height: 15px;
   min-height: 15px;
 }
-.mini .lrg .children-gap > *:not(:first-child) {
+.mini .lrg .children-gap > *:not(:first-child):not(.link) {
   margin-top: 15px;
 }
-.mini .lrg .children-gap-full > * {
+.mini .lrg .children-gap > *:not(:last-child):not(.link) {
+  margin-bottom: 15px;
+}
+.mini .lrg .children-gap-full > *:first-child {
   margin-top: 15px;
 }
 .mini .lrg .children-gap-full > *:last-child {
   margin-bottom: 15px;
 }
-.mini .lrg .children-gap-top > * {
+.mini .lrg .children-gap-top > *:first-child {
   margin-top: 15px;
+}
+.mini .lrg .children-gap-bottom > *:last-child {
+  margin-bottom: 15px;
 }
 
 .mini .label {
@@ -1024,7 +1048,7 @@
   font-weight: 500;
 }
 .mini .label.warning {
-  color: #ff6633;
+  color: #ff8833;
   font-weight: 500;
 }
 .mini .sml .label {
@@ -1140,19 +1164,19 @@
   transform: rotate(1deg) scale(0.96) translateY(2px) !important;
 }
 .mini .link.warning {
-  color: hsl(15, 100%, 50%);
+  color: hsl(25, 100%, 50%);
   cursor: pointer;
   display: inline-block;
   font-weight: inherit;
 }
 .mini .link:hover.warning {
-  color: #e63900;
+  color: #e66000;
 }
 .mini .link:not(.active):hover.warning {
   transform: rotate(-1deg) scale(1.02) translateY(0px);
 }
 .mini .link:active.warning {
-  color: #cc3300;
+  color: #cc5500;
 }
 .mini .link:not(.active):active.warning {
   transform: rotate(1deg) scale(0.96) translateY(2px) !important;
@@ -1244,20 +1268,20 @@
   color: white;
 }
 .mini .list.warning.active .list-header:not(.active):active, .mini .list.warning.active .list-subheader:not(.active):active, .mini .list.warning.active .list-subsubheader:not(.active):active, .mini .list.warning.active .list-item:not(.active):active, .mini .list.warning.active .list-subitem:not(.active):active, .mini .list.warning.active .list-subsubitem:not(.active):active {
-  background-color: #ab2b00 !important;
+  background-color: #ab4700 !important;
   color: white;
 }
 .mini .list.warning.active .list-header:not(.selected):hover, .mini .list.warning.active .list-subheader:not(.selected):hover, .mini .list.warning.active .list-subsubheader:not(.selected):hover, .mini .list.warning.active .list-item:not(.selected):hover, .mini .list.warning.active .list-subitem:not(.selected):hover, .mini .list.warning.active .list-subsubitem:not(.selected):hover {
-  background-color: #c73200;
+  background-color: #c75300;
   color: white;
   cursor: pointer;
 }
 .mini .list.warning .list-header, .mini .list.warning .list-subheader, .mini .list.warning .list-subsubheader {
-  color: #c73200;
+  color: #c75300;
   font-weight: 700;
 }
 .mini .list.warning .list-header.active, .mini .list.warning .list-subheader.active, .mini .list.warning .list-subsubheader.active, .mini .list.warning .list-item.active, .mini .list.warning .list-subitem.active, .mini .list.warning .list-subsubitem.active {
-  background-color: #ab2b00 !important;
+  background-color: #ab4700 !important;
   color: white;
 }
 .mini .sml .list .list-header {
@@ -1491,7 +1515,7 @@
 }
 .mini .panel.warning {
   background-color: white;
-  border-color: #ffd9cc;
+  border-color: #ffe1cc;
 }
 .mini .sml .panel {
   border-radius: 3px;
@@ -1538,16 +1562,16 @@
 }
 
 .mini .sml .paragraph {
-  margin-bottom: 7.5px;
-  margin-top: 7.5px;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
 }
 .mini .med .paragraph {
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
 }
 .mini .lrg .paragraph {
-  margin-bottom: 22.5px;
-  margin-top: 22.5px;
+  margin-bottom: 30px !important;
+  margin-top: 30px !important;
 }
 .mini .paragraph {
   display: block;
@@ -1569,7 +1593,7 @@
   border-top: #bddbcc solid 2px;
 }
 .mini .splitter.warning {
-  border-top: #ffb399 solid 2px;
+  border-top: #ffc499 solid 2px;
 }
 .mini .sml .splitter {
   height: 2px;
@@ -1768,37 +1792,37 @@
   color: #478566;
 }
 .mini .tabs > .tabs-bar > .tab.warning {
-  background-color: hsl(15, 100%, 50%);
+  background-color: hsl(25, 100%, 50%);
   border-color: transparent;
   color: white;
 }
 .mini .tabs > .tabs-bar > .tab.warning.active {
   background-color: white;
   border-color: #e6e6e6;
-  color: hsl(15, 100%, 50%);
+  color: hsl(25, 100%, 50%);
 }
 .mini .tabs > .tabs-content {
   border-color: #e6e6e6;
 }
 .mini .tabs > .tabs-bar > .tab:hover.warning, .mini .tabs > .tabs-bar > .tab:focus.warning {
-  background-color: #e63900 !important;
-  border-color: #e63900;
+  background-color: #e66000 !important;
+  border-color: #e66000;
   color: white;
 }
 .mini .tabs > .tabs-bar > .tab.active:hover.warning, .mini .tabs > .tabs-bar > .tab.active:focus.warning {
   background-color: white !important;
   border-color: #e6e6e6;
-  color: #e63900;
+  color: #e66000;
 }
 .mini .tabs > .tabs-bar > .tab:active.warning {
-  background-color: #cc3300 !important;
-  border-color: #cc3300;
+  background-color: #cc5500 !important;
+  border-color: #cc5500;
   color: white;
 }
 .mini .tabs > .tabs-bar > .tab.active:hover.warning, .mini .tabs > .tabs-bar > .tab.active:focus.warning {
   background-color: white !important;
   border-color: #e6e6e6;
-  color: #cc3300;
+  color: #cc5500;
 }
 .mini .sml .tabs {
   margin-bottom: 2.5px;
@@ -1823,7 +1847,6 @@
 }
 .mini .sml .tabs > .tabs-bar > .tab.active {
   height: 22px;
-  min-height: 22px;
   margin-bottom: 0;
   margin-top: 0;
   min-height: 22px;
@@ -1858,7 +1881,6 @@
 }
 .mini .med .tabs > .tabs-bar > .tab.active {
   height: 32px;
-  min-height: 32px;
   margin-bottom: 0;
   margin-top: 0;
   min-height: 32px;
@@ -1893,7 +1915,6 @@
 }
 .mini .lrg .tabs > .tabs-bar > .tab.active {
   height: 42px;
-  min-height: 42px;
   margin-bottom: 0;
   margin-top: 0;
   min-height: 42px;
@@ -2654,7 +2675,7 @@
   color: #478566;
 }
 .mini .span.warning {
-  color: #cc3300;
+  color: #cc5500;
 }
 
 .mini .bold {
@@ -2750,14 +2771,26 @@
   vertical-align: middle;
 }
 .mini .clear {
-  padding: 0 !important;
   margin: 0 !important;
-}
-.mini .no-padding {
   padding: 0 !important;
 }
-.mini .no-margin {
+.mini .clear-margin {
   margin: 0 !important;
+}
+.mini .clear-margin-top {
+  margin-top: 0 !important;
+}
+.mini .clear-margin-bottom {
+  margin-bottom: 0 !important;
+}
+.mini .clear-padding {
+  padding: 0 !important;
+}
+.mini .clear-padding-top {
+  padding-top: 0 !important;
+}
+.mini .clear-padding-bottom {
+  padding-bottom: 0 !important;
 }
 .mini .disabled {
   cursor: not-allowed;
