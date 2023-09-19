@@ -82,6 +82,15 @@
           width: $width - $lrg-horizontal * 2
 
   @mixin media-minimal($max-width, $wrap)
+    .container-fluid
+      @for $i from 1 through $grid-cells
+        @if $i < 10
+          .f-#{$i}
+            width: 100vw / $grid-cells * $i !important
+        @else
+          .f#{$i}
+            width: 100vw / $grid-cells * $i !important
+
     @media screen and (max-width: $max-width)
       @for $i from 1 through $grid-cells
         @if $i < 10
@@ -164,7 +173,7 @@
       .ccc
         padding: 0 $sml-horizontal
     
-    .container.sml
+    .container.sml, .container-fluid.sml
       padding: 0 $sml-horizontal
 
   @if $med
@@ -180,7 +189,7 @@
       .ccc
         padding: $med-vertical $med-horizontal
 
-    .container.med
+    .container.med, .container-fluid.med
       padding: 0 $med-horizontal
 
   @if $lrg
@@ -196,7 +205,7 @@
       .ccc
         padding: 0 $lrg-horizontal
 
-    .container.lrg
+    .container.lrg, .container-fluid.lrg
       padding: 0 $lrg-horizontal
 
   @if $sml
@@ -217,3 +226,11 @@
       .row
         margin-left: -$lrg-horizontal
         margin-right: -$lrg-horizontal
+
+  .p13
+    flex: none
+    width: calc(100% / 3)
+
+  .p23
+    flex: none
+    width: calc(100% / 3 * 2)

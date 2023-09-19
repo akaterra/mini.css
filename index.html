@@ -173,6 +173,12 @@
                                             <option value="slope">Slope</option>
                                             <option value="square" selected>Square</option>
                                         </select>
+                                        <label class="label">Container</label>
+                                        <select class="control primary shadow" id="containerMode">
+                                            <option value="fixed" selected>Fixed</option>
+                                            <option value="fluid">Fluid</option>
+                                        </select>
+
                                     </div>
                                 </div>
                             </div>
@@ -1616,7 +1622,7 @@
                             <div class="row">
                                 <div class="c-8">
                                     <div class="cow">
-                                        <div class="panel primary no-margin __height-100">Bubbling panels</div>
+                                        <div class="panel primary clear-margin __height-100">Bubbling panels</div>
                                         <div class="panel on-bottom-left auto shadow aligned">Bottom left</div>
                                         <div class="panel on-bottom-right auto shadow">Bottom right</div>
                                         <div class="panel on-left-bottom auto shadow">Left bottom</div>
@@ -1630,7 +1636,7 @@
                                 <div class="c-2">&nbsp;</div>
                                 <div class="c-8">
                                     <div class="cow">
-                                        <div class="panel primary no-margin __height-100">Bubbling alerts</div>
+                                        <div class="panel primary clear-margin __height-100">Bubbling alerts</div>
                                         <div class="alert on-bottom-left auto shadow">Bottom left</div>
                                         <div class="alert on-bottom-right auto shadow">Bottom right</div>
                                         <div class="alert on-left-bottom auto shadow">Left bottom</div>
@@ -3421,6 +3427,22 @@
                 case "square":
                     removeClass('container', 'slope');
                     addClass('container', 'square');
+
+                    break;
+            }
+        });
+
+        onChangeSelect('containerMode', function (value) {
+            switch (value) {
+                case "fixed":
+                    removeClass('container', 'container-fluid');
+                    addClass('container', 'container');
+
+                    break;
+
+                case "fluid":
+                    removeClass('container', 'container');
+                    addClass('container', 'container-fluid');
 
                     break;
             }
