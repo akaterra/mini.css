@@ -6,10 +6,10 @@
       height: $ver * 2
       min-height: $ver * 2
   
-    .children-gap>*:not(:first-child):not(.link)
+    .children-gap>*:not(:first-child)
       margin-top: $ver * 2
 
-    .children-gap>*:not(:last-child):not(.link)
+    .children-gap>*:not(:last-child)
       margin-bottom: $ver * 2
 
     .children-gap-full>*:first-child
@@ -23,6 +23,28 @@
 
     .children-gap-bottom>*:last-child
       margin-bottom: $ver * 2
+
+    .gap-hor
+      width: $ver
+      min-width: $ver
+  
+    .children-gap-hor>*:not(:first-child)
+      margin-left: $ver
+
+    .children-gap-hor>*:not(:last-child)
+      margin-right: $ver
+
+    .children-gap-hor-full>*:first-child
+      margin-left: $ver
+
+    .children-gap-hor-full>*:last-child
+      margin-right: $ver
+
+    .children-gap-hor-top>*:first-child
+      margin-left: $ver
+
+    .children-gap-hor-bottom>*:last-child
+      margin-right: $ver
 
   @if $sml
     .sml

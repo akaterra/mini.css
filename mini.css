@@ -964,10 +964,10 @@
   height: 5px;
   min-height: 5px;
 }
-.mini .sml .children-gap > *:not(:first-child):not(.link) {
+.mini .sml .children-gap > *:not(:first-child) {
   margin-top: 5px;
 }
-.mini .sml .children-gap > *:not(:last-child):not(.link) {
+.mini .sml .children-gap > *:not(:last-child) {
   margin-bottom: 5px;
 }
 .mini .sml .children-gap-full > *:first-child {
@@ -982,14 +982,36 @@
 .mini .sml .children-gap-bottom > *:last-child {
   margin-bottom: 5px;
 }
+.mini .sml .gap-hor {
+  width: 2.5px;
+  min-width: 2.5px;
+}
+.mini .sml .children-gap-hor > *:not(:first-child) {
+  margin-left: 2.5px;
+}
+.mini .sml .children-gap-hor > *:not(:last-child) {
+  margin-right: 2.5px;
+}
+.mini .sml .children-gap-hor-full > *:first-child {
+  margin-left: 2.5px;
+}
+.mini .sml .children-gap-hor-full > *:last-child {
+  margin-right: 2.5px;
+}
+.mini .sml .children-gap-hor-top > *:first-child {
+  margin-left: 2.5px;
+}
+.mini .sml .children-gap-hor-bottom > *:last-child {
+  margin-right: 2.5px;
+}
 .mini .med .gap {
   height: 10px;
   min-height: 10px;
 }
-.mini .med .children-gap > *:not(:first-child):not(.link) {
+.mini .med .children-gap > *:not(:first-child) {
   margin-top: 10px;
 }
-.mini .med .children-gap > *:not(:last-child):not(.link) {
+.mini .med .children-gap > *:not(:last-child) {
   margin-bottom: 10px;
 }
 .mini .med .children-gap-full > *:first-child {
@@ -1004,14 +1026,36 @@
 .mini .med .children-gap-bottom > *:last-child {
   margin-bottom: 10px;
 }
+.mini .med .gap-hor {
+  width: 5px;
+  min-width: 5px;
+}
+.mini .med .children-gap-hor > *:not(:first-child) {
+  margin-left: 5px;
+}
+.mini .med .children-gap-hor > *:not(:last-child) {
+  margin-right: 5px;
+}
+.mini .med .children-gap-hor-full > *:first-child {
+  margin-left: 5px;
+}
+.mini .med .children-gap-hor-full > *:last-child {
+  margin-right: 5px;
+}
+.mini .med .children-gap-hor-top > *:first-child {
+  margin-left: 5px;
+}
+.mini .med .children-gap-hor-bottom > *:last-child {
+  margin-right: 5px;
+}
 .mini .lrg .gap {
   height: 15px;
   min-height: 15px;
 }
-.mini .lrg .children-gap > *:not(:first-child):not(.link) {
+.mini .lrg .children-gap > *:not(:first-child) {
   margin-top: 15px;
 }
-.mini .lrg .children-gap > *:not(:last-child):not(.link) {
+.mini .lrg .children-gap > *:not(:last-child) {
   margin-bottom: 15px;
 }
 .mini .lrg .children-gap-full > *:first-child {
@@ -1025,6 +1069,28 @@
 }
 .mini .lrg .children-gap-bottom > *:last-child {
   margin-bottom: 15px;
+}
+.mini .lrg .gap-hor {
+  width: 7.5px;
+  min-width: 7.5px;
+}
+.mini .lrg .children-gap-hor > *:not(:first-child) {
+  margin-left: 7.5px;
+}
+.mini .lrg .children-gap-hor > *:not(:last-child) {
+  margin-right: 7.5px;
+}
+.mini .lrg .children-gap-hor-full > *:first-child {
+  margin-left: 7.5px;
+}
+.mini .lrg .children-gap-hor-full > *:last-child {
+  margin-right: 7.5px;
+}
+.mini .lrg .children-gap-hor-top > *:first-child {
+  margin-left: 7.5px;
+}
+.mini .lrg .children-gap-hor-bottom > *:last-child {
+  margin-right: 7.5px;
 }
 
 .mini .label {
@@ -2149,8 +2215,8 @@
   border-collapse: collapse;
   vertical-align: middle;
 }
-.mini .table.highlighted > .row:hover {
-  background-image: linear-gradient(to right, transparent 0%, #e6e6e6 50%, transparent 100%);
+.mini .table.highlighted > .row:hover:not(.header) {
+  background-image: linear-gradient(to right, transparent 0%, #ececec 25%, #ececec 75%, transparent 100%);
 }
 .mini .table.table-inner.underlined > .row:after {
   margin: 0;
@@ -2755,10 +2821,14 @@
 }
 
 .mini .zebra > *:nth-child(4n+0), .mini .children-zebra > *:nth-child(4n+0) > * {
-  background-image: linear-gradient(to right, transparent 0%, #f2f2f2 50%, transparent 100%);
+  background-image: linear-gradient(to right, transparent 0%, #f2f2f2 10%, #f2f2f2 90%, transparent 100%);
 }
 .mini .zebra > *:nth-child(4n+2), .mini .children-zebra > *:nth-child(4n+2) > * {
-  background-image: linear-gradient(to right, transparent 0%, #f2f2f2 50%, transparent 100%);
+  background-image: linear-gradient(to right, transparent 0%, #f2f2f2 10%, #f2f2f2 90%, transparent 100%);
+}
+
+.mini .document-color {
+  color: inherit !important;
 }
 
 .mini .auto {
