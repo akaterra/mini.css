@@ -101,27 +101,30 @@
 }
 .mini .sml .badge {
   border-radius: 25px;
-  padding: 0 5px;
+  padding: 2px 5px;
 }
 .mini .med .badge {
   border-radius: 25px;
-  padding: 0 10px;
+  padding: 2px 10px;
 }
 .mini .lrg .badge {
   border-radius: 25px;
-  padding: 0 15px;
+  padding: 2px 15px;
 }
 .mini .badge.badge-sml {
   border-radius: 25px;
-  padding: 0 5px;
+  padding: 2px 5px;
 }
 .mini .badge.badge-med {
   border-radius: 25px;
-  padding: 0 10px;
+  padding: 2px 10px;
 }
 .mini .badge.badge-lrg {
   border-radius: 25px;
-  padding: 0 15px;
+  padding: 2px 15px;
+}
+.mini .badge {
+  line-height: 1;
 }
 
 .mini .block {
@@ -964,132 +967,78 @@
   height: 5px;
   min-height: 5px;
 }
-.mini .sml .children-gap > *:not(:first-child) {
+.mini .sml .children-gap {
+  row-gap: 5px;
+}
+.mini .sml .children-gap-full > *:first-child, .mini .sml .children-gap-top > *:first-child {
   margin-top: 5px;
 }
-.mini .sml .children-gap > *:not(:last-child) {
-  margin-bottom: 5px;
-}
-.mini .sml .children-gap-full > *:first-child {
-  margin-top: 5px;
-}
-.mini .sml .children-gap-full > *:last-child {
-  margin-bottom: 5px;
-}
-.mini .sml .children-gap-top > *:first-child {
-  margin-top: 5px;
-}
-.mini .sml .children-gap-bottom > *:last-child {
+.mini .sml .children-gap-full > *:last-child, .mini .sml .children-gap-bottom > *:last-child {
   margin-bottom: 5px;
 }
 .mini .sml .gap-hor {
   width: 2.5px;
   min-width: 2.5px;
 }
-.mini .sml .children-gap-hor > *:not(:first-child) {
+.mini .sml .children-gap-hor {
+  column-gap: 2.5px;
+}
+.mini .sml .children-gap-hor-full > *:first-child, .mini .sml .children-gap-hor-top > *:first-child {
   margin-left: 2.5px;
 }
-.mini .sml .children-gap-hor > *:not(:last-child) {
-  margin-right: 2.5px;
-}
-.mini .sml .children-gap-hor-full > *:first-child {
-  margin-left: 2.5px;
-}
-.mini .sml .children-gap-hor-full > *:last-child {
-  margin-right: 2.5px;
-}
-.mini .sml .children-gap-hor-top > *:first-child {
-  margin-left: 2.5px;
-}
-.mini .sml .children-gap-hor-bottom > *:last-child {
+.mini .sml .children-gap-hor-full > *:last-child, .mini .sml .children-gap-hor-bottom > *:last-child {
   margin-right: 2.5px;
 }
 .mini .med .gap {
   height: 10px;
   min-height: 10px;
 }
-.mini .med .children-gap > *:not(:first-child) {
+.mini .med .children-gap {
+  row-gap: 10px;
+}
+.mini .med .children-gap-full > *:first-child, .mini .med .children-gap-top > *:first-child {
   margin-top: 10px;
 }
-.mini .med .children-gap > *:not(:last-child) {
-  margin-bottom: 10px;
-}
-.mini .med .children-gap-full > *:first-child {
-  margin-top: 10px;
-}
-.mini .med .children-gap-full > *:last-child {
-  margin-bottom: 10px;
-}
-.mini .med .children-gap-top > *:first-child {
-  margin-top: 10px;
-}
-.mini .med .children-gap-bottom > *:last-child {
+.mini .med .children-gap-full > *:last-child, .mini .med .children-gap-bottom > *:last-child {
   margin-bottom: 10px;
 }
 .mini .med .gap-hor {
   width: 5px;
   min-width: 5px;
 }
-.mini .med .children-gap-hor > *:not(:first-child) {
+.mini .med .children-gap-hor {
+  column-gap: 5px;
+}
+.mini .med .children-gap-hor-full > *:first-child, .mini .med .children-gap-hor-top > *:first-child {
   margin-left: 5px;
 }
-.mini .med .children-gap-hor > *:not(:last-child) {
-  margin-right: 5px;
-}
-.mini .med .children-gap-hor-full > *:first-child {
-  margin-left: 5px;
-}
-.mini .med .children-gap-hor-full > *:last-child {
-  margin-right: 5px;
-}
-.mini .med .children-gap-hor-top > *:first-child {
-  margin-left: 5px;
-}
-.mini .med .children-gap-hor-bottom > *:last-child {
+.mini .med .children-gap-hor-full > *:last-child, .mini .med .children-gap-hor-bottom > *:last-child {
   margin-right: 5px;
 }
 .mini .lrg .gap {
   height: 15px;
   min-height: 15px;
 }
-.mini .lrg .children-gap > *:not(:first-child) {
+.mini .lrg .children-gap {
+  row-gap: 15px;
+}
+.mini .lrg .children-gap-full > *:first-child, .mini .lrg .children-gap-top > *:first-child {
   margin-top: 15px;
 }
-.mini .lrg .children-gap > *:not(:last-child) {
-  margin-bottom: 15px;
-}
-.mini .lrg .children-gap-full > *:first-child {
-  margin-top: 15px;
-}
-.mini .lrg .children-gap-full > *:last-child {
-  margin-bottom: 15px;
-}
-.mini .lrg .children-gap-top > *:first-child {
-  margin-top: 15px;
-}
-.mini .lrg .children-gap-bottom > *:last-child {
+.mini .lrg .children-gap-full > *:last-child, .mini .lrg .children-gap-bottom > *:last-child {
   margin-bottom: 15px;
 }
 .mini .lrg .gap-hor {
   width: 7.5px;
   min-width: 7.5px;
 }
-.mini .lrg .children-gap-hor > *:not(:first-child) {
+.mini .lrg .children-gap-hor {
+  column-gap: 7.5px;
+}
+.mini .lrg .children-gap-hor-full > *:first-child, .mini .lrg .children-gap-hor-top > *:first-child {
   margin-left: 7.5px;
 }
-.mini .lrg .children-gap-hor > *:not(:last-child) {
-  margin-right: 7.5px;
-}
-.mini .lrg .children-gap-hor-full > *:first-child {
-  margin-left: 7.5px;
-}
-.mini .lrg .children-gap-hor-full > *:last-child {
-  margin-right: 7.5px;
-}
-.mini .lrg .children-gap-hor-top > *:first-child {
-  margin-left: 7.5px;
-}
-.mini .lrg .children-gap-hor-bottom > *:last-child {
+.mini .lrg .children-gap-hor-full > *:last-child, .mini .lrg .children-gap-hor-bottom > *:last-child {
   margin-right: 7.5px;
 }
 
@@ -2871,11 +2820,11 @@
 }
 .mini .h-auto {
   flex: none;
-  height: auto;
+  height: auto !important;
 }
 .mini .w-auto {
   flex: none;
-  width: auto;
+  width: auto !important;
 }
 
 .mini .c-1 {

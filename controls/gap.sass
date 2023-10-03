@@ -6,44 +6,38 @@
       height: $ver * 2
       min-height: $ver * 2
   
-    .children-gap>*:not(:first-child)
+    .children-gap
+      row-gap: $ver * 2
+
+    // .children-gap>*:not(:first-child)
+    //   margin-top: $ver * 2
+
+    // .children-gap>*:not(:last-child)
+    //   margin-bottom: $ver * 2
+
+    .children-gap-full>*:first-child, .children-gap-top>*:first-child
       margin-top: $ver * 2
 
-    .children-gap>*:not(:last-child)
-      margin-bottom: $ver * 2
-
-    .children-gap-full>*:first-child
-      margin-top: $ver * 2
-
-    .children-gap-full>*:last-child
-      margin-bottom: $ver * 2
-
-    .children-gap-top>*:first-child
-      margin-top: $ver * 2
-
-    .children-gap-bottom>*:last-child
+    .children-gap-full>*:last-child, .children-gap-bottom>*:last-child
       margin-bottom: $ver * 2
 
     .gap-hor
       width: $ver
       min-width: $ver
-  
-    .children-gap-hor>*:not(:first-child)
+
+    .children-gap-hor
+      column-gap: $ver
+
+    // .children-gap-hor>*:not(:first-child)
+    //   margin-left: $ver
+
+    // .children-gap-hor>*:not(:last-child)
+    //   margin-right: $ver
+
+    .children-gap-hor-full>*:first-child, .children-gap-hor-top>*:first-child
       margin-left: $ver
 
-    .children-gap-hor>*:not(:last-child)
-      margin-right: $ver
-
-    .children-gap-hor-full>*:first-child
-      margin-left: $ver
-
-    .children-gap-hor-full>*:last-child
-      margin-right: $ver
-
-    .children-gap-hor-top>*:first-child
-      margin-left: $ver
-
-    .children-gap-hor-bottom>*:last-child
+    .children-gap-hor-full>*:last-child, .children-gap-hor-bottom>*:last-child
       margin-right: $ver
 
   @if $sml
