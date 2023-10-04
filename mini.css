@@ -1592,6 +1592,108 @@
   display: block;
 }
 
+.mini .select {
+  position: relative;
+}
+.mini .select::before {
+  content: " ";
+  position: absolute;
+  z-index: 1000;
+}
+.mini .select > select {
+  appearance: none;
+}
+.mini .select:before {
+  background: hsl(0, 0%, 50%);
+}
+.mini .select:hover:before, .mini .select:focus:before {
+  background: #737373 !important;
+}
+.mini .select:not(.disabled):active:before, .mini .select.active:before {
+  background: #666666 !important;
+}
+.mini .select.default:before {
+  background: hsl(0, 0%, 50%);
+}
+.mini .select:hover.default:before, .mini .select:focus.default:before {
+  background: #737373 !important;
+}
+.mini .select:not(.disabled):active.default:before, .mini .select.active.default:before {
+  background: #666666 !important;
+}
+.mini .select.failure:before {
+  background: hsl(0, 100%, 50%);
+}
+.mini .select:hover.failure:before, .mini .select:focus.failure:before {
+  background: #e60000 !important;
+}
+.mini .select:not(.disabled):active.failure:before, .mini .select.active.failure:before {
+  background: #cc0000 !important;
+}
+.mini .select.primary:before {
+  background: hsl(340, 100%, 50%);
+}
+.mini .select:hover.primary:before, .mini .select:focus.primary:before {
+  background: #e6004d !important;
+}
+.mini .select:not(.disabled):active.primary:before, .mini .select.active.primary:before {
+  background: #cc0044 !important;
+}
+.mini .select.success:before {
+  background: hsl(150, 30%, 50%);
+}
+.mini .select:hover.success:before, .mini .select:focus.success:before {
+  background: #509573 !important;
+}
+.mini .select:not(.disabled):active.success:before, .mini .select.active.success:before {
+  background: #478566 !important;
+}
+.mini .select.warning:before {
+  background: hsl(25, 100%, 50%);
+}
+.mini .select:hover.warning:before, .mini .select:focus.warning:before {
+  background: #e66000 !important;
+}
+.mini .select:not(.disabled):active.warning:before, .mini .select.active.warning:before {
+  background: #cc5500 !important;
+}
+.mini .sml .select:before {
+  bottom: calc(50% - 5.5px + 4px);
+  left: calc(100% - 11px + 0px);
+  right: 8px;
+  top: calc(50% - 5.5px + 4px);
+}
+.mini .med .select:before {
+  bottom: calc(50% - 8px + 4px);
+  left: calc(100% - 16px + 0px);
+  right: 8px;
+  top: calc(50% - 8px + 4px);
+}
+.mini .lrg .select:before {
+  bottom: calc(50% - 10.5px + 4px);
+  left: calc(100% - 21px + 0px);
+  right: 8px;
+  top: calc(50% - 10.5px + 4px);
+}
+.mini .select-sml:before {
+  bottom: calc(50% - 5.5px + 4px);
+  left: calc(100% - 11px + 0px);
+  right: 8px;
+  top: calc(50% - 5.5px + 4px);
+}
+.mini .select-med:before {
+  bottom: calc(50% - 8px + 4px);
+  left: calc(100% - 16px + 0px);
+  right: 8px;
+  top: calc(50% - 8px + 4px);
+}
+.mini .select-lrg:before {
+  bottom: calc(50% - 10.5px + 4px);
+  left: calc(100% - 21px + 0px);
+  right: 8px;
+  top: calc(50% - 10.5px + 4px);
+}
+
 .mini .splitter {
   border-top: #cccccc solid 2px;
 }
@@ -2591,12 +2693,10 @@
 .mini .overflow {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .mini .children-overflow > * {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .mini .sml .pad-hor {
@@ -2755,6 +2855,12 @@
   background-color: hsl(340, 100%, 50%) !important;
   color: white !important;
 }
+.mini .wrap {
+  white-space: pre-wrap;
+}
+.mini .no-wrap {
+  white-space: no-wrap;
+}
 
 .mini .rtl .left {
   text-align: right;
@@ -2776,19 +2882,6 @@
   background-image: linear-gradient(to right, transparent 0%, #f2f2f2 10%, #f2f2f2 90%, transparent 100%);
 }
 
-.mini .document-color {
-  color: inherit !important;
-}
-
-.mini .auto {
-  height: auto;
-  flex: auto;
-  position: relative;
-  width: auto;
-}
-.mini .children-middle > * {
-  vertical-align: middle;
-}
 .mini .clear {
   margin: 0 !important;
   padding: 0 !important;
@@ -2802,14 +2895,34 @@
 .mini .clear-margin-bottom {
   margin-bottom: 0 !important;
 }
-.mini .clear-padding {
+.mini .clear-pad {
   padding: 0 !important;
 }
-.mini .clear-padding-top {
+.mini .clear-pad-left {
+  padding-left: 0 !important;
+}
+.mini .clear-pad-right {
+  padding-right: 0 !important;
+}
+.mini .clear-pad-top {
   padding-top: 0 !important;
 }
-.mini .clear-padding-bottom {
+.mini .clear-pad-bottom {
   padding-bottom: 0 !important;
+}
+
+.mini .document-color {
+  color: inherit !important;
+}
+
+.mini .auto {
+  height: auto;
+  flex: auto;
+  position: relative;
+  width: auto;
+}
+.mini .children-middle > * {
+  vertical-align: middle;
 }
 .mini .disabled {
   cursor: not-allowed;
@@ -4760,6 +4873,7 @@ html, body {
 }
 .mini .cow, .mini .row {
   display: flex;
+  flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
   position: relative;
