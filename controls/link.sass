@@ -5,39 +5,37 @@
     @if $prefix == null
       .link
         color: $color
-        cursor: pointer
-        display: inline-block
         font-weight: $font-weight
     @else
       .link.#{$prefix}
         color: $color
-        cursor: pointer
-        display: inline-block
         font-weight: $font-weight
 
   @mixin link-hover($prefix, $color, $font-weight)
     @if $prefix == null
       .link:hover
         color: $color
-      .link:not(.active):hover
-        transform: rotate($hover-rotate) scale($hover-scale) translateY(0px)
     @else
       .link:hover.#{$prefix}
         color: $color
-      .link:not(.active):hover.#{$prefix}
-        transform: rotate($hover-rotate) scale($hover-scale) translateY(0px)
 
   @mixin link-active($prefix, $color, $font-weight)
     @if $prefix == null
       .link:active
         color: $color
-      .link:not(.active):active
-        transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
     @else
       .link:active.#{$prefix}
         color: $color
-      .link:not(.active):active.#{$prefix}
-        transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
+
+  .link
+    &:hover
+      @include hover()
+
+    &:active:not(.disabled)
+      @include active()
+
+    cursor: pointer
+    display: inline-block
 
   @include link(null, $col-primary, inherit)
   @include link-hover(null, $col-primary-dark-1, inherit)

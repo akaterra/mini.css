@@ -82,17 +82,6 @@
         width: $height
 
   .checkbox
-    &:hover
-      transform: rotate($hover-rotate) scale($hover-scale)
-
-    &:active:not(.disabled)
-      transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
-
-    content: none
-    cursor: pointer
-    outline: none
-    position: relative
-
     &:before
       border-style: solid
       box-sizing: border-box
@@ -100,6 +89,17 @@
       content: ''
       display: block
       outline-style: solid
+
+    &:hover
+      @include hover()
+
+    &:active:not(.disabled)
+      @include active()
+
+    content: none
+    cursor: pointer
+    outline: none
+    position: relative
 
   @include checkbox(null, $col, $col-default, $col, $col)
   @include checkbox-hover(null, $col, $col-default-dark-1, $col, $col)

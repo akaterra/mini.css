@@ -66,10 +66,10 @@
 
   .button
     &:hover
-      transform: rotate($hover-rotate) scale($hover-scale)
+      @include hover()
 
     &:active:not(.disabled)
-      transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
+      @include active()
 
     align-items: center
     cursor: pointer

@@ -4,103 +4,121 @@
   @mixin list($prefix, $color, $font-weight)
     @if $prefix == null
       .list
-        &.active
-          .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
-            &:not(.active):active
-              background-color: darken($color, $col-ratio * $col-darken-active-ratio * 100%) !important
-              color: white
-  
-            &:not(.active):hover
-              background-color: darken($color, $col-ratio * $col-darken-hover-ratio * 100%)
-              color: white
-              cursor: pointer
-  
-        .list-header, .list-subheader, .list-subsubheader
-          color: darken($color, $col-ratio * $col-darken-ratio * 100%)
-          font-weight: $font-weight
-
-        .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
-          &.active
-            background-color: darken($color, $col-ratio * $col-darken-active-ratio * 100%) !important
-            color: white
+        .list-header, .list-item
+          color: $color
     @else
       .list.#{$prefix}
-        &.active
-          .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
-            &:not(.active):active
-              background-color: darken($color, $col-ratio * $col-darken-active-ratio * 100%) !important
-              color: white
+        .list-header, .list-item
+          color: $color
 
-            &:not(.selected):hover
-              background-color: darken($color, $col-ratio * $col-darken-hover-ratio * 100%)
-              color: white
-              cursor: pointer
+  @mixin list-hover($prefix, $bg-color, $border-color, $color, $transparent-color)
+    @if $prefix == null
+      .list.active
+        .list-header:hover, .list-item:hover
+          background-color: $bg-color !important
+          border-color: $border-color
+          color: $color
+    @else
+      .list.active.#{$prefix}
+        .list-header:hover, .list-item:hover
+          background-color: $bg-color !important
+          border-color: $border-color
+          color: $color
 
-        .list-header, .list-subheader, .list-subsubheader
-          color: darken($color, $col-ratio * $col-darken-ratio * 100%)
-          font-weight: $font-weight
+  @mixin list-active($prefix, $bg-color, $border-color, $color, $transparent-color)
+    @if $prefix == null
+      .list
+        .list-header.active, .list-item.active
+          background-color: $bg-color !important
+          border-color: $border-color
+          color: $color
 
-        .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
-          &.active
-            background-color: darken($color, $col-ratio * $col-darken-active-ratio * 100%) !important
-            color: white
+      .list.active
+        .list-header:active:not(.disabled), .list-item:active:not(.disabled)
+          background-color: $bg-color !important
+          border-color: $border-color
+          color: $color
+    @else
+      .list.#{$prefix}
+        .list-header.active, .list-item.active
+          background-color: $bg-color !important
+          border-color: $border-color
+          color: $color
+
+      .list.active.#{$prefix}
+        .list-header:active:not(.disabled), .list-item:active:not(.disabled)
+          background-color: $bg-color !important
+          border-color: $border-color
+          color: $color
 
   @mixin list-sized($suffix, $border-radius, $font-size, $font-size-ratio, $ver, $hor)
     @if $suffix == null
       .list
         .list-header
+          &.sub
+            padding-left: $hor * 2
+          
+          &.subsub
+            padding-left: $hor * 3
+
           &:not(:first-child)
             margin-top: $ver * 2
   
           font-size: $font-size * ($font-size-ratio - 0.25)
           padding: $ver 0 $ver $hor * 1
 
-        .list-subheader
-          &:not(:first-child)
-            margin-top: $ver * 2
-  
-          padding: $ver 0 $ver $hor * 1
-
-        .list-subsubheader
-          &:not(:first-child)
-            margin-top: $ver * 2
-  
-          padding: $ver 0 $ver $hor * 2
-
         .list-item
+          &.sub
+            padding-left: $hor * 3
+          
+          &.subsub
+            padding-left: $hor * 4
+
           padding: $ver 0 $ver $hor * 2
 
-        .list-subitem
-          padding: $ver 0 $ver $hor * 3
-
-        .list-subsubitem
-          padding: $ver 0 $ver $hor * 4
-
-        .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
+        .list-header, .list-item
           border: 0
-          border-radius: $border-radius
+          // border-radius: $border-radius
+
+        margin-bottom: $ver
+        margin-top: $ver
     @else
       .list.list-#{$suffix}
         .list-header
           font-size: $font-size * ($font-size-ratio - 0.25)
 
-        .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
-          font-size: $font-size
+        // .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
+        //   font-size: $font-size
 
-        .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
-          border-radius: $border-radius
+        // .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
+        //   border-radius: $border-radius
+
+        margin-bottom: $ver
+        margin-top: $ver
 
   @include list(null, $col-default, $font-bold)
+  @include list-hover(null, $col-default-dark-1, $col-default-dark-1, $col, $col)
+  @include list-active(null, $col-default-dark-2, $col-default-dark-2, $col, $col)
 
   @include list('default', $col-default, $font-bold)
+  @include list-hover('default', $col-default-dark-1, $col-default-dark-1, $col, $col)
+  @include list-active('default', $col-default-dark-2, $col-default-dark-2, $col, $col)
 
   @include list('failure', $col-failure, $font-bold)
+  @include list-hover('failure', $col-failure-dark-1, $col-failure-dark-1, $col, $col)
+  @include list-active('failure', $col-failure-dark-2, $col-failure-dark-2, $col, $col)
 
   @include list('primary', $col-primary, $font-bold)
+  @include list-hover('primary', $col-primary-dark-1, $col-primary-dark-1, $col, $col)
+  @include list-active('primary', $col-primary-dark-2, $col-primary-dark-2, $col, $col)
 
   @include list('success', $col-success, $font-bold)
+  @include list-hover('success', $col-success-dark-1, $col-success-dark-1, $col, $col)
+  @include list-active('success', $col-success-dark-2, $col-success-dark-2, $col, $col)
 
   @include list('warning', $col-warning, $font-bold)
+  @include list-hover('warning', $col-warning-dark-1, $col-warning-dark-1, $col, $col)
+  @include list-active('warning', $col-warning-dark-2, $col-warning-dark-2, $col, $col)
 
   @if $sml
     .sml
@@ -124,8 +142,18 @@
     @include list-sized('lrg', $lrg-border-radius, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
 
   .list
-    &>*
-      display: block
+    // &>*
+    //   display: block
 
-    .list-item, .list-subitem, .list-subsubitem
-      color: $col-default
+    &.active
+      .list-header, .list-item
+        &:hover
+          @include hover()
+
+        &:active:not(.disabled)
+          @include active()
+  
+        cursor: pointer
+
+    // .list-item, .list-subitem, .list-subsubitem
+    //   color: $col-default

@@ -44,16 +44,23 @@
         top: calc(50% - $height / 2 + $border-width * 2)
 
   .select
-    position: relative
-
-    &::before
-      content: ' '
+    &:before
+      content: ''
+      pointer-events: none
       position: absolute
       z-index: 1000
   
+    &:hover:before
+      @include hover()
+
+    &:active:not(.disabled):before
+      @include active()
+
     &>select
       appearance: none
 
+    position: relative
+  
   @include select(null, $col, $col-default, $col, $col)
   @include select-hover(null, $col, $col-default-dark-1, $col, $col)
   @include select-active(null, $col, $col-default-dark-2, $col, $col)

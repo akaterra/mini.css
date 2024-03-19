@@ -32,6 +32,7 @@
 
         &>.tabs-content
           border-color: $border-color-content
+          display: flex
 
   @mixin tab-hover($prefix, $bg-color, $border-color, $color, $transparent-color, $border-color-content)
     @if $prefix == null
@@ -206,10 +207,10 @@
 
       &>.tab
         &:hover:not(.active)
-          transform: rotate($hover-rotate) scale($hover-scale)
+          @include hover()
 
         &:active:not(.active)
-          transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
+          @include active()
 
         align-items: center
         border-bottom-width: 0 !important

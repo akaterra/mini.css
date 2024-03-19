@@ -12,10 +12,10 @@ $colors: default, failure, primary, success, warning
 
 $font-bold: 700
 
-$active-rotate: 1deg
+$active-rotate: 0.5deg
 $active-scale: 0.96
-$hover-rotate: -1deg
-$hover-scale: 1.02
+$hover-rotate: -0.5deg
+$hover-scale: 1.04
 
 $sml-1: 22px
 $sml-border-radius: 3px
@@ -50,20 +50,20 @@ $col-inverted: #404040
 $col-inverted-text: #404040
 
 $col-ratio: 1.1
-$col-darken-ratio: 0.1
-$col-darken-active-ratio: 0.15
-$col-darken-hover-ratio: 0.1
+// $col-darken-ratio: 0.1
+// $col-darken-active-ratio: 0.15
+// $col-darken-hover-ratio: 0.1
 
 $col-default: hsl(0, 0%, 50%)
-$col-default-ratio: 1.0
+// $col-default-ratio: 1.0
 $col-failure: hsl(0, 100%, 50%)
-$col-failure-ratio: 1.0
+// $col-failure-ratio: 1.0
 $col-primary: hsl(340, 100%, 50%)
-$col-primary-ratio: 1.0
+// $col-primary-ratio: 1.0
 $col-success: hsl(150, 30%, 50%)
-$col-success-ratio: 1.0
+// $col-success-ratio: 1.0
 $col-warning: hsl(25, 100%, 50%)
-$col-warning-ratio: 1.0
+// $col-warning-ratio: 1.0
 
 $col-dark-step: 0.05
 $col-ligth-step: 0.10
@@ -128,3 +128,11 @@ $col-warning-light-6: lighten($col-warning, $col-ligth-step * 4.5 * 100%)
   -o-#{$property}: $css
   -webkit-#{$property}: $css
   #{$property}: $css
+
+@mixin hover
+  // transform: scale($hover-scale)
+  transform: rotate($hover-rotate) scale($hover-scale)
+
+@mixin active
+  // transform: scale($active-scale) translateY(2px) !important
+  transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important

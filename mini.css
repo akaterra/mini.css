@@ -237,10 +237,10 @@
   text-transform: uppercase;
 }
 .mini .button:hover {
-  transform: rotate(-1deg) scale(1.02);
+  transform: rotate(-0.5deg) scale(1.04);
 }
 .mini .button:active:not(.disabled) {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
+  transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
 }
 .mini a.button {
   text-decoration: none;
@@ -499,12 +499,6 @@
   outline: none;
   position: relative;
 }
-.mini .checkbox:hover {
-  transform: rotate(-1deg) scale(1.02);
-}
-.mini .checkbox:active:not(.disabled) {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
-}
 .mini .checkbox:before {
   border-style: solid;
   box-sizing: border-box;
@@ -512,6 +506,12 @@
   content: "";
   display: block;
   outline-style: solid;
+}
+.mini .checkbox:hover {
+  transform: rotate(-0.5deg) scale(1.04);
+}
+.mini .checkbox:active:not(.disabled) {
+  transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
 }
 .mini .checkbox:before {
   background: white;
@@ -1089,344 +1089,300 @@
 }
 
 .mini .link {
-  color: hsl(340, 100%, 50%);
   cursor: pointer;
   display: inline-block;
+}
+.mini .link:hover {
+  transform: rotate(-0.5deg) scale(1.04);
+}
+.mini .link:active:not(.disabled) {
+  transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
+}
+.mini .link {
+  color: hsl(340, 100%, 50%);
   font-weight: inherit;
 }
 .mini .link:hover {
   color: #e6004d;
 }
-.mini .link:not(.active):hover {
-  transform: rotate(-1deg) scale(1.02) translateY(0px);
-}
 .mini .link:active {
   color: #cc0044;
 }
-.mini .link:not(.active):active {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
-}
 .mini .link.default {
   color: hsl(0, 0%, 50%);
-  cursor: pointer;
-  display: inline-block;
   font-weight: inherit;
 }
 .mini .link:hover.default {
   color: #737373;
 }
-.mini .link:not(.active):hover.default {
-  transform: rotate(-1deg) scale(1.02) translateY(0px);
-}
 .mini .link:active.default {
   color: #666666;
 }
-.mini .link:not(.active):active.default {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
-}
 .mini .link.failure {
   color: hsl(0, 100%, 50%);
-  cursor: pointer;
-  display: inline-block;
   font-weight: inherit;
 }
 .mini .link:hover.failure {
   color: #e60000;
 }
-.mini .link:not(.active):hover.failure {
-  transform: rotate(-1deg) scale(1.02) translateY(0px);
-}
 .mini .link:active.failure {
   color: #cc0000;
 }
-.mini .link:not(.active):active.failure {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
-}
 .mini .link.primary {
   color: hsl(340, 100%, 50%);
-  cursor: pointer;
-  display: inline-block;
   font-weight: inherit;
 }
 .mini .link:hover.primary {
   color: #e6004d;
 }
-.mini .link:not(.active):hover.primary {
-  transform: rotate(-1deg) scale(1.02) translateY(0px);
-}
 .mini .link:active.primary {
   color: #cc0044;
 }
-.mini .link:not(.active):active.primary {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
-}
 .mini .link.success {
   color: hsl(150, 30%, 50%);
-  cursor: pointer;
-  display: inline-block;
   font-weight: inherit;
 }
 .mini .link:hover.success {
   color: #509573;
 }
-.mini .link:not(.active):hover.success {
-  transform: rotate(-1deg) scale(1.02) translateY(0px);
-}
 .mini .link:active.success {
   color: #478566;
 }
-.mini .link:not(.active):active.success {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
-}
 .mini .link.warning {
   color: hsl(25, 100%, 50%);
-  cursor: pointer;
-  display: inline-block;
   font-weight: inherit;
 }
 .mini .link:hover.warning {
   color: #e66000;
 }
-.mini .link:not(.active):hover.warning {
-  transform: rotate(-1deg) scale(1.02) translateY(0px);
-}
 .mini .link:active.warning {
   color: #cc5500;
 }
-.mini .link:not(.active):active.warning {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
-}
 
-.mini .list.active .list-header:not(.active):active, .mini .list.active .list-subheader:not(.active):active, .mini .list.active .list-subsubheader:not(.active):active, .mini .list.active .list-item:not(.active):active, .mini .list.active .list-subitem:not(.active):active, .mini .list.active .list-subsubitem:not(.active):active {
-  background-color: #555555 !important;
+.mini .list .list-header, .mini .list .list-item {
+  color: hsl(0, 0%, 50%);
+}
+.mini .list.active .list-header:hover, .mini .list.active .list-item:hover {
+  background-color: #737373 !important;
+  border-color: #737373;
   color: white;
 }
-.mini .list.active .list-header:not(.active):hover, .mini .list.active .list-subheader:not(.active):hover, .mini .list.active .list-subsubheader:not(.active):hover, .mini .list.active .list-item:not(.active):hover, .mini .list.active .list-subitem:not(.active):hover, .mini .list.active .list-subsubitem:not(.active):hover {
-  background-color: #636363;
-  color: white;
-  cursor: pointer;
-}
-.mini .list .list-header, .mini .list .list-subheader, .mini .list .list-subsubheader {
-  color: #636363;
-  font-weight: 700;
-}
-.mini .list .list-header.active, .mini .list .list-subheader.active, .mini .list .list-subsubheader.active, .mini .list .list-item.active, .mini .list .list-subitem.active, .mini .list .list-subsubitem.active {
-  background-color: #555555 !important;
+.mini .list .list-header.active, .mini .list .list-item.active {
+  background-color: #666666 !important;
+  border-color: #666666;
   color: white;
 }
-.mini .list.default.active .list-header:not(.active):active, .mini .list.default.active .list-subheader:not(.active):active, .mini .list.default.active .list-subsubheader:not(.active):active, .mini .list.default.active .list-item:not(.active):active, .mini .list.default.active .list-subitem:not(.active):active, .mini .list.default.active .list-subsubitem:not(.active):active {
-  background-color: #555555 !important;
+.mini .list.active .list-header:active:not(.disabled), .mini .list.active .list-item:active:not(.disabled) {
+  background-color: #666666 !important;
+  border-color: #666666;
   color: white;
 }
-.mini .list.default.active .list-header:not(.selected):hover, .mini .list.default.active .list-subheader:not(.selected):hover, .mini .list.default.active .list-subsubheader:not(.selected):hover, .mini .list.default.active .list-item:not(.selected):hover, .mini .list.default.active .list-subitem:not(.selected):hover, .mini .list.default.active .list-subsubitem:not(.selected):hover {
-  background-color: #636363;
-  color: white;
-  cursor: pointer;
+.mini .list.default .list-header, .mini .list.default .list-item {
+  color: hsl(0, 0%, 50%);
 }
-.mini .list.default .list-header, .mini .list.default .list-subheader, .mini .list.default .list-subsubheader {
-  color: #636363;
-  font-weight: 700;
-}
-.mini .list.default .list-header.active, .mini .list.default .list-subheader.active, .mini .list.default .list-subsubheader.active, .mini .list.default .list-item.active, .mini .list.default .list-subitem.active, .mini .list.default .list-subsubitem.active {
-  background-color: #555555 !important;
+.mini .list.active.default .list-header:hover, .mini .list.active.default .list-item:hover {
+  background-color: #737373 !important;
+  border-color: #737373;
   color: white;
 }
-.mini .list.failure.active .list-header:not(.active):active, .mini .list.failure.active .list-subheader:not(.active):active, .mini .list.failure.active .list-subsubheader:not(.active):active, .mini .list.failure.active .list-item:not(.active):active, .mini .list.failure.active .list-subitem:not(.active):active, .mini .list.failure.active .list-subsubitem:not(.active):active {
-  background-color: #ab0000 !important;
+.mini .list.default .list-header.active, .mini .list.default .list-item.active {
+  background-color: #666666 !important;
+  border-color: #666666;
   color: white;
 }
-.mini .list.failure.active .list-header:not(.selected):hover, .mini .list.failure.active .list-subheader:not(.selected):hover, .mini .list.failure.active .list-subsubheader:not(.selected):hover, .mini .list.failure.active .list-item:not(.selected):hover, .mini .list.failure.active .list-subitem:not(.selected):hover, .mini .list.failure.active .list-subsubitem:not(.selected):hover {
-  background-color: #c70000;
-  color: white;
-  cursor: pointer;
-}
-.mini .list.failure .list-header, .mini .list.failure .list-subheader, .mini .list.failure .list-subsubheader {
-  color: #c70000;
-  font-weight: 700;
-}
-.mini .list.failure .list-header.active, .mini .list.failure .list-subheader.active, .mini .list.failure .list-subsubheader.active, .mini .list.failure .list-item.active, .mini .list.failure .list-subitem.active, .mini .list.failure .list-subsubitem.active {
-  background-color: #ab0000 !important;
+.mini .list.active.default .list-header:active:not(.disabled), .mini .list.active.default .list-item:active:not(.disabled) {
+  background-color: #666666 !important;
+  border-color: #666666;
   color: white;
 }
-.mini .list.primary.active .list-header:not(.active):active, .mini .list.primary.active .list-subheader:not(.active):active, .mini .list.primary.active .list-subsubheader:not(.active):active, .mini .list.primary.active .list-item:not(.active):active, .mini .list.primary.active .list-subitem:not(.active):active, .mini .list.primary.active .list-subsubitem:not(.active):active {
-  background-color: #ab0039 !important;
+.mini .list.failure .list-header, .mini .list.failure .list-item {
+  color: hsl(0, 100%, 50%);
+}
+.mini .list.active.failure .list-header:hover, .mini .list.active.failure .list-item:hover {
+  background-color: #e60000 !important;
+  border-color: #e60000;
   color: white;
 }
-.mini .list.primary.active .list-header:not(.selected):hover, .mini .list.primary.active .list-subheader:not(.selected):hover, .mini .list.primary.active .list-subsubheader:not(.selected):hover, .mini .list.primary.active .list-item:not(.selected):hover, .mini .list.primary.active .list-subitem:not(.selected):hover, .mini .list.primary.active .list-subsubitem:not(.selected):hover {
-  background-color: #c70042;
-  color: white;
-  cursor: pointer;
-}
-.mini .list.primary .list-header, .mini .list.primary .list-subheader, .mini .list.primary .list-subsubheader {
-  color: #c70042;
-  font-weight: 700;
-}
-.mini .list.primary .list-header.active, .mini .list.primary .list-subheader.active, .mini .list.primary .list-subsubheader.active, .mini .list.primary .list-item.active, .mini .list.primary .list-subitem.active, .mini .list.primary .list-subsubitem.active {
-  background-color: #ab0039 !important;
+.mini .list.failure .list-header.active, .mini .list.failure .list-item.active {
+  background-color: #cc0000 !important;
+  border-color: #cc0000;
   color: white;
 }
-.mini .list.success.active .list-header:not(.active):active, .mini .list.success.active .list-subheader:not(.active):active, .mini .list.success.active .list-subsubheader:not(.active):active, .mini .list.success.active .list-item:not(.active):active, .mini .list.success.active .list-subitem:not(.active):active, .mini .list.success.active .list-subsubitem:not(.active):active {
-  background-color: #3c6f55 !important;
+.mini .list.active.failure .list-header:active:not(.disabled), .mini .list.active.failure .list-item:active:not(.disabled) {
+  background-color: #cc0000 !important;
+  border-color: #cc0000;
   color: white;
 }
-.mini .list.success.active .list-header:not(.selected):hover, .mini .list.success.active .list-subheader:not(.selected):hover, .mini .list.success.active .list-subsubheader:not(.selected):hover, .mini .list.success.active .list-item:not(.selected):hover, .mini .list.success.active .list-subitem:not(.selected):hover, .mini .list.success.active .list-subsubitem:not(.selected):hover {
-  background-color: #468163;
-  color: white;
-  cursor: pointer;
+.mini .list.primary .list-header, .mini .list.primary .list-item {
+  color: hsl(340, 100%, 50%);
 }
-.mini .list.success .list-header, .mini .list.success .list-subheader, .mini .list.success .list-subsubheader {
-  color: #468163;
-  font-weight: 700;
-}
-.mini .list.success .list-header.active, .mini .list.success .list-subheader.active, .mini .list.success .list-subsubheader.active, .mini .list.success .list-item.active, .mini .list.success .list-subitem.active, .mini .list.success .list-subsubitem.active {
-  background-color: #3c6f55 !important;
+.mini .list.active.primary .list-header:hover, .mini .list.active.primary .list-item:hover {
+  background-color: #e6004d !important;
+  border-color: #e6004d;
   color: white;
 }
-.mini .list.warning.active .list-header:not(.active):active, .mini .list.warning.active .list-subheader:not(.active):active, .mini .list.warning.active .list-subsubheader:not(.active):active, .mini .list.warning.active .list-item:not(.active):active, .mini .list.warning.active .list-subitem:not(.active):active, .mini .list.warning.active .list-subsubitem:not(.active):active {
-  background-color: #ab4700 !important;
+.mini .list.primary .list-header.active, .mini .list.primary .list-item.active {
+  background-color: #cc0044 !important;
+  border-color: #cc0044;
   color: white;
 }
-.mini .list.warning.active .list-header:not(.selected):hover, .mini .list.warning.active .list-subheader:not(.selected):hover, .mini .list.warning.active .list-subsubheader:not(.selected):hover, .mini .list.warning.active .list-item:not(.selected):hover, .mini .list.warning.active .list-subitem:not(.selected):hover, .mini .list.warning.active .list-subsubitem:not(.selected):hover {
-  background-color: #c75300;
+.mini .list.active.primary .list-header:active:not(.disabled), .mini .list.active.primary .list-item:active:not(.disabled) {
+  background-color: #cc0044 !important;
+  border-color: #cc0044;
   color: white;
-  cursor: pointer;
 }
-.mini .list.warning .list-header, .mini .list.warning .list-subheader, .mini .list.warning .list-subsubheader {
-  color: #c75300;
-  font-weight: 700;
+.mini .list.success .list-header, .mini .list.success .list-item {
+  color: hsl(150, 30%, 50%);
 }
-.mini .list.warning .list-header.active, .mini .list.warning .list-subheader.active, .mini .list.warning .list-subsubheader.active, .mini .list.warning .list-item.active, .mini .list.warning .list-subitem.active, .mini .list.warning .list-subsubitem.active {
-  background-color: #ab4700 !important;
+.mini .list.active.success .list-header:hover, .mini .list.active.success .list-item:hover {
+  background-color: #509573 !important;
+  border-color: #509573;
   color: white;
+}
+.mini .list.success .list-header.active, .mini .list.success .list-item.active {
+  background-color: #478566 !important;
+  border-color: #478566;
+  color: white;
+}
+.mini .list.active.success .list-header:active:not(.disabled), .mini .list.active.success .list-item:active:not(.disabled) {
+  background-color: #478566 !important;
+  border-color: #478566;
+  color: white;
+}
+.mini .list.warning .list-header, .mini .list.warning .list-item {
+  color: hsl(25, 100%, 50%);
+}
+.mini .list.active.warning .list-header:hover, .mini .list.active.warning .list-item:hover {
+  background-color: #e66000 !important;
+  border-color: #e66000;
+  color: white;
+}
+.mini .list.warning .list-header.active, .mini .list.warning .list-item.active {
+  background-color: #cc5500 !important;
+  border-color: #cc5500;
+  color: white;
+}
+.mini .list.active.warning .list-header:active:not(.disabled), .mini .list.active.warning .list-item:active:not(.disabled) {
+  background-color: #cc5500 !important;
+  border-color: #cc5500;
+  color: white;
+}
+.mini .sml .list {
+  margin-bottom: 2.5px;
+  margin-top: 2.5px;
 }
 .mini .sml .list .list-header {
   font-size: 0.9375rem;
   padding: 2.5px 0 2.5px 5px;
 }
+.mini .sml .list .list-header.sub {
+  padding-left: 10px;
+}
+.mini .sml .list .list-header.subsub {
+  padding-left: 15px;
+}
 .mini .sml .list .list-header:not(:first-child) {
-  margin-top: 5px;
-}
-.mini .sml .list .list-subheader {
-  padding: 2.5px 0 2.5px 5px;
-}
-.mini .sml .list .list-subheader:not(:first-child) {
-  margin-top: 5px;
-}
-.mini .sml .list .list-subsubheader {
-  padding: 2.5px 0 2.5px 10px;
-}
-.mini .sml .list .list-subsubheader:not(:first-child) {
   margin-top: 5px;
 }
 .mini .sml .list .list-item {
   padding: 2.5px 0 2.5px 10px;
 }
-.mini .sml .list .list-subitem {
-  padding: 2.5px 0 2.5px 15px;
+.mini .sml .list .list-item.sub {
+  padding-left: 15px;
 }
-.mini .sml .list .list-subsubitem {
-  padding: 2.5px 0 2.5px 20px;
+.mini .sml .list .list-item.subsub {
+  padding-left: 20px;
 }
-.mini .sml .list .list-header, .mini .sml .list .list-subheader, .mini .sml .list .list-subsubheader, .mini .sml .list .list-item, .mini .sml .list .list-subitem, .mini .sml .list .list-subsubitem {
+.mini .sml .list .list-header, .mini .sml .list .list-item {
   border: 0;
-  border-radius: 3px;
+}
+.mini .med .list {
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .mini .med .list .list-header {
   font-size: 1.25rem;
   padding: 5px 0 5px 10px;
 }
+.mini .med .list .list-header.sub {
+  padding-left: 20px;
+}
+.mini .med .list .list-header.subsub {
+  padding-left: 30px;
+}
 .mini .med .list .list-header:not(:first-child) {
-  margin-top: 10px;
-}
-.mini .med .list .list-subheader {
-  padding: 5px 0 5px 10px;
-}
-.mini .med .list .list-subheader:not(:first-child) {
-  margin-top: 10px;
-}
-.mini .med .list .list-subsubheader {
-  padding: 5px 0 5px 20px;
-}
-.mini .med .list .list-subsubheader:not(:first-child) {
   margin-top: 10px;
 }
 .mini .med .list .list-item {
   padding: 5px 0 5px 20px;
 }
-.mini .med .list .list-subitem {
-  padding: 5px 0 5px 30px;
+.mini .med .list .list-item.sub {
+  padding-left: 30px;
 }
-.mini .med .list .list-subsubitem {
-  padding: 5px 0 5px 40px;
+.mini .med .list .list-item.subsub {
+  padding-left: 40px;
 }
-.mini .med .list .list-header, .mini .med .list .list-subheader, .mini .med .list .list-subsubheader, .mini .med .list .list-item, .mini .med .list .list-subitem, .mini .med .list .list-subsubitem {
+.mini .med .list .list-header, .mini .med .list .list-item {
   border: 0;
-  border-radius: 5px;
+}
+.mini .lrg .list {
+  margin-bottom: 7.5px;
+  margin-top: 7.5px;
 }
 .mini .lrg .list .list-header {
   font-size: 1.875rem;
   padding: 7.5px 0 7.5px 15px;
 }
+.mini .lrg .list .list-header.sub {
+  padding-left: 30px;
+}
+.mini .lrg .list .list-header.subsub {
+  padding-left: 45px;
+}
 .mini .lrg .list .list-header:not(:first-child) {
-  margin-top: 15px;
-}
-.mini .lrg .list .list-subheader {
-  padding: 7.5px 0 7.5px 15px;
-}
-.mini .lrg .list .list-subheader:not(:first-child) {
-  margin-top: 15px;
-}
-.mini .lrg .list .list-subsubheader {
-  padding: 7.5px 0 7.5px 30px;
-}
-.mini .lrg .list .list-subsubheader:not(:first-child) {
   margin-top: 15px;
 }
 .mini .lrg .list .list-item {
   padding: 7.5px 0 7.5px 30px;
 }
-.mini .lrg .list .list-subitem {
-  padding: 7.5px 0 7.5px 45px;
+.mini .lrg .list .list-item.sub {
+  padding-left: 45px;
 }
-.mini .lrg .list .list-subsubitem {
-  padding: 7.5px 0 7.5px 60px;
+.mini .lrg .list .list-item.subsub {
+  padding-left: 60px;
 }
-.mini .lrg .list .list-header, .mini .lrg .list .list-subheader, .mini .lrg .list .list-subsubheader, .mini .lrg .list .list-item, .mini .lrg .list .list-subitem, .mini .lrg .list .list-subsubitem {
+.mini .lrg .list .list-header, .mini .lrg .list .list-item {
   border: 0;
-  border-radius: 7px;
+}
+.mini .list.list-sml {
+  margin-bottom: 2.5px;
+  margin-top: 2.5px;
 }
 .mini .list.list-sml .list-header {
   font-size: 0.9375rem;
 }
-.mini .list.list-sml .list-subheader, .mini .list.list-sml .list-subsubheader, .mini .list.list-sml .list-item, .mini .list.list-sml .list-subitem, .mini .list.list-sml .list-subsubitem {
-  font-size: 0.75rem;
-}
-.mini .list.list-sml .list-header, .mini .list.list-sml .list-subheader, .mini .list.list-sml .list-subsubheader, .mini .list.list-sml .list-item, .mini .list.list-sml .list-subitem, .mini .list.list-sml .list-subsubitem {
-  border-radius: 3px;
+.mini .list.list-med {
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .mini .list.list-med .list-header {
   font-size: 1.25rem;
 }
-.mini .list.list-med .list-subheader, .mini .list.list-med .list-subsubheader, .mini .list.list-med .list-item, .mini .list.list-med .list-subitem, .mini .list.list-med .list-subsubitem {
-  font-size: 1rem;
-}
-.mini .list.list-med .list-header, .mini .list.list-med .list-subheader, .mini .list.list-med .list-subsubheader, .mini .list.list-med .list-item, .mini .list.list-med .list-subitem, .mini .list.list-med .list-subsubitem {
-  border-radius: 5px;
+.mini .list.list-lrg {
+  margin-bottom: 7.5px;
+  margin-top: 7.5px;
 }
 .mini .list.list-lrg .list-header {
   font-size: 1.875rem;
 }
-.mini .list.list-lrg .list-subheader, .mini .list.list-lrg .list-subsubheader, .mini .list.list-lrg .list-item, .mini .list.list-lrg .list-subitem, .mini .list.list-lrg .list-subsubitem {
-  font-size: 1.5rem;
+.mini .list.active .list-header, .mini .list.active .list-item {
+  cursor: pointer;
 }
-.mini .list.list-lrg .list-header, .mini .list.list-lrg .list-subheader, .mini .list.list-lrg .list-subsubheader, .mini .list.list-lrg .list-item, .mini .list.list-lrg .list-subitem, .mini .list.list-lrg .list-subsubitem {
-  border-radius: 7px;
+.mini .list.active .list-header:hover, .mini .list.active .list-item:hover {
+  transform: rotate(-0.5deg) scale(1.04);
 }
-.mini .list > * {
-  display: block;
-}
-.mini .list .list-item, .mini .list .list-subitem, .mini .list .list-subsubitem {
-  color: hsl(0, 0%, 50%);
+.mini .list.active .list-header:active:not(.disabled), .mini .list.active .list-item:active:not(.disabled) {
+  transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
 }
 
 .mini .rtl.sml .list .list-header {
@@ -1595,10 +1551,17 @@
 .mini .select {
   position: relative;
 }
-.mini .select::before {
-  content: " ";
+.mini .select:before {
+  content: "";
+  pointer-events: none;
   position: absolute;
   z-index: 1000;
+}
+.mini .select:hover:before {
+  transform: rotate(-0.5deg) scale(1.04);
+}
+.mini .select:active:not(.disabled):before {
+  transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
 }
 .mini .select > select {
   appearance: none;
@@ -1788,6 +1751,7 @@
 }
 .mini .tabs > .tabs-content {
   border-color: #e6e6e6;
+  display: flex;
 }
 .mini .tabs > .tabs-bar > .tab:hover.default, .mini .tabs > .tabs-bar > .tab:focus.default {
   background-color: #737373 !important;
@@ -1821,6 +1785,7 @@
 }
 .mini .tabs > .tabs-content {
   border-color: #e6e6e6;
+  display: flex;
 }
 .mini .tabs > .tabs-bar > .tab:hover.failure, .mini .tabs > .tabs-bar > .tab:focus.failure {
   background-color: #e60000 !important;
@@ -1854,6 +1819,7 @@
 }
 .mini .tabs > .tabs-content {
   border-color: #e6e6e6;
+  display: flex;
 }
 .mini .tabs > .tabs-bar > .tab:hover.primary, .mini .tabs > .tabs-bar > .tab:focus.primary {
   background-color: #e6004d !important;
@@ -1887,6 +1853,7 @@
 }
 .mini .tabs > .tabs-content {
   border-color: #e6e6e6;
+  display: flex;
 }
 .mini .tabs > .tabs-bar > .tab:hover.success, .mini .tabs > .tabs-bar > .tab:focus.success {
   background-color: #509573 !important;
@@ -1920,6 +1887,7 @@
 }
 .mini .tabs > .tabs-content {
   border-color: #e6e6e6;
+  display: flex;
 }
 .mini .tabs > .tabs-bar > .tab:hover.warning, .mini .tabs > .tabs-bar > .tab:focus.warning {
   background-color: #e66000 !important;
@@ -2148,10 +2116,10 @@
   z-index: 0;
 }
 .mini .tabs > .tabs-bar > .tab:hover:not(.active) {
-  transform: rotate(-1deg) scale(1.02);
+  transform: rotate(-0.5deg) scale(1.04);
 }
 .mini .tabs > .tabs-bar > .tab:active:not(.active) {
-  transform: rotate(1deg) scale(0.96) translateY(2px) !important;
+  transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
 }
 .mini .tabs > .tabs-bar > .tab.active {
   cursor: auto;
@@ -2676,6 +2644,18 @@
 .mini .lrg {
   font-size: 1.5rem;
 }
+.mini .larger {
+  font-size: larger;
+}
+.mini .large {
+  font-size: large;
+}
+.mini .smaller {
+  font-size: smaller;
+}
+.mini .small {
+  font-size: small;
+}
 
 .mini .opacity {
   opacity: 1;
@@ -2889,25 +2869,31 @@
 .mini .clear-margin {
   margin: 0 !important;
 }
-.mini .clear-margin-top {
+.mini .clear-ml {
+  margin-left: 0 !important;
+}
+.mini .clear-mr {
+  margin-right: 0 !important;
+}
+.mini .clear-mt {
   margin-top: 0 !important;
 }
-.mini .clear-margin-bottom {
+.mini .clear-mb {
   margin-bottom: 0 !important;
 }
-.mini .clear-pad {
+.mini .clear-padding {
   padding: 0 !important;
 }
-.mini .clear-pad-left {
+.mini .clear-pl {
   padding-left: 0 !important;
 }
-.mini .clear-pad-right {
+.mini .clear-pr {
   padding-right: 0 !important;
 }
-.mini .clear-pad-top {
+.mini .clear-pt {
   padding-top: 0 !important;
 }
-.mini .clear-pad-bottom {
+.mini .clear-pb {
   padding-bottom: 0 !important;
 }
 
@@ -4646,7 +4632,7 @@
   padding: 0 10px;
 }
 .mini .med .ccc {
-  padding: 5px 10px;
+  padding: 0 10px;
 }
 .mini .container.med, .mini .container-fluid.med {
   padding: 0 10px;
