@@ -44,25 +44,25 @@
         color: $color
 
   @mixin button-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
-    @if $suffix == null
-      .button
-        border-radius: $border-radius
-        border-width: $border-width
-        font-size: calc($font-size * 0.8)
-        height: $height
-        line-height: 2.5
-        margin-bottom: $ver
-        margin-top: $ver
-        min-height: $height
-        padding: calc($ver + $font-size * 0.1) $hor
+    // @if $suffix == null
+    //   .button
+    //     border-radius: $border-radius
+    //     border-width: $border-width
+    //     font-size: calc($font-size * 0.8)
+    //     height: $height
+    //     line-height: 2.5
+    //     margin-bottom: $ver
+    //     margin-top: $ver
+    //     min-height: $height
+    //     padding: calc($ver + $font-size * 0.1) $hor
 
-    @else
-      .button.button-#{$suffix}
-        border-radius: $border-radius
-        border-width: $border-width
-        font-size: calc($font-size * 0.8)
-        height: $height
-        min-height: $height
+    // @else
+    .button.button-#{$suffix}
+      // border-radius: $border-radius
+      // border-width: $border-width
+      font-size: calc($font-size * 0.8)
+      height: $height
+      min-height: $height
 
   .button
     &:hover
@@ -79,6 +79,17 @@
     text-align: center
     text-transform: uppercase
   
+  .button
+    border-radius: var(--d-b-r)
+    border-width: var(--d-b-w)
+    font-size: calc(var(--d-f-s) * 0.8)
+    height: var(--d-1)
+    line-height: 2.5
+    margin-bottom: var(--d-v)
+    margin-top: var(--d-v)
+    min-height: var(--d-1)
+    padding: calc(var(--d-v) + var(--d-f-s) * 0.1) var(--d-h)
+
   a.button
     text-decoration: none
 
@@ -107,8 +118,8 @@
   @include button-active('warning', $col-warning-d-2, $col-warning-d-2, $col, $col)
 
   @if $sml
-    .sml
-      @include button-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+    // .sml
+    //   @include button-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
       // .button-med
       //   padding: calc($sml-vertical + $med-font-size * 0.1) $sml-horizontal
@@ -117,8 +128,8 @@
       //   padding: calc($sml-vertical + $lrg-font-size * 0.1) $sml-horizontal
   
   @if $med
-    .med
-      @include button-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+    // .med
+    //   @include button-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
 
       // .button-sml
       //   padding: calc($med-vertical + $sml-font-size * 0.1) $med-horizontal
@@ -127,8 +138,8 @@
       //   padding: calc($med-vertical + $lrg-font-size * 0.1) $med-horizontal
 
   @if $lrg
-    .lrg
-      @include button-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+    // .lrg
+    //   @include button-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
       // .button-sml
       //   padding: calc($lrg-vertical + $sml-font-size * 0.1) $lrg-horizontal

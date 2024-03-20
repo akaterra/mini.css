@@ -48,32 +48,29 @@
             .c#{$i}-s-, .f#{$i}-s-
               width: 100% / $grid-cells * $i !important
 
-        @if $wrap == 'sml'
-          .sml
-            @if $i < 10
-              .f-#{$i}
-                width: calc(($fixed-width + $sml-horizontal * 2) / $grid-cells * $i)
-            @else
-              .f#{$i}
-                width: calc(($fixed-width + $sml-horizontal * 2) / $grid-cells * $i)
+        .sml
+          @if $i < 10
+            .f-#{$i}
+              width: calc(($fixed-width + $sml-horizontal * 2) / $grid-cells * $i)
+          @else
+            .f#{$i}
+              width: calc(($fixed-width + $sml-horizontal * 2) / $grid-cells * $i)
 
-        @if $wrap == 'med'
-          .med
-            @if $i < 10
-              .f-#{$i}
-                width: calc(($fixed-width + $med-horizontal * 2) / $grid-cells * $i)
-            @else
-              .f#{$i}
-                width: calc(($fixed-width + $med-horizontal * 2) / $grid-cells * $i)
+        .med
+          @if $i < 10
+            .f-#{$i}
+              width: calc(($fixed-width + $med-horizontal * 2) / $grid-cells * $i)
+          @else
+            .f#{$i}
+              width: calc(($fixed-width + $med-horizontal * 2) / $grid-cells * $i)
 
-        @if $wrap == 'lrg'
-          .lrg
-            @if $i < 10
-              .f-#{$i}
-                width: calc(($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i)
-            @else
-              .f#{$i}
-                width: calc(($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i)
+        .lrg
+          @if $i < 10
+            .f-#{$i}
+              width: calc(($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i)
+          @else
+            .f#{$i}
+              width: calc(($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i)
 
       .container.sml
         width: calc($width - $sml-horizontal * 2)
