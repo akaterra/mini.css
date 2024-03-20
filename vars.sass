@@ -8,7 +8,7 @@ $inline-ns: ''
 
 $grid-cells: 18
 
-$colors: default, failure, primary, success, warning
+// $colors: default, failure, primary, success, warning
 
 $font-bold: 700
 
@@ -17,111 +17,100 @@ $active-scale: 0.96
 $hover-rotate: -0.5deg
 $hover-scale: 1.04
 
-$sml-1: 22px
-$sml-border-radius: 3px
-$sml-border-width: 2px
-$sml-font-size: 0.75rem
-$sml-horizontal: 5px
+$sml-1: var(--s-1)
+$sml-border-radius: var(--s-b-r)
+$sml-border-width: var(--s-b-w)
+$sml-font-size: var(--s-f-s)
+$sml-horizontal: var(--s-h)
 $sml-media: 700px
 $sml-media-max: 969px
-$sml-vertical: $sml-horizontal / 2
+$sml-vertical: var(--s-v)
 
-$med-1: 32px
-$med-border-radius: 5px
-$med-border-width: 2px
-$med-font-size: 1rem
-$med-horizontal: 10px
+$med-1: var(--m-1)
+$med-border-radius: var(--m-b-r)
+$med-border-width: var(--m-b-w)
+$med-font-size: var(--m-f-s)
+$med-horizontal: var(--m-h)
 $med-media: 970px
 $med-media-max: 1239px
-$med-vertical: $med-horizontal / 2
+$med-vertical: var(--m-v)
 
-$lrg-1: 42px
-$lrg-border-radius: 7px
-$lrg-border-width: 2px
-$lrg-font-size: 1.5rem
-$lrg-horizontal: 15px
+$lrg-1: var(--l-1)
+$lrg-border-radius: var(--l-b-r)
+$lrg-border-width: var(--l-b-w)
+$lrg-font-size: var(--l-f-s)
+$lrg-horizontal: var(--l-h)
 $lrg-media: 1240px
 $lrg-media-max: 3839px
-$lrg-vertical: $lrg-horizontal / 2
+$lrg-vertical: var(--l-v)
 
-$col: white
-$col-text: #404040
-$col-inverted: #404040
-$col-inverted-text: #404040
+$col: var(--c)
+$col-text: var(--c-t)
+$col-inverted: var(--i)
+$col-inverted-text: var(--t-i)
 
 $col-ratio: 1.1
-// $col-darken-ratio: 0.1
-// $col-darken-active-ratio: 0.15
-// $col-darken-hover-ratio: 0.1
 
-$col-default: hsl(0, 0%, 50%)
-// $col-default-ratio: 1.0
-$col-failure: hsl(0, 100%, 50%)
-// $col-failure-ratio: 1.0
-$col-primary: hsl(340, 100%, 50%)
-// $col-primary-ratio: 1.0
-$col-success: hsl(150, 30%, 50%)
-// $col-success-ratio: 1.0
-$col-warning: hsl(25, 100%, 50%)
-// $col-warning-ratio: 1.0
+$col-default: var(--c-def)
+$col-failure: var(--c-fai)
+$col-primary: var(--c-pri)
+$col-success: var(--c-suc)
+$col-warning: var(--c-war)
 
-$col-dark-step: 0.05
-$col-ligth-step: 0.10
+$col-default-d-1: var(--c-def-d-1)
+$col-default-d-2: var(--c-def-d-2)
+$col-default-d-3: var(--c-def-d-3)
+$col-default-d-4: var(--c-def-d-4)
+$col-default-l-1: var(--c-def-l-1)
+$col-default-l-2: var(--c-def-l-2)
+$col-default-l-3: var(--c-def-l-3)
+$col-default-l-4: var(--c-def-l-4)
+$col-default-l-5: var(--c-def-l-5)
+$col-default-l-6: var(--c-def-l-6)
 
-$col-default-dark-1: darken($col-default, $col-dark-step * 1 * 100%)
-$col-default-dark-2: darken($col-default, $col-dark-step * 2 * 100%)
-$col-default-dark-3: darken($col-default, $col-dark-step * 3 * 100%)
-$col-default-dark-4: darken($col-default, $col-dark-step * 4 * 100%)
-$col-default-light-1: lighten($col-default, $col-ligth-step * 1 * 100%)
-$col-default-light-2: lighten($col-default, $col-ligth-step * 2 * 100%)
-$col-default-light-3: lighten($col-default, $col-ligth-step * 3 * 100%)
-$col-default-light-4: lighten($col-default, $col-ligth-step * 4 * 100%)
-$col-default-light-5: lighten($col-default, $col-ligth-step * 4.25 * 100%)
-$col-default-light-6: lighten($col-default, $col-ligth-step * 4.5 * 100%)
+$col-failure-d-1: var(--c-fai-d-1)
+$col-failure-d-2: var(--c-fai-d-2)
+$col-failure-d-3: var(--c-fai-d-3)
+$col-failure-d-4: var(--c-fai-d-4)
+$col-failure-l-1: var(--c-fai-l-1)
+$col-failure-l-2: var(--c-fai-l-2)
+$col-failure-l-3: var(--c-fai-l-3)
+$col-failure-l-4: var(--c-fai-l-4)
+$col-failure-l-5: var(--c-fai-l-5)
+$col-failure-l-6: var(--c-fai-l-6)
 
-$col-failure-dark-1: darken($col-failure, $col-dark-step * 1 * 100%)
-$col-failure-dark-2: darken($col-failure, $col-dark-step * 2 * 100%)
-$col-failure-dark-3: darken($col-failure, $col-dark-step * 3 * 100%)
-$col-failure-dark-4: darken($col-failure, $col-dark-step * 4 * 100%)
-$col-failure-light-1: lighten($col-failure, $col-ligth-step * 1 * 100%)
-$col-failure-light-2: lighten($col-failure, $col-ligth-step * 2 * 100%)
-$col-failure-light-3: lighten($col-failure, $col-ligth-step * 3 * 100%)
-$col-failure-light-4: lighten($col-failure, $col-ligth-step * 4 * 100%)
-$col-failure-light-5: lighten($col-failure, $col-ligth-step * 4.25 * 100%)
-$col-failure-light-6: lighten($col-failure, $col-ligth-step * 4.5 * 100%)
+$col-primary-d-1: var(--c-pri-d-1)
+$col-primary-d-2: var(--c-pri-d-2)
+$col-primary-d-3: var(--c-pri-d-3)
+$col-primary-d-4: var(--c-pri-d-4)
+$col-primary-l-1: var(--c-pri-l-1)
+$col-primary-l-2: var(--c-pri-l-2)
+$col-primary-l-3: var(--c-pri-l-3)
+$col-primary-l-4: var(--c-pri-l-4)
+$col-primary-l-5: var(--c-pri-l-5)
+$col-primary-l-6: var(--c-pri-l-6)
 
-$col-primary-dark-1: darken($col-primary, $col-dark-step * 1 * 100%)
-$col-primary-dark-2: darken($col-primary, $col-dark-step * 2 * 100%)
-$col-primary-dark-3: darken($col-primary, $col-dark-step * 3 * 100%)
-$col-primary-dark-4: darken($col-primary, $col-dark-step * 4 * 100%)
-$col-primary-light-1: lighten($col-primary, $col-ligth-step * 1 * 100%)
-$col-primary-light-2: lighten($col-primary, $col-ligth-step * 2 * 100%)
-$col-primary-light-3: lighten($col-primary, $col-ligth-step * 3 * 100%)
-$col-primary-light-4: lighten($col-primary, $col-ligth-step * 4 * 100%)
-$col-primary-light-5: lighten($col-primary, $col-ligth-step * 4.25 * 100%)
-$col-primary-light-6: lighten($col-primary, $col-ligth-step * 4.5 * 100%)
+$col-success-d-1: var(--c-suc-d-1)
+$col-success-d-2: var(--c-suc-d-2)
+$col-success-d-3: var(--c-suc-d-3)
+$col-success-d-4: var(--c-suc-d-4)
+$col-success-l-1: var(--c-suc-l-1)
+$col-success-l-2: var(--c-suc-l-2)
+$col-success-l-3: var(--c-suc-l-3)
+$col-success-l-4: var(--c-suc-l-4)
+$col-success-l-5: var(--c-suc-l-5)
+$col-success-l-6: var(--c-suc-l-6)
 
-$col-success-dark-1: darken($col-success, $col-dark-step * 1 * 100%)
-$col-success-dark-2: darken($col-success, $col-dark-step * 2 * 100%)
-$col-success-dark-3: darken($col-success, $col-dark-step * 3 * 100%)
-$col-success-dark-4: darken($col-success, $col-dark-step * 4 * 100%)
-$col-success-light-1: lighten($col-success, $col-ligth-step * 1 * 100%)
-$col-success-light-2: lighten($col-success, $col-ligth-step * 2 * 100%)
-$col-success-light-3: lighten($col-success, $col-ligth-step * 3 * 100%)
-$col-success-light-4: lighten($col-success, $col-ligth-step * 4 * 100%)
-$col-success-light-5: lighten($col-success, $col-ligth-step * 4.25 * 100%)
-$col-success-light-6: lighten($col-success, $col-ligth-step * 4.5 * 100%)
-
-$col-warning-dark-1: darken($col-warning, $col-dark-step * 1 * 100%)
-$col-warning-dark-2: darken($col-warning, $col-dark-step * 2 * 100%)
-$col-warning-dark-3: darken($col-warning, $col-dark-step * 3 * 100%)
-$col-warning-dark-4: darken($col-warning, $col-dark-step * 4 * 100%)
-$col-warning-light-1: lighten($col-warning, $col-ligth-step * 1 * 100%)
-$col-warning-light-2: lighten($col-warning, $col-ligth-step * 2 * 100%)
-$col-warning-light-3: lighten($col-warning, $col-ligth-step * 3 * 100%)
-$col-warning-light-4: lighten($col-warning, $col-ligth-step * 4 * 100%)
-$col-warning-light-5: lighten($col-warning, $col-ligth-step * 4.25 * 100%)
-$col-warning-light-6: lighten($col-warning, $col-ligth-step * 4.5 * 100%)
+$col-warning-d-1: var(--c-war-d-1)
+$col-warning-d-2: var(--c-war-d-2)
+$col-warning-d-3: var(--c-war-d-3)
+$col-warning-d-4: var(--c-war-d-4)
+$col-warning-l-1: var(--c-war-l-1)
+$col-warning-l-2: var(--c-war-l-2)
+$col-warning-l-3: var(--c-war-l-3)
+$col-warning-l-4: var(--c-war-l-4)
+$col-warning-l-5: var(--c-war-l-5)
+$col-warning-l-6: var(--c-war-l-6)
 
 @mixin cross($property, $css)
   -moz-#{$property}: $css

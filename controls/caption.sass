@@ -14,35 +14,35 @@
   @mixin caption-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)
     @if $suffix == null
       .caption
-        font-size: $font-size * $font-size-ratio
+        font-size: calc($font-size * $font-size-ratio)
         padding: $ver 0 // $hor
 
         &.larger
-          font-size: $font-size * ($font-size-ratio + 0.5)
+          font-size: calc($font-size * ($font-size-ratio + 0.5))
 
         &.largest
-          font-size: $font-size * ($font-size-ratio + 1)
+          font-size: calc($font-size * ($font-size-ratio + 1))
 
         &.smaller
-          font-size: $font-size * ($font-size-ratio - 0.25)
+          font-size: calc($font-size * ($font-size-ratio - 0.25))
 
         &.smallest
-          font-size: $font-size * ($font-size-ratio - 0.5)
+          font-size: calc($font-size * ($font-size-ratio - 0.5))
     @else
       .caption.caption-#{$suffix}
-        font-size: $font-size * $font-size-ratio
+        font-size: calc($font-size * $font-size-ratio)
 
-  @include caption(null, $col-default-dark-4, $font-bold)
+  @include caption(null, $col-default-d-4, $font-bold)
 
-  @include caption('default', $col-default-dark-4, $font-bold)
+  @include caption('default', $col-default-d-4, $font-bold)
 
-  @include caption('failure', $col-failure-dark-4, $font-bold)
+  @include caption('failure', $col-failure-d-4, $font-bold)
 
-  @include caption('primary', $col-primary-dark-4, $font-bold)
+  @include caption('primary', $col-primary-d-4, $font-bold)
 
-  @include caption('success', $col-success-dark-4, $font-bold)
+  @include caption('success', $col-success-d-4, $font-bold)
 
-  @include caption('warning', $col-warning-dark-4, $font-bold)
+  @include caption('warning', $col-warning-d-4, $font-bold)
 
   @if $sml
     .sml

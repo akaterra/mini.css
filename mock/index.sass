@@ -1,1 +1,109 @@
 @import ../vars
+
+:root
+  --c: white
+  --c-t: #404040
+  --c-i: #404040
+  --c-i-t: #404040
+
+  --c-d-s: 0.10
+  --c-l-s: 0.20
+
+  --c-d-1: 1
+  --c-d-2: 2
+  --c-d-3: 3
+  --c-d-4: 3.5
+  --c-l-1: 1
+  --c-l-2: 2
+  --c-l-3: 3
+  --c-l-4: 4
+  --c-l-5: 4.25
+  --c-l-6: 4.5
+
+  --c-def: hsl(0, 0%, 50%)
+  --c-fai: hsl(0, 100%, 50%)
+  --c-pri: hsl(340, 100%, 50%)
+  --c-suc: hsl(150, 30%, 50%)
+  --c-war: hsl(25, 100%, 50%)
+
+  --c-def-d-1: color-mix(in srgb, var(--c-def) calc(100% - var(--c-d-s) * var(--c-d-1) * 100%), black)
+  --c-def-d-2: color-mix(in srgb, var(--c-def) calc(100% - var(--c-d-s) * var(--c-d-2) * 100%), black)
+  --c-def-d-3: color-mix(in srgb, var(--c-def) calc(100% - var(--c-d-s) * var(--c-d-3) * 100%), black)
+  --c-def-d-4: color-mix(in srgb, var(--c-def) calc(100% - var(--c-d-s) * var(--c-d-4) * 100%), black)
+  --c-def-l-1: color-mix(in srgb, var(--c-def) calc(100% - var(--c-l-s) * var(--c-l-1) * 100%), white)
+  --c-def-l-2: color-mix(in srgb, var(--c-def) calc(100% - var(--c-l-s) * var(--c-l-2) * 100%), white)
+  --c-def-l-3: color-mix(in srgb, var(--c-def) calc(100% - var(--c-l-s) * var(--c-l-3) * 100%), white)
+  --c-def-l-4: color-mix(in srgb, var(--c-def) calc(100% - var(--c-l-s) * var(--c-l-4) * 100%), white)
+  --c-def-l-5: color-mix(in srgb, var(--c-def) calc(100% - var(--c-l-s) * var(--c-l-5) * 100%), white)
+  --c-def-l-6: color-mix(in srgb, var(--c-def) calc(100% - var(--c-l-s) * var(--c-l-6) * 100%), white)
+
+  --c-fai-d-1: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-d-s) * var(--c-d-1) * 100%), black)
+  --c-fai-d-2: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-d-s) * var(--c-d-2) * 100%), black)
+  --c-fai-d-3: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-d-s) * var(--c-d-3) * 100%), black)
+  --c-fai-d-4: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-d-s) * var(--c-d-4) * 100%), black)
+  --c-fai-l-1: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-l-s) * var(--c-l-1) * 100%), white)
+  --c-fai-l-2: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-l-s) * var(--c-l-2) * 100%), white)
+  --c-fai-l-3: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-l-s) * var(--c-l-3) * 100%), white)
+  --c-fai-l-4: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-l-s) * var(--c-l-4) * 100%), white)
+  --c-fai-l-5: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-l-s) * var(--c-l-5) * 100%), white)
+  --c-fai-l-6: color-mix(in srgb, var(--c-fai) calc(100% - var(--c-l-s) * var(--c-l-6) * 100%), white)
+
+  --c-pri-d-1: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-d-s) * var(--c-d-1) * 100%), black)
+  --c-pri-d-2: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-d-s) * var(--c-d-2) * 100%), black)
+  --c-pri-d-3: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-d-s) * var(--c-d-3) * 100%), black)
+  --c-pri-d-4: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-d-s) * var(--c-d-4) * 100%), black)
+  --c-pri-l-1: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-l-s) * var(--c-l-1) * 100%), white)
+  --c-pri-l-2: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-l-s) * var(--c-l-2) * 100%), white)
+  --c-pri-l-3: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-l-s) * var(--c-l-3) * 100%), white)
+  --c-pri-l-4: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-l-s) * var(--c-l-4) * 100%), white)
+  --c-pri-l-5: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-l-s) * var(--c-l-5) * 100%), white)
+  --c-pri-l-6: color-mix(in srgb, var(--c-pri) calc(100% - var(--c-l-s) * var(--c-l-6) * 100%), white)
+
+  --c-suc-d-1: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-d-s) * var(--c-d-1) * 100%), black)
+  --c-suc-d-2: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-d-s) * var(--c-d-2) * 100%), black)
+  --c-suc-d-3: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-d-s) * var(--c-d-3) * 100%), black)
+  --c-suc-d-4: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-d-s) * var(--c-d-4) * 100%), black)
+  --c-suc-l-1: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-l-s) * var(--c-l-1) * 100%), white)
+  --c-suc-l-2: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-l-s) * var(--c-l-2) * 100%), white)
+  --c-suc-l-3: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-l-s) * var(--c-l-3) * 100%), white)
+  --c-suc-l-4: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-l-s) * var(--c-l-4) * 100%), white)
+  --c-suc-l-5: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-l-s) * var(--c-l-5) * 100%), white)
+  --c-suc-l-6: color-mix(in srgb, var(--c-suc) calc(100% - var(--c-l-s) * var(--c-l-6) * 100%), white)
+
+  --c-war-d-1: color-mix(in srgb, var(--c-war) calc(100% - var(--c-d-s) * var(--c-d-1) * 100%), black)
+  --c-war-d-2: color-mix(in srgb, var(--c-war) calc(100% - var(--c-d-s) * var(--c-d-2) * 100%), black)
+  --c-war-d-3: color-mix(in srgb, var(--c-war) calc(100% - var(--c-d-s) * var(--c-d-3) * 100%), black)
+  --c-war-d-4: color-mix(in srgb, var(--c-war) calc(100% - var(--c-d-s) * var(--c-d-4) * 100%), black)
+  --c-war-l-1: color-mix(in srgb, var(--c-war) calc(100% - var(--c-l-s) * var(--c-l-1) * 100%), white)
+  --c-war-l-2: color-mix(in srgb, var(--c-war) calc(100% - var(--c-l-s) * var(--c-l-2) * 100%), white)
+  --c-war-l-3: color-mix(in srgb, var(--c-war) calc(100% - var(--c-l-s) * var(--c-l-3) * 100%), white)
+  --c-war-l-4: color-mix(in srgb, var(--c-war) calc(100% - var(--c-l-s) * var(--c-l-4) * 100%), white)
+  --c-war-l-5: color-mix(in srgb, var(--c-war) calc(100% - var(--c-l-s) * var(--c-l-5) * 100%), white)
+  --c-war-l-6: color-mix(in srgb, var(--c-war) calc(100% - var(--c-l-s) * var(--c-l-6) * 100%), white)
+
+  --s-1: 22px
+  --s-b-r: 3px
+  --s-b-w: 2px
+  --s-f-s: 0.75rem
+  --s-h: 5px
+  --s-media: 700px
+  --s-media-max: 969px
+  --s-v: calc(var(--s-h) / 2)
+
+  --m-1: 32px
+  --m-b-r: 5px
+  --m-b-w: 2px
+  --m-f-s: 1rem
+  --m-h: 10px
+  --m-media: 970px
+  --m-media-max: 1239px
+  --m-v: calc(var(--m-h) / 2)
+
+  --l-1: 42px
+  --l-b-r: 7px
+  --l-b-w: 2px
+  --l-f-s: 1.5rem
+  --l-h: 15px
+  --l-media: 1240px
+  --l-media-max: 3839px
+  --l-v: calc(var(--l-h) / 2)

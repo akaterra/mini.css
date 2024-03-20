@@ -1,46 +1,46 @@
 @import ../vars
 
 .mini
-  @mixin table($prefix, $border-color, $border-color-ratio, $border-color-ratio_top)
+  @mixin table($prefix, $border-color, $border-color-top)
     @if $prefix == null
       .table
         &>.row
           &>.l
-            border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+            border-color: $border-color
 
           &>.r
-            border-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+            border-color: $border-color
 
         &.underlined
           &>.row
             &:after
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+              border-bottom-color: $border-color
 
             &.header:after
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+              border-bottom-color: $border-color-top
           
           th:after, tr:after
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+            border-bottom-color: $border-color-top
 
     @else
       .table.#{$prefix}
         &>.row
           &>.l
-            border-left-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+            border-left-color: $border-color
 
           &>.r
-            border-right-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+            border-right-color: $border-color
 
         &.underlined
           &>.row
             &:after
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio * 100%)
+              border-bottom-color: $border-color
 
             &.header:after>th
-              border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+              border-bottom-color: $border-color-top
 
           th:after, tr:after
-            border-bottom-color: lighten($border-color, $col-ratio * $border-color-ratio_top * 100%)
+            border-bottom-color: $border-color-top
 
   @mixin table-sized($suffix, $border-width, $ver, $hor)
     @if $suffix == null
@@ -69,7 +69,7 @@
           border-bottom-width: $border-width
           margin: 0 $hor
 
-  @include table(null, $col-default, 0.3, 0.15)
+  @include table(null, $col-default-l-3, $col-default)
 
   .sml
     @include table-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
@@ -99,7 +99,7 @@
 
   .table
     &.highlighted>.row:hover:not(.header)
-      background-image: linear-gradient(to right, transparent 0%, $col-default-light-5 25%, $col-default-light-5 75%, transparent 100%)
+      background-image: linear-gradient(to right, transparent 0%, $col-default-l-5 25%, $col-default-l-5 75%, transparent 100%)
 
     &.table-inner.underlined>.row:after
       margin: 0

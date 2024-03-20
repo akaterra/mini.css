@@ -94,13 +94,13 @@
             border-top-left-radius: $border-radius
             border-top-right-radius: $border-radius
             border-width: $border-width
-            font-size: $font-size * 0.8
+            font-size: calc($font-size * 0.8)
             padding: 0 $hor $border-width $hor
 
             &:not(.active)
-              height: $height - $border-width * 2
+              height: calc($height - $border-width * 2)
               margin-top: $border-width
-              min-height: $height - $border-width * 2
+              min-height: calc($height - $border-width * 2)
               padding-bottom: 0
 
             &.active
@@ -110,13 +110,13 @@
               min-height: $height
               padding-top: $border-width
 
-          padding-left: $hor - $border-width
-          padding-right: $hor - $border-width
+          padding-left: calc($hor - $border-width)
+          padding-right: calc($hor - $border-width)
 
         &>.tabs-content
           border-radius: $border-radius
           border-width: $border-width
-          margin-top: -$border-width
+          margin-top: calc($border-width * -1)
           padding: 0 $hor
 
         margin-bottom: $ver
@@ -129,13 +129,13 @@
             border-top-left-radius: $border-radius
             border-top-right-radius: $border-radius
             border-width: $border-width
-            font-size: $font-size * 0.8
+            font-size: calc($font-size * 0.8)
             padding: 0 $hor $border-width $hor
 
             &:not(.active)
-              height: $height - $border-width * 2
+              height: calc($height - $border-width * 2)
               margin-top: $border-width
-              min-height: $height - $border-width * 2
+              min-height: calc($height - $border-width * 2)
               padding-bottom: 0
 
             &.active
@@ -149,31 +149,31 @@
         &>.tabs-content
           border-radius: $border-radius
           border-width: $border-width
-          margin-top: -$border-width
+          margin-top: calc($border-width * -1)
 
-  @include tab(null, $col-primary, $col-primary, $col, $col, $col-default-light-4)
-  @include tab-hover(null, $col-primary-dark-1, $col-primary-dark-1, $col, $col, $col-default-light-4)
-  @include tab-active(null, $col-primary-dark-2, $col-primary-dark-2, $col, $col, $col-default-light-4)
+  @include tab(null, $col-primary, $col-primary, $col, $col, $col-default-l-4)
+  @include tab-hover(null, $col-primary-d-1, $col-primary-d-1, $col, $col, $col-default-l-4)
+  @include tab-active(null, $col-primary-d-2, $col-primary-d-2, $col, $col, $col-default-l-4)
 
-  @include tab('default', $col-default, $col-default, $col, $col, $col-default-light-4)
-  @include tab-hover('default', $col-default-dark-1, $col-default-dark-1, $col, $col, $col-default-light-4)
-  @include tab-active('default', $col-default-dark-2, $col-default-dark-2, $col, $col, $col-default-light-4)
+  @include tab('default', $col-default, $col-default, $col, $col, $col-default-l-4)
+  @include tab-hover('default', $col-default-d-1, $col-default-d-1, $col, $col, $col-default-l-4)
+  @include tab-active('default', $col-default-d-2, $col-default-d-2, $col, $col, $col-default-l-4)
 
-  @include tab('failure', $col-failure, $col-failure, $col, $col, $col-default-light-4)
-  @include tab-hover('failure', $col-failure-dark-1, $col-failure-dark-1, $col, $col, $col-default-light-4)
-  @include tab-active('failure', $col-failure-dark-2, $col-failure-dark-2, $col, $col, $col-default-light-4)
+  @include tab('failure', $col-failure, $col-failure, $col, $col, $col-default-l-4)
+  @include tab-hover('failure', $col-failure-d-1, $col-failure-d-1, $col, $col, $col-default-l-4)
+  @include tab-active('failure', $col-failure-d-2, $col-failure-d-2, $col, $col, $col-default-l-4)
 
-  @include tab('primary', $col-primary, $col-primary, $col, $col, $col-default-light-4)
-  @include tab-hover('primary', $col-primary-dark-1, $col-primary-dark-1, $col, $col, $col-default-light-4)
-  @include tab-active('primary', $col-primary-dark-2, $col-primary-dark-2, $col, $col, $col-default-light-4)
+  @include tab('primary', $col-primary, $col-primary, $col, $col, $col-default-l-4)
+  @include tab-hover('primary', $col-primary-d-1, $col-primary-d-1, $col, $col, $col-default-l-4)
+  @include tab-active('primary', $col-primary-d-2, $col-primary-d-2, $col, $col, $col-default-l-4)
 
-  @include tab('success', $col-success, $col-success, $col, $col, $col-default-light-4)
-  @include tab-hover('success', $col-success-dark-1, $col-success-dark-1, $col, $col, $col-default-light-4)
-  @include tab-active('success', $col-success-dark-2, $col-success-dark-2, $col, $col, $col-default-light-4)
+  @include tab('success', $col-success, $col-success, $col, $col, $col-default-l-4)
+  @include tab-hover('success', $col-success-d-1, $col-success-d-1, $col, $col, $col-default-l-4)
+  @include tab-active('success', $col-success-d-2, $col-success-d-2, $col, $col, $col-default-l-4)
 
-  @include tab('warning', $col-warning, $col-warning, $col, $col, $col-default-light-4)
-  @include tab-hover('warning', $col-warning-dark-1, $col-warning-dark-1, $col, $col, $col-default-light-4)
-  @include tab-active('warning', $col-warning-dark-2, $col-warning-dark-2, $col, $col, $col-default-light-4)
+  @include tab('warning', $col-warning, $col-warning, $col, $col, $col-default-l-4)
+  @include tab-hover('warning', $col-warning-d-1, $col-warning-d-1, $col, $col, $col-default-l-4)
+  @include tab-active('warning', $col-warning-d-2, $col-warning-d-2, $col, $col, $col-default-l-4)
 
   @if $sml
     .sml

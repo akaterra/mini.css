@@ -11,7 +11,7 @@
 
   @mixin blockquote-sized($prefix, $hor)
     .blockquote
-      padding-left: $hor * 2 - 2px
+      padding-left: calc($hor * 2 - 2px)
 
   @include blockquote(null, $col-default)
 

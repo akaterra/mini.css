@@ -2,11 +2,11 @@
 
 .mini
   @mixin shadow($val)
-    box-shadow: 0 $val $val * 1.5 rgba(0, 0, 0, .25)
+    box-shadow: 0 $val calc($val * 1.5) rgba(0, 0, 0, .25)
     // box-shadow: $val $val 0 0 rgba(0, 0, 0, .15)
 
   @mixin text-shadow($val)
-    text-shadow: 0 $val / 4 $val / 4 rgba(0, 0, 0, .25)
+    text-shadow: 0 calc($val / 4) calc($val / 4) rgba(0, 0, 0, .25)
     // text-shadow: $val / 2 $val / 2 0 0 rgba(0, 0, 0, .15)
 
   .sml
@@ -14,10 +14,10 @@
       @include shadow($sml-vertical)
 
       &.shadow-low
-        @include shadow($sml-vertical * 0.5)
+        @include shadow(calc($sml-vertical * 0.5))
 
       &.shadow-high
-        @include shadow($sml-vertical * 2)
+        @include shadow(calc($sml-vertical * 2))
 
     .text-shadow
       @include text-shadow($sml-vertical)
@@ -27,10 +27,10 @@
       @include shadow($med-vertical)
 
       &.shadow-low
-        @include shadow($med-vertical * 0.5)
+        @include shadow(calc($med-vertical * 0.5))
 
       &.shadow-high
-        @include shadow($med-vertical * 2)
+        @include shadow(calc($med-vertical * 2))
 
     .text-shadow
       @include text-shadow($med-vertical)
@@ -40,10 +40,10 @@
       @include shadow($lrg-vertical)
 
       &.shadow-low
-        @include shadow($lrg-vertical * 0.5)
+        @include shadow(calc($lrg-vertical * 0.5))
 
       &.shadow-high
-        @include shadow($lrg-vertical * 2)
+        @include shadow(calc($lrg-vertical * 2))
 
     .text-shadow
       @include text-shadow($lrg-vertical)

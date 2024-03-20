@@ -33,14 +33,14 @@
       .select:before
         bottom: calc(50% - $height / 2 + $border-width * 2)
         left: calc(100% - $height + $border-width * 0)
-        right: $border-width * 4
+        right: calc($border-width * 4)
         top: calc(50% - $height / 2 + $border-width * 2)
 
     @else
       .select-#{$suffix}:before
         bottom: calc(50% - $height / 2 + $border-width * 2)
         left: calc(100% - $height + $border-width * 0)
-        right: $border-width * 4
+        right: calc($border-width * 4)
         top: calc(50% - $height / 2 + $border-width * 2)
 
   .select
@@ -62,46 +62,46 @@
     position: relative
   
   @include select(null, $col, $col-default, $col, $col)
-  @include select-hover(null, $col, $col-default-dark-1, $col, $col)
-  @include select-active(null, $col, $col-default-dark-2, $col, $col)
+  @include select-hover(null, $col, $col-default-d-1, $col, $col)
+  @include select-active(null, $col, $col-default-d-2, $col, $col)
 
   @include select('default', $col, $col-default, $col, $col)
-  @include select-hover('default', $col, $col-default-dark-1, $col, $col)
-  @include select-active('default', $col, $col-default-dark-2, $col, $col)
+  @include select-hover('default', $col, $col-default-d-1, $col, $col)
+  @include select-active('default', $col, $col-default-d-2, $col, $col)
 
   @include select('failure', $col, $col-failure, $col, $col)
-  @include select-hover('failure', $col, $col-failure-dark-1, $col, $col)
-  @include select-active('failure', $col, $col-failure-dark-2, $col, $col)
+  @include select-hover('failure', $col, $col-failure-d-1, $col, $col)
+  @include select-active('failure', $col, $col-failure-d-2, $col, $col)
   
   @include select('primary', $col, $col-primary, $col, $col)
-  @include select-hover('primary', $col, $col-primary-dark-1, $col, $col)
-  @include select-active('primary', $col, $col-primary-dark-2, $col, $col)
+  @include select-hover('primary', $col, $col-primary-d-1, $col, $col)
+  @include select-active('primary', $col, $col-primary-d-2, $col, $col)
   
   @include select('success', $col, $col-success, $col, $col)
-  @include select-hover('success', $col, $col-success-dark-1, $col, $col)
-  @include select-active('success', $col, $col-success-dark-2, $col, $col)
+  @include select-hover('success', $col, $col-success-d-1, $col, $col)
+  @include select-active('success', $col, $col-success-d-2, $col, $col)
   
   @include select('warning', $col, $col-warning, $col, $col)
-  @include select-hover('warning', $col, $col-warning-dark-1, $col, $col)
-  @include select-active('warning', $col, $col-warning-dark-2, $col, $col)
+  @include select-hover('warning', $col, $col-warning-d-1, $col, $col)
+  @include select-active('warning', $col, $col-warning-d-2, $col, $col)
 
   @if $sml
     .sml
-      @include select-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1 * 0.5, $sml-vertical, $sml-horizontal)
+      @include select-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, calc($sml-1 * 0.5), $sml-vertical, $sml-horizontal)
 
   @if $med
     .med
-      @include select-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1 * 0.5, $med-vertical, $med-horizontal)
+      @include select-sized(null, $med-border-radius, $med-border-width, $med-font-size, calc($med-1 * 0.5), $med-vertical, $med-horizontal)
 
   @if $lrg
     .lrg
-      @include select-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1 * 0.5, $lrg-vertical, $lrg-horizontal)
+      @include select-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, calc($lrg-1 * 0.5), $lrg-vertical, $lrg-horizontal)
 
   @if $sml
-    @include select-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1 * 0.5, $sml-vertical, $sml-horizontal)
+    @include select-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, calc($sml-1 * 0.5), $sml-vertical, $sml-horizontal)
 
   @if $med
-    @include select-sized('med', $med-border-radius, $med-border-width, $med-font-size, $med-1 * 0.5, $med-vertical, $med-horizontal)
+    @include select-sized('med', $med-border-radius, $med-border-width, $med-font-size, calc($med-1 * 0.5), $med-vertical, $med-horizontal)
 
   @if $lrg
-    @include select-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1 * 0.5, $lrg-vertical, $lrg-horizontal)
+    @include select-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, calc($lrg-1 * 0.5), $lrg-vertical, $lrg-horizontal)

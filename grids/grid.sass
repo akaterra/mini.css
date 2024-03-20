@@ -48,38 +48,41 @@
             .c#{$i}-s-, .f#{$i}-s-
               width: 100% / $grid-cells * $i !important
 
-        .sml
-          @if $i < 10
-            .f-#{$i}
-              width: ($fixed-width + $sml-horizontal * 2) / $grid-cells * $i
-          @else
-            .f#{$i}
-              width: ($fixed-width + $sml-horizontal * 2) / $grid-cells * $i
+        @if $wrap == 'sml'
+          .sml
+            @if $i < 10
+              .f-#{$i}
+                width: calc(($fixed-width + $sml-horizontal * 2) / $grid-cells * $i)
+            @else
+              .f#{$i}
+                width: calc(($fixed-width + $sml-horizontal * 2) / $grid-cells * $i)
 
-        .container.sml
-          width: $width - $sml-horizontal * 2
+        @if $wrap == 'med'
+          .med
+            @if $i < 10
+              .f-#{$i}
+                width: calc(($fixed-width + $med-horizontal * 2) / $grid-cells * $i)
+            @else
+              .f#{$i}
+                width: calc(($fixed-width + $med-horizontal * 2) / $grid-cells * $i)
 
-        .med
-          @if $i < 10
-            .f-#{$i}
-              width: ($fixed-width + $med-horizontal * 2) / $grid-cells * $i
-          @else
-            .f#{$i}
-              width: ($fixed-width + $med-horizontal * 2) / $grid-cells * $i
+        @if $wrap == 'lrg'
+          .lrg
+            @if $i < 10
+              .f-#{$i}
+                width: calc(($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i)
+            @else
+              .f#{$i}
+                width: calc(($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i)
 
-        .container.med
-          width: $width - $med-horizontal * 2
+      .container.sml
+        width: calc($width - $sml-horizontal * 2)
 
-        .lrg
-          @if $i < 10
-            .f-#{$i}
-              width: ($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i
-          @else
-            .f#{$i}
-              width: ($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i
+      .container.med
+        width: calc($width - $med-horizontal * 2)
 
-        .container.lrg
-          width: $width - $lrg-horizontal * 2
+      .container.lrg
+        width: calc($width - $lrg-horizontal * 2)
 
   @mixin media-minimal($max-width, $wrap)
     .container-fluid
@@ -211,21 +214,21 @@
   @if $sml
     .sml
       .row
-        margin-left: -$sml-horizontal
-        margin-right: -$sml-horizontal
+        margin-left: calc($sml-horizontal * -1)
+        margin-right: calc($sml-horizontal * -1)
 
 
   @if $med
     .med
       .row
-        margin-left: -$med-horizontal
-        margin-right: -$med-horizontal
+        margin-left: calc($med-horizontal * -1)
+        margin-right: calc($med-horizontal * -1)
 
   @if $lrg
     .lrg
       .row
-        margin-left: -$lrg-horizontal
-        margin-right: -$lrg-horizontal
+        margin-left: calc($lrg-horizontal * -1)
+        margin-right: calc($lrg-horizontal * -1)
 
   .p13
     flex: none

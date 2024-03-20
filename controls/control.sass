@@ -32,21 +32,21 @@
       .control
         border-radius: $border-radius
         border-width: $border-width
-        font-size: $font-size * 0.8
+        font-size: calc($font-size * 0.8)
         height: $height
         margin-bottom: $ver
         margin-top: $ver
         min-height: $height
 
         @if $normalize-css
-          padding: $ver $hor - 2px
+          padding: $ver calc($hor - 2px)
         @else
           padding: $ver $hor
     @else
       .control.control-#{$suffix}
         border-radius: $border-radius
         border-width: $border-width
-        font-size: $font-size * 0.8
+        font-size: calc($font-size * 0.8)
         height: $height
         min-height: $height
 
@@ -55,22 +55,22 @@
         padding: $ver $hor
 
   @include control(null, $col, $col-default, $col-default, $col-default)
-  @include control-hover(null, $col, $col-default-dark-1, $col-default, $col-default-dark-1)
+  @include control-hover(null, $col, $col-default-d-1, $col-default, $col-default-d-1)
 
   @include control('default', $col, $col-default, $col-default, $col-default)
-  @include control-hover('default', $col, $col-default-dark-1, $col-default, $col-default-dark-1)
+  @include control-hover('default', $col, $col-default-d-1, $col-default, $col-default-d-1)
 
   @include control('failure', $col, $col-failure, $col-failure, $col-failure)
-  @include control-hover('failure', $col, $col-failure-dark-1, $col-failure, $col-failure-dark-1)
+  @include control-hover('failure', $col, $col-failure-d-1, $col-failure, $col-failure-d-1)
 
   @include control('primary', $col, $col-primary, $col-primary, $col-primary)
-  @include control-hover('primary', $col, $col-primary-dark-1, $col-primary, $col-primary-dark-1)
+  @include control-hover('primary', $col, $col-primary-d-1, $col-primary, $col-primary-d-1)
 
   @include control('success', $col, $col-success, $col-success, $col-success)
-  @include control-hover('success', $col, $col-success-dark-1, $col-success, $col-success-dark-1)
+  @include control-hover('success', $col, $col-success-d-1, $col-success, $col-success-d-1)
 
   @include control('warning', $col, $col-warning, $col-warning, $col-warning)
-  @include control-hover('warning', $col, $col-warning-dark-1, $col-warning, $col-warning-dark-1)
+  @include control-hover('warning', $col, $col-warning-d-1, $col-warning, $col-warning-d-1)
 
   @if $sml
     .sml

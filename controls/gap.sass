@@ -3,11 +3,11 @@
 .mini
   @mixin gap-sized($suffix, $ver, $hor)
     .gap
-      height: $ver * 2
-      min-height: $ver * 2
+      height: calc($ver * 2)
+      min-height: calc($ver * 2)
   
     .children-gap
-      row-gap: $ver * 2
+      row-gap: calc($ver * 2)
 
     // .children-gap>*:not(:first-child)
     //   margin-top: $ver * 2
@@ -16,10 +16,10 @@
     //   margin-bottom: $ver * 2
 
     .children-gap-full>*:first-child, .children-gap-top>*:first-child
-      margin-top: $ver * 2
+      margin-top: calc($ver * 2)
 
     .children-gap-full>*:last-child, .children-gap-bottom>*:last-child
-      margin-bottom: $ver * 2
+      margin-bottom: calc($ver * 2)
 
     .gap-hor
       width: $ver

@@ -3,8 +3,8 @@
 .mini
   @mixin paragraph-sized($suffix, $ver, $hor)
     .paragraph
-      margin-bottom: $ver * 4 !important
-      margin-top: $ver * 4 !important
+      margin-bottom: calc($ver * 4) !important
+      margin-top: calc($ver * 4) !important
 
   @if $sml
     .sml
