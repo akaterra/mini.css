@@ -14,19 +14,27 @@
         color: $color
 
   @mixin alert-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
-    @if $suffix == null
-      .alert
-        border-radius: $border-radius
-        border-width: $border-width
-        font-size: $font-size
-        margin-bottom: $ver
-        margin-top: $ver
-        padding: $ver $hor
-    @else
-      .alert.alert-#{$suffix}
-        border-radius: $border-radius
-        border-width: $border-width
-        font-size: $font-size
+    // @if $suffix == null
+    //   .alert
+    //     border-radius: $border-radius
+    //     border-width: $border-width
+    //     font-size: $font-size
+    //     margin-bottom: $ver
+    //     margin-top: $ver
+    //     padding: $ver $hor
+    // @else
+    .alert.alert-#{$suffix}
+      border-radius: $border-radius
+      border-width: $border-width
+      font-size: $font-size
+
+  .alert
+    border-radius: var(--d-b-r)
+    border-width: var(--d-b-w)
+    font-size: var(--d-f-s)
+    margin-bottom: var(--d-v)
+    margin-top: var(--d-v)
+    padding: var(--d-v) var(--d-h)
 
   @include alert(null, $col-primary-l-1, $col-primary-l-1, $col, $col)
 
@@ -40,17 +48,17 @@
 
   @include alert('warning', $col-warning-l-1, $col-warning-l-1, $col, $col)
 
-  @if $sml
-    .sml
-      @include alert-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
+  // @if $sml
+  //   .sml
+  //     @include alert-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
-  @if $med
-    .med
-      @include alert-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
+  // @if $med
+  //   .med
+  //     @include alert-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
 
-  @if $lrg
-    .lrg
-      @include alert-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  // @if $lrg
+  //   .lrg
+  //     @include alert-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include alert-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)

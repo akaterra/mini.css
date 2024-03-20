@@ -87,69 +87,103 @@
             color: $bg-color
 
   @mixin tab-sized($suffix, $border-radius, $border-width, $font-size, $font-size-ratio, $height, $ver, $hor)
-    @if $suffix == null
-      .tabs
-        &>.tabs-bar
-          &>.tab
-            border-top-left-radius: $border-radius
-            border-top-right-radius: $border-radius
-            border-width: $border-width
-            font-size: calc($font-size * 0.8)
-            padding: 0 $hor $border-width $hor
+    // @if $suffix == null
+    //   .tabs
+    //     &>.tabs-bar
+    //       &>.tab
+    //         border-top-left-radius: $border-radius
+    //         border-top-right-radius: $border-radius
+    //         border-width: $border-width
+    //         font-size: calc($font-size * 0.8)
+    //         padding: 0 $hor $border-width $hor
 
-            &:not(.active)
-              height: calc($height - $border-width * 2)
-              margin-top: $border-width
-              min-height: calc($height - $border-width * 2)
-              padding-bottom: 0
+    //         &:not(.active)
+    //           height: calc($height - $border-width * 2)
+    //           margin-top: $border-width
+    //           min-height: calc($height - $border-width * 2)
+    //           padding-bottom: 0
 
-            &.active
-              height: $height
-              margin-bottom: 0
-              margin-top: 0
-              min-height: $height
-              padding-top: $border-width
+    //         &.active
+    //           height: $height
+    //           margin-bottom: 0
+    //           margin-top: 0
+    //           min-height: $height
+    //           padding-top: $border-width
 
-          padding-left: calc($hor - $border-width)
-          padding-right: calc($hor - $border-width)
+    //       padding-left: calc($hor - $border-width)
+    //       padding-right: calc($hor - $border-width)
 
-        &>.tabs-content
-          border-radius: $border-radius
+    //     &>.tabs-content
+    //       border-radius: $border-radius
+    //       border-width: $border-width
+    //       margin-top: calc($border-width * -1)
+    //       padding: 0 $hor
+
+    //     margin-bottom: $ver
+    //     margin-top: $ver
+
+    // @else
+    .tabs.tabs-#{$suffix}
+      &>.tabs-bar
+        &>.tab
+          border-top-left-radius: $border-radius
+          border-top-right-radius: $border-radius
           border-width: $border-width
-          margin-top: calc($border-width * -1)
-          padding: 0 $hor
+          font-size: calc($font-size * 0.8)
+          padding: 0 $hor $border-width $hor
 
-        margin-bottom: $ver
-        margin-top: $ver
+          &:not(.active)
+            height: calc($height - $border-width * 2)
+            margin-top: $border-width
+            min-height: calc($height - $border-width * 2)
+            padding-bottom: 0
 
-    @else
-      .tabs.tabs-#{$suffix}
-        &>.tabs-bar
-          &>.tab
-            border-top-left-radius: $border-radius
-            border-top-right-radius: $border-radius
-            border-width: $border-width
-            font-size: calc($font-size * 0.8)
-            padding: 0 $hor $border-width $hor
+          &.active
+            height: $height
+            min-height: $height
+            margin-bottom: 0
+            margin-top: 0
+            min-height: $height
+            padding-top: $border-width
 
-            &:not(.active)
-              height: calc($height - $border-width * 2)
-              margin-top: $border-width
-              min-height: calc($height - $border-width * 2)
-              padding-bottom: 0
+      &>.tabs-content
+        border-radius: $border-radius
+        border-width: $border-width
+        margin-top: calc($border-width * -1)
 
-            &.active
-              height: $height
-              min-height: $height
-              margin-bottom: 0
-              margin-top: 0
-              min-height: $height
-              padding-top: $border-width
+  .tabs
+    &>.tabs-bar
+      &>.tab
+        border-top-left-radius: var(--d-b-r)
+        border-top-right-radius: var(--d-b-r)
+        border-width: var(--d-b-w)
+        font-size: calc(var(--d-f-s) * 0.8)
+        padding: 0 var(--d-h) var(--d-b-w) var(--d-h)
 
-        &>.tabs-content
-          border-radius: $border-radius
-          border-width: $border-width
-          margin-top: calc($border-width * -1)
+        &:not(.active)
+          height: calc(var(--d-1) - var(--d-b-w) * 2)
+          margin-top: var(--d-b-w)
+          min-height: calc(var(--d-q) - var(--d-b-w) * 2)
+          padding-bottom: 0
+
+        &.active
+          height: var(--d-1)
+          margin-bottom: 0
+          margin-top: 0
+          min-height: var(--d-1)
+          padding-top: var(--d-b-w)
+
+      padding-left: calc(var(--d-h) - var(--d-b-w))
+      padding-right: calc(var(--d-h) - var(--d-b-w))
+
+    &>.tabs-content
+      border-radius: var(--d-b-r)
+      border-width: var(--d-b-w)
+      margin-top: calc(var(--d-b-w) * -1)
+      padding: 0 var(--d-h)
+
+    margin-bottom: var(--d-v)
+    margin-top: var(--d-v)
 
   @include tab(null, $col-primary, $col-primary, $col, $col, $col-default-l-4)
   @include tab-hover(null, $col-primary-d-1, $col-primary-d-1, $col, $col, $col-default-l-4)
@@ -175,17 +209,17 @@
   @include tab-hover('warning', $col-warning-d-1, $col-warning-d-1, $col, $col, $col-default-l-4)
   @include tab-active('warning', $col-warning-d-2, $col-warning-d-2, $col, $col, $col-default-l-4)
 
-  @if $sml
-    .sml
-      @include tab-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)
+  // @if $sml
+  //   .sml
+  //     @include tab-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)
 
-  @if $med
-    .med
-      @include tab-sized(null, $med-border-radius, $med-border-width, $med-font-size, 1, $med-1, $med-vertical, $med-horizontal)
+  // @if $med
+  //   .med
+  //     @include tab-sized(null, $med-border-radius, $med-border-width, $med-font-size, 1, $med-1, $med-vertical, $med-horizontal)
 
-  @if $lrg
-    .lrg
-      @include tab-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, 1, $lrg-1, $lrg-vertical, $lrg-horizontal)
+  // @if $lrg
+  //   .lrg
+  //     @include tab-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, 1, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include tab-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)

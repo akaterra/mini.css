@@ -43,42 +43,57 @@
             border-bottom-color: $border-color-top
 
   @mixin table-sized($suffix, $border-width, $ver, $hor)
-    @if $suffix == null
-      .table
-        margin-left: -$hor
-        margin-right: -$hor
-        margin-bottom: $ver
-        margin-top: $ver
+    // @if $suffix == null
+    //   .table
+    //     margin-left: calc($hor * -1)
+    //     margin-right: calc($hor * -1)
+    //     margin-bottom: $ver
+    //     margin-top: $ver
 
-        &>.row>*, th, tr
-          padding-bottom: $ver
-          padding-top: $ver
+    //     &>.row>*, th, tr
+    //       padding-bottom: $ver
+    //       padding-top: $ver
 
-      .table.underlined
-        &>.row:after, th:after, tr:after
-          border-bottom-width: $border-width
-          margin: 0 $hor
-    @else
-      .table.table-#{$suffix}
-        &>.row>*, th, tr
-          padding-bottom: $ver
-          padding-top: $ver
+    //   .table.underlined
+    //     &>.row:after, th:after, tr:after
+    //       border-bottom-width: $border-width
+    //       margin: 0 $hor
+    // @else
+    .table.table-#{$suffix}
+      &>.row>*, th, tr
+        padding-bottom: $ver
+        padding-top: $ver
 
-      .table.table-#{$suffix}.underlined
-        &>.row:after, th:after, tr:after
-          border-bottom-width: $border-width
-          margin: 0 $hor
+    .table.table-#{$suffix}.underlined
+      &>.row:after, th:after, tr:after
+        border-bottom-width: $border-width
+        margin: 0 $hor
 
+  .table
+    margin-left: calc(var(--d-h) * -1)
+    margin-right: calc(var(--d-h) * -1)
+    margin-bottom: var(--d-v)
+    margin-top: var(--d-v)
+
+    &>.row>*, th, tr
+      padding-bottom: var(--d-v)
+      padding-top: var(--d-v)
+
+  .table.underlined
+    &>.row:after, th:after, tr:after
+      border-bottom-width: var(--d-b-w)
+      margin: 0 var(--d-h)
+  
   @include table(null, $col-default-l-3, $col-default)
 
-  .sml
-    @include table-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
+  // .sml
+  //   @include table-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
 
-  .med
-    @include table-sized(null, $med-border-width, $med-vertical, $med-horizontal)
+  // .med
+  //   @include table-sized(null, $med-border-width, $med-vertical, $med-horizontal)
 
-  .lrg
-    @include table-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
+  // .lrg
+  //   @include table-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
 
   @include table-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
 

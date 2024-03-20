@@ -52,50 +52,81 @@
           color: $color
 
   @mixin list-sized($suffix, $border-radius, $font-size, $font-size-ratio, $ver, $hor)
-    @if $suffix == null
-      .list
-        .list-header
-          &.sub
-            padding-left: calc($hor * 2)
+    // @if $suffix == null
+    //   .list
+    //     .list-header
+    //       &.sub
+    //         padding-left: calc($hor * 2)
           
-          &.subsub
-            padding-left: calc($hor * 3)
+    //       &.subsub
+    //         padding-left: calc($hor * 3)
 
-          &:not(:first-child)
-            margin-top: calc($ver * 2)
+    //       &:not(:first-child)
+    //         margin-top: calc($ver * 2)
   
-          border-radius: $border-radius
-          font-size: calc($font-size * ($font-size-ratio - 0.25))
-          padding: $ver 0 $ver $hor
+    //       border-radius: $border-radius
+    //       font-size: calc($font-size * ($font-size-ratio - 0.25))
+    //       padding: $ver 0 $ver $hor
 
-        .list-item
-          &.sub
-            padding-left: calc($hor * 3)
+    //     .list-item
+    //       &.sub
+    //         padding-left: calc($hor * 3)
           
-          &.subsub
-            padding-left: calc($hor * 4)
+    //       &.subsub
+    //         padding-left: calc($hor * 4)
 
-          border-radius: $border-radius
-          padding: $ver 0 $ver calc($hor * 2)
+    //       border-radius: $border-radius
+    //       padding: $ver 0 $ver calc($hor * 2)
 
-        .list-header, .list-item
-          border: 0
+    //     .list-header, .list-item
+    //       border: 0
 
-        margin-bottom: $ver
-        margin-top: $ver
-    @else
-      .list.list-#{$suffix}
-        .list-header
-          font-size: calc($font-size * ($font-size-ratio - 0.25))
+    //     margin-bottom: $ver
+    //     margin-top: $ver
+    // @else
+    .list.list-#{$suffix}
+      .list-header
+        font-size: calc($font-size * ($font-size-ratio - 0.25))
 
-        // .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
-        //   font-size: $font-size
+      // .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
+      //   font-size: $font-size
 
-        // .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
-        //   border-radius: $border-radius
+      // .list-header, .list-subheader, .list-subsubheader, .list-item, .list-subitem, .list-subsubitem
+      //   border-radius: $border-radius
 
-        margin-bottom: $ver
-        margin-top: $ver
+      margin-bottom: $ver
+      margin-top: $ver
+
+  .list
+    .list-header
+      &.sub
+        padding-left: calc(var(--d-h) * 2)
+      
+      &.subsub
+        padding-left: calc(var(--d-h) * 3)
+
+      &:not(:first-child)
+        margin-top: calc(var(--d-v) * 2)
+
+      border-radius: var(--d-b-r)
+      font-size: calc(var(--d-f-s) * (1.5 - 0.25))
+      padding: var(--d-v) 0 var(--d-v) var(--d-h)
+
+    .list-item
+      &.sub
+        padding-left: calc(var(--d-h) * 3)
+      
+      &.subsub
+        padding-left: calc(var(--d-h) * 4)
+
+      border-radius: var(--d-b-r)
+      padding: var(--d-v) 0 var(--d-v) calc(var(--d-h) * 2)
+
+    .list-header, .list-item
+      border: 0
+
+    margin-bottom: var(--d-v)
+    margin-top: var(--d-v)
 
   @include list(null, $col-default, $font-bold)
   @include list-hover(null, $col-default-d-1, $col-default-d-1, $col, $col)
@@ -121,17 +152,17 @@
   @include list-hover('warning', $col-warning-d-1, $col-warning-d-1, $col, $col)
   @include list-active('warning', $col-warning-d-2, $col-warning-d-2, $col, $col)
 
-  @if $sml
-    .sml
-      @include list-sized(null, $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
+  // @if $sml
+  //   .sml
+  //     @include list-sized(null, $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)
 
-  @if $med
-    .med
-      @include list-sized(null, $med-border-radius, $med-font-size, 1.5, $med-vertical, $med-horizontal)
+  // @if $med
+  //   .med
+  //     @include list-sized(null, $med-border-radius, $med-font-size, 1.5, $med-vertical, $med-horizontal)
 
-  @if $lrg
-    .lrg
-      @include list-sized(null, $lrg-border-radius, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
+  // @if $lrg
+  //   .lrg
+  //     @include list-sized(null, $lrg-border-radius, $lrg-font-size, 1.5, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include list-sized('sml', $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)

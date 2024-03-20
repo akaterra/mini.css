@@ -12,12 +12,15 @@
         font-weight: $font-weight
 
   @mixin label-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)
-    @if $suffix == null
-      .label
-        font-size: calc($font-size * $font-size-ratio)
-    @else
-      .label.label-#{$suffix}
-        font-size: calc($font-size * $font-size-ratio)
+    // @if $suffix == null
+    //   .label
+    //     font-size: calc($font-size * $font-size-ratio)
+    // @else
+    .label.label-#{$suffix}
+      font-size: calc($font-size * $font-size-ratio)
+
+  .label
+    font-size: calc(var(--d-f-s) * 0.8)
 
   @include label(null, $col-default-l-1, 0.1, 500)
 
@@ -31,17 +34,17 @@
 
   @include label('warning', $col-warning-l-1, 0.1, 500)
 
-  @if $sml
-    .sml
-      @include label-sized(null, $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
+  // @if $sml
+  //   .sml
+  //     @include label-sized(null, $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
 
-  @if $med
-    .med
-      @include label-sized(null, $med-font-size, 0.8, $med-vertical, $med-horizontal)
+  // @if $med
+  //   .med
+  //     @include label-sized(null, $med-font-size, 0.8, $med-vertical, $med-horizontal)
 
-  @if $lrg
-    .lrg
-      @include label-sized(null, $lrg-font-size, 0.8, $lrg-vertical, $lrg-horizontal)
+  // @if $lrg
+  //   .lrg
+  //     @include label-sized(null, $lrg-font-size, 0.8, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include label-sized('sml', $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)
