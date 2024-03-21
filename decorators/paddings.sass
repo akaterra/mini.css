@@ -1,41 +1,14 @@
 @import ../vars
 
 .mini
-  .sml
-    .pad-hor
-      &.double
-        padding-left: calc($sml-horizontal * 2) !important
-        padding-right: calc($sml-horizontal * 2) !important
+  .pad-hor
+    &.double
+      padding-left: calc(var(--d-h) * 2) !important
+      padding-right: calc(var(--d-h) * 2) !important
 
-      &.triple
-        padding-left: calc($sml-horizontal * 3) !important
-        padding-right: calc($sml-horizontal * 3) !important
+    &.triple
+      padding-left: calc(var(--d-h) * 3) !important
+      padding-right: calc(var(--d-h) * 3) !important
 
-      padding-left: $sml-horizontal !important
-      padding-right: $sml-horizontal !important
-
-  .med
-    .pad-hor
-      &.double
-        padding-left: calc($med-horizontal * 2) !important
-        padding-right: calc($med-horizontal * 2) !important
-
-      &.triple
-        padding-left: calc($med-horizontal * 3) !important
-        padding-right: calc($med-horizontal * 3) !important
-
-      padding-left: $med-horizontal !important
-      padding-right: $med-horizontal !important
-
-  .lrg
-    .pad-hor
-      &.double
-        padding-left: calc($lrg-horizontal * 2) !important
-        padding-right: calc($lrg-horizontal * 2) !important
-
-      &.triple
-        padding-left: calc($lrg-horizontal * 3) !important
-        padding-right: calc($lrg-horizontal * 3) !important
-
-      padding-left: $lrg-horizontal !important
-      padding-right: $lrg-horizontal !important
+    padding-left: var(--d-h) !important
+    padding-right: var(--d-h) !important

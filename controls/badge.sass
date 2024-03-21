@@ -14,14 +14,12 @@
         display: inline-block
 
   @mixin badge-sized($suffix, $border-radius, $ver, $hor)
-    @if $suffix == null
-      .badge
-        border-radius: $border-radius
-        padding: $ver $hor
-    @else
-      .badge.badge-#{$suffix}
-        border-radius: $border-radius
-        padding: $ver $hor
+    .badge.badge-#{$suffix}
+      padding: $ver $hor
+
+  .badge
+    border-radius: 2000px
+    padding: var(--d-v) var(--d-h)
 
   @include badge(null, $col-primary, $col)
 
@@ -34,18 +32,6 @@
   @include badge('success', $col-success, $col)
 
   @include badge('warning', $col-warning, $col)
-
-  @if $sml
-    .sml
-      @include badge-sized(null, 25px, $sml-border-width, $sml-horizontal)
-
-  @if $med
-    .med
-      @include badge-sized(null, 25px, $med-border-width, $med-horizontal)
-
-  @if $lrg
-    .lrg
-      @include badge-sized(null, 25px, $lrg-border-width, $lrg-horizontal)
 
   @if $sml
     @include badge-sized('sml', 25px, $sml-border-width, $sml-horizontal)

@@ -9,10 +9,6 @@
       .blockquote.#{$prefix}
         border-left: 2px $color solid
 
-  @mixin blockquote-sized($prefix, $hor)
-  //   .blockquote
-  //     padding-left: calc($hor * 2 - 2px)
-
   .blockquote
     padding-left: calc(var(--d-h) * 2 - 2px)
 
@@ -27,24 +23,3 @@
   @include blockquote('success', $col-success)
 
   @include blockquote('warning', $col-warning)
-
-  // @if $sml
-  //   .sml
-  //     @include blockquote-sized(null, $sml-horizontal)
-
-  // @if $med
-  //   .med
-  //     @include blockquote-sized(null, $med-horizontal)
-
-  // @if $lrg
-  //   .lrg
-  //     @include blockquote-sized(null, $lrg-horizontal)
-
-  @if $sml
-    @include blockquote-sized('sml', $sml-horizontal)
-
-  @if $med
-    @include blockquote-sized('med', $med-horizontal)
-
-  @if $lrg
-    @include blockquote-sized('lrg', $lrg-horizontal)

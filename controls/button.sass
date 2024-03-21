@@ -44,22 +44,7 @@
         color: $color
 
   @mixin button-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
-    // @if $suffix == null
-    //   .button
-    //     border-radius: $border-radius
-    //     border-width: $border-width
-    //     font-size: calc($font-size * 0.8)
-    //     height: $height
-    //     line-height: 2.5
-    //     margin-bottom: $ver
-    //     margin-top: $ver
-    //     min-height: $height
-    //     padding: calc($ver + $font-size * 0.1) $hor
-
-    // @else
     .button.button-#{$suffix}
-      // border-radius: $border-radius
-      // border-width: $border-width
       font-size: calc($font-size * 0.8)
       height: $height
       min-height: $height
@@ -116,36 +101,6 @@
   @include button('warning', $col-warning, $col-warning, $col, $col)
   @include button-hover('warning', $col-warning-d-1, $col-warning-d-1, $col, $col)
   @include button-active('warning', $col-warning-d-2, $col-warning-d-2, $col, $col)
-
-  @if $sml
-    // .sml
-    //   @include button-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
-
-      // .button-med
-      //   padding: calc($sml-vertical + $med-font-size * 0.1) $sml-horizontal
-
-      // .button-lrg
-      //   padding: calc($sml-vertical + $lrg-font-size * 0.1) $sml-horizontal
-  
-  @if $med
-    // .med
-    //   @include button-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
-
-      // .button-sml
-      //   padding: calc($med-vertical + $sml-font-size * 0.1) $med-horizontal
-
-      // .button-lrg
-      //   padding: calc($med-vertical + $lrg-font-size * 0.1) $med-horizontal
-
-  @if $lrg
-    // .lrg
-    //   @include button-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
-
-      // .button-sml
-      //   padding: calc($lrg-vertical + $sml-font-size * 0.1) $lrg-horizontal
-
-      // .button-lrg
-      //   padding: calc($lrg-vertical + $lrg-font-size * 0.1) $lrg-horizontal
 
   @if $sml
     @include button-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)

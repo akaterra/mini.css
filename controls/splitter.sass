@@ -10,12 +10,6 @@
         border-top: $color solid 2px
 
   @mixin splitter-sized($suffix, $height, $ver, $hor)
-    // @if $suffix == null
-    //   .splitter
-    //     height: $height
-    //     min-height: $height
-    //     margin: $ver 0
-    // @else
     .splitter.splitter-#{$suffix}
       height: $height
       min-height: $height
@@ -37,18 +31,6 @@
   @include splitter('success', $col-success-l-3)
 
   @include splitter('warning', $col-warning-l-3)
-
-  // @if $sml
-  //   .sml
-  //     @include splitter-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
-
-  // @if $med
-  //   .med
-  //     @include splitter-sized(null, $med-border-width, $med-vertical, $med-horizontal)
-
-  // @if $lrg
-  //   .lrg
-  //     @include splitter-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include splitter-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)

@@ -54,6 +54,10 @@
 }
 
 .mini .badge {
+  border-radius: 2000px;
+  padding: var(--d-v) var(--d-h);
+}
+.mini .badge {
   background-color: var(--c-pri);
   color: var(--c);
   display: inline-block;
@@ -83,28 +87,13 @@
   color: var(--c);
   display: inline-block;
 }
-.mini .sml .badge {
-  border-radius: 25px;
-  padding: var(--s-b-w) var(--s-h);
-}
-.mini .med .badge {
-  border-radius: 25px;
-  padding: var(--m-b-w) var(--m-h);
-}
-.mini .lrg .badge {
-  border-radius: 25px;
-  padding: var(--l-b-w) var(--l-h);
-}
 .mini .badge.badge-sml {
-  border-radius: 25px;
   padding: var(--s-b-w) var(--s-h);
 }
 .mini .badge.badge-med {
-  border-radius: 25px;
   padding: var(--m-b-w) var(--m-h);
 }
 .mini .badge.badge-lrg {
-  border-radius: 25px;
   padding: var(--l-b-w) var(--l-h);
 }
 .mini .badge {
@@ -980,26 +969,36 @@
 .mini .list .list-header {
   border-radius: var(--d-b-r);
   font-size: calc(var(--d-f-s) * 1.25);
-  padding: var(--d-v) 0 var(--d-v) var(--d-h);
+  padding-bottom: var(--d-v);
+  padding-left: var(--d-h-l);
+  padding-right: var(--d-h-r);
+  padding-top: var(--d-v);
 }
 .mini .list .list-header.sub {
-  padding-left: calc(var(--d-h) * 2);
+  padding-left: calc(var(--d-h-l) * 2);
+  padding-right: calc(var(--d-h-r) * 2);
 }
 .mini .list .list-header.subsub {
-  padding-left: calc(var(--d-h) * 3);
+  padding-left: calc(var(--d-h-l) * 3);
+  padding-right: calc(var(--d-h-r) * 3);
 }
 .mini .list .list-header:not(:first-child) {
   margin-top: calc(var(--d-v) * 2);
 }
 .mini .list .list-item {
   border-radius: var(--d-b-r);
-  padding: var(--d-v) 0 var(--d-v) calc(var(--d-h) * 2);
+  padding-bottom: var(--d-v);
+  padding-left: calc(var(--d-h-l) * 2);
+  padding-right: calc(var(--d-h-r) * 2);
+  padding-top: var(--d-v);
 }
 .mini .list .list-item.sub {
-  padding-left: calc(var(--d-h) * 3);
+  padding-left: calc(var(--d-h-l) * 3);
+  padding-right: calc(var(--d-h-r) * 3);
 }
 .mini .list .list-item.subsub {
-  padding-left: calc(var(--d-h) * 4);
+  padding-left: calc(var(--d-h-l) * 4);
+  padding-right: calc(var(--d-h-r) * 4);
 }
 .mini .list .list-header, .mini .list .list-item {
   border: 0;
@@ -1389,7 +1388,7 @@
 .mini .tabs > .tabs-bar > .tab:not(.active) {
   height: calc(var(--d-1) - var(--d-b-w) * 2);
   margin-top: var(--d-b-w);
-  min-height: calc(var(--d-q) - var(--d-b-w) * 2);
+  min-height: calc(var(--d-1) - var(--d-b-w) * 2);
   padding-bottom: 0;
 }
 .mini .tabs > .tabs-bar > .tab.active {
@@ -1708,7 +1707,7 @@
   cursor: pointer;
   display: flex;
   font-weight: bolder;
-  margin: 0 2px;
+  margin: 0 var(--d-b-w);
   position: relative;
   z-index: 0;
 }
@@ -1731,7 +1730,7 @@
 }
 .mini .tabs > .tabs-content.underlined {
   border-radius: 0;
-  border-width: 2px 0 0 0;
+  border-width: var(--d-b-w) 0 0 0;
 }
 
 .mini .rtl .tabs > .tabs-bar > .tab {
@@ -1745,8 +1744,8 @@
   margin-top: var(--d-v);
 }
 .mini .table > .row > *, .mini .table th, .mini .table tr {
-  padding-bottom: var(--d-v);
-  padding-top: var(--d-v);
+  padding-bottom: var(--d-v) !important;
+  padding-top: var(--d-v) !important;
 }
 .mini .table.underlined > .row:after, .mini .table.underlined th:after, .mini .table.underlined tr:after {
   border-bottom-width: var(--d-b-w);
@@ -1848,6 +1847,18 @@
   width: 100%;
 }
 
+.mini .b-l, .mini .on-bottom-left, .mini .b-r, .mini .on-bottom-right {
+  margin-top: var(--d-v) !important;
+}
+.mini .t-l, .mini .on-top-left, .mini .t-r, .mini .on-top-right {
+  margin-bottom: var(--d-v) !important;
+}
+.mini .l-b, .mini .on-left-bottom, .mini .l-t, .mini .on-left-top {
+  margin: 0 var(--d-v) 0 var(--d-v) !important;
+}
+.mini .r-b, .mini .on-right-bottom, .mini .r-t, .mini .on-right-top {
+  margin: 0 var(--d-v) 0 var(--d-v) !important;
+}
 .mini .b-l, .mini .on-bottom-left {
   bottom: auto;
   left: 0;
@@ -1893,7 +1904,6 @@
 .mini .t-l, .mini .on-top-left {
   bottom: 100%;
   left: 0;
-  margin: 0 !important;
   position: absolute !important;
   right: auto;
   top: auto;
@@ -1901,46 +1911,9 @@
 .mini .t-r, .mini .on-top-right {
   bottom: 100%;
   left: auto;
-  margin: 0 !important;
   position: absolute !important;
   right: 0;
   top: auto;
-}
-.mini .sml .b-l, .mini .sml .on-bottom-left, .mini .sml .b-r, .mini .sml .on-bottom-right {
-  margin-top: var(--s-v) !important;
-}
-.mini .sml .t-l, .mini .sml .on-top-left, .mini .sml .t-r, .mini .sml .on-top-right {
-  margin-bottom: var(--s-v) !important;
-}
-.mini .sml .l-b, .mini .sml .on-left-bottom, .mini .sml .l-t, .mini .sml .on-left-top {
-  margin: 0 var(--s-v) 0 var(--s-v) !important;
-}
-.mini .sml .r-b, .mini .sml .on-right-bottom, .mini .sml .r-t, .mini .sml .on-right-top {
-  margin: 0 var(--s-v) 0 var(--s-v) !important;
-}
-.mini .med .b-l, .mini .med .on-bottom-left, .mini .med .b-r, .mini .med .on-bottom-right {
-  margin-top: var(--m-v) !important;
-}
-.mini .med .t-l, .mini .med .on-top-left, .mini .med .t-r, .mini .med .on-top-right {
-  margin-bottom: var(--m-v) !important;
-}
-.mini .med .l-b, .mini .med .on-left-bottom, .mini .med .l-t, .mini .med .on-left-top {
-  margin: 0 var(--m-v) 0 var(--m-v) !important;
-}
-.mini .med .r-b, .mini .med .on-right-bottom, .mini .med .r-t, .mini .med .on-right-top {
-  margin: 0 var(--m-v) 0 var(--m-v) !important;
-}
-.mini .lrg .b-l, .mini .lrg .on-bottom-left, .mini .lrg .b-r, .mini .lrg .on-bottom-right {
-  margin-top: var(--l-v) !important;
-}
-.mini .lrg .t-l, .mini .lrg .on-top-left, .mini .lrg .t-r, .mini .lrg .on-top-right {
-  margin-bottom: var(--l-v) !important;
-}
-.mini .lrg .l-b, .mini .lrg .on-left-bottom, .mini .lrg .l-t, .mini .lrg .on-left-top {
-  margin: 0 var(--l-v) 0 var(--l-v) !important;
-}
-.mini .lrg .r-b, .mini .lrg .on-right-bottom, .mini .lrg .r-t, .mini .lrg .on-right-top {
-  margin: 0 var(--l-v) 0 var(--l-v) !important;
 }
 
 .mini .rtl .b-l, .mini .rtl .on-bottom-left {
@@ -2254,41 +2227,17 @@
   text-overflow: ellipsis;
 }
 
-.mini .sml .pad-hor {
-  padding-left: var(--s-h) !important;
-  padding-right: var(--s-h) !important;
+.mini .pad-hor {
+  padding-left: var(--d-h) !important;
+  padding-right: var(--d-h) !important;
 }
-.mini .sml .pad-hor.double {
-  padding-left: calc(var(--s-h) * 2) !important;
-  padding-right: calc(var(--s-h) * 2) !important;
+.mini .pad-hor.double {
+  padding-left: calc(var(--d-h) * 2) !important;
+  padding-right: calc(var(--d-h) * 2) !important;
 }
-.mini .sml .pad-hor.triple {
-  padding-left: calc(var(--s-h) * 3) !important;
-  padding-right: calc(var(--s-h) * 3) !important;
-}
-.mini .med .pad-hor {
-  padding-left: var(--m-h) !important;
-  padding-right: var(--m-h) !important;
-}
-.mini .med .pad-hor.double {
-  padding-left: calc(var(--m-h) * 2) !important;
-  padding-right: calc(var(--m-h) * 2) !important;
-}
-.mini .med .pad-hor.triple {
-  padding-left: calc(var(--m-h) * 3) !important;
-  padding-right: calc(var(--m-h) * 3) !important;
-}
-.mini .lrg .pad-hor {
-  padding-left: var(--l-h) !important;
-  padding-right: var(--l-h) !important;
-}
-.mini .lrg .pad-hor.double {
-  padding-left: calc(var(--l-h) * 2) !important;
-  padding-right: calc(var(--l-h) * 2) !important;
-}
-.mini .lrg .pad-hor.triple {
-  padding-left: calc(var(--l-h) * 3) !important;
-  padding-right: calc(var(--l-h) * 3) !important;
+.mini .pad-hor.triple {
+  padding-left: calc(var(--d-h) * 3) !important;
+  padding-right: calc(var(--d-h) * 3) !important;
 }
 
 .mini .rtl {
@@ -4048,9 +3997,15 @@
   --d-b-w: var(--s-b-w);
   --d-f-s: var(--s-f-s);
   --d-h: var(--s-h);
+  --d-h-l: var(--s-h);
+  --d-h-r: 0;
   --d-media: var(--s-media);
   --d-media-max: var(--s-media-max);
   --d-v: var(--s-v);
+}
+:root .sml.rtl, :root .sml .rtl {
+  --d-h-l: 0;
+  --d-h-r: var(--s-h);
 }
 :root .med {
   --d-1: var(--m-1);
@@ -4058,9 +4013,15 @@
   --d-b-w: var(--m-b-w);
   --d-f-s: var(--m-f-s);
   --d-h: var(--m-h);
+  --d-h-l: var(--m-h);
+  --d-h-r: 0;
   --d-media: var(--m-media);
   --d-media-max: var(--m-media-max);
   --d-v: var(--m-v);
+}
+:root .med.rtl, :root .med .rtl {
+  --d-h-l: 0;
+  --d-h-r: var(--m-h);
 }
 :root .lrg {
   --d-1: var(--l-1);
@@ -4068,9 +4029,15 @@
   --d-b-w: var(--l-b-w);
   --d-f-s: var(--l-f-s);
   --d-h: var(--l-h);
+  --d-h-l: var(--l-h);
+  --d-h-r: 0;
   --d-media: var(--l-media);
   --d-media-max: var(--l-media-max);
   --d-v: var(--l-v);
+}
+:root .lrg.rtl, :root .lrg .rtl {
+  --d-h-l: 0;
+  --d-h-r: var(--l-h);
 }
 
 html, body {

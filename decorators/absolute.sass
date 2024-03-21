@@ -1,18 +1,17 @@
 @import "../vars"
 
 .mini
-  @mixin absolute-sized($suffix, $ver, $hor)
-    .b-l, .on-bottom-left, .b-r, .on-bottom-right
-      margin-top: $ver !important
+  .b-l, .on-bottom-left, .b-r, .on-bottom-right
+    margin-top: var(--d-v) !important
 
-    .t-l, .on-top-left, .t-r, .on-top-right
-      margin-bottom: $ver !important
-  
-    .l-b, .on-left-bottom, .l-t, .on-left-top
-      margin: 0 $ver 0 $ver !important
+  .t-l, .on-top-left, .t-r, .on-top-right
+    margin-bottom: var(--d-v) !important
 
-    .r-b, .on-right-bottom, .r-t, .on-right-top
-      margin: 0 $ver 0 $ver !important
+  .l-b, .on-left-bottom, .l-t, .on-left-top
+    margin: 0 var(--d-v) 0 var(--d-v) !important
+
+  .r-b, .on-right-bottom, .r-t, .on-right-top
+    margin: 0 var(--d-v) 0 var(--d-v) !important
 
   .b-l, .on-bottom-left
     bottom: auto
@@ -59,7 +58,6 @@
   .t-l, .on-top-left
     bottom: 100%
     left: 0
-    margin: 0 !important
     position: absolute !important
     right: auto
     top: auto
@@ -67,19 +65,6 @@
   .t-r, .on-top-right
     bottom: 100%
     left: auto
-    margin: 0 !important
     position: absolute !important
     right: 0
     top: auto
-
-  @if $sml
-    .sml
-      @include absolute-sized(null, $sml-vertical, $sml-horizontal)
-
-  @if $med
-    .med
-      @include absolute-sized(null, $med-vertical, $med-horizontal)
-
-  @if $lrg
-    .lrg
-      @include absolute-sized(null, $lrg-vertical, $lrg-horizontal)

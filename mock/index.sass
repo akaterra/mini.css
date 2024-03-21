@@ -109,31 +109,49 @@
   --l-v: calc(var(--l-h) / 2)
 
   .sml
+    &.rtl, .rtl
+      --d-h-l: 0
+      --d-h-r: var(--s-h)
+
     --d-1: var(--s-1)
     --d-b-r: var(--s-b-r)
     --d-b-w: var(--s-b-w)
     --d-f-s: var(--s-f-s)
     --d-h: var(--s-h)
+    --d-h-l: var(--s-h)
+    --d-h-r: 0
     --d-media: var(--s-media)
     --d-media-max: var(--s-media-max)
     --d-v: var(--s-v)
 
   .med
+    &.rtl, .rtl
+      --d-h-l: 0
+      --d-h-r: var(--m-h)
+
     --d-1: var(--m-1)
     --d-b-r: var(--m-b-r)
     --d-b-w: var(--m-b-w)
     --d-f-s: var(--m-f-s)
     --d-h: var(--m-h)
+    --d-h-l: var(--m-h)
+    --d-h-r: 0
     --d-media: var(--m-media)
     --d-media-max: var(--m-media-max)
     --d-v: var(--m-v)
 
   .lrg
+    &.rtl, .rtl
+      --d-h-l: 0
+      --d-h-r: var(--l-h)
+
     --d-1: var(--l-1)
     --d-b-r: var(--l-b-r)
     --d-b-w: var(--l-b-w)
     --d-f-s: var(--l-f-s)
     --d-h: var(--l-h)
+    --d-h-l: var(--l-h)
+    --d-h-r: 0
     --d-media: var(--l-media)
     --d-media-max: var(--l-media-max)
     --d-v: var(--l-v)

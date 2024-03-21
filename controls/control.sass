@@ -28,24 +28,7 @@
         border-color: $border-color
 
   @mixin control-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
-    // @if $suffix == null
-    //   .control
-    //     border-radius: $border-radius
-    //     border-width: $border-width
-    //     font-size: calc($font-size * 0.8)
-    //     height: $height
-    //     margin-bottom: $ver
-    //     margin-top: $ver
-    //     min-height: $height
-
-    //     @if $normalize-css
-    //       padding: $ver calc($hor - 2px)
-    //     @else
-    //       padding: $ver $hor
-    // @else
     .control.control-#{$suffix}
-      // border-radius: $border-radius
-      // border-width: $border-width
       font-size: calc($font-size * 0.8)
       height: $height
       min-height: $height
@@ -85,18 +68,6 @@
 
   @include control('warning', $col, $col-warning, $col-warning, $col-warning)
   @include control-hover('warning', $col, $col-warning-d-1, $col-warning, $col-warning-d-1)
-
-  // @if $sml
-  //   .sml
-  //     @include control-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
-
-  // @if $med
-  //   .med
-  //     @include control-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-1, $med-vertical, $med-horizontal)
-
-  // @if $lrg
-  //   .lrg
-  //     @include control-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-1, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include control-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)

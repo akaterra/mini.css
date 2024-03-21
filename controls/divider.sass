@@ -16,13 +16,6 @@
           border-top-color: $color-top
 
   @mixin divider-sized($suffix, $height, $ver, $hor)
-    // @if $suffix == null
-    //   .divider
-    //     border-top-width: $height
-    //     height: $height
-    //     min-height: $height
-    //     margin: $ver $hor
-    // @else
     .divider.divider-#{$suffix}
       border-top-width: $height
       height: $height
@@ -46,18 +39,6 @@
   @include divider('success', $col-success-l-3, $col-success)
 
   @include divider('warning', $col-warning-l-3, $col-warning)
-
-  // @if $sml
-  //   .sml
-  //     @include divider-sized(null, $sml-border-width, $sml-vertical, $sml-horizontal)
-
-  // @if $med
-  //   .med
-  //     @include divider-sized(null, $med-border-width, $med-vertical, $med-horizontal)
-
-  // @if $lrg
-  //   .lrg
-  //     @include divider-sized(null, $lrg-border-width, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include divider-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)

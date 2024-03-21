@@ -17,18 +17,8 @@
 
         background-color: $bg-color
         border-color: $border-color
-        // color: $color
 
   @mixin panel-sized($suffix, $border-radius, $border-width, $font-size, $ver, $hor)
-    // @if $suffix == null
-    //   .panel
-    //     border-radius: $border-radius
-    //     border-width: $border-width
-    //     font-size: $font-size
-    //     margin-bottom: $ver
-    //     margin-top: $ver
-    //     padding: $ver $hor
-    // @else
     .panel.panel-#{$suffix}
       border-radius: $border-radius
       border-width: $border-width
@@ -53,18 +43,6 @@
   @include panel('success', $col, $col-success-l-4, $col-text, $col-text)
 
   @include panel('warning', $col, $col-warning-l-4, $col-text, $col-text)
-
-  // @if $sml
-  //   .sml
-  //     @include panel-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)
-
-  // @if $med
-  //   .med
-  //     @include panel-sized(null, $med-border-radius, $med-border-width, $med-font-size, $med-vertical, $med-horizontal)
-
-  // @if $lrg
-  //   .lrg
-  //     @include panel-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include panel-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)

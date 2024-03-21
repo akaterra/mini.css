@@ -51,22 +51,6 @@
         background: $border-color !important
 
   @mixin checkbox-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
-    // @if $suffix == null
-    //   .checkbox
-    //     height: $height
-    //     margin: auto calc($border-width * 2) auto 0
-    //     width: $height
-
-    //   .checkbox:before
-    //     border-width: $border-width
-    //     font-size: $font-size
-    //     height: $height
-    //     outline-offset: calc($border-width * -2)
-    //     outline-width: $border-width
-    //     padding: $border-width
-    //     width: $height
-
-    // @else
     .checkbox-#{$suffix}
       height: $height
       margin: auto calc($border-width * 2) auto 0
@@ -138,18 +122,6 @@
   @include checkbox('warning', $col, $col-warning, $col, $col)
   @include checkbox-hover('warning', $col, $col-warning-d-1, $col, $col)
   @include checkbox-active('warning', $col, $col-warning-d-2, $col, $col)
-
-  // @if $sml
-  //   .sml
-  //     @include checkbox-sized(null, $sml-border-radius, $sml-border-width, $sml-font-size, calc($sml-1 * 0.5), $sml-vertical, $sml-horizontal)
-
-  // @if $med
-  //   .med
-  //     @include checkbox-sized(null, $med-border-radius, $med-border-width, $med-font-size, calc($med-1 * 0.5), $med-vertical, $med-horizontal)
-
-  // @if $lrg
-  //   .lrg
-  //     @include checkbox-sized(null, $lrg-border-radius, $lrg-border-width, $lrg-font-size, calc($lrg-1 * 0.5), $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include checkbox-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, calc($sml-1 * 0.5), $sml-vertical, $sml-horizontal)

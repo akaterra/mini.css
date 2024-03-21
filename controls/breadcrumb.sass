@@ -2,15 +2,6 @@
 
 .mini
   @mixin breadcrumbs-sized($suffix, $ver, $hor)
-    // @if $suffix == null
-    //   .breadcrumbs
-    //     &>.breadcrumb:after
-    //       padding: 0 $hor
-
-    //     margin-bottom: $ver
-    //     margin-top: $ver
-
-    // @else
     .breadcrumbs.breadcrumbs-#{$suffix}
       &>.breadcrumb:after
         padding: 0 $hor
@@ -21,18 +12,6 @@
 
     margin-bottom: var(--d-v)
     margin-top: var(--d-v)
-
-  // @if $sml
-  //   .sml
-  //     @include breadcrumbs-sized(null, $sml-vertical, $sml-horizontal)
-
-  // @if $med
-  //   .med
-  //     @include breadcrumbs-sized(null, $med-vertical, $med-horizontal)
-
-  // @if $lrg
-  //   .lrg
-  //     @include breadcrumbs-sized(null, $lrg-vertical, $lrg-horizontal)
 
   @if $sml
     @include breadcrumbs-sized('sml', $sml-vertical, $sml-horizontal)
