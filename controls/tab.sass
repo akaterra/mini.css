@@ -1,91 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin tab($prefix, $bg-color, $border-color, $color, $transparent-color, $border-color-content)
-    @if $prefix == null
-      .tabs
-        &>.tabs-bar
-          &>.tab
-            background-color: $bg-color
-            border-color: transparent
-            color: $color
-
-          &>.tab.active
-            background-color: $color
-            border-color: $border-color-content
-            color: $bg-color
-
-        &>.tabs-content
-          border-color: $border-color-content
-    @else
-      .tabs
-        &>.tabs-bar
-          &>.tab.#{$prefix}
-            background-color: $bg-color
-            border-color: transparent
-            color: $color
-
-          &>.tab.#{$prefix}.active
-            background-color: $color
-            border-color: $border-color-content
-            color: $bg-color
-
-        &>.tabs-content
-          border-color: $border-color-content
-          display: flex
-
-  @mixin tab-hover($prefix, $bg-color, $border-color, $color, $transparent-color, $border-color-content)
-    @if $prefix == null
-      .tabs
-        &>.tabs-bar
-          &>.tab:hover,&>.tab:focus
-            background-color: $bg-color !important
-            border-color: $border-color
-            color: $color
-
-          &>.tab.active:hover,&>.tab.active:focus
-            background-color: $color !important
-            border-color: $border-color-content
-            color: $bg-color
-    @else
-      .tabs
-        &>.tabs-bar
-          &>.tab:hover.#{$prefix},&>.tab:focus.#{$prefix}
-            background-color: $bg-color !important
-            border-color: $border-color
-            color: $color
-
-          &>.tab.active:hover.#{$prefix},&>.tab.active:focus.#{$prefix}
-            background-color: $color !important
-            border-color: $border-color-content
-            color: $bg-color
-
-  @mixin tab-active($prefix, $bg-color, $border-color, $color, $transparent-color, $border-color-content)
-    @if $prefix == null
-      .tabs
-        &>.tabs-bar
-          &>.tab:active
-            background-color: $bg-color !important
-            border-color: $border-color
-            color: $color
-
-          &>.tab.active:hover,&>.tab.active:focus
-            background-color: $color !important
-            border-color: $border-color-content
-            color: $bg-color
-    @else
-      .tabs
-        &>.tabs-bar
-          &>.tab:active.#{$prefix}
-            background-color: $bg-color !important
-            border-color: $border-color
-            color: $color
-
-          &>.tab.active:hover.#{$prefix},&>.tab.active:focus.#{$prefix}
-            background-color: $color !important
-            border-color: $border-color-content
-            color: $bg-color
-
   @mixin tab-sized($suffix, $border-radius, $border-width, $font-size, $font-size-ratio, $height, $ver, $hor)
     .tabs.tabs-#{$suffix}
       &>.tabs-bar
@@ -149,29 +64,62 @@
     margin-bottom: var(--d-v)
     margin-top: var(--d-v)
 
-  @include tab(null, $col-primary, $col-primary, $col, $col, $col-default-l-4)
-  @include tab-hover(null, $col-primary-d-1, $col-primary-d-1, $col, $col, $col-default-l-4)
-  @include tab-active(null, $col-primary-d-2, $col-primary-d-2, $col, $col, $col-default-l-4)
+  // color
 
-  @include tab('default', $col-default, $col-default, $col, $col, $col-default-l-4)
-  @include tab-hover('default', $col-default-d-1, $col-default-d-1, $col, $col, $col-default-l-4)
-  @include tab-active('default', $col-default-d-2, $col-default-d-2, $col, $col, $col-default-l-4)
+  .tabs
+    &>.tabs-bar
+      &>.tab
+        &:active:not(.disabled)
+          background-color: $col-primary-d-2 !important
+          border-color: $col-primary-d-2
+          color: $col
 
-  @include tab('failure', $col-failure, $col-failure, $col, $col, $col-default-l-4)
-  @include tab-hover('failure', $col-failure-d-1, $col-failure-d-1, $col, $col, $col-default-l-4)
-  @include tab-active('failure', $col-failure-d-2, $col-failure-d-2, $col, $col, $col-default-l-4)
+        &:hover, &:focus
+          background-color: $col-primary-d-1 !important
+          border-color: $col-primary-d-1
+          color: $col
 
-  @include tab('primary', $col-primary, $col-primary, $col, $col, $col-default-l-4)
-  @include tab-hover('primary', $col-primary-d-1, $col-primary-d-1, $col, $col, $col-default-l-4)
-  @include tab-active('primary', $col-primary-d-2, $col-primary-d-2, $col, $col, $col-default-l-4)
+        background-color: $col-primary
+        border-color: transparent
+        color: $col
 
-  @include tab('success', $col-success, $col-success, $col, $col, $col-default-l-4)
-  @include tab-hover('success', $col-success-d-1, $col-success-d-1, $col, $col, $col-default-l-4)
-  @include tab-active('success', $col-success-d-2, $col-success-d-2, $col, $col, $col-default-l-4)
+      &>.tab:is(.default, .failure, .primary, .success, .warning)
+        &:active:not(.disabled)
+          background-color: var(--c-d-2) !important
+          border-color: var(--c-d-2)
+          color: var(--c)
 
-  @include tab('warning', $col-warning, $col-warning, $col, $col, $col-default-l-4)
-  @include tab-hover('warning', $col-warning-d-1, $col-warning-d-1, $col, $col, $col-default-l-4)
-  @include tab-active('warning', $col-warning-d-2, $col-warning-d-2, $col, $col, $col-default-l-4)
+        &:hover, &:focus
+          background-color: var(--c-d-1) !important
+          border-color: var(--c-d-1)
+          color: var(--c)
+
+        background-color: var(--c-i)
+        border-color: transparent
+        color: var(--c)
+
+      &>.tab.active
+        &:hover, &:focus
+          background-color: $col !important
+          border-color: $col-default-l-4
+          color: $col-primary-d-1
+
+        background-color: $col
+        border-color: $col-default-l-4
+        color: $col-primary
+
+      &>.tab.active:is(.default, .failure, .primary, .success, .warning)
+        &:hover, &:focus
+          background-color: var(--c) !important
+          border-color: var(--c-l-4)
+          color: var(--c-d-1)
+
+        background-color: var(--c)
+        border-color: var(--c-l-4)
+        color: var(--c-i)
+
+    &>.tabs-content
+      border-color: $col-default-l-4
 
   @if $sml
     @include tab-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, 1, $sml-1, $sml-vertical, $sml-horizontal)

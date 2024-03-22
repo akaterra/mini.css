@@ -1,33 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin select($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .select:before
-        background: $border-color
-
-    @else
-      .select.#{$prefix}:before
-        background: $border-color
-
-  @mixin select-hover($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .select:hover:before, .select:focus:before
-        background: $border-color !important
-
-    @else
-      .select:hover.#{$prefix}:before, .select:focus.#{$prefix}:before
-        background: $border-color !important
-
-  @mixin select-active($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .select:not(.disabled):active:before, .select.active:before
-        background: $border-color !important
-
-    @else
-      .select:not(.disabled):active.#{$prefix}:before, .select.active.#{$prefix}:before
-        background: $border-color !important
-
   @mixin select-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     .select-#{$suffix}:before
       bottom: calc(50% - $height / 2 + $border-width * 2)
@@ -59,29 +32,27 @@
     right: calc(var(--d-b-w) * 4)
     top: calc(50% - var(--d-1) * 0.5 / 2 + var(--d-b-w) * 2)
 
-  @include select(null, $col, $col-default, $col, $col)
-  @include select-hover(null, $col, $col-default-d-1, $col, $col)
-  @include select-active(null, $col, $col-default-d-2, $col, $col)
+  // color
 
-  @include select('default', $col, $col-default, $col, $col)
-  @include select-hover('default', $col, $col-default-d-1, $col, $col)
-  @include select-active('default', $col, $col-default-d-2, $col, $col)
+  .select
+    &:not(.disabled):active:before, &.active:before
+      background: $col-default-d-2 !important
 
-  @include select('failure', $col, $col-failure, $col, $col)
-  @include select-hover('failure', $col, $col-failure-d-1, $col, $col)
-  @include select-active('failure', $col, $col-failure-d-2, $col, $col)
-  
-  @include select('primary', $col, $col-primary, $col, $col)
-  @include select-hover('primary', $col, $col-primary-d-1, $col, $col)
-  @include select-active('primary', $col, $col-primary-d-2, $col, $col)
-  
-  @include select('success', $col, $col-success, $col, $col)
-  @include select-hover('success', $col, $col-success-d-1, $col, $col)
-  @include select-active('success', $col, $col-success-d-2, $col, $col)
-  
-  @include select('warning', $col, $col-warning, $col, $col)
-  @include select-hover('warning', $col, $col-warning-d-1, $col, $col)
-  @include select-active('warning', $col, $col-warning-d-2, $col, $col)
+    &:hover:before, &:focus:before
+      background: $col-default-d-1 !important
+
+    &:before
+      background: $col-default
+
+  .select:is(.default, .failure, .primary, .success, .warning)
+    &:not(.disabled):active:before, &.active:before
+      background: var(--c-d-2) !important
+
+    &:hover:before, &:focus:before
+      background: var(--c-d-1) !important
+
+    &:before
+      background: var(--c-i)
 
   @if $sml
     @include select-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, calc($sml-1 * 0.5), $sml-vertical, $sml-horizontal)

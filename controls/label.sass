@@ -1,34 +1,21 @@
 @import ../vars
 
 .mini
-  @mixin label($prefix, $color, $color-ratio, $font-weight)
-    @if $prefix == null
-      .label
-        color: $color
-        font-weight: $font-weight
-    @else
-      .label.#{$prefix}
-        color: $color
-        font-weight: $font-weight
-
   @mixin label-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)
     .label.label-#{$suffix}
       font-size: calc($font-size * $font-size-ratio)
 
   .label
     font-size: calc(var(--d-f-s) * 0.8)
+    font-weight: 500
 
-  @include label(null, $col-default-l-1, 0.1, 500)
+  // color
 
-  @include label('default', $col-default-l-1, 0.1, 500)
+  .label
+    color: $col-default-l-1
 
-  @include label('failure', $col-failure-l-1, 0.1, 500)
-
-  @include label('primary', $col-primary-l-1, 0.1, 500)
-
-  @include label('success', $col-success-l-1, 0.1, 500)
-
-  @include label('warning', $col-warning-l-1, 0.1, 500)
+  .label:is(.default, .failure, .primary, .success, .warning)
+    color: var(--c-l-1)
 
   @if $sml
     @include label-sized('sml', $sml-font-size, 0.8, $sml-vertical, $sml-horizontal)

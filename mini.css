@@ -12,29 +12,9 @@
   border-color: var(--c-pri-l-1);
   color: var(--c);
 }
-.mini .alert.default {
-  background-color: var(--c-def-l-1);
-  border-color: var(--c-def-l-1);
-  color: var(--c);
-}
-.mini .alert.failure {
-  background-color: var(--c-fai-l-1);
-  border-color: var(--c-fai-l-1);
-  color: var(--c);
-}
-.mini .alert.primary {
-  background-color: var(--c-pri-l-1);
-  border-color: var(--c-pri-l-1);
-  color: var(--c);
-}
-.mini .alert.success {
-  background-color: var(--c-suc-l-1);
-  border-color: var(--c-suc-l-1);
-  color: var(--c);
-}
-.mini .alert.warning {
-  background-color: var(--c-war-l-1);
-  border-color: var(--c-war-l-1);
+.mini .alert:is(.default, .failure, .primary, .success, .warning) {
+  background-color: var(--c-l-1);
+  border-color: var(--c-l-1);
   color: var(--c);
 }
 .mini .alert.alert-sml {
@@ -55,40 +35,16 @@
 
 .mini .badge {
   border-radius: 2000px;
+  display: inline-block;
+  line-height: 1;
   padding: calc(var(--d-v) / 2) var(--d-h);
 }
 .mini .badge {
   background-color: var(--c-pri);
   color: var(--c);
-  display: inline-block;
 }
-.mini .badge.default {
-  background-color: var(--c-def);
-  color: var(--c);
-  display: inline-block;
-}
-.mini .badge.failure {
-  background-color: var(--c-fai);
-  color: var(--c);
-  display: inline-block;
-}
-.mini .badge.primary {
-  background-color: var(--c-pri);
-  color: var(--c);
-  display: inline-block;
-}
-.mini .badge.success {
-  background-color: var(--c-suc);
-  color: var(--c);
-  display: inline-block;
-}
-.mini .badge.warning {
-  background-color: var(--c-war);
-  color: var(--c);
-  display: inline-block;
-}
-.mini .badge {
-  line-height: 1;
+.mini .badge:is(.default, .failure, .primary, .success, .warning) {
+  background-color: var(--c-i);
 }
 
 .mini .block {
@@ -109,20 +65,8 @@
 .mini .blockquote {
   border-left: var(--d-b-w) var(--c-def) solid;
 }
-.mini .blockquote.default {
-  border-left: var(--d-b-w) var(--c-def) solid;
-}
-.mini .blockquote.failure {
-  border-left: var(--d-b-w) var(--c-fai) solid;
-}
-.mini .blockquote.primary {
-  border-left: var(--d-b-w) var(--c-pri) solid;
-}
-.mini .blockquote.success {
-  border-left: var(--d-b-w) var(--c-suc) solid;
-}
-.mini .blockquote.warning {
-  border-left: var(--d-b-w) var(--c-war) solid;
+.mini .blockquote:is(.default, .failure, .primary, .success, .warning) {
+  border-left: var(--d-b-w) var(--c-i) solid;
 }
 
 .mini .breadcrumbs {
@@ -213,22 +157,22 @@
 .mini .button.transparent {
   color: var(--c-pri);
 }
-.mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning) {
+.mini .button:is(.default, .failure, .primary, .success, .warning) {
   background: var(--c-i);
   border-color: var(--c-i);
   color: var(--c);
 }
-.mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning):active:not(.disabled), .mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning).active {
+.mini .button:is(.default, .failure, .primary, .success, .warning):active:not(.disabled), .mini .button:is(.default, .failure, .primary, .success, .warning).active {
   background-color: var(--c-d-2) !important;
   border-color: var(--c-d-2);
   color: var(--c) !important;
 }
-.mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning):hover, .mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning):focus {
+.mini .button:is(.default, .failure, .primary, .success, .warning):hover, .mini .button:is(.default, .failure, .primary, .success, .warning):focus {
   background-color: var(--c-d-1) !important;
   border-color: var(--c-d-1);
   color: var(--c) !important;
 }
-.mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning).transparent {
+.mini .button:is(.default, .failure, .primary, .success, .warning).transparent {
   color: var(--c-i);
 }
 .mini .button.button-sml {
@@ -249,6 +193,7 @@
 
 .mini .caption {
   font-size: calc(var(--d-f-s) * 1.5);
+  font-weight: 700;
   padding: var(--d-v) 0;
 }
 .mini .caption.larger {
@@ -265,27 +210,9 @@
 }
 .mini .caption {
   color: var(--c-def-d-4);
-  font-weight: 700;
 }
-.mini .caption.default {
-  color: var(--c-def-d-4);
-  font-weight: 700;
-}
-.mini .caption.failure {
-  color: var(--c-fai-d-4);
-  font-weight: 700;
-}
-.mini .caption.primary {
-  color: var(--c-pri-d-4);
-  font-weight: 700;
-}
-.mini .caption.success {
-  color: var(--c-suc-d-4);
-  font-weight: 700;
-}
-.mini .caption.warning {
-  color: var(--c-war-d-4);
-  font-weight: 700;
+.mini .caption:is(.default, .failure, .primary, .success, .warning) {
+  color: var(--c-d-4);
 }
 .mini .caption.caption-sml {
   font-size: calc(var(--s-f-s) * 1.5);
@@ -337,6 +264,18 @@
   padding: var(--d-b-w);
   width: calc(var(--d-1) * 0.5);
 }
+.mini .checkbox:active:not(.disabled):before, .mini .checkbox.active:before {
+  border-color: var(--c-def-d-2) !important;
+}
+.mini .checkbox:checked:not(.disabled):active:before, .mini .checkbox.active:checked:before {
+  background: var(--c-def-d-2) !important;
+}
+.mini .checkbox:hover:before, .mini .checkbox:focus:before {
+  border-color: var(--c-def-d-1) !important;
+}
+.mini .checkbox:hover:checked:before, .mini .checkbox:focus:checked:before {
+  background: var(--c-def-d-1) !important;
+}
 .mini .checkbox:before {
   background: var(--c);
   border-color: var(--c-def);
@@ -345,117 +284,25 @@
   background: var(--c-def);
   outline-color: var(--c);
 }
-.mini .checkbox:hover:before, .mini .checkbox:focus:before {
-  border-color: var(--c-def-d-1) !important;
+.mini .checkbox:is(.default, .failure, .primary, .success, .warning):active:not(.disabled):before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning).active:before {
+  border-color: var(--c-d-2) !important;
 }
-.mini .checkbox:hover:checked:before, .mini .checkbox:focus:checked:before {
-  background: var(--c-def-d-1) !important;
+.mini .checkbox:is(.default, .failure, .primary, .success, .warning):checked:not(.disabled):active:before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning).active:checked:before {
+  background: var(--c-d-2) !important;
 }
-.mini .checkbox:active:not(.disabled):before, .mini .checkbox.active:before {
-  border-color: var(--c-def-d-2) !important;
+.mini .checkbox:is(.default, .failure, .primary, .success, .warning):hover:before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning):focus:before {
+  border-color: var(--c-d-1) !important;
 }
-.mini .checkbox:checked:not(.disabled):active:before, .mini .checkbox.active:checked:before {
-  background: var(--c-def-d-2) !important;
+.mini .checkbox:is(.default, .failure, .primary, .success, .warning):hover:checked:before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning):focus:checked:before {
+  background: var(--c-d-1) !important;
 }
-.mini .checkbox.default:before {
+.mini .checkbox:is(.default, .failure, .primary, .success, .warning):before {
   background: var(--c);
-  border-color: var(--c-def);
+  border-color: var(--c-i);
 }
-.mini .checkbox:checked.default:before {
-  background: var(--c-def);
+.mini .checkbox:is(.default, .failure, .primary, .success, .warning):checkd:before {
+  background: var(--c-i);
   outline-color: var(--c);
-}
-.mini .checkbox:hover.default:before, .mini .checkbox:focus.default:before {
-  border-color: var(--c-def-d-1) !important;
-}
-.mini .checkbox:hover.default:checked:before, .mini .checkbox:focus.default:checked:before {
-  background: var(--c-def-d-1) !important;
-}
-.mini .checkbox:active:not(.disabled).default:before, .mini .checkbox.active.default:before {
-  border-color: var(--c-def-d-2) !important;
-}
-.mini .checkbox:checked:not(.disabled):active.default:before, .mini .checkbox.active:checked.default:before {
-  background: var(--c-def-d-2) !important;
-}
-.mini .checkbox.failure:before {
-  background: var(--c);
-  border-color: var(--c-fai);
-}
-.mini .checkbox:checked.failure:before {
-  background: var(--c-fai);
-  outline-color: var(--c);
-}
-.mini .checkbox:hover.failure:before, .mini .checkbox:focus.failure:before {
-  border-color: var(--c-fai-d-1) !important;
-}
-.mini .checkbox:hover.failure:checked:before, .mini .checkbox:focus.failure:checked:before {
-  background: var(--c-fai-d-1) !important;
-}
-.mini .checkbox:active:not(.disabled).failure:before, .mini .checkbox.active.failure:before {
-  border-color: var(--c-fai-d-2) !important;
-}
-.mini .checkbox:checked:not(.disabled):active.failure:before, .mini .checkbox.active:checked.failure:before {
-  background: var(--c-fai-d-2) !important;
-}
-.mini .checkbox.primary:before {
-  background: var(--c);
-  border-color: var(--c-pri);
-}
-.mini .checkbox:checked.primary:before {
-  background: var(--c-pri);
-  outline-color: var(--c);
-}
-.mini .checkbox:hover.primary:before, .mini .checkbox:focus.primary:before {
-  border-color: var(--c-pri-d-1) !important;
-}
-.mini .checkbox:hover.primary:checked:before, .mini .checkbox:focus.primary:checked:before {
-  background: var(--c-pri-d-1) !important;
-}
-.mini .checkbox:active:not(.disabled).primary:before, .mini .checkbox.active.primary:before {
-  border-color: var(--c-pri-d-2) !important;
-}
-.mini .checkbox:checked:not(.disabled):active.primary:before, .mini .checkbox.active:checked.primary:before {
-  background: var(--c-pri-d-2) !important;
-}
-.mini .checkbox.success:before {
-  background: var(--c);
-  border-color: var(--c-suc);
-}
-.mini .checkbox:checked.success:before {
-  background: var(--c-suc);
-  outline-color: var(--c);
-}
-.mini .checkbox:hover.success:before, .mini .checkbox:focus.success:before {
-  border-color: var(--c-suc-d-1) !important;
-}
-.mini .checkbox:hover.success:checked:before, .mini .checkbox:focus.success:checked:before {
-  background: var(--c-suc-d-1) !important;
-}
-.mini .checkbox:active:not(.disabled).success:before, .mini .checkbox.active.success:before {
-  border-color: var(--c-suc-d-2) !important;
-}
-.mini .checkbox:checked:not(.disabled):active.success:before, .mini .checkbox.active:checked.success:before {
-  background: var(--c-suc-d-2) !important;
-}
-.mini .checkbox.warning:before {
-  background: var(--c);
-  border-color: var(--c-war);
-}
-.mini .checkbox:checked.warning:before {
-  background: var(--c-war);
-  outline-color: var(--c);
-}
-.mini .checkbox:hover.warning:before, .mini .checkbox:focus.warning:before {
-  border-color: var(--c-war-d-1) !important;
-}
-.mini .checkbox:hover.warning:checked:before, .mini .checkbox:focus.warning:checked:before {
-  background: var(--c-war-d-1) !important;
-}
-.mini .checkbox:active:not(.disabled).warning:before, .mini .checkbox.active.warning:before {
-  border-color: var(--c-war-d-2) !important;
-}
-.mini .checkbox:checked:not(.disabled):active.warning:before, .mini .checkbox.active:checked.warning:before {
-  background: var(--c-war-d-2) !important;
 }
 .mini .checkbox-sml {
   height: calc(var(--s-1) * 0.5);
@@ -530,66 +377,22 @@
   border-color: var(--c-def);
   color: var(--c-def);
 }
-.mini .control.transparent {
-  color: var(--c-def);
-}
 .mini .control:hover, .mini .control:focus {
   border-color: var(--c-def-d-1);
 }
-.mini .control.default {
-  background-color: var(--c);
-  border-color: var(--c-def);
+.mini .control.transparent {
   color: var(--c-def);
 }
-.mini .control.default.transparent {
-  color: var(--c-def);
-}
-.mini .control:hover.default, .mini .control:focus.default {
-  border-color: var(--c-def-d-1);
-}
-.mini .control.failure {
+.mini .control:is(.default, .failure, .primary, .success, .warning) {
   background-color: var(--c);
-  border-color: var(--c-fai);
-  color: var(--c-fai);
+  border-color: var(--c-i);
+  color: var(--c-i);
 }
-.mini .control.failure.transparent {
-  color: var(--c-fai);
+.mini .control:is(.default, .failure, .primary, .success, .warning):hover, .mini .control:is(.default, .failure, .primary, .success, .warning):focus {
+  border-color: var(--c-d-1);
 }
-.mini .control:hover.failure, .mini .control:focus.failure {
-  border-color: var(--c-fai-d-1);
-}
-.mini .control.primary {
-  background-color: var(--c);
-  border-color: var(--c-pri);
-  color: var(--c-pri);
-}
-.mini .control.primary.transparent {
-  color: var(--c-pri);
-}
-.mini .control:hover.primary, .mini .control:focus.primary {
-  border-color: var(--c-pri-d-1);
-}
-.mini .control.success {
-  background-color: var(--c);
-  border-color: var(--c-suc);
-  color: var(--c-suc);
-}
-.mini .control.success.transparent {
-  color: var(--c-suc);
-}
-.mini .control:hover.success, .mini .control:focus.success {
-  border-color: var(--c-suc-d-1);
-}
-.mini .control.warning {
-  background-color: var(--c);
-  border-color: var(--c-war);
-  color: var(--c-war);
-}
-.mini .control.warning.transparent {
-  color: var(--c-war);
-}
-.mini .control:hover.warning, .mini .control:focus.warning {
-  border-color: var(--c-war-d-1);
+.mini .control:is(.default, .failure, .primary, .success, .warning).transparent {
+  color: var(--c-i);
 }
 .mini .control.control-sml {
   font-size: calc(var(--s-f-s) * 0.8);
@@ -631,35 +434,11 @@
 .mini .divider.top {
   border-top-color: var(--c-def);
 }
-.mini .divider.default {
-  border-top-color: var(--c-def-l-3);
+.mini .divider:is(.default, .failure, .primary, .success, .warning) {
+  border-top-color: var(--c-l-3);
 }
-.mini .divider.default.top {
-  border-top-color: var(--c-def);
-}
-.mini .divider.failure {
-  border-top-color: var(--c-fai-l-3);
-}
-.mini .divider.failure.top {
-  border-top-color: var(--c-fai);
-}
-.mini .divider.primary {
-  border-top-color: var(--c-pri-l-3);
-}
-.mini .divider.primary.top {
-  border-top-color: var(--c-pri);
-}
-.mini .divider.success {
-  border-top-color: var(--c-suc-l-3);
-}
-.mini .divider.success.top {
-  border-top-color: var(--c-suc);
-}
-.mini .divider.warning {
-  border-top-color: var(--c-war-l-3);
-}
-.mini .divider.warning.top {
-  border-top-color: var(--c-war);
+.mini .divider:is(.default, .failure, .primary, .success, .warning).top {
+  border-top-color: val(--c-i);
 }
 .mini .divider.divider-sml {
   border-top-width: var(--s-b-w);
@@ -779,30 +558,13 @@
 
 .mini .label {
   font-size: calc(var(--d-f-s) * 0.8);
+  font-weight: 500;
 }
 .mini .label {
   color: var(--c-def-l-1);
-  font-weight: 500;
 }
-.mini .label.default {
-  color: var(--c-def-l-1);
-  font-weight: 500;
-}
-.mini .label.failure {
-  color: var(--c-fai-l-1);
-  font-weight: 500;
-}
-.mini .label.primary {
-  color: var(--c-pri-l-1);
-  font-weight: 500;
-}
-.mini .label.success {
-  color: var(--c-suc-l-1);
-  font-weight: 500;
-}
-.mini .label.warning {
-  color: var(--c-war-l-1);
-  font-weight: 500;
+.mini .label:is(.default, .failure, .primary, .success, .warning) {
+  color: var(--c-l-1);
 }
 .mini .label.label-sml {
   font-size: calc(var(--s-f-s) * 0.8);
@@ -829,63 +591,21 @@
 }
 .mini .link {
   color: var(--c-pri);
-  font-weight: inherit;
-}
-.mini .link:hover {
-  color: var(--c-pri-d-1);
 }
 .mini .link:active {
   color: var(--c-pri-d-2);
 }
-.mini .link.default {
-  color: var(--c-def);
-  font-weight: inherit;
-}
-.mini .link:hover.default {
-  color: var(--c-def-d-1);
-}
-.mini .link:active.default {
-  color: var(--c-def-d-2);
-}
-.mini .link.failure {
-  color: var(--c-fai);
-  font-weight: inherit;
-}
-.mini .link:hover.failure {
-  color: var(--c-fai-d-1);
-}
-.mini .link:active.failure {
-  color: var(--c-fai-d-2);
-}
-.mini .link.primary {
-  color: var(--c-pri);
-  font-weight: inherit;
-}
-.mini .link:hover.primary {
+.mini .link:hover {
   color: var(--c-pri-d-1);
 }
-.mini .link:active.primary {
-  color: var(--c-pri-d-2);
+.mini .link:is(.default, .failure, .primary, .success, .warning) {
+  color: var(--c-i);
 }
-.mini .link.success {
-  color: var(--c-suc);
-  font-weight: inherit;
+.mini .link:is(.default, .failure, .primary, .success, .warning):active {
+  color: var(--c-d-2);
 }
-.mini .link:hover.success {
-  color: var(--c-suc-d-1);
-}
-.mini .link:active.success {
-  color: var(--c-suc-d-2);
-}
-.mini .link.warning {
-  color: var(--c-war);
-  font-weight: inherit;
-}
-.mini .link:hover.warning {
-  color: var(--c-war-d-1);
-}
-.mini .link:active.warning {
-  color: var(--c-war-d-2);
+.mini .link:is(.default, .failure, .primary, .success, .warning):hover {
+  color: var(--c-d-2);
 }
 
 .mini .list {
@@ -929,112 +649,40 @@
 .mini .list .list-header, .mini .list .list-item {
   border: 0;
 }
-.mini .list .list-header, .mini .list .list-item {
-  color: var(--c-def);
-}
-.mini .list.active .list-header:hover, .mini .list.active .list-item:hover {
-  background-color: var(--c-def-d-1) !important;
-  border-color: var(--c-def-d-1);
-  color: var(--c);
-}
 .mini .list .list-header.active, .mini .list .list-item.active {
   background-color: var(--c-def-d-2) !important;
   border-color: var(--c-def-d-2);
   color: var(--c);
+}
+.mini .list .list-header, .mini .list .list-item {
+  color: var(--c-def);
+}
+.mini .list:is(.default, .failure, .primary, .success, .warning) .list-header.active, .mini .list:is(.default, .failure, .primary, .success, .warning) .list-item.active {
+  background-color: var(--c-d-2) !important;
+  border-color: var(--c-d-2);
+  color: var(--c);
+}
+.mini .list:is(.default, .failure, .primary, .success, .warning) .list-header, .mini .list:is(.default, .failure, .primary, .success, .warning) .list-item {
+  color: var(--c-i);
 }
 .mini .list.active .list-header:active:not(.disabled), .mini .list.active .list-item:active:not(.disabled) {
   background-color: var(--c-def-d-2) !important;
   border-color: var(--c-def-d-2);
   color: var(--c);
 }
-.mini .list.default .list-header, .mini .list.default .list-item {
-  color: var(--c-def);
-}
-.mini .list.active.default .list-header:hover, .mini .list.active.default .list-item:hover {
+.mini .list.active .list-header:hover, .mini .list.active .list-item:hover {
   background-color: var(--c-def-d-1) !important;
   border-color: var(--c-def-d-1);
   color: var(--c);
 }
-.mini .list.default .list-header.active, .mini .list.default .list-item.active {
-  background-color: var(--c-def-d-2) !important;
-  border-color: var(--c-def-d-2);
+.mini .list.active:is(.default, .failure, .primary, .success, .warning) .list-header:active:not(.disabled), .mini .list.active:is(.default, .failure, .primary, .success, .warning) .list-item:active:not(.disabled) {
+  background-color: var(--c-d-2) !important;
+  border-color: var(--c-d-2);
   color: var(--c);
 }
-.mini .list.active.default .list-header:active:not(.disabled), .mini .list.active.default .list-item:active:not(.disabled) {
-  background-color: var(--c-def-d-2) !important;
-  border-color: var(--c-def-d-2);
-  color: var(--c);
-}
-.mini .list.failure .list-header, .mini .list.failure .list-item {
-  color: var(--c-fai);
-}
-.mini .list.active.failure .list-header:hover, .mini .list.active.failure .list-item:hover {
-  background-color: var(--c-fai-d-1) !important;
-  border-color: var(--c-fai-d-1);
-  color: var(--c);
-}
-.mini .list.failure .list-header.active, .mini .list.failure .list-item.active {
-  background-color: var(--c-fai-d-2) !important;
-  border-color: var(--c-fai-d-2);
-  color: var(--c);
-}
-.mini .list.active.failure .list-header:active:not(.disabled), .mini .list.active.failure .list-item:active:not(.disabled) {
-  background-color: var(--c-fai-d-2) !important;
-  border-color: var(--c-fai-d-2);
-  color: var(--c);
-}
-.mini .list.primary .list-header, .mini .list.primary .list-item {
-  color: var(--c-pri);
-}
-.mini .list.active.primary .list-header:hover, .mini .list.active.primary .list-item:hover {
-  background-color: var(--c-pri-d-1) !important;
-  border-color: var(--c-pri-d-1);
-  color: var(--c);
-}
-.mini .list.primary .list-header.active, .mini .list.primary .list-item.active {
-  background-color: var(--c-pri-d-2) !important;
-  border-color: var(--c-pri-d-2);
-  color: var(--c);
-}
-.mini .list.active.primary .list-header:active:not(.disabled), .mini .list.active.primary .list-item:active:not(.disabled) {
-  background-color: var(--c-pri-d-2) !important;
-  border-color: var(--c-pri-d-2);
-  color: var(--c);
-}
-.mini .list.success .list-header, .mini .list.success .list-item {
-  color: var(--c-suc);
-}
-.mini .list.active.success .list-header:hover, .mini .list.active.success .list-item:hover {
-  background-color: var(--c-suc-d-1) !important;
-  border-color: var(--c-suc-d-1);
-  color: var(--c);
-}
-.mini .list.success .list-header.active, .mini .list.success .list-item.active {
-  background-color: var(--c-suc-d-2) !important;
-  border-color: var(--c-suc-d-2);
-  color: var(--c);
-}
-.mini .list.active.success .list-header:active:not(.disabled), .mini .list.active.success .list-item:active:not(.disabled) {
-  background-color: var(--c-suc-d-2) !important;
-  border-color: var(--c-suc-d-2);
-  color: var(--c);
-}
-.mini .list.warning .list-header, .mini .list.warning .list-item {
-  color: var(--c-war);
-}
-.mini .list.active.warning .list-header:hover, .mini .list.active.warning .list-item:hover {
-  background-color: var(--c-war-d-1) !important;
-  border-color: var(--c-war-d-1);
-  color: var(--c);
-}
-.mini .list.warning .list-header.active, .mini .list.warning .list-item.active {
-  background-color: var(--c-war-d-2) !important;
-  border-color: var(--c-war-d-2);
-  color: var(--c);
-}
-.mini .list.active.warning .list-header:active:not(.disabled), .mini .list.active.warning .list-item:active:not(.disabled) {
-  background-color: var(--c-war-d-2) !important;
-  border-color: var(--c-war-d-2);
+.mini .list.active:is(.default, .failure, .primary, .success, .warning) .list-header:hover, .mini .list.active:is(.default, .failure, .primary, .success, .warning) .list-item:hover {
+  background-color: var(--c-d-1) !important;
+  border-color: var(--c-d-1);
   color: var(--c);
 }
 .mini .list.list-sml {
@@ -1104,25 +752,9 @@
   background-color: var(--c);
   border-color: var(--c-def-l-4);
 }
-.mini .panel.default {
+.mini .panel:is(.default, .failure, .primary, .success, .warning) {
   background-color: var(--c);
-  border-color: var(--c-def-l-4);
-}
-.mini .panel.failure {
-  background-color: var(--c);
-  border-color: var(--c-fai-l-4);
-}
-.mini .panel.primary {
-  background-color: var(--c);
-  border-color: var(--c-pri-l-4);
-}
-.mini .panel.success {
-  background-color: var(--c);
-  border-color: var(--c-suc-l-4);
-}
-.mini .panel.warning {
-  background-color: var(--c);
-  border-color: var(--c-war-l-4);
+  border-color: var(--c-l-4);
 }
 .mini .panel.panel-sml {
   border-radius: var(--s-b-r);
@@ -1184,59 +816,23 @@
   right: calc(var(--d-b-w) * 4);
   top: calc(50% - var(--d-1) * 0.5 / 2 + var(--d-b-w) * 2);
 }
-.mini .select:before {
-  background: var(--c-def);
+.mini .select:not(.disabled):active:before, .mini .select.active:before {
+  background: var(--c-def-d-2) !important;
 }
 .mini .select:hover:before, .mini .select:focus:before {
   background: var(--c-def-d-1) !important;
 }
-.mini .select:not(.disabled):active:before, .mini .select.active:before {
-  background: var(--c-def-d-2) !important;
-}
-.mini .select.default:before {
+.mini .select:before {
   background: var(--c-def);
 }
-.mini .select:hover.default:before, .mini .select:focus.default:before {
-  background: var(--c-def-d-1) !important;
+.mini .select:is(.default, .failure, .primary, .success, .warning):not(.disabled):active:before, .mini .select:is(.default, .failure, .primary, .success, .warning).active:before {
+  background: var(--c-d-2) !important;
 }
-.mini .select:not(.disabled):active.default:before, .mini .select.active.default:before {
-  background: var(--c-def-d-2) !important;
+.mini .select:is(.default, .failure, .primary, .success, .warning):hover:before, .mini .select:is(.default, .failure, .primary, .success, .warning):focus:before {
+  background: var(--c-d-1) !important;
 }
-.mini .select.failure:before {
-  background: var(--c-fai);
-}
-.mini .select:hover.failure:before, .mini .select:focus.failure:before {
-  background: var(--c-fai-d-1) !important;
-}
-.mini .select:not(.disabled):active.failure:before, .mini .select.active.failure:before {
-  background: var(--c-fai-d-2) !important;
-}
-.mini .select.primary:before {
-  background: var(--c-pri);
-}
-.mini .select:hover.primary:before, .mini .select:focus.primary:before {
-  background: var(--c-pri-d-1) !important;
-}
-.mini .select:not(.disabled):active.primary:before, .mini .select.active.primary:before {
-  background: var(--c-pri-d-2) !important;
-}
-.mini .select.success:before {
-  background: var(--c-suc);
-}
-.mini .select:hover.success:before, .mini .select:focus.success:before {
-  background: var(--c-suc-d-1) !important;
-}
-.mini .select:not(.disabled):active.success:before, .mini .select.active.success:before {
-  background: var(--c-suc-d-2) !important;
-}
-.mini .select.warning:before {
-  background: var(--c-war);
-}
-.mini .select:hover.warning:before, .mini .select:focus.warning:before {
-  background: var(--c-war-d-1) !important;
-}
-.mini .select:not(.disabled):active.warning:before, .mini .select.active.warning:before {
-  background: var(--c-war-d-2) !important;
+.mini .select:is(.default, .failure, .primary, .success, .warning):before {
+  background: var(--c-i);
 }
 .mini .select-sml:before {
   bottom: calc(50% - var(--s-1) * 0.5 / 2 + var(--s-b-w) * 2);
@@ -1263,22 +859,16 @@
   margin: var(--d-v) 0;
 }
 .mini .splitter {
-  border-top: var(--c-def-l-3) solid 2px;
+  border-top: var(--c-def-l-3) solid var(--d-b-w);
 }
-.mini .splitter.default {
-  border-top: var(--c-def-l-3) solid 2px;
+.mini .splitter.top {
+  border-top-color: var(--c-def);
 }
-.mini .splitter.failure {
-  border-top: var(--c-fai-l-3) solid 2px;
+.mini .splitter:is(.default, .failure, .primary, .success, .warning) {
+  border-top: var(--c-l-3) solid var(--d-b-w);
 }
-.mini .splitter.primary {
-  border-top: var(--c-pri-l-3) solid 2px;
-}
-.mini .splitter.success {
-  border-top: var(--c-suc-l-3) solid 2px;
-}
-.mini .splitter.warning {
-  border-top: var(--c-war-l-3) solid 2px;
+.mini .splitter:is(.default, .failure, .primary, .success, .warning).top {
+  border-top-color: var(--c-i);
 }
 .mini .splitter.splitter-sml {
   height: var(--s-b-w);
@@ -1335,203 +925,53 @@
   border-color: transparent;
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab.active {
-  background-color: var(--c);
-  border-color: var(--c-def-l-4);
-  color: var(--c-pri);
-}
-.mini .tabs > .tabs-content {
-  border-color: var(--c-def-l-4);
+.mini .tabs > .tabs-bar > .tab:active:not(.disabled) {
+  background-color: var(--c-pri-d-2) !important;
+  border-color: var(--c-pri-d-2);
+  color: var(--c);
 }
 .mini .tabs > .tabs-bar > .tab:hover, .mini .tabs > .tabs-bar > .tab:focus {
   background-color: var(--c-pri-d-1) !important;
   border-color: var(--c-pri-d-1);
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab.active:hover, .mini .tabs > .tabs-bar > .tab.active:focus {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-pri-d-1);
-}
-.mini .tabs > .tabs-bar > .tab:active {
-  background-color: var(--c-pri-d-2) !important;
-  border-color: var(--c-pri-d-2);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover, .mini .tabs > .tabs-bar > .tab.active:focus {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-pri-d-2);
-}
-.mini .tabs > .tabs-bar > .tab.default {
-  background-color: var(--c-def);
+.mini .tabs > .tabs-bar > .tab:is(.default, .failure, .primary, .success, .warning) {
+  background-color: var(--c-i);
   border-color: transparent;
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab.default.active {
-  background-color: var(--c);
-  border-color: var(--c-def-l-4);
-  color: var(--c-def);
-}
-.mini .tabs > .tabs-content {
-  border-color: var(--c-def-l-4);
-  display: flex;
-}
-.mini .tabs > .tabs-bar > .tab:hover.default, .mini .tabs > .tabs-bar > .tab:focus.default {
-  background-color: var(--c-def-d-1) !important;
-  border-color: var(--c-def-d-1);
+.mini .tabs > .tabs-bar > .tab:is(.default, .failure, .primary, .success, .warning):active:not(.disabled) {
+  background-color: var(--c-d-2) !important;
+  border-color: var(--c-d-2);
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab.active:hover.default, .mini .tabs > .tabs-bar > .tab.active:focus.default {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-def-d-1);
-}
-.mini .tabs > .tabs-bar > .tab:active.default {
-  background-color: var(--c-def-d-2) !important;
-  border-color: var(--c-def-d-2);
+.mini .tabs > .tabs-bar > .tab:is(.default, .failure, .primary, .success, .warning):hover, .mini .tabs > .tabs-bar > .tab:is(.default, .failure, .primary, .success, .warning):focus {
+  background-color: var(--c-d-1) !important;
+  border-color: var(--c-d-1);
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab.active:hover.default, .mini .tabs > .tabs-bar > .tab.active:focus.default {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-def-d-2);
-}
-.mini .tabs > .tabs-bar > .tab.failure {
-  background-color: var(--c-fai);
-  border-color: transparent;
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.failure.active {
-  background-color: var(--c);
-  border-color: var(--c-def-l-4);
-  color: var(--c-fai);
-}
-.mini .tabs > .tabs-content {
-  border-color: var(--c-def-l-4);
-  display: flex;
-}
-.mini .tabs > .tabs-bar > .tab:hover.failure, .mini .tabs > .tabs-bar > .tab:focus.failure {
-  background-color: var(--c-fai-d-1) !important;
-  border-color: var(--c-fai-d-1);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover.failure, .mini .tabs > .tabs-bar > .tab.active:focus.failure {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-fai-d-1);
-}
-.mini .tabs > .tabs-bar > .tab:active.failure {
-  background-color: var(--c-fai-d-2) !important;
-  border-color: var(--c-fai-d-2);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover.failure, .mini .tabs > .tabs-bar > .tab.active:focus.failure {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-fai-d-2);
-}
-.mini .tabs > .tabs-bar > .tab.primary {
-  background-color: var(--c-pri);
-  border-color: transparent;
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.primary.active {
+.mini .tabs > .tabs-bar > .tab.active {
   background-color: var(--c);
   border-color: var(--c-def-l-4);
   color: var(--c-pri);
 }
-.mini .tabs > .tabs-content {
-  border-color: var(--c-def-l-4);
-  display: flex;
-}
-.mini .tabs > .tabs-bar > .tab:hover.primary, .mini .tabs > .tabs-bar > .tab:focus.primary {
-  background-color: var(--c-pri-d-1) !important;
-  border-color: var(--c-pri-d-1);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover.primary, .mini .tabs > .tabs-bar > .tab.active:focus.primary {
+.mini .tabs > .tabs-bar > .tab.active:hover, .mini .tabs > .tabs-bar > .tab.active:focus {
   background-color: var(--c) !important;
   border-color: var(--c-def-l-4);
   color: var(--c-pri-d-1);
 }
-.mini .tabs > .tabs-bar > .tab:active.primary {
-  background-color: var(--c-pri-d-2) !important;
-  border-color: var(--c-pri-d-2);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover.primary, .mini .tabs > .tabs-bar > .tab.active:focus.primary {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-pri-d-2);
-}
-.mini .tabs > .tabs-bar > .tab.success {
-  background-color: var(--c-suc);
-  border-color: transparent;
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.success.active {
+.mini .tabs > .tabs-bar > .tab.active:is(.default, .failure, .primary, .success, .warning) {
   background-color: var(--c);
-  border-color: var(--c-def-l-4);
-  color: var(--c-suc);
+  border-color: var(--c-l-4);
+  color: var(--c-i);
+}
+.mini .tabs > .tabs-bar > .tab.active:is(.default, .failure, .primary, .success, .warning):hover, .mini .tabs > .tabs-bar > .tab.active:is(.default, .failure, .primary, .success, .warning):focus {
+  background-color: var(--c) !important;
+  border-color: var(--c-l-4);
+  color: var(--c-d-1);
 }
 .mini .tabs > .tabs-content {
   border-color: var(--c-def-l-4);
-  display: flex;
-}
-.mini .tabs > .tabs-bar > .tab:hover.success, .mini .tabs > .tabs-bar > .tab:focus.success {
-  background-color: var(--c-suc-d-1) !important;
-  border-color: var(--c-suc-d-1);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover.success, .mini .tabs > .tabs-bar > .tab.active:focus.success {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-suc-d-1);
-}
-.mini .tabs > .tabs-bar > .tab:active.success {
-  background-color: var(--c-suc-d-2) !important;
-  border-color: var(--c-suc-d-2);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover.success, .mini .tabs > .tabs-bar > .tab.active:focus.success {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-suc-d-2);
-}
-.mini .tabs > .tabs-bar > .tab.warning {
-  background-color: var(--c-war);
-  border-color: transparent;
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.warning.active {
-  background-color: var(--c);
-  border-color: var(--c-def-l-4);
-  color: var(--c-war);
-}
-.mini .tabs > .tabs-content {
-  border-color: var(--c-def-l-4);
-  display: flex;
-}
-.mini .tabs > .tabs-bar > .tab:hover.warning, .mini .tabs > .tabs-bar > .tab:focus.warning {
-  background-color: var(--c-war-d-1) !important;
-  border-color: var(--c-war-d-1);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover.warning, .mini .tabs > .tabs-bar > .tab.active:focus.warning {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-war-d-1);
-}
-.mini .tabs > .tabs-bar > .tab:active.warning {
-  background-color: var(--c-war-d-2) !important;
-  border-color: var(--c-war-d-2);
-  color: var(--c);
-}
-.mini .tabs > .tabs-bar > .tab.active:hover.warning, .mini .tabs > .tabs-bar > .tab.active:focus.warning {
-  background-color: var(--c) !important;
-  border-color: var(--c-def-l-4);
-  color: var(--c-war-d-2);
 }
 .mini .tabs.tabs-sml > .tabs-bar > .tab {
   border-top-left-radius: var(--s-b-r);
@@ -2206,17 +1646,8 @@
 .mini .span {
   color: var(--c-def-d-2);
 }
-.mini .span.failure {
-  color: var(--c-fai-d-2);
-}
-.mini .span.primary {
-  color: var(--c-pri-d-2);
-}
-.mini .span.success {
-  color: var(--c-suc-d-2);
-}
-.mini .span.warning {
-  color: var(--c-war-d-2);
+.mini .span:is(.default, .failure, .primary, .success, .warning) {
+  color: var(--c-d-2);
 }
 
 .mini .bold {

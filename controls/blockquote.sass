@@ -1,14 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin blockquote($prefix, $color)
-    @if $prefix == null
-      .blockquote
-        border-left: var(--d-b-w) $color solid
-    @else
-      .blockquote.#{$prefix}
-        border-left: var(--d-b-w) $color solid
-
   .blockquote
     margin-bottom: var(--d-v)
     margin-top: var(--d-v)
@@ -19,14 +11,10 @@
     padding-right: calc(var(--d-h-r) * 2 - var(--d-b-w))
     padding-top: var(--d-v)
 
-  @include blockquote(null, $col-default)
+  // color
 
-  @include blockquote('default', $col-default)
+  .blockquote
+    border-left: var(--d-b-w) $col-default solid
 
-  @include blockquote('failure', $col-failure)
-
-  @include blockquote('primary', $col-primary)
-
-  @include blockquote('success', $col-success)
-
-  @include blockquote('warning', $col-warning)
+  .blockquote:is(.default, .failure, .primary, .success, .warning)
+    border-left: var(--d-b-w) var(--c-i) solid

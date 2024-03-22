@@ -1,32 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin link($prefix, $color, $font-weight)
-    @if $prefix == null
-      .link
-        color: $color
-        font-weight: $font-weight
-    @else
-      .link.#{$prefix}
-        color: $color
-        font-weight: $font-weight
-
-  @mixin link-hover($prefix, $color, $font-weight)
-    @if $prefix == null
-      .link:hover
-        color: $color
-    @else
-      .link:hover.#{$prefix}
-        color: $color
-
-  @mixin link-active($prefix, $color, $font-weight)
-    @if $prefix == null
-      .link:active
-        color: $color
-    @else
-      .link:active.#{$prefix}
-        color: $color
-
   .link
     &:hover
       @include hover()
@@ -37,26 +11,22 @@
     cursor: pointer
     display: inline-block
 
-  @include link(null, $col-primary, inherit)
-  @include link-hover(null, $col-primary-d-1, inherit)
-  @include link-active(null, $col-primary-d-2, inherit)
+  // color
 
-  @include link('default', $col-default, inherit)
-  @include link-hover('default', $col-default-d-1, inherit)
-  @include link-active('default', $col-default-d-2, inherit)
+  .link
+    &:active
+      color: $col-primary-d-2
 
-  @include link('failure', $col-failure, inherit)
-  @include link-hover('failure', $col-failure-d-1, inherit)
-  @include link-active('failure', $col-failure-d-2, inherit)
+    &:hover
+      color: $col-primary-d-1
 
-  @include link('primary', $col-primary, inherit)
-  @include link-hover('primary', $col-primary-d-1, inherit)
-  @include link-active('primary', $col-primary-d-2, inherit)
+    color: $col-primary
 
-  @include link('success', $col-success, inherit)
-  @include link-hover('success', $col-success-d-1, inherit)
-  @include link-active('success', $col-success-d-2, inherit)
+  .link:is(.default, .failure, .primary, .success, .warning)
+    &:active
+      color: var(--c-d-2)
 
-  @include link('warning', $col-warning, inherit)
-  @include link-hover('warning', $col-warning-d-1, inherit)
-  @include link-active('warning', $col-warning-d-2, inherit)
+    &:hover
+      color: var(--c-d-2)
+
+    color: var(--c-i)

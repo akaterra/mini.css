@@ -1,32 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin control($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .control
-        &.transparent
-          color: $border-color
-
-        background-color: $bg-color
-        border-color: $border-color
-        color: $color
-    @else
-      .control.#{$prefix}
-        &.transparent
-          color: $border-color
-
-        background-color: $bg-color
-        border-color: $border-color
-        color: $color
-
-  @mixin control-hover($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .control:hover, .control:focus
-        border-color: $border-color
-    @else
-      .control:hover.#{$prefix}, .control:focus.#{$prefix}
-        border-color: $border-color
-
   @mixin control-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     .control.control-#{$suffix}
       font-size: calc($font-size * 0.8)
@@ -51,23 +25,29 @@
     @else
       padding: var(--d-v) var(--d-h)
 
-  @include control(null, $col, $col-default, $col-default, $col-default)
-  @include control-hover(null, $col, $col-default-d-1, $col-default, $col-default-d-1)
+  // color
 
-  @include control('default', $col, $col-default, $col-default, $col-default)
-  @include control-hover('default', $col, $col-default-d-1, $col-default, $col-default-d-1)
+  .control
+    &:hover, &:focus
+      border-color: $col-default-d-1
+  
+    &.transparent
+      color: $col-default
 
-  @include control('failure', $col, $col-failure, $col-failure, $col-failure)
-  @include control-hover('failure', $col, $col-failure-d-1, $col-failure, $col-failure-d-1)
+    background-color: $col
+    border-color: $col-default
+    color: $col-default
 
-  @include control('primary', $col, $col-primary, $col-primary, $col-primary)
-  @include control-hover('primary', $col, $col-primary-d-1, $col-primary, $col-primary-d-1)
+  .control:is(.default, .failure, .primary, .success, .warning)
+    &:hover, &:focus
+      border-color: var(--c-d-1)
+  
+    &.transparent
+      color: var(--c-i)
 
-  @include control('success', $col, $col-success, $col-success, $col-success)
-  @include control-hover('success', $col, $col-success-d-1, $col-success, $col-success-d-1)
-
-  @include control('warning', $col, $col-warning, $col-warning, $col-warning)
-  @include control-hover('warning', $col, $col-warning-d-1, $col-warning, $col-warning-d-1)
+    background-color: var(--c)
+    border-color: var(--c-i)
+    color: var(--c-i)
 
   @if $sml
     @include control-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)

@@ -1,23 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin panel($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .panel
-        &.transparent
-          // color: $transparent-color
-
-        background-color: $bg-color
-        border-color: $border-color
-        // color: $color
-    @else
-      .panel.#{$prefix}
-        &.transparent
-          // color: $transparent-color
-
-        background-color: $bg-color
-        border-color: $border-color
-
   @mixin panel-sized($suffix, $border-radius, $border-width, $font-size, $ver, $hor)
     .panel.panel-#{$suffix}
       border-radius: $border-radius
@@ -32,17 +15,15 @@
     margin-top: var(--d-v)
     padding: var(--d-v) var(--d-h)
 
-  @include panel(null, $col, $col-default-l-4, $col-text, $col-text)
+  // color
 
-  @include panel('default', $col, $col-default-l-4, $col-text, $col-text)
+  .panel
+    background-color: $col
+    border-color: $col-default-l-4
 
-  @include panel('failure', $col, $col-failure-l-4, $col-text, $col-text)
-
-  @include panel('primary', $col, $col-primary-l-4, $col-text, $col-text)
-
-  @include panel('success', $col, $col-success-l-4, $col-text, $col-text)
-
-  @include panel('warning', $col, $col-warning-l-4, $col-text, $col-text)
+  .panel:is(.default, .failure, .primary, .success, .warning)
+    background-color: var(--c)
+    border-color: var(--c-l-4)
 
   @if $sml
     @include panel-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-vertical, $sml-horizontal)

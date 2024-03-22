@@ -1,56 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin list($prefix, $color, $font-weight)
-    @if $prefix == null
-      .list
-        .list-header, .list-item
-          color: $color
-    @else
-      .list.#{$prefix}
-        .list-header, .list-item
-          color: $color
-
-  @mixin list-hover($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .list.active
-        .list-header:hover, .list-item:hover
-          background-color: $bg-color !important
-          border-color: $border-color
-          color: $color
-    @else
-      .list.active.#{$prefix}
-        .list-header:hover, .list-item:hover
-          background-color: $bg-color !important
-          border-color: $border-color
-          color: $color
-
-  @mixin list-active($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .list
-        .list-header.active, .list-item.active
-          background-color: $bg-color !important
-          border-color: $border-color
-          color: $color
-
-      .list.active
-        .list-header:active:not(.disabled), .list-item:active:not(.disabled)
-          background-color: $bg-color !important
-          border-color: $border-color
-          color: $color
-    @else
-      .list.#{$prefix}
-        .list-header.active, .list-item.active
-          background-color: $bg-color !important
-          border-color: $border-color
-          color: $color
-
-      .list.active.#{$prefix}
-        .list-header:active:not(.disabled), .list-item:active:not(.disabled)
-          background-color: $bg-color !important
-          border-color: $border-color
-          color: $color
-
   @mixin list-sized($suffix, $border-radius, $font-size, $font-size-ratio, $ver, $hor)
     .list.list-#{$suffix}
       .list-header
@@ -100,29 +50,47 @@
     margin-bottom: var(--d-v)
     margin-top: var(--d-v)
 
-  @include list(null, $col-default, $font-bold)
-  @include list-hover(null, $col-default-d-1, $col-default-d-1, $col, $col)
-  @include list-active(null, $col-default-d-2, $col-default-d-2, $col, $col)
+  // color
 
-  @include list('default', $col-default, $font-bold)
-  @include list-hover('default', $col-default-d-1, $col-default-d-1, $col, $col)
-  @include list-active('default', $col-default-d-2, $col-default-d-2, $col, $col)
+  .list
+    .list-header.active, .list-item.active
+      background-color: $col-default-d-2 !important
+      border-color: $col-default-d-2
+      color: $col
 
-  @include list('failure', $col-failure, $font-bold)
-  @include list-hover('failure', $col-failure-d-1, $col-failure-d-1, $col, $col)
-  @include list-active('failure', $col-failure-d-2, $col-failure-d-2, $col, $col)
+    .list-header, .list-item
+      color: $col-default
 
-  @include list('primary', $col-primary, $font-bold)
-  @include list-hover('primary', $col-primary-d-1, $col-primary-d-1, $col, $col)
-  @include list-active('primary', $col-primary-d-2, $col-primary-d-2, $col, $col)
+  .list:is(.default, .failure, .primary, .success, .warning)
+    .list-header.active, .list-item.active
+      background-color: var(--c-d-2) !important
+      border-color: var(--c-d-2)
+      color: var(--c)
 
-  @include list('success', $col-success, $font-bold)
-  @include list-hover('success', $col-success-d-1, $col-success-d-1, $col, $col)
-  @include list-active('success', $col-success-d-2, $col-success-d-2, $col, $col)
+    .list-header, .list-item
+      color: var(--c-i)
 
-  @include list('warning', $col-warning, $font-bold)
-  @include list-hover('warning', $col-warning-d-1, $col-warning-d-1, $col, $col)
-  @include list-active('warning', $col-warning-d-2, $col-warning-d-2, $col, $col)
+  .list.active
+    .list-header:active:not(.disabled), .list-item:active:not(.disabled)
+      background-color: $col-default-d-2 !important
+      border-color: $col-default-d-2
+      color: $col
+  
+    .list-header:hover, .list-item:hover
+      background-color: $col-default-d-1 !important
+      border-color: $col-default-d-1
+      color: $col
+
+  .list.active:is(.default, .failure, .primary, .success, .warning)
+    .list-header:active:not(.disabled), .list-item:active:not(.disabled)
+      background-color: var(--c-d-2) !important
+      border-color: var(--c-d-2)
+      color: var(--c)
+  
+    .list-header:hover, .list-item:hover
+      background-color: var(--c-d-1) !important
+      border-color: var(--c-d-1)
+      color: var(--c)
 
   @if $sml
     @include list-sized('sml', $sml-border-radius, $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)

@@ -1,22 +1,13 @@
 @import ../vars
 
 .mini
-  @mixin caption($prefix, $color, $font-weight)
-    @if $prefix == null
-      .caption
-        color: $color
-        font-weight: $font-weight
-    @else
-      .caption.#{$prefix}
-        color: $color
-        font-weight: $font-weight
-
   @mixin caption-sized($suffix, $font-size, $font-size-ratio, $ver, $hor)
     .caption.caption-#{$suffix}
       font-size: calc($font-size * $font-size-ratio)
 
   .caption
     font-size: calc(var(--d-f-s) * 1.5)
+    font-weight: $font-bold
     padding: var(--d-v) 0 // $hor
 
     &.larger
@@ -31,17 +22,14 @@
     &.smallest
       font-size: calc(var(--d-f-s) * (1.5 - 0.5))
 
-  @include caption(null, $col-default-d-4, $font-bold)
+  // color
 
-  @include caption('default', $col-default-d-4, $font-bold)
+  .caption
+    color: $col-default-d-4
 
-  @include caption('failure', $col-failure-d-4, $font-bold)
+  .caption:is(.default, .failure, .primary, .success, .warning)
+    color: var(--c-d-4)
 
-  @include caption('primary', $col-primary-d-4, $font-bold)
-
-  @include caption('success', $col-success-d-4, $font-bold)
-
-  @include caption('warning', $col-warning-d-4, $font-bold)
 
   @if $sml
     @include caption-sized('sml', $sml-font-size, 1.5, $sml-vertical, $sml-horizontal)

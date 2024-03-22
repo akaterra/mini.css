@@ -1,55 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin checkbox($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .checkbox:before
-        background: $bg-color
-        border-color: $border-color
-
-      .checkbox:checked:before
-        background: $border-color
-        outline-color: $bg-color
-
-    @else
-      .checkbox.#{$prefix}:before
-        background: $bg-color
-        border-color: $border-color
-
-      .checkbox:checked.#{$prefix}:before
-        background: $border-color
-        outline-color: $bg-color
-
-  @mixin checkbox-hover($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .checkbox:hover:before, .checkbox:focus:before
-        border-color: $border-color !important
-
-      .checkbox:hover:checked:before, .checkbox:focus:checked:before
-        background: $border-color !important
-
-    @else
-      .checkbox:hover.#{$prefix}:before, .checkbox:focus.#{$prefix}:before
-        border-color: $border-color !important
-
-      .checkbox:hover.#{$prefix}:checked:before, .checkbox:focus.#{$prefix}:checked:before
-        background: $border-color !important
-
-  @mixin checkbox-active($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .checkbox:active:not(.disabled):before, .checkbox.active:before
-        border-color: $border-color !important
-
-      .checkbox:checked:not(.disabled):active:before, .checkbox.active:checked:before
-        background: $border-color !important
-
-    @else
-      .checkbox:active:not(.disabled).#{$prefix}:before, .checkbox.active.#{$prefix}:before
-        border-color: $border-color !important
-
-      .checkbox:checked:not(.disabled):active.#{$prefix}:before, .checkbox.active:checked.#{$prefix}:before
-        background: $border-color !important
-
   @mixin checkbox-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     .checkbox-#{$suffix}
       height: $height
@@ -102,29 +53,49 @@
     padding: var(--d-b-w)
     width: calc(var(--d-1) * 0.5)
 
-  @include checkbox(null, $col, $col-default, $col, $col)
-  @include checkbox-hover(null, $col, $col-default-d-1, $col, $col)
-  @include checkbox-active(null, $col, $col-default-d-2, $col, $col)
+  // color
 
-  @include checkbox('default', $col, $col-default, $col, $col)
-  @include checkbox-hover('default', $col, $col-default-d-1, $col, $col)
-  @include checkbox-active('default', $col, $col-default-d-2, $col, $col)
+  .checkbox
+    &:active:not(.disabled):before, &.active:before
+      border-color: $col-default-d-2 !important
 
-  @include checkbox('failure', $col, $col-failure, $col, $col)
-  @include checkbox-hover('failure', $col, $col-failure-d-1, $col, $col)
-  @include checkbox-active('failure', $col, $col-failure-d-2, $col, $col)
+    &:checked:not(.disabled):active:before, &.active:checked:before
+      background: $col-default-d-2 !important
   
-  @include checkbox('primary', $col, $col-primary, $col, $col)
-  @include checkbox-hover('primary', $col, $col-primary-d-1, $col, $col)
-  @include checkbox-active('primary', $col, $col-primary-d-2, $col, $col)
-  
-  @include checkbox('success', $col, $col-success, $col, $col)
-  @include checkbox-hover('success', $col, $col-success-d-1, $col, $col)
-  @include checkbox-active('success', $col, $col-success-d-2, $col, $col)
-  
-  @include checkbox('warning', $col, $col-warning, $col, $col)
-  @include checkbox-hover('warning', $col, $col-warning-d-1, $col, $col)
-  @include checkbox-active('warning', $col, $col-warning-d-2, $col, $col)
+    &:hover:before, &:focus:before
+      border-color: $col-default-d-1 !important
+
+    &:hover:checked:before, &:focus:checked:before
+      background: $col-default-d-1 !important
+
+    &:before
+      background: $col
+      border-color: $col-default
+
+    &:checked:before
+      background: $col-default
+      outline-color: $col
+
+  .checkbox:is(.default, .failure, .primary, .success, .warning)
+    &:active:not(.disabled):before, &.active:before
+      border-color: var(--c-d-2) !important
+
+    &:checked:not(.disabled):active:before, &.active:checked:before
+      background: var(--c-d-2) !important
+
+    &:hover:before, &:focus:before
+      border-color: var(--c-d-1) !important
+
+    &:hover:checked:before, &:focus:checked:before
+      background: var(--c-d-1) !important
+
+    &:before
+      background: var(--c)
+      border-color: var(--c-i)
+
+    &:checkd:before
+      background: var(--c-i)
+      outline-color: var(--c)
 
   @if $sml
     @include checkbox-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, calc($sml-1 * 0.5), $sml-vertical, $sml-horizontal)

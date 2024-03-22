@@ -1,20 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin divider($prefix, $color, $color-top)
-    @if $prefix == null
-      .divider
-        border-top-color: $color
-
-        &.top
-          border-top-color: $color-top
-    @else
-      .divider.#{$prefix}
-        border-top-color: $color
-
-        &.top
-          border-top-color: $color-top
-
   @mixin divider-sized($suffix, $height, $ver, $hor)
     .divider.divider-#{$suffix}
       border-top-width: $height
@@ -28,17 +14,19 @@
     min-height: var(--d-b-w)
     margin: var(--d-v) var(--d-h)
 
-  @include divider(null, $col-default-l-3, $col-default)
+  // color
 
-  @include divider('default', $col-default-l-3, $col-default)
+  .divider
+    border-top-color: $col-default-l-3
 
-  @include divider('failure', $col-failure-l-3, $col-failure)
+    &.top
+      border-top-color: $col-default
 
-  @include divider('primary', $col-primary-l-3, $col-primary)
+  .divider:is(.default, .failure, .primary, .success, .warning)
+    border-top-color: var(--c-l-3)
 
-  @include divider('success', $col-success-l-3, $col-success)
-
-  @include divider('warning', $col-warning-l-3, $col-warning)
+    &.top
+      border-top-color: val(--c-i)
 
   @if $sml
     @include divider-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)

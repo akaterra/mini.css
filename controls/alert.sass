@@ -1,18 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin alert($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .alert
-        background-color: $bg-color
-        border-color: $border-color
-        color: $color
-    @else
-      .alert.#{$prefix}
-        background-color: $bg-color
-        border-color: $border-color
-        color: $color
-
   @mixin alert-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     .alert.alert-#{$suffix}
       border-radius: $border-radius
@@ -27,17 +15,17 @@
     margin-top: var(--d-v)
     padding: var(--d-v) var(--d-h)
 
-  @include alert(null, $col-primary-l-1, $col-primary-l-1, $col, $col)
+  // color
 
-  @include alert('default', $col-default-l-1, $col-default-l-1, $col, $col)
+  .alert
+    background-color: $col-primary-l-1
+    border-color: $col-primary-l-1
+    color: $col
 
-  @include alert('failure', $col-failure-l-1, $col-failure-l-1, $col, $col)
-
-  @include alert('primary', $col-primary-l-1, $col-primary-l-1, $col, $col)
-
-  @include alert('success', $col-success-l-1, $col-success-l-1, $col, $col)
-
-  @include alert('warning', $col-warning-l-1, $col-warning-l-1, $col, $col)
+  .alert:is(.default, .failure, .primary, .success, .warning)
+    background-color: var(--c-l-1)
+    border-color: var(--c-l-1)
+    color: var(--c)
 
   @if $sml
     @include alert-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)

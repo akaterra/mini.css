@@ -1,33 +1,17 @@
 @import ../vars
 
 .mini
-  @mixin badge($prefix, $bg-color, $color)
-    @if $prefix == null
-      .badge
-        background-color: $bg-color
-        color: $color
-        display: inline-block
-    @else
-      .badge.#{$prefix}
-        background-color: $bg-color
-        color: $color
-        display: inline-block
-
   .badge
     border-radius: 2000px
+    display: inline-block
+    line-height: 1
     padding: calc(var(--d-v) / 2) var(--d-h)
 
-  @include badge(null, $col-primary, $col)
-
-  @include badge('default', $col-default, $col)
-
-  @include badge('failure', $col-failure, $col)
-
-  @include badge('primary', $col-primary, $col)
-
-  @include badge('success', $col-success, $col)
-
-  @include badge('warning', $col-warning, $col)
+  // color
 
   .badge
-    line-height: 1
+    background-color: $col-primary
+    color: $col
+
+  .badge:is(.default, .failure, .primary, .success, .warning)
+    background-color: var(--c-i)
