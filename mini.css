@@ -55,7 +55,7 @@
 
 .mini .badge {
   border-radius: 2000px;
-  padding: var(--d-v) var(--d-h);
+  padding: calc(var(--d-v) / 2) var(--d-h);
 }
 .mini .badge {
   background-color: var(--c-pri);
@@ -87,15 +87,6 @@
   color: var(--c);
   display: inline-block;
 }
-.mini .badge.badge-sml {
-  padding: var(--s-b-w) var(--s-h);
-}
-.mini .badge.badge-med {
-  padding: var(--m-b-w) var(--m-h);
-}
-.mini .badge.badge-lrg {
-  padding: var(--l-b-w) var(--l-h);
-}
 .mini .badge {
   line-height: 1;
 }
@@ -106,25 +97,32 @@
 }
 
 .mini .blockquote {
-  padding-left: calc(var(--d-h) * 2 - 2px);
+  margin-bottom: var(--d-v);
+  margin-top: var(--d-v);
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-bottom: var(--d-v);
+  padding-left: calc(var(--d-h-l) * 2 - var(--d-b-w));
+  padding-right: calc(var(--d-h-r) * 2 - var(--d-b-w));
+  padding-top: var(--d-v);
 }
 .mini .blockquote {
-  border-left: 2px var(--c-def) solid;
+  border-left: var(--d-b-w) var(--c-def) solid;
 }
 .mini .blockquote.default {
-  border-left: 2px var(--c-def) solid;
+  border-left: var(--d-b-w) var(--c-def) solid;
 }
 .mini .blockquote.failure {
-  border-left: 2px var(--c-fai) solid;
+  border-left: var(--d-b-w) var(--c-fai) solid;
 }
 .mini .blockquote.primary {
-  border-left: 2px var(--c-pri) solid;
+  border-left: var(--d-b-w) var(--c-pri) solid;
 }
 .mini .blockquote.success {
-  border-left: 2px var(--c-suc) solid;
+  border-left: var(--d-b-w) var(--c-suc) solid;
 }
 .mini .blockquote.warning {
-  border-left: 2px var(--c-war) solid;
+  border-left: var(--d-b-w) var(--c-war) solid;
 }
 
 .mini .breadcrumbs {
@@ -202,108 +200,36 @@
   border-color: var(--c-pri);
   color: var(--c);
 }
-.mini .button.transparent {
-  color: var(--c-pri);
+.mini .button:active:not(.disabled), .mini .button.active {
+  background-color: var(--c-pri-d-2) !important;
+  border-color: var(--c-pri-d-2);
+  color: var(--c) !important;
 }
 .mini .button:hover, .mini .button:focus {
   background-color: var(--c-pri-d-1) !important;
   border-color: var(--c-pri-d-1);
-  color: var(--c);
+  color: var(--c) !important;
 }
-.mini .button:active:not(.disabled), .mini .button.active {
-  background-color: var(--c-pri-d-2) !important;
-  border-color: var(--c-pri-d-2);
-  color: var(--c);
-}
-.mini .button.default {
-  background: var(--c-def);
-  border-color: var(--c-def);
-  color: var(--c);
-}
-.mini .button.default.transparent {
-  color: var(--c-def);
-}
-.mini .button:hover.default, .mini .button:focus.default {
-  background-color: var(--c-def-d-1) !important;
-  border-color: var(--c-def-d-1);
-  color: var(--c);
-}
-.mini .button:active:not(.disabled).default, .mini .button.active.default {
-  background-color: var(--c-def-d-2) !important;
-  border-color: var(--c-def-d-2);
-  color: var(--c);
-}
-.mini .button.failure {
-  background: var(--c-fai);
-  border-color: var(--c-fai);
-  color: var(--c);
-}
-.mini .button.failure.transparent {
-  color: var(--c-fai);
-}
-.mini .button:hover.failure, .mini .button:focus.failure {
-  background-color: var(--c-fai-d-1) !important;
-  border-color: var(--c-fai-d-1);
-  color: var(--c);
-}
-.mini .button:active:not(.disabled).failure, .mini .button.active.failure {
-  background-color: var(--c-fai-d-2) !important;
-  border-color: var(--c-fai-d-2);
-  color: var(--c);
-}
-.mini .button.primary {
-  background: var(--c-pri);
-  border-color: var(--c-pri);
-  color: var(--c);
-}
-.mini .button.primary.transparent {
+.mini .button.transparent {
   color: var(--c-pri);
 }
-.mini .button:hover.primary, .mini .button:focus.primary {
-  background-color: var(--c-pri-d-1) !important;
-  border-color: var(--c-pri-d-1);
+.mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning) {
+  background: var(--c-i);
+  border-color: var(--c-i);
   color: var(--c);
 }
-.mini .button:active:not(.disabled).primary, .mini .button.active.primary {
-  background-color: var(--c-pri-d-2) !important;
-  border-color: var(--c-pri-d-2);
-  color: var(--c);
+.mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning):active:not(.disabled), .mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning).active {
+  background-color: var(--c-d-2) !important;
+  border-color: var(--c-d-2);
+  color: var(--c) !important;
 }
-.mini .button.success {
-  background: var(--c-suc);
-  border-color: var(--c-suc);
-  color: var(--c);
+.mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning):hover, .mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning):focus {
+  background-color: var(--c-d-1) !important;
+  border-color: var(--c-d-1);
+  color: var(--c) !important;
 }
-.mini .button.success.transparent {
-  color: var(--c-suc);
-}
-.mini .button:hover.success, .mini .button:focus.success {
-  background-color: var(--c-suc-d-1) !important;
-  border-color: var(--c-suc-d-1);
-  color: var(--c);
-}
-.mini .button:active:not(.disabled).success, .mini .button.active.success {
-  background-color: var(--c-suc-d-2) !important;
-  border-color: var(--c-suc-d-2);
-  color: var(--c);
-}
-.mini .button.warning {
-  background: var(--c-war);
-  border-color: var(--c-war);
-  color: var(--c);
-}
-.mini .button.warning.transparent {
-  color: var(--c-war);
-}
-.mini .button:hover.warning, .mini .button:focus.warning {
-  background-color: var(--c-war-d-1) !important;
-  border-color: var(--c-war-d-1);
-  color: var(--c);
-}
-.mini .button:active:not(.disabled).warning, .mini .button.active.warning {
-  background-color: var(--c-war-d-2) !important;
-  border-color: var(--c-war-d-2);
-  color: var(--c);
+.mini .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning).transparent {
+  color: var(--c-i);
 }
 .mini .button.button-sml {
   font-size: calc(var(--s-f-s) * 0.8);
@@ -3986,6 +3912,71 @@
   --l-media: 1240px;
   --l-media-max: 3839px;
   --l-v: calc(var(--l-h) / 2);
+}
+:root .default {
+  --c-i: var(--c-def);
+  --c-d-1: var(--c-def-d-1);
+  --c-d-2: var(--c-def-d-2);
+  --c-d-3: var(--c-def-d-3);
+  --c-d-4: var(--c-def-d-4);
+  --c-l-1: var(--c-def-l-1);
+  --c-l-2: var(--c-def-l-2);
+  --c-l-3: var(--c-def-l-3);
+  --c-l-4: var(--c-def-l-4);
+  --c-l-5: var(--c-def-l-5);
+  --c-l-6: var(--c-def-l-6);
+}
+:root .failure {
+  --c-i: var(--c-fai);
+  --c-d-1: var(--c-fai-d-1);
+  --c-d-2: var(--c-fai-d-2);
+  --c-d-3: var(--c-fai-d-3);
+  --c-d-4: var(--c-fai-d-4);
+  --c-l-1: var(--c-fai-l-1);
+  --c-l-2: var(--c-fai-l-2);
+  --c-l-3: var(--c-fai-l-3);
+  --c-l-4: var(--c-fai-l-4);
+  --c-l-5: var(--c-fai-l-5);
+  --c-l-6: var(--c-fai-l-6);
+}
+:root .primary {
+  --c-i: var(--c-pri);
+  --c-d-1: var(--c-pri-d-1);
+  --c-d-2: var(--c-pri-d-2);
+  --c-d-3: var(--c-pri-d-3);
+  --c-d-4: var(--c-pri-d-4);
+  --c-l-1: var(--c-pri-l-1);
+  --c-l-2: var(--c-pri-l-2);
+  --c-l-3: var(--c-pri-l-3);
+  --c-l-4: var(--c-pri-l-4);
+  --c-l-5: var(--c-pri-l-5);
+  --c-l-6: var(--c-pri-l-6);
+}
+:root .success {
+  --c-i: var(--c-suc);
+  --c-d-1: var(--c-suc-d-1);
+  --c-d-2: var(--c-suc-d-2);
+  --c-d-3: var(--c-suc-d-3);
+  --c-d-4: var(--c-suc-d-4);
+  --c-l-1: var(--c-suc-l-1);
+  --c-l-2: var(--c-suc-l-2);
+  --c-l-3: var(--c-suc-l-3);
+  --c-l-4: var(--c-suc-l-4);
+  --c-l-5: var(--c-suc-l-5);
+  --c-l-6: var(--c-suc-l-6);
+}
+:root .warning {
+  --c-i: var(--c-war);
+  --c-d-1: var(--c-war-d-1);
+  --c-d-2: var(--c-war-d-2);
+  --c-d-3: var(--c-war-d-3);
+  --c-d-4: var(--c-war-d-4);
+  --c-l-1: var(--c-war-l-1);
+  --c-l-2: var(--c-war-l-2);
+  --c-l-3: var(--c-war-l-3);
+  --c-l-4: var(--c-war-l-4);
+  --c-l-5: var(--c-war-l-5);
+  --c-l-6: var(--c-war-l-6);
 }
 :root .sml {
   --d-1: var(--s-1);

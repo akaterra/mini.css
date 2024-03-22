@@ -4,13 +4,20 @@
   @mixin blockquote($prefix, $color)
     @if $prefix == null
       .blockquote
-        border-left: 2px $color solid
+        border-left: var(--d-b-w) $color solid
     @else
       .blockquote.#{$prefix}
-        border-left: 2px $color solid
+        border-left: var(--d-b-w) $color solid
 
   .blockquote
-    padding-left: calc(var(--d-h) * 2 - 2px)
+    margin-bottom: var(--d-v)
+    margin-top: var(--d-v)
+    margin-inline-start: 0
+    margin-inline-end: 0
+    padding-bottom: var(--d-v)
+    padding-left: calc(var(--d-h-l) * 2 - var(--d-b-w))
+    padding-right: calc(var(--d-h-r) * 2 - var(--d-b-w))
+    padding-top: var(--d-v)
 
   @include blockquote(null, $col-default)
 

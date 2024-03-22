@@ -1,48 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin button($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .button
-        &.transparent
-          color: $border-color
-
-        background: $bg-color
-        border-color: $border-color
-        color: $color
-    @else
-      .button.#{$prefix}
-        &.transparent
-          color: $border-color
-
-        background: $bg-color
-        border-color: $border-color
-        color: $color
-
-  @mixin button-hover($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .button:hover, .button:focus
-        background-color: $bg-color !important
-        border-color: $border-color
-        color: $color
-    @else
-      .button:hover.#{$prefix}, .button:focus.#{$prefix}
-        background-color: $bg-color !important
-        border-color: $border-color
-        color: $color
-
-  @mixin button-active($prefix, $bg-color, $border-color, $color, $transparent-color)
-    @if $prefix == null
-      .button:active:not(.disabled), .button.active
-        background-color: $bg-color !important
-        border-color: $border-color
-        color: $color
-    @else
-      .button:active:not(.disabled).#{$prefix}, .button.active.#{$prefix}
-        background-color: $bg-color !important
-        border-color: $border-color
-        color: $color
-
   @mixin button-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     .button.button-#{$suffix}
       font-size: calc($font-size * 0.8)
@@ -78,29 +36,43 @@
   a.button
     text-decoration: none
 
-  @include button(null, $col-primary, $col-primary, $col, $col)
-  @include button-hover(null, $col-primary-d-1, $col-primary-d-1, $col, $col)
-  @include button-active(null, $col-primary-d-2, $col-primary-d-2, $col, $col)
+  // color
 
-  @include button('default', $col-default, $col-default, $col, $col)
-  @include button-hover('default', $col-default-d-1, $col-default-d-1, $col, $col)
-  @include button-active('default', $col-default-d-2, $col-default-d-2, $col, $col)
+  .button
+    &:active:not(.disabled), &.active
+      background-color: $col-primary-d-2 !important
+      border-color: $col-primary-d-2
+      color: $col !important
 
-  @include button('failure', $col-failure, $col-failure, $col, $col)
-  @include button-hover('failure', $col-failure-d-1, $col-failure-d-1, $col, $col)
-  @include button-active('failure', $col-failure-d-2, $col-failure-d-2, $col, $col)
+    &:hover, &:focus
+      background-color: $col-primary-d-1 !important
+      border-color: $col-primary-d-1
+      color: $col !important
 
-  @include button('primary', $col-primary, $col-primary, $col, $col)
-  @include button-hover('primary', $col-primary-d-1, $col-primary-d-1, $col, $col)
-  @include button-active('primary', $col-primary-d-2, $col-primary-d-2, $col, $col)
+    &.transparent
+      color: $col-primary
 
-  @include button('success', $col-success, $col-success, $col, $col)
-  @include button-hover('success', $col-success-d-1, $col-success-d-1, $col, $col)
-  @include button-active('success', $col-success-d-2, $col-success-d-2, $col, $col)
+    background: $col-primary
+    border-color: $col-primary
+    color: $col
 
-  @include button('warning', $col-warning, $col-warning, $col, $col)
-  @include button-hover('warning', $col-warning-d-1, $col-warning-d-1, $col, $col)
-  @include button-active('warning', $col-warning-d-2, $col-warning-d-2, $col, $col)
+  .button:is(.default, .button.failure, .button.primary, .button.success, .button.warning)
+    &:active:not(.disabled), &.active
+      background-color: var(--c-d-2) !important
+      border-color: var(--c-d-2)
+      color: var(--c) !important
+
+    &:hover, &:focus
+      background-color: var(--c-d-1) !important
+      border-color: var(--c-d-1)
+      color: var(--c) !important
+  
+    &.transparent
+      color: var(--c-i)
+
+    background: var(--c-i)
+    border-color: var(--c-i)
+    color: $col
 
   @if $sml
     @include button-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
