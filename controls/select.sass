@@ -4,8 +4,8 @@
   @mixin select-sized($suffix, $border-radius, $border-width, $font-size, $height, $ver, $hor)
     .select-#{$suffix}:before
       bottom: calc(50% - $height / 2 + $border-width * 2)
-      left: calc(100% - $height + $border-width * 0)
-      right: calc($border-width * 4)
+      left: calc((100% - $height) * var(--d-r-m) + ($border-width * 4) * var(--d-l-m))
+      right: calc((100% - $height) * var(--d-l-m) + ($border-width * 4) * var(--d-r-m))
       top: calc(50% - $height / 2 + $border-width * 2)
 
   .select
@@ -28,8 +28,8 @@
   
   .select:before
     bottom: calc(50% - var(--d-1) * 0.5 / 2 + var(--d-b-w) * 2)
-    left: calc(100% - var(--d-1) * 0.5 + var(--d-b-w) * 0)
-    right: calc(var(--d-b-w) * 4)
+    left: calc((100% - var(--d-1) * 0.5) * var(--d-l-m) + (var(--d-b-w) * 4) * var(--d-r-m))
+    right: calc((100% - var(--d-1) * 0.5) * var(--d-r-m) + (var(--d-b-w) * 4) * var(--d-l-m))
     top: calc(50% - var(--d-1) * 0.5 / 2 + var(--d-b-w) * 2)
 
   // color

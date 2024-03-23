@@ -174,12 +174,6 @@
   --l-v: calc(var(--l-h) / 2)
 
   .sml
-    &.rtl, .rtl
-      --d-h-l: 0
-      --d-h-r: var(--s-h)
-      --d-b-w-l: 0
-      --d-b-w-r: var(--s-b-w)
-
     --d-1: var(--s-1)
     --d-b-r: var(--s-b-r)
     --d-b-w: var(--s-b-w)
@@ -194,12 +188,6 @@
     --d-v: var(--s-v)
 
   .med
-    &.rtl, .rtl
-      --d-h-l: 0
-      --d-h-r: var(--m-h)
-      --d-b-w-l: 0
-      --d-b-w-r: var(--m-b-w)
-
     --d-1: var(--m-1)
     --d-b-r: var(--m-b-r)
     --d-b-w: var(--m-b-w)
@@ -214,12 +202,6 @@
     --d-v: var(--m-v)
 
   .lrg
-    &.rtl, .rtl
-      --d-h-l: 0
-      --d-h-r: var(--l-h)
-      --d-b-w-l: 0
-      --d-b-w-r: var(--l-b-w)
-
     --d-1: var(--l-1)
     --d-b-r: var(--l-b-r)
     --d-b-w: var(--l-b-w)
@@ -232,3 +214,10 @@
     --d-media: var(--l-media)
     --d-media-max: var(--l-media-max)
     --d-v: var(--l-v)
+
+  --d-l-m: 1
+  --d-r-m: 0
+
+  &.rtl, .rtl
+    --d-l-m: 0
+    --d-r-m: 1

@@ -2,19 +2,22 @@
 
 .mini
   .blockquote
+    background-color: $col
     margin-bottom: var(--d-v)
     margin-top: var(--d-v)
     margin-inline-start: 0
     margin-inline-end: 0
-    padding-bottom: var(--d-v)
-    padding-left: calc(var(--d-h-l) * 2 - var(--d-b-w))
-    padding-right: calc(var(--d-h-r) * 2 - var(--d-b-w))
-    padding-top: var(--d-v)
+    padding-bottom: calc(var(--d-v) * 2)
+    padding-left: calc(var(--d-h) * var(--d-l-m) * 2)
+    padding-right: calc(var(--d-h) * var(--d-r-m) * 2)
+    padding-top: calc(var(--d-v) * 2)
 
   // color
 
   .blockquote
-    border-left: var(--d-b-w) $col-default solid
+    border-left: calc(var(--d-b-w) * 2 * var(--d-l-m)) $col-default-l-2 solid
+    border-right: calc(var(--d-b-w) * 2 * var(--d-r-m)) $col-default-l-2 solid
 
   .blockquote:is(.default, .failure, .primary, .success, .warning)
-    border-left: var(--d-b-w) var(--c-i) solid
+    border-left: calc(var(--d-b-w) * 2 * var(--d-l-m)) var(--c-l-2) solid
+    border-right: calc(var(--d-b-w) * 2 * var(--d-r-m)) var(--c-l-2) solid

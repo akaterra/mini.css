@@ -12,12 +12,12 @@
   .list
     .list-header
       &.sub
-        padding-left: calc(var(--d-h-l) * 2)
-        padding-right: calc(var(--d-h-r) * 2)
+        padding-left: calc(var(--d-h) * var(--d-l-m) * 2)
+        padding-right: calc(var(--d-h) * var(--d-r-m) * 2)
       
       &.subsub
-        padding-left: calc(var(--d-h-l) * 3)
-        padding-right: calc(var(--d-h-r) * 3)
+        padding-left: calc(var(--d-h) * var(--d-l-m) * 3)
+        padding-right: calc(var(--d-h) * var(--d-r-m) * 3)
 
       &:not(:first-child)
         margin-top: calc(var(--d-v) * 2)
@@ -25,27 +25,29 @@
       border-radius: var(--d-b-r)
       font-size: calc(var(--d-f-s) * (1.5 - 0.25))
       padding-bottom: var(--d-v)
-      padding-left: var(--d-h-l)
-      padding-right: var(--d-h-r)
+      padding-left: calc(var(--d-h) * var(--d-l-m))
+      padding-right: calc(var(--d-h) * var(--d-r-m))
       padding-top: var(--d-v)
 
     .list-item
       &.sub
-        padding-left: calc(var(--d-h-l) * 3)
-        padding-right: calc(var(--d-h-r) * 3)
+        padding-left: calc(var(--d-h) * var(--d-l-m) * 3)
+        padding-right: calc(var(--d-h) * var(--d-r-m) * 3)
       
       &.subsub
-        padding-left: calc(var(--d-h-l) * 4)
-        padding-right: calc(var(--d-h-r) * 4)
+        padding-left: calc(var(--d-h) * var(--d-l-m) * 4)
+        padding-right: calc(var(--d-h) * var(--d-r-m) * 4)
 
       border-radius: var(--d-b-r)
       padding-bottom: var(--d-v)
-      padding-left: calc(var(--d-h-l) * 2)
-      padding-right: calc(var(--d-h-r) * 2)
+      padding-left: calc(var(--d-h) * var(--d-l-m) * 2)
+      padding-right: calc(var(--d-h) * var(--d-r-m) * 2)
       padding-top: var(--d-v)
 
     .list-header, .list-item
       border: 0
+      display: block
+      width: 100%
 
     margin-bottom: var(--d-v)
     margin-top: var(--d-v)
