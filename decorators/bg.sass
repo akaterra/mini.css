@@ -2,10 +2,15 @@
 
 .mini
   .bg-light, &.bg-light
-    background-color: hsl(0, 0%, 99%)
+    --c-bg: var(--c-bg-1)
 
   .bg-medium, &.bg-medium
-    background-color: hsl(0, 0%, 97%)
+    --c-bg: var(--c-bg-2)
 
   .bg-dark, &.bg-dark
-    background-color: hsl(0, 0%, 95%)
+    --c-bg: var(--c-bg-3)
+
+  .bg-light, &.bg-light, .bg-medium, &.bg-medium, .bg-dark, &.bg-dark
+    --c-bg-d-1: color-mix(in srgb, var(--c-bg) 97%, black)
+    --c-bg-d-2: color-mix(in srgb, var(--c-bg) 95%, black)
+    --c-bg-d-3: color-mix(in srgb, var(--c-bg) 93%, black)
