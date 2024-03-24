@@ -864,6 +864,13 @@
   top: calc(50% - var(--l-1) * 0.5 / 2 + var(--l-b-w) * 2);
 }
 
+.mini .span {
+  color: var(--c-def-d-2);
+}
+.mini .span:is(.default, .failure, .primary, .success, .warning) {
+  color: var(--c-d-2);
+}
+
 .mini .splitter {
   height: var(--d-b-w);
   min-height: var(--d-b-w);
@@ -1362,64 +1369,64 @@
   overflow-y: scroll;
 }
 
-.mini .sml .alert-roof, .mini .sml .button-roof, .mini .sml .control-roof, .mini .sml .panel-roof, .mini .med .alert-roof, .mini .med .button-roof, .mini .med .control-roof, .mini .med .panel-roof, .mini .lrg .alert-roof, .mini .lrg .button-roof, .mini .lrg .control-roof, .mini .lrg .panel-roof {
-  border-width: 2px 0;
-}
-.mini .sml.roof .alert, .mini .sml.roof .button, .mini .sml.roof .control, .mini .sml.roof .panel, .mini .med.roof .alert, .mini .med.roof .button, .mini .med.roof .control, .mini .med.roof .panel, .mini .lrg.roof .alert, .mini .lrg.roof .button, .mini .lrg.roof .control, .mini .lrg.roof .panel {
-  border-width: 2px 0;
-}
-.mini .sml.roof .tabs > .tabs-bar > .tab, .mini .med.roof .tabs > .tabs-bar > .tab, .mini .lrg.roof .tabs > .tabs-bar > .tab {
-  border-width: 2px 0 0 0;
-}
-.mini .sml.roof .tabs > .tabs-content, .mini .med.roof .tabs > .tabs-content, .mini .lrg.roof .tabs > .tabs-content {
-  border-width: 2px 0;
-}
-.mini .sml.roof .tabs > .tabs-content.underlined, .mini .med.roof .tabs > .tabs-content.underlined, .mini .lrg.roof .tabs > .tabs-content.underlined {
-  border-width: 2px 0 0 0;
-}
-.mini .sml .alert-square, .mini .sml .button-square, .mini .sml .control-square, .mini .sml .panel-square, .mini .med .alert-square, .mini .med .button-square, .mini .med .control-square, .mini .med .panel-square, .mini .lrg .alert-square, .mini .lrg .button-square, .mini .lrg .control-square, .mini .lrg .panel-square {
+.mini .alert-square, .mini .button-square, .mini .control-square, .mini .panel-square {
   border-radius: 0;
 }
-.mini .sml .list-square > .list-header, .mini .sml .list-square > .list-item, .mini .med .list-square > .list-header, .mini .med .list-square > .list-item, .mini .lrg .list-square > .list-header, .mini .lrg .list-square > .list-item {
+.mini .list-square > .list-header, .mini .list-square > .list-item {
   border-radius: 0;
 }
-.mini .sml.square .alert, .mini .sml.square .button, .mini .sml.square .control, .mini .sml.square .list-header, .mini .sml.square .list-item, .mini .sml.square .panel, .mini .med.square .alert, .mini .med.square .button, .mini .med.square .control, .mini .med.square .list-header, .mini .med.square .list-item, .mini .med.square .panel, .mini .lrg.square .alert, .mini .lrg.square .button, .mini .lrg.square .control, .mini .lrg.square .list-header, .mini .lrg.square .list-item, .mini .lrg.square .panel {
+.mini .square .alert, .mini .square .button, .mini .square .control, .mini .square .list-header, .mini .square .list-item, .mini .square .panel {
   border-radius: 0;
 }
-.mini .sml.square .tabs > .tabs-bar > .tab, .mini .med.square .tabs > .tabs-bar > .tab, .mini .lrg.square .tabs > .tabs-bar > .tab {
+.mini .square .tabs > .tabs-bar > .tab {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.mini .sml.square .tabs > .tabs-content, .mini .med.square .tabs > .tabs-content, .mini .lrg.square .tabs > .tabs-content {
+.mini .square .tabs > .tabs-content {
   border-radius: 0;
 }
-.mini .sml .alert-slope, .mini .sml .button-slope, .mini .sml .control-slope, .mini .sml .panel-slope, .mini .med .alert-slope, .mini .med .button-slope, .mini .med .control-slope, .mini .med .panel-slope, .mini .lrg .alert-slope, .mini .lrg .button-slope, .mini .lrg .control-slope, .mini .lrg .panel-slope {
+.mini .alert-slope, .mini .button-slope, .mini .control-slope, .mini .panel-slope {
   border-radius: 8px 0 8px 0;
 }
-.mini .sml .list-square > .list-header, .mini .sml .list-square > .list-item, .mini .med .list-square > .list-header, .mini .med .list-square > .list-item, .mini .lrg .list-square > .list-header, .mini .lrg .list-square > .list-item {
+.mini .list-square > .list-header, .mini .list-square > .list-item {
   border-radius: 8px 0 8px 0;
 }
-.mini .sml.slope .alert, .mini .sml.slope .button, .mini .sml.slope .control, .mini .sml.slope .list-header, .mini .sml.slope .list-item, .mini .sml.slope .panel, .mini .med.slope .alert, .mini .med.slope .button, .mini .med.slope .control, .mini .med.slope .list-header, .mini .med.slope .list-item, .mini .med.slope .panel, .mini .lrg.slope .alert, .mini .lrg.slope .button, .mini .lrg.slope .control, .mini .lrg.slope .list-header, .mini .lrg.slope .list-item, .mini .lrg.slope .panel {
+.mini .slope .alert, .mini .slope .button, .mini .slope .control, .mini .slope .list-header, .mini .slope .list-item, .mini .slope .panel {
   border-radius: 8px 0 8px 0;
 }
-.mini .sml.slope .tabs > .tabs-bar > .tab, .mini .med.slope .tabs > .tabs-bar > .tab, .mini .lrg.slope .tabs > .tabs-bar > .tab {
+.mini .slope .tabs > .tabs-bar > .tab {
   border-top-left-radius: 8px;
   border-top-right-radius: 0;
 }
-.mini .sml.slope .tabs > .tabs-content, .mini .med.slope .tabs > .tabs-content, .mini .lrg.slope .tabs > .tabs-content {
+.mini .slope .tabs > .tabs-content {
   border-radius: 8px 0 8px 0;
 }
-.mini .sml .alert-wall, .mini .sml .button-wall, .mini .sml .control-wall, .mini .sml .panel-wall, .mini .med .alert-wall, .mini .med .button-wall, .mini .med .control-wall, .mini .med .panel-wall, .mini .lrg .alert-wall, .mini .lrg .button-wall, .mini .lrg .control-wall, .mini .lrg .panel-wall {
-  border-width: 0 2px;
+.mini .alert-roof, .mini .button-roof, .mini .control-roof, .mini .panel-roof {
+  border-width: var(--d-b-w) 0;
 }
-.mini .sml.wall .alert, .mini .sml.wall .button, .mini .sml.wall .control, .mini .sml.wall .panel, .mini .med.wall .alert, .mini .med.wall .button, .mini .med.wall .control, .mini .med.wall .panel, .mini .lrg.wall .alert, .mini .lrg.wall .button, .mini .lrg.wall .control, .mini .lrg.wall .panel {
-  border-width: 0 2px;
+.mini .roof .alert, .mini .roof .button, .mini .roof .control, .mini .roof .panel {
+  border-width: var(--d-b-w) 0;
 }
-.mini .sml.wall .tabs > .tabs-bar > .tab, .mini .med.wall .tabs > .tabs-bar > .tab, .mini .lrg.wall .tabs > .tabs-bar > .tab {
-  border-width: 0 2px;
+.mini .roof .tabs > .tabs-bar > .tab {
+  border-width: var(--d-b-w) 0 0 0;
 }
-.mini .sml.wall .tabs > .tabs-content, .mini .med.wall .tabs > .tabs-content, .mini .lrg.wall .tabs > .tabs-content {
-  border-width: 0 2px;
+.mini .roof .tabs > .tabs-content {
+  border-width: var(--d-b-w) 0;
+}
+.mini .roof .tabs > .tabs-content.underlined {
+  border-width: var(--d-b-w) 0 0 0;
+}
+.mini .alert-wall, .mini .button-wall, .mini .control-wall, .mini .panel-wall {
+  border-width: 0 var(--d-b-w);
+}
+.mini .wall .alert, .mini .wall .button, .mini .wall .control, .mini .wall .panel {
+  border-width: 0 var(--d-b-w);
+}
+.mini .wall .tabs > .tabs-bar > .tab {
+  border-width: 0 var(--d-b-w);
+}
+.mini .wall .tabs > .tabs-content {
+  border-width: 0 var(--d-b-w);
 }
 
 .mini .rounded {
@@ -1657,13 +1664,6 @@
 }
 .mini .lrg .text-shadow {
   text-shadow: 0 calc(var(--l-v) / 4) calc(var(--l-v) / 4) rgba(0, 0, 0, 0.25);
-}
-
-.mini .span {
-  color: var(--c-def-d-2);
-}
-.mini .span:is(.default, .failure, .primary, .success, .warning) {
-  color: var(--c-d-2);
 }
 
 .mini .bold {

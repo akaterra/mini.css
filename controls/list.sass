@@ -83,7 +83,7 @@
       border-color: $col-default-d-1
       color: $col
 
-  .list.active:is(.default, .failure, .primary, .success, .warning)
+  .list.active:is(#{$colors})
     .list-header:active:not(.disabled), .list-item:active:not(.disabled)
       background-color: var(--c-d-2) !important
       border-color: var(--c-d-2)

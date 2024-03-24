@@ -44,7 +44,7 @@
     &:before
       background: $col-default
 
-  .select:is(.default, .failure, .primary, .success, .warning)
+  .select:is(#{$colors})
     &:not(.disabled):active:before, &.active:before
       background: var(--c-d-2) !important
 

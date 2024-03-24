@@ -14,7 +14,7 @@
   .label
     color: $col-default-l-1
 
-  .label:is(.default, .failure, .primary, .success, .warning)
+  .label:is(#{$colors})
     color: var(--c-l-1)
 
   @if $sml

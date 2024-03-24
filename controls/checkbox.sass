@@ -76,7 +76,7 @@
       background: $col-default
       outline-color: $col
 
-  .checkbox:is(.default, .failure, .primary, .success, .warning)
+  .checkbox:is(#{$colors})
     &:active:not(.disabled):before, &.active:before
       border-color: var(--c-d-2) !important
 

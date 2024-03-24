@@ -2,40 +2,18 @@
 
 .mini
 
-  // roof
-  .sml, .med, .lrg
-    .alert-roof, .button-roof, .control-roof, .panel-roof
-      border-width: 2px 0
-
-  .sml.roof, .med.roof, .lrg.roof
-    .alert, .button, .control, .panel
-      border-width: 2px 0
-
-  .sml.roof, .med.roof, .lrg.roof
-    .tabs
-      &>.tabs-bar>.tab
-        border-width: 2px 0 0 0
-
-      &>.tabs-content
-        border-width: 2px 0
-
-      &>.tabs-content.underlined
-        border-width: 2px 0 0 0
-
   // square
-  .sml, .med, .lrg
-    .alert-square, .button-square, .control-square, .panel-square
+  .alert-square, .button-square, .control-square, .panel-square
+    border-radius: 0
+  
+  .list-square
+    >.list-header, >.list-item
       border-radius: 0
-    
-    .list-square
-      >.list-header, >.list-item
-        border-radius: 0
 
-  .sml.square, .med.square, .lrg.square
+  .square
     .alert, .button, .control, .list-header, .list-item, .panel
       border-radius: 0
 
-  .sml.square, .med.square, .lrg.square
     .tabs
       &>.tabs-bar>.tab
         border-top-left-radius: 0
@@ -45,19 +23,17 @@
         border-radius: 0
 
   // slope
-  .sml, .med, .lrg
-    .alert-slope, .button-slope, .control-slope, .panel-slope
+  .alert-slope, .button-slope, .control-slope, .panel-slope
+    border-radius: 8px 0 8px 0
+
+  .list-square
+    >.list-header, >.list-item
       border-radius: 8px 0 8px 0
 
-    .list-square
-      >.list-header, >.list-item
-        border-radius: 8px 0 8px 0
-
-  .sml.slope, .med.slope, .lrg.slope
+  .slope
     .alert, .button, .control, .list-header, .list-item, .panel
       border-radius: 8px 0 8px 0
 
-  .sml.slope, .med.slope, .lrg.slope
     .tabs
       &>.tabs-bar>.tab
         border-top-left-radius: 8px
@@ -66,24 +42,38 @@
       &>.tabs-content
         border-radius: 8px 0 8px 0
 
-  // wall
-  .sml, .med, .lrg
-    .alert-wall, .button-wall, .control-wall, .panel-wall
-      border-width: 0 2px
+  // roof
+  .alert-roof, .button-roof, .control-roof, .panel-roof
+    border-width: var(--d-b-w) 0
 
-  .sml.wall, .med.wall, .lrg.wall
+  .roof
     .alert, .button, .control, .panel
-      border-width: 0 2px
+      border-width: var(--d-b-w) 0
 
-  .sml.wall, .med.wall, .lrg.wall
     .tabs
       &>.tabs-bar>.tab
-        // border-image-source: linear-gradient(0deg, trasparent 5px, inherit, trasparent 5px)
-        border-width: 0 2px
+        border-width: var(--d-b-w) 0 0 0
 
       &>.tabs-content
-        // border-image-source: linear-gradient(0deg, trasparent 5px, inherit, trasparent 5px)
-        border-width: 0 2px
+        border-width: var(--d-b-w) 0
+
+      &>.tabs-content.underlined
+        border-width: var(--d-b-w) 0 0 0
+
+  // wall
+  .alert-wall, .button-wall, .control-wall, .panel-wall
+    border-width: 0 var(--d-b-w)
+
+  .wall
+    .alert, .button, .control, .panel
+      border-width: 0 var(--d-b-w)
+
+    .tabs
+      &>.tabs-bar>.tab
+        border-width: 0 var(--d-b-w)
+
+      &>.tabs-content
+        border-width: 0 var(--d-b-w)
 
   // .alert.unbound, .button.unbound, .control.unbound, .panel.unbound
   //   border: 0 !important

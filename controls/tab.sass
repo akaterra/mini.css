@@ -108,7 +108,7 @@
         border-color: $col-default-l-4
         color: $col-primary
 
-      &>.tab.active:is(.default, .failure, .primary, .success, .warning)
+      &>.tab.active:is(#{$colors})
         &:hover, &:focus
           background-color: var(--c) !important
           border-color: var(--c-l-4)

@@ -1,47 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin table($prefix, $border-color, $border-color-top)
-    @if $prefix == null
-      .table
-        &>.row
-          &>.l
-            border-color: $border-color
-
-          &>.r
-            border-color: $border-color
-
-        &.underlined
-          &>.row
-            &:after
-              border-bottom-color: $border-color
-
-            &.header:after
-              border-bottom-color: $border-color-top
-          
-          th:after, tr:after
-            border-bottom-color: $border-color-top
-
-    @else
-      .table.#{$prefix}
-        &>.row
-          &>.l
-            border-left-color: $border-color
-
-          &>.r
-            border-right-color: $border-color
-
-        &.underlined
-          &>.row
-            &:after
-              border-bottom-color: $border-color
-
-            &.header:after>th
-              border-bottom-color: $border-color-top
-
-          th:after, tr:after
-            border-bottom-color: $border-color-top
-
   @mixin table-sized($suffix, $border-width, $ver, $hor)
     .table.table-#{$suffix}
       &>.row>*, th, tr
@@ -68,7 +27,26 @@
       border-bottom-width: var(--d-b-w)
       margin: 0 var(--d-h)
 
-  @include table(null, $col-default-l-3, $col-default)
+  // color
+
+  .table
+    &>.row
+      &>.l
+        border-color: $col-default-l-3
+
+      &>.r
+        border-color: $col-default-l-3
+
+    &.underlined
+      &>.row
+        &:after
+          border-bottom-color: $col-default-l-3
+
+        &.header:after
+          border-bottom-color: $col-default
+      
+      th:after, tr:after
+        border-bottom-color: $col-default
 
   @include table-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
 
@@ -101,9 +79,7 @@
     &>.row
       &>*
         display: inline-flex
-        // float: none !important
         font-size: initial
-        // position: static
         vertical-align: inherit
 
       &.header>*
