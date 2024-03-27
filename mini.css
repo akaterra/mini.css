@@ -109,7 +109,7 @@
   content: "→";
 }
 
-.mini .rtl .breadcrumbs > .breadcrumb:not(.active):after {
+.mini .rtl .breadcrumbs > .breadcrumb:not(.active):after, .mini [dir=rtl] .breadcrumbs > .breadcrumb:not(.active):after, .mini[dir=rtl] .breadcrumbs > .breadcrumb:not(.active):after {
   content: "←";
 }
 
@@ -804,6 +804,8 @@
 }
 
 .mini .select {
+  margin-bottom: var(--d-v);
+  margin-top: var(--d-v);
   position: relative;
 }
 .mini .select:before {
@@ -818,7 +820,7 @@
 .mini .select:active:not(.disabled):before {
   transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
 }
-.mini .select > select {
+.mini .select > select.control {
   appearance: none;
 }
 .mini .select:before {
@@ -835,6 +837,10 @@
 }
 .mini .select:before {
   background: var(--c-def);
+}
+.mini .select > .control {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
 .mini .select:is(.default, .failure, .primary, .success, .warning):not(.disabled):active:before, .mini .select:is(.default, .failure, .primary, .success, .warning).active:before {
   background: var(--c-d-2) !important;
@@ -1345,27 +1351,34 @@
   background-color: var(--c-bg);
 }
 
-.mini .block.block-frame {
+.mini .frame {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   top: 0;
 }
-.mini .block.no-scroll {
+.mini .frame-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.mini .no-scroll, .mini.no-scroll {
   overflow: hidden;
 }
-.mini .block.no-x-scroll {
+.mini .no-scroll-x, .mini.no-scroll-x {
   overflow-x: hidden;
 }
-.mini .block.no-y-scroll {
+.mini .no-scroll-y, .mini.no-scroll-y {
   overflow-y: hidden;
 }
-.mini .block.x-scroll {
+.mini .scroll-x, .mini.scroll-x {
   overflow-x: scroll;
   overflow-y: hidden;
 }
-.mini .block.y-scroll {
+.mini .scroll-y, .mini.scroll-y {
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -1549,6 +1562,13 @@
 }
 .mini .flex18 {
   flex: 18;
+}
+
+.mini .rtl .flex-left, .mini [dir=rtl] .flex-left, .mini[dir=rtl] .flex-left {
+  justify-content: right;
+}
+.mini .rtl .flex-right, .mini [dir=rtl] .flex-right, .mini[dir=rtl] .flex-right {
+  justify-content: left;
 }
 
 .mini .font {
@@ -1736,16 +1756,16 @@
   white-space: no-wrap;
 }
 
-.mini .rtl .left {
+.mini .rtl .left, .mini [dir=rtl] .left, .mini[dir=rtl] .left {
   text-align: right;
 }
-.mini .rtl .children-left > * {
+.mini .rtl .children-left > *, .mini [dir=rtl] .children-left > *, .mini[dir=rtl] .children-left > * {
   text-align: right;
 }
-.mini .rtl .right {
+.mini .rtl .right, .mini [dir=rtl] .right, .mini[dir=rtl] .right {
   text-align: left;
 }
-.mini .rtl .children-right > * {
+.mini .rtl .children-right > *, .mini [dir=rtl] .children-right > *, .mini[dir=rtl] .children-right > * {
   text-align: left;
 }
 
@@ -3474,7 +3494,7 @@
   --d-media-max: var(--l-media-max);
   --d-v: var(--l-v);
 }
-:root.rtl, :root .rtl {
+:root.rtl, :root .rtl, :root [dir=rtl] {
   --d-l-m: 0;
   --d-r-m: 1;
 }
@@ -3521,6 +3541,9 @@ html, body {
 }
 .mini .h00, .mini .h-max {
   height: 100%;
+}
+.mini .h00-min {
+  min-height: 100%;
 }
 .mini .w00, .mini .w-max {
   width: 100%;

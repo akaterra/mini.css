@@ -1,27 +1,33 @@
 @import ../vars
 
 .mini
-    .block
-        &.block-frame
-            position: absolute
-            bottom: 0
-            left: 0
-            right: 0
-            top: 0
+    .frame
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        top: 0
 
-        &.no-scroll
-            overflow: hidden
+    .frame-fixed
+        position: fixed
+        bottom: 0
+        left: 0
+        right: 0
+        top: 0
 
-        &.no-x-scroll
-            overflow-x: hidden
+    .no-scroll, &.no-scroll
+        overflow: hidden
 
-        &.no-y-scroll
-            overflow-y: hidden
+    .no-scroll-x, &.no-scroll-x
+        overflow-x: hidden
 
-        &.x-scroll
-            overflow-x: scroll
-            overflow-y: hidden
+    .no-scroll-y, &.no-scroll-y
+        overflow-y: hidden
 
-        &.y-scroll
-            overflow-x: hidden
-            overflow-y: scroll
+    .scroll-x, &.scroll-x
+        overflow-x: scroll
+        overflow-y: hidden
+
+    .scroll-y, &.scroll-y
+        overflow-x: hidden
+        overflow-y: scroll
