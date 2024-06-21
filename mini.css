@@ -1770,7 +1770,7 @@
 }
 
 .mini .zebra > *:nth-child(2n+0), .mini .children-zebra > *:nth-child(2n+0) > * {
-  background-image: linear-gradient(to right, transparent 0%, var(--c-bg-d-2) 10%, var(--c-bg-d-2) 90%, transparent 100%);
+  background-image: linear-gradient(to right, transparent 0%, var(--c-bg-d-1) 10%, var(--c-bg-d-1) 90%, transparent 100%);
 }
 
 .mini .clear {
@@ -3364,7 +3364,7 @@
   --s-b-r: 3px;
   --s-b-w: 2px;
   --s-f-s: 0.75rem;
-  --s-h: 5px;
+  --s-h: 6px;
   --s-media: 700px;
   --s-media-max: 969px;
   --s-v: calc(var(--s-h) / 2);
@@ -3377,10 +3377,10 @@
   --m-media-max: 1239px;
   --m-v: calc(var(--m-h) / 2);
   --l-1: 42px;
-  --l-b-r: 7px;
+  --l-b-r: 8px;
   --l-b-w: 2px;
   --l-f-s: 1.5rem;
-  --l-h: 15px;
+  --l-h: 16px;
   --l-media: 1240px;
   --l-media-max: 3839px;
   --l-v: calc(var(--l-h) / 2);
