@@ -5,26 +5,34 @@
     @media screen and (max-width: $max-width)
       @for $i from 1 through $grid-cells
         @if $i < 10
+          .f-#{$i}-m-
+            width: calc((var(--d-media-max) + var(--d-h) * 2) / $grid-cells * $i)
+        @else
+          .f#{$i}-m-
+            width: calc((var(--d-media-max) + var(--d-h) * 2) / $grid-cells * $i)
+  
+      @for $i from 1 through $grid-cells
+        @if $i < 10
           @if $wrap == 'lrg'
             .c-#{$i}.-l-, .f-#{$i}.-l-
               width: 100% !important
-          @if $wrap == 'lrg'
-            .c-#{$i}-l-, .f-#{$i}-l-
-              width: 100% / $grid-cells * $i !important
+
+            .c-#{$i}-l-
+              width: calc(100% / $grid-cells * $i)
 
           @if $wrap == 'med'
             .c-#{$i}.-m-, .f-#{$i}.-m-
               width: 100% !important
-          @if $wrap == 'med'
-            .c-#{$i}-m-, .f-#{$i}-m-
-              width: 100% / $grid-cells * $i !important
+
+            .c-#{$i}-m-
+              width: calc(100% / $grid-cells * $i)
   
           @if $wrap == 'sml'
             .c-#{$i}.-s-, .f-#{$i}.-s-
               width: 100% !important
-          @if $wrap == 'sml'
-            .c-#{$i}-s-, .f-#{$i}-s-
-              width: 100% / $grid-cells * $i !important
+
+            .c-#{$i}-s-
+              width: calc(100% / $grid-cells * $i)
 
         @else
           @if $wrap == 'lrg'
@@ -32,21 +40,21 @@
               width: 100% !important
           @if $wrap == 'lrg'
             .c#{$i}-l-, .f#{$i}-l-
-              width: 100% / $grid-cells * $i !important
+              width: calc(100% / $grid-cells * $i)
 
           @if $wrap == 'med'
             .c#{$i}.-m-, .f#{$i}.-m-
               width: 100% !important
           @if $wrap == 'med'
             .c#{$i}-m-, .f#{$i}-m-
-              width: 100% / $grid-cells * $i !important
+              width: calc(100% / $grid-cells * $i)
 
           @if $wrap == 'sml'
             .c#{$i}.-s-, .f#{$i}.-s-
               width: 100% !important
           @if $wrap == 'sml'
             .c#{$i}-s-, .f#{$i}-s-
-              width: 100% / $grid-cells * $i !important
+              width: calc(100% / $grid-cells * $i)
 
         .sml
           @if $i < 10
@@ -86,19 +94,19 @@
       @for $i from 1 through $grid-cells
         @if $i < 10
           .f-#{$i}
-            width: 100vw / $grid-cells * $i !important
+            width: calc(100vw / $grid-cells * $i) !important
         @else
           .f#{$i}
-            width: 100vw / $grid-cells * $i !important
+            width: calc(100vw / $grid-cells * $i) !important
 
     @media screen and (max-width: $max-width)
       @for $i from 1 through $grid-cells
         @if $i < 10
           .f-#{$i}
-            width: 100vw / $grid-cells * $i !important
+            width: calc(100vw / $grid-cells * $i) !important
         @else
           .f#{$i}
-            width: 100vw / $grid-cells * $i !important
+            width: calc(100vw / $grid-cells * $i) !important
 
       .container
         width: 100% !important
@@ -130,11 +138,11 @@
     @if $i < 10
       .c-#{$i}
         position: relative
-        width: 100% / $grid-cells * $i
+        width: calc(100% / $grid-cells * $i)
     @else
       .c#{$i}
         position: relative
-        width: 100% / $grid-cells * $i
+        width: calc(100% / $grid-cells * $i)
 
   @for $i from 0 through 19
     @if $i < 2

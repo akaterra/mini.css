@@ -6,26 +6,24 @@
       font-size: calc($font-size * 0.8)
       height: $height
       min-height: $height
-      padding-bottom: $ver
-      padding-top: $ver
+    //   padding-bottom: $ver
+    //   padding-top: $ver
 
-    @if $normalize-css
-      textarea.control, a.button
-        padding: $ver $hor
+    // @if $normalize-css
+    //   textarea.control, a.button
+    //     padding: $ver $hor
 
   .control
     border-radius: var(--d-b-r)
     border-width: var(--d-b-w)
     font-size: calc(var(--d-f-s) * 0.8)
     height: var(--d-1)
+    line-height: normal
     margin-bottom: var(--d-v)
     margin-top: var(--d-v)
     min-height: var(--d-1)
-
-    @if $normalize-css
-      padding: var(--d-v) calc(var(--d-h) - 2px)
-    @else
-      padding: var(--d-v) var(--d-h)
+    padding-left: var(--d-h)
+    padding-right: var(--d-h)
 
   // color
 
