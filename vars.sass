@@ -120,8 +120,12 @@ $col-warning-l-6: var(--c-war-l-6)
 
 @mixin hover
   // transform: scale($hover-scale)
+  transition-timing-function: ease-in
+  transition: 0.05s
   transform: rotate($hover-rotate) scale($hover-scale)
 
 @mixin active
   // transform: scale($active-scale) translateY(2px) !important
+  transition-timing-function: ease-in
+  transition: 0.05s
   transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important

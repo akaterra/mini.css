@@ -2,13 +2,13 @@
 
 .mini
   @mixin table-sized($suffix, $border-width, $ver, $hor)
-    .table.table-#{$suffix}
-      &>.row>*, th, tr
-        padding-bottom: $ver
-        padding-top: $ver
+    // .table.table-#{$suffix}
+    //   &>.row>*, tr
+    //     padding-bottom: $ver
+    //     padding-top: $ver
 
     .table.table-#{$suffix}.underlined
-      &>.row:after, th:after, tr:after
+      &>.row:after, tr:after
         border-bottom-width: $border-width
         margin: 0 $hor
 
@@ -18,25 +18,17 @@
     margin-bottom: var(--d-v)
     margin-top: var(--d-v)
 
-    &>.row>*, th, tr
-      padding-bottom: var(--d-v) !important
-      padding-top: var(--d-v) !important
-
   .table.underlined
-    &>.row:after, th:after, tr:after
+    &>.row:after, tr:after
       border-bottom-width: var(--d-b-w)
+      content: ''
+      display: block
       margin: 0 var(--d-h)
+      width: 100%
 
   // color
 
   .table
-    &>.row
-      &>.l
-        border-color: $col-default-l-3
-
-      &>.r
-        border-color: $col-default-l-3
-
     &.underlined
       &>.row
         &:after
@@ -45,7 +37,10 @@
         &.header:after
           border-bottom-color: $col-default
       
-      th:after, tr:after
+      tbody>tr:not(.header):after
+        border-bottom-color: $col-default-l-3
+  
+      thead>tr:after, tr.header
         border-bottom-color: $col-default
 
   @include table-sized('sml', $sml-border-width, $sml-vertical, $sml-horizontal)
@@ -56,17 +51,34 @@
 
   .ltr
     .table
-      &>.row
-        &>.l
-          border-left-style: solid
-          border-left-width: 1px
-
-        &>.r
-          border-right-style: solid
-          border-right-width: 1px
+      @for $i from 1 through $grid-cells - 1
+        @if $i < 10
+          .d-#{$i}
+            >*:nth-child(#{$i})
+              border-right-style: solid
+              border-right-width: 1px
+              border-color: $col-default-l-3
+              padding-right: calc(var(--m-h) - 1px)
+            >*:nth-child(#{$i + 1})
+              border-left-style: solid
+              border-left-width: 1px
+              border-color: $col-default-l-3
+              padding-left: calc(var(--m-h) - 1px)
+        @else
+          .d#{$i}
+            >*:nth-child(#{$i})
+              border-right-style: solid
+              border-right-width: 1px
+              border-color: $col-default-l-3
+              padding-right: calc(var(--m-h) - 1px)
+            >*:nth-child(#{$i + 1})
+              border-left-style: solid
+              border-left-width: 1px
+              border-color: $col-default-l-3
+              padding-left: calc(var(--m-h) - 1px)
 
   .table
-    &.highlighted>.row:hover:not(.header)
+    &.highlighted>.row:hover:not(.header), &.highlighted>tbody>tr:hover:not(.header)
       background-image: linear-gradient(to right, transparent 0%, var(--c-bg-d-3) 25%, var(--c-bg-d-3) 75%, transparent 100%)
 
     &.table-inner.underlined>.row:after
@@ -78,22 +90,44 @@
 
     &>.row
       &>*
+        align-items: center
         display: inline-flex
-        font-size: initial
-        vertical-align: inherit
+        flex: 1
+        padding: var(--d-v) var(--m-h)
+        text-align: inherit
 
-      &.header>*
+      &.header
         font-weight: $font-bold
         text-align: center
 
-      display: table
-      font-size: 0
       margin: 0 !important
-      vertical-align: inherit
+      display: flex
+      flex-wrap: wrap
       width: 100%
-
-    thead>th:after, tbody>tr:after
-      border-bottom-style: solid
 
     border-collapse: collapse
     vertical-align: middle
+
+  table.table
+    border-spacing: 0
+    display: block
+
+    tbody, thead
+      display: block
+      width: 100%
+    
+    tr
+      display: flex
+      flex-wrap: wrap
+      width: 100%
+
+    tr:after
+      border-bottom-style: solid
+      width: 100%
+    
+    td, th
+      align-items: center
+      display: inline-flex
+      flex: 1
+      padding: var(--d-v) var(--m-h)
+      text-align: inherit

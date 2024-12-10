@@ -137,21 +137,25 @@
   @for $i from 1 through $grid-cells
     @if $i < 10
       .c-#{$i}
+        flex: none !important
         position: relative
         width: calc(100% / $grid-cells * $i)
     @else
       .c#{$i}
+        flex: none !important
         position: relative
         width: calc(100% / $grid-cells * $i)
 
   @for $i from 0 through 19
     @if $i < 2
       .w-#{$i * 5}
-        flex: none
+        flex: none !important
+        position: relative
         width: 5% * $i
     @else
       .w#{$i * 5}
-        flex: none
+        flex: none !important
+        position: relative
         width: 5% * $i
 
   @include media($lrg-media, $lrg-media, $lrg-media-max, 'lrg')
