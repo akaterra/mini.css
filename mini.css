@@ -1691,11 +1691,6 @@
   background-color: var(--c-i);
 }
 
-.mini .block {
-  height: 100%;
-  position: relative;
-}
-
 .mini .blockquote {
   background-color: var(--c-bg-d-2);
   margin-bottom: var(--d-v);
@@ -3041,7 +3036,7 @@
 }
 .mini .table > .row > * {
   align-items: center;
-  display: inline-flex;
+  display: flex;
   flex: 1;
   padding: var(--d-v) var(--m-h);
   text-align: inherit;
@@ -3069,7 +3064,7 @@
 }
 .mini table.table td, .mini table.table th {
   align-items: center;
-  display: inline-flex;
+  display: flex;
   flex: 1;
   padding: var(--d-v) var(--m-h);
   text-align: inherit;
@@ -3337,8 +3332,11 @@
   border-bottom-width: 0;
 }
 
+.mini .block {
+  display: block !important;
+}
 .mini .flex {
-  display: flex;
+  display: flex !important;
 }
 .mini .flex-center {
   justify-content: center;

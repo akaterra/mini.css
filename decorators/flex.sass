@@ -1,6 +1,9 @@
 @import ../vars
 
 .mini
+  .block
+    display: block !important
+
   .flex
     &-center
       justify-content: center
@@ -34,7 +37,7 @@
       &>*
         flex: 1
 
-    display: flex
+    display: flex !important
 
   @for $i from 1 through $grid-cells
     @if $i < 10
