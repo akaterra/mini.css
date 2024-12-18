@@ -100,21 +100,21 @@
 
       &>.tab.active
         &:hover, &:focus
-          background-color: $col !important
+          background-color: var(--c-bg) !important
           border-color: $col-default-l-4
           color: $col-primary-d-1
 
-        background-color: $col
+        background-color: var(--c-bg)
         border-color: $col-default-l-4
         color: $col-primary
 
       &>.tab.active:is(#{$colors})
         &:hover, &:focus
-          background-color: var(--c) !important
+          background-color: var(--c-bg) !important
           border-color: var(--c-l-4)
           color: var(--c-d-1)
 
-        background-color: var(--c)
+        background-color: var(--c-bg)
         border-color: var(--c-l-4)
         color: var(--c-i)
 
@@ -171,8 +171,21 @@
       border-style: solid
       z-index: 500
 
-      &.underlined
-        border-radius: 0
-        border-width: var(--d-b-w) 0 0 0
+    &:after
+      border-bottom: solid var(--d-b-w) $col-default-l-4
+      border-radius: 0
+      display: block
+      content: " "
+      margin-top: calc(var(--d-b-w) * -1)
+      position: relative
+      z-index: 500
 
     position: relative
+
+  .tabs.with-content
+    &>.tabs-bar
+      &>.tab.active
+        &:hover, &:focus
+          background-color: $col !important
+
+        background-color: $col

@@ -2402,11 +2402,12 @@
   padding: var(--d-v) var(--d-h);
 }
 .mini .panel {
+  --c-bg: var(--c);
   background-color: var(--c);
   border-color: var(--c-def-l-4);
+  border-style: solid;
 }
 .mini .panel:is(.default, .failure, .primary, .success, .warning) {
-  background-color: var(--c);
   border-color: var(--c-l-4);
 }
 .mini .panel.panel-sml {
@@ -2423,10 +2424,6 @@
   border-radius: var(--l-b-r);
   border-width: var(--l-b-w);
   font-size: var(--l-f-s);
-}
-.mini .panel {
-  background-color: var(--c);
-  border-style: solid;
 }
 
 .mini .sml .paragraph {
@@ -2621,22 +2618,22 @@
   color: var(--c);
 }
 .mini .tabs > .tabs-bar > .tab.active {
-  background-color: var(--c);
+  background-color: var(--c-bg);
   border-color: var(--c-def-l-4);
   color: var(--c-pri);
 }
 .mini .tabs > .tabs-bar > .tab.active:hover, .mini .tabs > .tabs-bar > .tab.active:focus {
-  background-color: var(--c) !important;
+  background-color: var(--c-bg) !important;
   border-color: var(--c-def-l-4);
   color: var(--c-pri-d-1);
 }
 .mini .tabs > .tabs-bar > .tab.active:is(.default, .failure, .primary, .success, .warning) {
-  background-color: var(--c);
+  background-color: var(--c-bg);
   border-color: var(--c-l-4);
   color: var(--c-i);
 }
 .mini .tabs > .tabs-bar > .tab.active:is(.default, .failure, .primary, .success, .warning):hover, .mini .tabs > .tabs-bar > .tab.active:is(.default, .failure, .primary, .success, .warning):focus {
-  background-color: var(--c) !important;
+  background-color: var(--c-bg) !important;
   border-color: var(--c-l-4);
   color: var(--c-d-1);
 }
@@ -2768,9 +2765,20 @@
   border-style: solid;
   z-index: 500;
 }
-.mini .tabs > .tabs-content.underlined {
+.mini .tabs:after {
+  border-bottom: solid var(--d-b-w) var(--c-def-l-4);
   border-radius: 0;
-  border-width: var(--d-b-w) 0 0 0;
+  display: block;
+  content: " ";
+  margin-top: calc(var(--d-b-w) * -1);
+  position: relative;
+  z-index: 500;
+}
+.mini .tabs.with-content > .tabs-bar > .tab.active {
+  background-color: var(--c);
+}
+.mini .tabs.with-content > .tabs-bar > .tab.active:hover, .mini .tabs.with-content > .tabs-bar > .tab.active:focus {
+  background-color: var(--c) !important;
 }
 
 .mini .table {

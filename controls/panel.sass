@@ -18,11 +18,12 @@
   // color
 
   .panel
-    background-color: $col
-    border-color: $col-default-l-4
+    --c-bg: var(--c)
+    background-color: var(--c)
+    border-color: var(--c-def-l-4)
+    border-style: solid
 
   .panel:is(#{$colors})
-    background-color: var(--c)
     border-color: var(--c-l-4)
 
   @if $sml
@@ -33,7 +34,3 @@
 
   @if $lrg
     @include panel-sized('lrg', $lrg-border-radius, $lrg-border-width, $lrg-font-size, $lrg-vertical, $lrg-horizontal)
-
-  .panel
-    background-color: $col
-    border-style: solid
