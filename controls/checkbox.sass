@@ -31,6 +31,7 @@
     &:active:not(.disabled)
       @include active()
 
+    appearance: none
     content: none
     cursor: pointer
     outline: none
@@ -93,7 +94,7 @@
       background: var(--c)
       border-color: var(--c-i)
 
-    &:checkd:before
+    &:checked:before
       background: var(--c-i)
       outline-color: var(--c)
 
