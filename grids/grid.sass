@@ -5,14 +5,6 @@
     @media screen and (max-width: $max-width)
       @for $i from 1 through $grid-cells
         @if $i < 10
-          .f-#{$i}-m-
-            width: calc((var(--d-media-max) + var(--d-h) * 2) / $grid-cells * $i)
-        @else
-          .f#{$i}-m-
-            width: calc((var(--d-media-max) + var(--d-h) * 2) / $grid-cells * $i)
-  
-      @for $i from 1 through $grid-cells
-        @if $i < 10
           @if $wrap == 'lrg'
             .c-#{$i}.-l-, .f-#{$i}.-l-
               width: 100% !important
@@ -20,12 +12,18 @@
             .c-#{$i}-l-
               width: calc(100% / $grid-cells * $i)
 
+            .f-#{$i}-l-
+              width: calc((var(--d-media-fixed) + var(--d-h) * 2) / $grid-cells * $i)
+
           @if $wrap == 'med'
             .c-#{$i}.-m-, .f-#{$i}.-m-
               width: 100% !important
 
             .c-#{$i}-m-
               width: calc(100% / $grid-cells * $i)
+
+            .f-#{$i}-m-
+              width: calc((var(--d-media-fixed) + var(--d-h) * 2) / $grid-cells * $i)
   
           @if $wrap == 'sml'
             .c-#{$i}.-s-, .f-#{$i}.-s-
@@ -34,60 +32,43 @@
             .c-#{$i}-s-
               width: calc(100% / $grid-cells * $i)
 
+            .f-#{$i}-s-
+              width: calc((var(--d-media-fixed) + var(--d-h) * 2) / $grid-cells * $i)
+
         @else
           @if $wrap == 'lrg'
             .c#{$i}.-l-, .f#{$i}.-l-
               width: 100% !important
-          @if $wrap == 'lrg'
+
             .c#{$i}-l-, .f#{$i}-l-
               width: calc(100% / $grid-cells * $i)
+
+            .f#{$i}-l-
+              width: calc((var(--d-media-fixed) + var(--d-h) * 2) / $grid-cells * $i)
 
           @if $wrap == 'med'
             .c#{$i}.-m-, .f#{$i}.-m-
               width: 100% !important
-          @if $wrap == 'med'
+
             .c#{$i}-m-, .f#{$i}-m-
               width: calc(100% / $grid-cells * $i)
+
+            .f#{$i}-m-
+              width: calc((var(--d-media-fixed) + var(--d-h) * 2) / $grid-cells * $i)
 
           @if $wrap == 'sml'
             .c#{$i}.-s-, .f#{$i}.-s-
               width: 100% !important
-          @if $wrap == 'sml'
+
             .c#{$i}-s-, .f#{$i}-s-
               width: calc(100% / $grid-cells * $i)
 
-        .sml
-          @if $i < 10
-            .f-#{$i}
-              width: calc(($fixed-width + $sml-horizontal * 2) / $grid-cells * $i)
-          @else
-            .f#{$i}
-              width: calc(($fixed-width + $sml-horizontal * 2) / $grid-cells * $i)
+            .f#{$i}-s-
+              width: calc((var(--d-media-fixed) + var(--d-h) * 2) / $grid-cells * $i)
 
-        .med
-          @if $i < 10
-            .f-#{$i}
-              width: calc(($fixed-width + $med-horizontal * 2) / $grid-cells * $i)
-          @else
-            .f#{$i}
-              width: calc(($fixed-width + $med-horizontal * 2) / $grid-cells * $i)
-
-        .lrg
-          @if $i < 10
-            .f-#{$i}
-              width: calc(($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i)
-          @else
-            .f#{$i}
-              width: calc(($fixed-width + $lrg-horizontal * 2) / $grid-cells * $i)
-
-      .container.sml
-        width: calc($width - $sml-horizontal * 2)
-
-      .container.med
-        width: calc($width - $med-horizontal * 2)
-
-      .container.lrg
-        width: calc($width - $lrg-horizontal * 2)
+      .container
+        --d-media-fixed: #{$fixed-width}
+        width: calc($width - var(--d-h) * 2)
 
   @mixin media-minimal($max-width, $wrap)
     .container-fluid
@@ -100,15 +81,8 @@
             width: calc(100vw / $grid-cells * $i) !important
 
     @media screen and (max-width: $max-width)
-      @for $i from 1 through $grid-cells
-        @if $i < 10
-          .f-#{$i}
-            width: calc(100vw / $grid-cells * $i) !important
-        @else
-          .f#{$i}
-            width: calc(100vw / $grid-cells * $i) !important
-
       .container
+        --d-media-fixed: 100vw
         width: 100% !important
 
   @mixin media-show($max-width, $wrap)
@@ -140,13 +114,25 @@
         flex: none !important
         position: relative
         width: calc(100% / $grid-cells * $i)
+
+      .f-#{$i}
+        width: calc((var(--d-media-fixed) + var(--d-h) * 2) / $grid-cells * $i)
+
+      .c-#{$i}, .f-#{$i}
+        padding: 0 var(--d-h)
     @else
       .c#{$i}
         flex: none !important
         position: relative
         width: calc(100% / $grid-cells * $i)
 
-  @for $i from 0 through 19
+      .f#{$i}
+        width: calc((var(--d-media-fixed) + var(--d-h) * 2) / $grid-cells * $i)
+
+      .c#{$i}, .f#{$i}
+        padding: 0 var(--d-h)
+
+  @for $i from 0 through calc($grid-cells + 1)
     @if $i < 2
       .w-#{$i * 5}
         flex: none !important
@@ -157,7 +143,7 @@
         flex: none !important
         position: relative
         width: 5% * $i
-
+  
   @include media($lrg-media, $lrg-media, $lrg-media-max, 'lrg')
 
   @include media($med-media, $med-media, $med-media-max, 'med')
@@ -172,72 +158,12 @@
 
   @include media-show($sml-media-max, 2)
 
-  @if $sml
-    .sml
-      @for $i from 1 through $grid-cells
-        @if $i < 10
-          .c-#{$i}, .f-#{$i}
-            padding: 0 $sml-horizontal
-        @else
-          .c#{$i}, .f#{$i}
-            padding: 0 $sml-horizontal
+  .ccc
+    padding: 0 var(--d-h)
 
-      .ccc
-        padding: 0 $sml-horizontal
-    
-    .container.sml, .container-fluid.sml
-      padding: 0 $sml-horizontal
-
-  @if $med
-    .med
-      @for $i from 1 through $grid-cells
-        @if $i < 10
-          .c-#{$i}, .f-#{$i}
-            padding: 0 $med-horizontal
-        @else
-          .c#{$i}, .f#{$i}
-            padding: 0 $med-horizontal
-
-      .ccc
-        padding: 0 $med-horizontal
-
-    .container.med, .container-fluid.med
-      padding: 0 $med-horizontal
-
-  @if $lrg
-    .lrg
-      @for $i from 1 through $grid-cells
-        @if $i < 10
-          .c-#{$i}, .f-#{$i}
-            padding: 0 $lrg-horizontal
-        @else
-          .c#{$i}, .f#{$i}
-            padding: 0 $lrg-horizontal
-
-      .ccc
-        padding: 0 $lrg-horizontal
-
-    .container.lrg, .container-fluid.lrg
-      padding: 0 $lrg-horizontal
-
-  @if $sml
-    .sml
-      .row
-        margin-left: calc($sml-horizontal * -1)
-        margin-right: calc($sml-horizontal * -1)
-
-
-  @if $med
-    .med
-      .row
-        margin-left: calc($med-horizontal * -1)
-        margin-right: calc($med-horizontal * -1)
-
-  @if $lrg
-    .lrg
-      .row
-        margin-left: calc($lrg-horizontal * -1)
-        margin-right: calc($lrg-horizontal * -1)
+  .row
+    margin-left: calc(var(--d-h) * -1)
+    margin-right: calc(var(--d-h) * -1)
 
   .p13
     flex: none

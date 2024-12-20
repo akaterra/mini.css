@@ -133,12 +133,15 @@
   .tabs
     &>.tabs-bar
       &:after
-        clear: both
-
-      &:after, &:before
-        display: table
+        border-bottom: solid var(--d-b-w) $col-default-l-4
+        border-radius: 0
+        display: block
         content: " "
-
+        margin-top: calc(var(--d-b-w) * -1)
+        position: relative
+        width: 100%
+        z-index: 500
+  
       &>.tab
         &:hover:not(.active)
           @include hover()
@@ -169,15 +172,6 @@
       background-color: $col
       position: relative
       border-style: solid
-      z-index: 500
-
-    &:after
-      border-bottom: solid var(--d-b-w) $col-default-l-4
-      border-radius: 0
-      display: block
-      content: " "
-      margin-top: calc(var(--d-b-w) * -1)
-      position: relative
       z-index: 500
 
     position: relative
