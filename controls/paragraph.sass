@@ -1,23 +1,6 @@
 @import ../vars
 
 .mini
-  @mixin paragraph-sized($suffix, $ver, $hor)
-    .paragraph
-      margin-bottom: calc($ver * 4) !important
-      margin-top: calc($ver * 4) !important
-
-  @if $sml
-    .sml
-      @include paragraph-sized(null, $sml-vertical, $sml-horizontal)
-
-  @if $med
-    .med
-      @include paragraph-sized(null, $med-vertical, $med-horizontal)
-
-  @if $lrg
-    .lrg
-      @include paragraph-sized(null, $lrg-vertical, $lrg-horizontal)
-
   .paragraph
     // &.paragraph-sml
     //   margin-bottom: $sml-vertical * 3
@@ -32,3 +15,5 @@
     //   margin-top: $lrg-vertical * 3
 
     display: block
+    margin-bottom: calc(var(--d-v) * 4) !important
+    margin-top: calc(var(--d-v) * 4) !important

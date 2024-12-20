@@ -1,41 +1,28 @@
 @import ../vars
 
 .mini
-  @mixin gap-sized($suffix, $ver, $hor)
-    .gap
-      height: calc($ver * 2)
-      min-height: calc($ver * 2)
-  
-    .children-gap
-      row-gap: calc($ver * 2)
+  .gap
+    height: calc(var(--d-v) * 2)
+    min-height: calc(var(--d-v) * 2)
 
-    .children-gap-full>*:first-child, .children-gap-top>*:first-child
-      margin-top: calc($ver * 2)
+  .children-gap
+    row-gap: calc(var(--d-v) * 2)
 
-    .children-gap-full>*:last-child, .children-gap-bottom>*:last-child
-      margin-bottom: calc($ver * 2)
+  .children-gap-full>*:first-child, .children-gap-top>*:first-child
+    margin-top: calc(var(--d-v) * 2)
 
-    .gap-hor
-      width: $ver
-      min-width: $ver
+  .children-gap-full>*:last-child, .children-gap-bottom>*:last-child
+    margin-bottom: calc(var(--d-v) * 2)
 
-    .children-gap-hor
-      column-gap: $ver
+  .gap-hor
+    width: var(--d-v)
+    min-width: var(--d-v)
 
-    .children-gap-hor-full>*:first-child, .children-gap-hor-top>*:first-child
-      margin-left: $ver
+  .children-gap-hor
+    column-gap: var(--d-v)
 
-    .children-gap-hor-full>*:last-child, .children-gap-hor-bottom>*:last-child
-      margin-right: $ver
+  .children-gap-hor-full>*:first-child, .children-gap-hor-top>*:first-child
+    margin-left: var(--d-v)
 
-  @if $sml
-    .sml
-      @include gap-sized(null, $sml-vertical, $sml-horizontal)
-
-  @if $med
-    .med
-      @include gap-sized(null, $med-vertical, $med-horizontal)
-
-  @if $lrg
-    .lrg
-      @include gap-sized(null, $lrg-vertical, $lrg-horizontal)
+  .children-gap-hor-full>*:last-child, .children-gap-hor-bottom>*:last-child
+    margin-right: var(--d-v)
