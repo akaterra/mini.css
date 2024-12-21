@@ -69,7 +69,7 @@
   .tabs
     &>.tabs-bar
       &>.tab
-        &:active:not(.disabled):not(:disabled)
+        &:active:not(.active):not(.disabled):not(:disabled)
           background-color: $col-primary-d-2 !important
           border-color: $col-primary-d-2
           color: $col
@@ -84,7 +84,7 @@
         color: $col
 
       &>.tab:is(.default, .failure, .primary, .success, .warning)
-        &:active:not(.disabled):not(:disabled)
+        &:active:not(.active):not(.disabled):not(:disabled)
           background-color: var(--c-d-2) !important
           border-color: var(--c-d-2)
           color: var(--c)

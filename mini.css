@@ -1865,7 +1865,7 @@
   border-color: transparent;
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab:active:not(.disabled):not(:disabled) {
+.mini .tabs > .tabs-bar > .tab:active:not(.active):not(.disabled):not(:disabled) {
   background-color: var(--c-pri-d-2) !important;
   border-color: var(--c-pri-d-2);
   color: var(--c);
@@ -1880,7 +1880,7 @@
   border-color: transparent;
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab:is(.default, .failure, .primary, .success, .warning):active:not(.disabled):not(:disabled) {
+.mini .tabs > .tabs-bar > .tab:is(.default, .failure, .primary, .success, .warning):active:not(.active):not(.disabled):not(:disabled) {
   background-color: var(--c-d-2) !important;
   border-color: var(--c-d-2);
   color: var(--c);
