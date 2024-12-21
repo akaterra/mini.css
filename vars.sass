@@ -129,3 +129,7 @@ $col-warning-l-6: var(--c-war-l-6)
   transition-timing-function: ease-in
   transition: 0.05s
   transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
+
+@mixin disabled()
+  cursor: not-allowed !important
+  opacity: 0.5

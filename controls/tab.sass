@@ -69,7 +69,7 @@
   .tabs
     &>.tabs-bar
       &>.tab
-        &:active:not(.disabled)
+        &:active:not(.disabled):not(:disabled)
           background-color: $col-primary-d-2 !important
           border-color: $col-primary-d-2
           color: $col
@@ -84,7 +84,7 @@
         color: $col
 
       &>.tab:is(.default, .failure, .primary, .success, .warning)
-        &:active:not(.disabled)
+        &:active:not(.disabled):not(:disabled)
           background-color: var(--c-d-2) !important
           border-color: var(--c-d-2)
           color: var(--c)
@@ -146,7 +146,7 @@
         &:hover:not(.active)
           @include hover()
 
-        &:active:not(.disabled)
+        &:active:not(.disabled):not(:disabled)
           @include active()
 
         align-items: center
@@ -163,6 +163,9 @@
         cursor: auto
         position: relative
         z-index: 1000
+      
+      &>.tab:disabled
+        @include disabled()
 
       display: flex
       flex-flow: wrap

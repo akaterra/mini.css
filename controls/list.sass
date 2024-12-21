@@ -73,7 +73,7 @@
       color: var(--c-i)
 
   .list.active
-    .list-header:active:not(.disabled), .list-item:active:not(.disabled)
+    .list-header:active:not(.disabled):not(:disabled), .list-item:active:not(.disabled):not(:disabled)
       background-color: $col-default-d-2 !important
       border-color: $col-default-d-2
       color: $col
@@ -84,7 +84,7 @@
       color: $col
 
   .list.active:is(#{$colors})
-    .list-header:active:not(.disabled), .list-item:active:not(.disabled)
+    .list-header:active:not(.disabled):not(:disabled), .list-item:active:not(.disabled):not(:disabled)
       background-color: var(--c-d-2) !important
       border-color: var(--c-d-2)
       color: var(--c)
@@ -112,7 +112,7 @@
         &:hover
           @include hover()
 
-        &:active:not(.disabled)
+        &:active:not(.disabled):not(:disabled)
           @include active()
   
         cursor: pointer

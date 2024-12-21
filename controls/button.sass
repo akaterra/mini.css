@@ -11,7 +11,7 @@
     &:hover
       @include hover()
 
-    &:active:not(.disabled)
+    &:active:not(.disabled):not(:disabled)
       @include active()
 
     align-items: center
@@ -39,7 +39,7 @@
   // color
 
   .button
-    &:active:not(.disabled), &.active
+    &:active:not(.disabled):not(:disabled), &.active
       background-color: $col-primary-d-2 !important
       border-color: $col-primary-d-2
       color: $col !important
@@ -57,7 +57,7 @@
     color: $col
 
   .button:is(#{$colors})
-    &:active:not(.disabled), &.active
+    &:active:not(.disabled):not(:disabled), &.active
       background-color: var(--c-d-2) !important
       border-color: var(--c-d-2)
       color: var(--c) !important
@@ -73,6 +73,9 @@
     background: var(--c-i)
     border-color: var(--c-i)
     color: $col
+  
+  .button:disabled
+    @include disabled()
 
   @if $sml
     @include button-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)

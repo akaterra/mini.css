@@ -28,8 +28,11 @@
     &:hover
       @include hover()
 
-    &:active:not(.disabled)
+    &:active:not(.disabled):not(:disabled)
       @include active()
+
+    &:disabled
+      @include disabled()
 
     appearance: none
     content: none
@@ -49,18 +52,24 @@
     border-width: var(--d-b-w)
     font-size: var(--d-f-s)
     height: calc(var(--d-1) * 0.5)
-    outline-offset: calc(var(--d-b-w) * -2)
-    outline-width: var(--d-b-w)
     padding: var(--d-b-w)
     width: calc(var(--d-1) * 0.5)
+
+  .checkbox[type='checkbox']:before
+    outline-offset: calc(var(--d-b-w) * -2)
+    outline-width: calc(var(--d-b-w) * 1)
+
+  .checkbox[type='radio']:before
+    outline-offset: calc(var(--d-b-w) * -3)
+    outline-width: calc(var(--d-b-w) * 1)
 
   // color
 
   .checkbox
-    &:active:not(.disabled):before, &.active:before
+    &:active:not(.disabled):not(:disabled):before, &.active:before
       border-color: $col-default-d-2 !important
 
-    &:checked:not(.disabled):active:before, &.active:checked:before
+    &:checked:not(.disabled):not(:disabled):active:before, &.active:checked:before
       background: $col-default-d-2 !important
   
     &:hover:before, &:focus:before
@@ -78,10 +87,10 @@
       outline-color: $col
 
   .checkbox:is(#{$colors})
-    &:active:not(.disabled):before, &.active:before
+    &:active:not(.disabled):not(:disabled):before, &.active:before
       border-color: var(--c-d-2) !important
 
-    &:checked:not(.disabled):active:before, &.active:checked:before
+    &:checked:not(.disabled):not(:disabled):active:before, &.active:checked:before
       background: var(--c-d-2) !important
 
     &:hover:before, &:focus:before

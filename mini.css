@@ -801,60 +801,6 @@
     width: calc(700px - var(--d-h) * 2);
   }
 }
-.mini .container-fluid .f-1 {
-  width: 5.5555555556vw !important;
-}
-.mini .container-fluid .f-2 {
-  width: 11.1111111111vw !important;
-}
-.mini .container-fluid .f-3 {
-  width: 16.6666666667vw !important;
-}
-.mini .container-fluid .f-4 {
-  width: 22.2222222222vw !important;
-}
-.mini .container-fluid .f-5 {
-  width: 27.7777777778vw !important;
-}
-.mini .container-fluid .f-6 {
-  width: 33.3333333333vw !important;
-}
-.mini .container-fluid .f-7 {
-  width: 38.8888888889vw !important;
-}
-.mini .container-fluid .f-8 {
-  width: 44.4444444444vw !important;
-}
-.mini .container-fluid .f-9 {
-  width: 50vw !important;
-}
-.mini .container-fluid .f10 {
-  width: 55.5555555556vw !important;
-}
-.mini .container-fluid .f11 {
-  width: 61.1111111111vw !important;
-}
-.mini .container-fluid .f12 {
-  width: 66.6666666667vw !important;
-}
-.mini .container-fluid .f13 {
-  width: 72.2222222222vw !important;
-}
-.mini .container-fluid .f14 {
-  width: 77.7777777778vw !important;
-}
-.mini .container-fluid .f15 {
-  width: 83.3333333333vw !important;
-}
-.mini .container-fluid .f16 {
-  width: 88.8888888889vw !important;
-}
-.mini .container-fluid .f17 {
-  width: 94.4444444444vw !important;
-}
-.mini .container-fluid .f18 {
-  width: 100vw !important;
-}
 @media screen and (max-width: 969px) {
   .mini .container {
     --d-media-fixed: 100vw;
@@ -884,6 +830,9 @@
   .mini .show-sml {
     display: block !important;
   }
+}
+.mini .container-fluid {
+  --d-media-fixed: 100vw;
 }
 .mini .ccc {
   padding: 0 var(--d-h);
@@ -1135,7 +1084,7 @@
   transition: 0.05s;
   transform: rotate(-0.5deg) scale(1.04);
 }
-.mini .button:active:not(.disabled) {
+.mini .button:active:not(.disabled):not(:disabled) {
   transition-timing-function: ease-in;
   transition: 0.05s;
   transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
@@ -1159,7 +1108,7 @@
   border-color: var(--c-pri);
   color: var(--c);
 }
-.mini .button:active:not(.disabled), .mini .button.active {
+.mini .button:active:not(.disabled):not(:disabled), .mini .button.active {
   background-color: var(--c-pri-d-2) !important;
   border-color: var(--c-pri-d-2);
   color: var(--c) !important;
@@ -1177,7 +1126,7 @@
   border-color: var(--c-i);
   color: var(--c);
 }
-.mini .button:is(.default, .failure, .primary, .success, .warning):active:not(.disabled), .mini .button:is(.default, .failure, .primary, .success, .warning).active {
+.mini .button:is(.default, .failure, .primary, .success, .warning):active:not(.disabled):not(:disabled), .mini .button:is(.default, .failure, .primary, .success, .warning).active {
   background-color: var(--c-d-2) !important;
   border-color: var(--c-d-2);
   color: var(--c) !important;
@@ -1189,6 +1138,10 @@
 }
 .mini .button:is(.default, .failure, .primary, .success, .warning).transparent {
   color: var(--c-i);
+}
+.mini .button:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5;
 }
 .mini .button.button-sml {
   font-size: calc(var(--s-f-s) * 0.8);
@@ -1260,10 +1213,14 @@
   transition: 0.05s;
   transform: rotate(-0.5deg) scale(1.04);
 }
-.mini .checkbox:active:not(.disabled) {
+.mini .checkbox:active:not(.disabled):not(:disabled) {
   transition-timing-function: ease-in;
   transition: 0.05s;
   transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
+}
+.mini .checkbox:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5;
 }
 .mini .checkbox {
   height: calc(var(--d-1) * 0.5);
@@ -1277,15 +1234,21 @@
   border-width: var(--d-b-w);
   font-size: var(--d-f-s);
   height: calc(var(--d-1) * 0.5);
-  outline-offset: calc(var(--d-b-w) * -2);
-  outline-width: var(--d-b-w);
   padding: var(--d-b-w);
   width: calc(var(--d-1) * 0.5);
 }
-.mini .checkbox:active:not(.disabled):before, .mini .checkbox.active:before {
+.mini .checkbox[type=checkbox]:before {
+  outline-offset: calc(var(--d-b-w) * -2);
+  outline-width: calc(var(--d-b-w) * 1);
+}
+.mini .checkbox[type=radio]:before {
+  outline-offset: calc(var(--d-b-w) * -3);
+  outline-width: calc(var(--d-b-w) * 1);
+}
+.mini .checkbox:active:not(.disabled):not(:disabled):before, .mini .checkbox.active:before {
   border-color: var(--c-def-d-2) !important;
 }
-.mini .checkbox:checked:not(.disabled):active:before, .mini .checkbox.active:checked:before {
+.mini .checkbox:checked:not(.disabled):not(:disabled):active:before, .mini .checkbox.active:checked:before {
   background: var(--c-def-d-2) !important;
 }
 .mini .checkbox:hover:before, .mini .checkbox:focus:before {
@@ -1302,10 +1265,10 @@
   background: var(--c-def);
   outline-color: var(--c);
 }
-.mini .checkbox:is(.default, .failure, .primary, .success, .warning):active:not(.disabled):before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning).active:before {
+.mini .checkbox:is(.default, .failure, .primary, .success, .warning):active:not(.disabled):not(:disabled):before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning).active:before {
   border-color: var(--c-d-2) !important;
 }
-.mini .checkbox:is(.default, .failure, .primary, .success, .warning):checked:not(.disabled):active:before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning).active:checked:before {
+.mini .checkbox:is(.default, .failure, .primary, .success, .warning):checked:not(.disabled):not(:disabled):active:before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning).active:checked:before {
   background: var(--c-d-2) !important;
 }
 .mini .checkbox:is(.default, .failure, .primary, .success, .warning):hover:before, .mini .checkbox:is(.default, .failure, .primary, .success, .warning):focus:before {
@@ -1413,6 +1376,10 @@
 }
 .mini .control:is(.default, .failure, .primary, .success, .warning).transparent {
   color: var(--c-i);
+}
+.mini .control:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5;
 }
 .mini .control.control-sml {
   font-size: calc(var(--s-f-s) * 0.8);
@@ -1630,7 +1597,7 @@
 .mini .list:is(.default, .failure, .primary, .success, .warning) .list-header, .mini .list:is(.default, .failure, .primary, .success, .warning) .list-item {
   color: var(--c-i);
 }
-.mini .list.active .list-header:active:not(.disabled), .mini .list.active .list-item:active:not(.disabled) {
+.mini .list.active .list-header:active:not(.disabled):not(:disabled), .mini .list.active .list-item:active:not(.disabled):not(:disabled) {
   background-color: var(--c-def-d-2) !important;
   border-color: var(--c-def-d-2);
   color: var(--c);
@@ -1640,7 +1607,7 @@
   border-color: var(--c-def-d-1);
   color: var(--c);
 }
-.mini .list.active:is(.default, .failure, .primary, .success, .warning) .list-header:active:not(.disabled), .mini .list.active:is(.default, .failure, .primary, .success, .warning) .list-item:active:not(.disabled) {
+.mini .list.active:is(.default, .failure, .primary, .success, .warning) .list-header:active:not(.disabled):not(:disabled), .mini .list.active:is(.default, .failure, .primary, .success, .warning) .list-item:active:not(.disabled):not(:disabled) {
   background-color: var(--c-d-2) !important;
   border-color: var(--c-d-2);
   color: var(--c);
@@ -1679,7 +1646,7 @@
   transition: 0.05s;
   transform: rotate(-0.5deg) scale(1.04);
 }
-.mini .list.active .list-header:active:not(.disabled), .mini .list.active .list-item:active:not(.disabled) {
+.mini .list.active .list-header:active:not(.disabled):not(:disabled), .mini .list.active .list-item:active:not(.disabled):not(:disabled) {
   transition-timing-function: ease-in;
   transition: 0.05s;
   transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
@@ -1898,7 +1865,7 @@
   border-color: transparent;
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab:active:not(.disabled) {
+.mini .tabs > .tabs-bar > .tab:active:not(.disabled):not(:disabled) {
   background-color: var(--c-pri-d-2) !important;
   border-color: var(--c-pri-d-2);
   color: var(--c);
@@ -1913,7 +1880,7 @@
   border-color: transparent;
   color: var(--c);
 }
-.mini .tabs > .tabs-bar > .tab:is(.default, .failure, .primary, .success, .warning):active:not(.disabled) {
+.mini .tabs > .tabs-bar > .tab:is(.default, .failure, .primary, .success, .warning):active:not(.disabled):not(:disabled) {
   background-color: var(--c-d-2) !important;
   border-color: var(--c-d-2);
   color: var(--c);
@@ -2058,7 +2025,7 @@
   transition: 0.05s;
   transform: rotate(-0.5deg) scale(1.04);
 }
-.mini .tabs > .tabs-bar > .tab:active:not(.disabled) {
+.mini .tabs > .tabs-bar > .tab:active:not(.disabled):not(:disabled) {
   transition-timing-function: ease-in;
   transition: 0.05s;
   transform: rotate(0.5deg) scale(0.96) translateY(2px) !important;
@@ -2067,6 +2034,10 @@
   cursor: auto;
   position: relative;
   z-index: 1000;
+}
+.mini .tabs > .tabs-bar > .tab:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5;
 }
 .mini .tabs > .tabs-content {
   background-color: var(--c);

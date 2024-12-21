@@ -43,6 +43,9 @@
     border-color: var(--c-i)
     color: var(--c-i)
 
+  .control:disabled
+    @include disabled()
+
   @if $sml
     @include control-sized('sml', $sml-border-radius, $sml-border-width, $sml-font-size, $sml-1, $sml-vertical, $sml-horizontal)
 
