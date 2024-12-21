@@ -980,18 +980,12 @@
   color: var(--c);
 }
 .mini .alert.alert-sml {
-  border-radius: var(--s-b-r);
-  border-width: var(--s-b-w);
   font-size: var(--s-f-s);
 }
 .mini .alert.alert-med {
-  border-radius: var(--m-b-r);
-  border-width: var(--m-b-w);
   font-size: var(--m-f-s);
 }
 .mini .alert.alert-lrg {
-  border-radius: var(--l-b-r);
-  border-width: var(--l-b-w);
   font-size: var(--l-f-s);
 }
 
@@ -1694,18 +1688,12 @@
   border-color: var(--c-l-4);
 }
 .mini .panel.panel-sml {
-  border-radius: var(--s-b-r);
-  border-width: var(--s-b-w);
   font-size: var(--s-f-s);
 }
 .mini .panel.panel-med {
-  border-radius: var(--m-b-r);
-  border-width: var(--m-b-w);
   font-size: var(--m-f-s);
 }
 .mini .panel.panel-lrg {
-  border-radius: var(--l-b-r);
-  border-width: var(--l-b-w);
   font-size: var(--l-f-s);
 }
 
