@@ -11,19 +11,16 @@
           font-size: calc($font-size * 0.8)
           padding: 0 $hor $border-width $hor
 
-          &:not(.active)
-            height: calc($height - $border-width * 2)
-            margin-top: $border-width
-            min-height: calc($height - $border-width * 2)
-            padding-bottom: 0
+          height: $height
+          min-height: $height
+          min-height: $height
+          padding-top: $border-width
 
-          &.active
-            height: $height
-            min-height: $height
-            margin-bottom: 0
-            margin-top: 0
-            min-height: $height
-            padding-top: $border-width
+          &:not(.active)
+            border: 0 !important
+            margin: $border-width
+            height: calc($height - $border-width * 2)
+            min-height: calc($height - $border-width * 2)
 
       &>.tabs-content
         border-radius: $border-radius
@@ -39,21 +36,18 @@
         font-size: calc(var(--d-f-s) * 0.8)
         padding: 0 var(--d-h) var(--d-b-w) var(--d-h)
 
+        height: var(--d-1)
+        min-height: var(--d-1)
+        padding-top: var(--d-b-w)
+
         &:not(.active)
+          border: 0 !important
+          margin: var(--d-b-w)
           height: calc(var(--d-1) - var(--d-b-w) * 2)
-          margin-top: var(--d-b-w)
           min-height: calc(var(--d-1) - var(--d-b-w) * 2)
-          padding-bottom: 0
 
-        &.active
-          height: var(--d-1)
-          margin-bottom: 0
-          margin-top: 0
-          min-height: var(--d-1)
-          padding-top: var(--d-b-w)
-
-      padding-left: calc(var(--d-h) - var(--d-b-w))
-      padding-right: calc(var(--d-h) - var(--d-b-w))
+      padding-left: calc(var(--d-b-w) + var(--d-b-w) * var(--d-l-m))
+      padding-right: calc(var(--d-b-w) + var(--d-b-w) * var(--d-r-m))
 
     &>.tabs-content
       border-radius: var(--d-b-r)
@@ -71,31 +65,29 @@
       &>.tab
         &:active:not(.active):not(.disabled):not(:disabled)
           background-color: $col-primary-d-2 !important
-          border-color: $col-primary-d-2
+          // border-color: $col-primary-d-2
           color: $col
 
         &:hover, &:focus
           background-color: $col-primary-d-1 !important
-          border-color: $col-primary-d-1
+          // border-color: $col-primary-d-1
           color: $col
 
         background-color: $col-primary
-        border-color: transparent
+        border-color: var(--c-bg)
         color: $col
 
       &>.tab:is(.default, .failure, .primary, .success, .warning)
         &:active:not(.active):not(.disabled):not(:disabled)
           background-color: var(--c-d-2) !important
-          border-color: var(--c-d-2)
           color: var(--c)
 
         &:hover, &:focus
           background-color: var(--c-d-1) !important
-          border-color: var(--c-d-1)
           color: var(--c)
 
         background-color: var(--c-i)
-        border-color: transparent
+        border-color: var(--c-bg)
         color: var(--c)
 
       &>.tab.active
@@ -135,10 +127,13 @@
       &:after
         border-bottom: solid var(--d-b-w) $col-default-l-4
         border-radius: 0
-        display: block
+        bottom: 0
         content: " "
+        display: block
+        left: 0
         margin-top: calc(var(--d-b-w) * -1)
-        position: relative
+        position: absolute
+        right: 0
         width: 100%
         z-index: 500
   
@@ -155,7 +150,7 @@
         cursor: pointer
         display: flex
         font-weight: bolder
-        margin: 0 var(--d-b-w)
+        margin: 0
         position: relative
         z-index: 0
 
