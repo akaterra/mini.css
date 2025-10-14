@@ -1073,6 +1073,10 @@
   text-align: center;
   text-transform: uppercase;
 }
+.mini .button:focus {
+  outline: calc(var(--d-b-w) * 3) solid rgba(255, 255, 0, 0.5);
+  outline-offset: calc(var(--d-b-w) * -2);
+}
 .mini .button:hover {
   transition-timing-function: ease-in;
   transition: 0.05s;
@@ -1201,6 +1205,10 @@
   content: "";
   display: block;
   outline-style: solid;
+}
+.mini .checkbox:focus {
+  outline: calc(var(--d-b-w) * 3) solid rgba(255, 255, 0, 0.5);
+  outline-offset: calc(var(--d-b-w) * -2);
 }
 .mini .checkbox:hover {
   transition-timing-function: ease-in;
@@ -1354,7 +1362,11 @@
   border-color: var(--c-def);
   color: var(--c-def);
 }
-.mini .control:hover, .mini .control:focus {
+.mini .control:focus {
+  outline: calc(var(--d-b-w) * 3) solid rgba(255, 255, 0, 0.5);
+  outline-offset: calc(var(--d-b-w) * -2);
+}
+.mini .control:hover {
   border-color: var(--c-def-d-1);
 }
 .mini .control.transparent {
@@ -1365,7 +1377,7 @@
   border-color: var(--c-i);
   color: var(--c-i);
 }
-.mini .control:is(.default, .failure, .primary, .success, .warning):hover, .mini .control:is(.default, .failure, .primary, .success, .warning):focus {
+.mini .control:is(.default, .failure, .primary, .success, .warning):hover {
   border-color: var(--c-d-1);
 }
 .mini .control:is(.default, .failure, .primary, .success, .warning).transparent {
@@ -1736,6 +1748,10 @@
 .mini .select:not(.disabled):active:before, .mini .select.active:before {
   background: var(--c-def-d-2) !important;
 }
+.mini .select:focus {
+  outline: calc(var(--d-b-w) * 3) solid rgba(255, 255, 0, 0.5);
+  outline-offset: calc(var(--d-b-w) * -2);
+}
 .mini .select:hover:before, .mini .select:focus:before {
   background: var(--c-def-d-1) !important;
 }
@@ -1998,6 +2014,10 @@
 .mini .tabs > .tabs-bar > .tab:not(.active) {
   border-bottom: 0;
   border-top: 0;
+}
+.mini .tabs > .tabs-bar > .tab:focus {
+  outline: calc(var(--d-b-w) * 3) solid rgba(255, 255, 0, 0.5);
+  outline-offset: calc(var(--d-b-w) * -2);
 }
 .mini .tabs > .tabs-bar > .tab:hover:not(.active) {
   transition-timing-function: ease-in;

@@ -130,6 +130,10 @@ $col-warning-l-6: var(--c-war-l-6)
   transition: 0.05s
   transform: rotate($active-rotate) scale($active-scale) translateY(2px) !important
 
-@mixin disabled()
+@mixin focus
+  outline: calc(var(--d-b-w) * 3) solid rgba(255,255,0,0.5)
+  outline-offset: calc(var(--d-b-w) * -2)
+
+@mixin disabled
   cursor: not-allowed !important
   opacity: 0.5

@@ -40,6 +40,9 @@
     &:not(.disabled):active:before, &.active:before
       background: $col-default-d-2 !important
 
+    &:focus
+      @include focus()
+
     &:hover:before, &:focus:before
       background: $col-default-d-1 !important
 

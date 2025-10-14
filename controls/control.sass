@@ -22,7 +22,10 @@
   // color
 
   .control
-    &:hover, &:focus
+    &:focus
+      @include focus()
+
+    &:hover //, &:focus
       border-color: $col-default-d-1
   
     &.transparent
@@ -33,7 +36,7 @@
     color: $col-default
 
   .control:is(#{$colors})
-    &:hover, &:focus
+    &:hover //, &:focus
       border-color: var(--c-d-1)
   
     &.transparent
